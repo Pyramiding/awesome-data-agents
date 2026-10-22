@@ -15,6 +15,8 @@ Open an issue or pull request containing:
 
 Please update both `README.md` and `resources.json`. Keep entries concise and use your own summary rather than copying source text.
 
+For new machine-readable entries, include `summary`, `date_evidence`, and `evidence_url`. For implementations, also specify the component type, license, technical documentation, and maintenance status. Update `PROJECT_GUIDE.md` when a project adds a useful implementation path.
+
 ## What is likely to be accepted
 
 - First-party engineering write-ups with architecture or operational detail

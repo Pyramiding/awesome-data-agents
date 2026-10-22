@@ -6,10 +6,10 @@
 
 *从业务问题到可信答案：上下文、受控执行、证据验证与治理形成可追踪的闭环。*
 
-**91 条资料** · `28` 架构与实践 · `20` 公开实现 · `18` 演讲 · `13` 研究 · `7` 持续文档 · `5` 评测  
+**133 条资料** · `45` 架构与实践 · `31` 公开实现 · `18` 分享与议程 · `13` 研究 · `15` 持续文档 · `11` 评测  
 **资料截止：2026-10-22（Asia/Shanghai）**
 
-[先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开实现](#开源实现与公开源码) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
+[先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [国际导航](#国际资料导航) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开实现](#开源实现与公开源码) · [项目路线](PROJECT_GUIDE.md) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
 
 这里不追求链接数量。每条资料都尽量回到作者、项目或大会原始页面，并回答三个问题：**它解决什么、采用什么机制、证据边界在哪里。** 仓库进一步把分散材料提炼成参考架构、交付成熟度与设计检查表，帮助读者做方案判断，而不只是收藏链接。
 
@@ -103,7 +103,7 @@ Trace → Evals → 回归 → 反馈/记忆
 
 - 优先一手来源；必须能核验到 2026 年日期或重要更新，并包含可复用的架构、实现或评测信息。
 - 厂商内部数字只按“发布方自述”记录，不做跨系统排名；无项目级许可证的仓库只称“公开源码”。
-- `🧪` 为研究或早期项目；`♻️` 为旧项目的 2026 重要更新；`📅` 为截止日仅有议程，不能视作已有回放。
+- `🧪` 为研究或早期项目；`♻️` 为旧项目的 2026 重要更新；`📅` 为截止日仅有议程，不能视作已有回放；`🗄️` 为已归档实现。
 
 完整规则见 [METHODOLOGY.md](METHODOLOGY.md)，结构化元数据见 [resources.json](resources.json)。
 
@@ -120,45 +120,87 @@ Trace → Evals → 回归 → 反馈/记忆
 9. **2026-08-04 · [DataSpace](https://arxiv.org/abs/2608.03451)** — 410 个跨语言任务、六种模态与确定性表格评测，也是 KDD Cup 2026 Data Agent Track 的官方 benchmark。
 10. **2026-09-15 · [EvoOntology](https://github.com/ruc-datalab/EvoOntology)** — 通过 MCP 暴露可版本化、可自演进的 Ontology Layer，直接回应语义层维护成本问题。
 
+## 国际资料导航
+
+从一个具体工程问题进入，再顺着实现、教程和评测阅读。下表是资料入口，不是厂商排名；完整项目路线见 [PROJECT_GUIDE.md](PROJECT_GUIDE.md)。
+
+| 你想研究什么 | 建议入口 | 可复用的内容 |
+|---|---|---|
+| 数据工程 Agent 如何自行校验 | [dbt Wizard harness](https://docs.getdbt.com/blog/wizard-agent-harness) · [dbt Skills](https://docs.getdbt.com/blog/dbt-agent-skills) | DAG 上下文、编译反馈、限定验证范围、数据差异评审 |
+| 分析 Agent 的工具如何设计 | [Cube Harness](https://cube.dev/blog/building-an-agentic-analytics-harness) · [Preset 生产化](https://preset.io/blog/preset-chatbot-technical-deep-dive/) | 结构化错误、结果分页、持久状态、异步与流式接入 |
+| 上下文如何持续修正 | [Hex Context Suggestions](https://hex.tech/blog/introducing-context-suggestions/) · [MotherDuck Guides](https://motherduck.com/blog/context-belongs-in-the-warehouse/) | 会话复盘、人工审核、仓内上下文和版本管理 |
+| BI 与多租户工具如何接入 | [Superset MCP](https://preset.io/blog/superset-mcp-service-deep-dive/) · [Preset 企业化](https://preset.io/blog/preset-mcp-open-source-to-enterprise/) | 预览与持久化分开、RBAC/RLS、工作区隔离 |
+| 如何评测上下文和 Skills 的实际收益 | [Xorq 配对实验](https://xorq.dev/blog/orientation-over-reasoning/) · [Preset Skills 评测](https://preset.io/blog/building-preset-agent-skills/) | 固定条件对照、轨迹规则检查、质量与额外 token 成本 |
+| 如何构建真实的数据工作验收集 | [ADE-bench](https://www.getdbt.com/blog/ade-bench-dbt-data-benchmarking) · [Hex DataBench](https://hex.tech/blog/databench-agentic-analytics-benchmark/) | 工程修复与开放分析采用不同验收；后者任务集仍私有 |
+| 云平台上的 Agent 怎样继承真实用户权限 | [AWS 身份传播](https://aws.amazon.com/blogs/security/identity-aware-ai-data-agents-with-aws-lake-formation-and-trusted-identity-propagation/) · [Genie MCP](https://docs.databricks.com/aws/en/agents/mcp-tools/genie-mcp) | 身份沿工具链传递、按数据目录授权、记录访问证据 |
+
+日期中的“更新”表示该页或项目在 2026 年的重要变更，不表示首次发布。资料数量按独立条目统计，同一项目的文章、实现与教程可能分别计数。
+
 ## 工程实践与公开分享
 
 ### 上下文、语义与可信分析
 
 - **2026-01-22 · AWS · [Accelerate context-aware data analysis and ML workflows with Amazon SageMaker Data Agent](https://aws.amazon.com/blogs/big-data/accelerate-context-aware-data-analysis-and-ml-workflows-with-amazon-sagemaker-data-agent/)** — Glue/DataZone 目录、Notebook 状态、分析计划、Serverless 执行和 IAM 治理的端到端示例。
+- **2026-01-28 · Hex · [Introducing Context Studio](https://hex.tech/blog/introducing-context-studio/)** — 统一管理数据资产认证、确定性指标模型和业务指南；从真实对话诊断错误，预览上下文修改，再版本化发布。
 - **2026-01-29 · OpenAI · [Inside OpenAI’s in-house data agent](https://openai.com/index/inside-our-in-house-data-agent/)** — 六层上下文、按需 RAG、工具循环、可复用 workflow 与持续评测。
 - **2026-03-06 · Pinterest Engineering · [Unified Context-Intent Embeddings for Scalable Text-to-SQL](https://medium.com/pinterest-engineering/unified-context-intent-embeddings-for-scalable-text-to-sql-793635e60aac)** — 用历史分析 SQL 的 context-intent embedding、结构/统计模式和治理信号先定位可信资产，再生成 SQL。
 - **2026-03-19 · Snowflake · [The Agent Context Layer for Trustworthy Data Agents](https://www.snowflake.com/en/blog/agent-context-layer-trustworthy-data-agents/)** — 以业务定义、规则、时效与权限构建 Agent Context Layer。
 - **2026-03-30 · Analytics at Meta · [Inside Meta’s Home Grown AI Analytics Agent](https://medium.com/@AnalyticsAtMeta/inside-metas-home-grown-ai-analytics-agent-4ea6779acfb3)** — 个人历史、域摘要、共享离线记忆与 Cookbook → Recipe → Ingredient 分层知识。
+- **2026-04-23 · Hex · [Introducing Context Suggestions](https://hex.tech/blog/introducing-context-suggestions/)** — Review Agent 复盘代码、工具调用和分析输出，将澄清、歧义与缺失定义聚类成问题，并提出上下文变更供团队审核。
 - **2026-04-30 · DataHub · [Introducing the DataHub Analytics Agent](https://datahub.com/blog/datahub-analytics-agent/)** — Context Graph 读写，联合 schema、glossary、lineage、owner、quality 与 freshness，并通过 MCP/Agent Context Kit 暴露。
 - **2026-06-03 · Anthropic · [How Anthropic enables self-service data analytics with Claude](https://claude.com/resources/articles/how-anthropic-enables-self-service-data-analytics-with-claude)** — Skills 与 dbt/model 同 PR 更新，并用内部 eval 验证变更。
 - **2026-06-30 · Snowflake · [Introducing Cortex Sense](https://www.snowflake.com/en/blog/enterprise-ai-agents-grounded-context/)** — 从查询历史、转换和 BI 指标提取上下文，并按权威性、流行度与新鲜度排序。
+- **2026-07-10 · Cube · [The Context Layer Needs a Semantic Layer](https://cube.dev/blog/the-context-layer-needs-a-semantic-layer)** — 区分可执行语义、描述性业务知识与历史记忆，说明指标和权限如何在查询编译时落实；属于厂商架构观点。
 - **2026-07-27 · LangChain · [How we built LangChain’s agent-first data stack](https://www.langchain.com/blog/agent-data-stack)** — dbt 模型、语义层和 Git 同步指南组成多层 context，并说明组织落地方式。
+- **2026-07-29 · MotherDuck · [Context belongs in the warehouse](https://motherduck.com/blog/context-belongs-in-the-warehouse/)** — 将指标定义、关联规则和业务陷阱存为仓内 Markdown Guides，以 SQL 管理与版本化；Agent 经 MCP 按需读取，组织和个人上下文分层分发。
 - **2026-08-17 · Snowflake · [Building an Internal Context Layer for AI Agents](https://www.snowflake.com/en/blog/snowflake-internal-context-layer-for-ai-agents/)** — 产品数据科学团队如何用内部语义层回答跨团队产品问题。
+- **2026-09-16 · dbt Labs · [dbt_context_engineering: modeling the context your AI agents read](https://docs.getdbt.com/blog/dbt-context-engineering)** — 将工单、通话和合同等非结构化材料建模为 Agent 可检索、可引用的上下文，沿用版本、测试与血缘管理。
 - **2026-09-29 · Datus · [The Semantic Layer in the Agent Loop](https://datus.ai/blog/semantic-layer-in-the-agent-loop/)** — 把语义层放进推理循环，作为 grain、fan-out、歧义与指标定义的确定性检查器。
 
 ### 编排、执行与数据工程
 
 - **2026-02-03 · Snowflake · [Take Ideas to Production Faster with an Agentic AI Developer Platform](https://www.snowflake.com/en/blog/agentic-ai-developer-platform/)** — 用 catalog、lineage、RBAC、Skills 与受治理执行覆盖工程、分析和 ML。
+- **2026-02-05 · dbt Labs · [Make your AI better at data work with dbt's agent skills](https://docs.getdbt.com/blog/dbt-agent-skills)** — 把建模、测试、语义层和迁移流程封装为按任务加载的 Skills；附接入与端到端工作流示例。
+- **2026-03-12 更新 · Snowflake Developers · [Build a Cortex Agent from Scratch with Snowflake](https://www.snowflake.com/en/developers/guides/build-a-cortex-agent-from-scratch-with-snowflake/)** — 从样例数据、语义视图和 Cortex Search 建到双工具 Agent，再用 SQL/Python 测试，复现指标与产品文档的统一问答。
+- **2026-03-27 · ClickHouse · [How we’re building a data platform for a new user: agents](https://clickhouse.com/blog/building-a-data-platform-for-agents)** — 以 LibreChat、ClickHouse＋MCP 和 Langfuse 构成交互、数据及观测三层架构，讨论探索型查询、上下文发现和任务级权限。 **文中含路线图，需区分已发布与计划能力。**
 - **2026-04-11 · Google Cloud · [Building Event-Driven Data Agents with BigQuery, Pub/Sub, and ADK](https://cloud.google.com/blog/topics/developers-practitioners/building-event-driven-data-agents-with-bigquery-pubsub-and-adk)** — Detection → Routing → Resolution → Observability 的事件驱动闭环，并保留人工升级。
 - **2026-04-17 · Databricks · [Introducing Genie Agent Mode](https://www.databricks.com/blog/introducing-genie-agent-mode)** — 从问答模式扩展到多步探索、假设验证和结构化解释。
 - **2026-04-21 · Snowflake · [Cortex Code Expands: One Governed Agent for Your Entire Data Stack](https://www.snowflake.com/en/blog/cortex-code-governed-agent-data-stack/)** — Skills、SDK、MCP、ACP、Sandbox 与 Plan Mode 的平台化组合。
 - **2026-04-30 · AWS · [Agentic analytics with SageMaker, Athena, and Amazon Quick](https://aws.amazon.com/blogs/machine-learning/unleashing-agentic-ai-analytics-on-amazon-sagemaker-with-amazon-athena-and-amazon-quick/)** — 把结构化查询、非结构化知识库与受治理的自助分析组合起来。
+- **2026-05-05 · Preset · [Shipping Preset Chatbot: From AI Prototype to Production](https://preset.io/blog/preset-chatbot-technical-deep-dive/)** — MCP 统一多端能力，LangGraph 持久化对话；详述异步 Agent 接入同步 Web 框架、独立连接池、SSE 桥接和工具错误处理。
 - **2026-05-08 · Databricks · [Pushing the Frontier for Data Agents with Genie](https://www.databricks.com/blog/pushing-frontier-data-agents-genie)** — 结构化与非结构化数据的并行发现、自纠错和验证。
 - **2026-05-19 · Google Cloud · [Data Agent Kit brings data skills and tools to your IDE or CLI](https://cloud.google.com/blog/products/data-analytics/data-agent-kit-brings-data-skills-and-tools-to-your-ide-or-cli/)** — 预置 Skills + MCP tools，把 BigQuery、AlloyDB、GCS 等带进常用 Agent。
+- **2026-06-02 · Cube · [Introducing Cube Agent Skills](https://cube.dev/blog/introducing-cube-agent-skills)** — 把周报、流失分析和模型变更流程存为模型项目中的 Markdown Skills，经分支、评审与部署复用。
+- **2026-06-09 · ClickHouse · [ClickHouse Agents: Claude-powered agentic analytics, now in public beta](https://clickhouse.com/blog/clickhouse-agents-beta)** — 将原生查询、MCP、沙箱代码执行、Skills、记忆、子 Agent 与分析产物整合到 Cloud RBAC 下的 LibreChat 托管运行时。 **公开 Beta。**
 - **2026-06-15 · Google Cloud · [What’s new in data agents](https://cloud.google.com/blog/products/data-analytics/new-data-agents-across-the-agentic-data-cloud/)** — 分析、数据科学、数据工程和数据库可观测 Agent 的产品矩阵。
 - **2026-07-23 · Databricks · [Why a Frontier Data Agent Outperforms General Coding Agents](https://www.databricks.com/blog/why-frontier-data-agent-outperforms-general-coding-agents-quality-and-cost)** — 用真实内部任务讨论专项检索、持久记忆和企业上下文的价值；对比结果属于厂商内部评测。
+- **2026-09-03 · Cube · [Building an Agentic Analytics Harness](https://cube.dev/blog/building-an-agentic-analytics-harness)** — 从 Semantic SQL、可恢复工具错误、结果截断提示、持久产物和权限过滤检索拆解分析 Agent 的运行机制。
 - **2026-09-08 · Google Cloud · [Agentic analytics with the Data Agent Kit](https://cloud.google.com/blog/products/data-analytics/agentic-analytics-with-the-data-agent-kit)** — BigQuery、Cloud SQL 与 GCS 多源根因分析教程，包含权限确认和执行轨迹。
 - **2026-09-10 · OpenAI · [Now everyone can put data to work](https://openai.com/index/put-data-to-work/)** — Data agent 从分析延伸到交互式仪表盘与经批准的后续行动；适合观察产品化边界。
 - **2026-09-24 · DevConf.US · [Building In-House Data Agents on RHOAI](https://pretalx.devconf.info/devconf-us-2026/talk/P9W73V/)** — OpenShift AI、Spark、Kubeflow Operator、Context Layer 与 MCP tools 的管道诊断/修复案例。
 - **2026-09-30 · Google Cloud · [Data Agent Kit is now GA](https://cloud.google.com/blog/topics/developers-practitioners/data-agent-kit-is-now-ga-bring-google-data-cloud-to-any-coding-agent)** — 免费 MCP tools + Agent Skills 的 GA 发布和兼容 Agent 说明。
+- **2026-10-09 更新 · Snowflake Developers · [Getting Started with the Cortex Agent SDK](https://www.snowflake.com/en/developers/guides/getting-started-with-cortex-agent-sdk/)** — 五个递进示例覆盖流式结果、多轮会话、后台运行与代码沙箱，最终组成检查流水线、数据质量并按需诊断事故的运维 Agent。
+- **2026-10-14 · dbt Labs · [Inside the dbt Wizard harness: building an agent that thinks in DAGs](https://docs.getdbt.com/blog/wizard-agent-harness)** — 拆解 DAG 上下文、编译反馈、专用验证 Agent、批准范围内构建与 deferral；将数据差异交给人工评审。
 - **2026-10-16 · Google Cloud · [Cross-cloud agentic analytics reference architecture](https://docs.cloud.google.com/architecture/agentic-ai-cross-cloud-analytics)** — 面向多云数据湖、仓库和非结构化数据的高层参考架构。
+
+### 身份、权限与接入治理
+
+- **2026-03-31 · Preset · [Preset MCP: From Open Source to Enterprise](https://preset.io/blog/preset-mcp-open-source-to-enterprise/)** — 通过外围中间件为 MCP 服务加入工作区隔离、逐请求数据库绑定、OAuth、弹性部署及可观测性，同时复用原有权限检查。
+- **2026-03-31 · Preset / Apache Superset · [Apache Superset MCP Service: A Technical Deep Dive](https://preset.io/blog/superset-mcp-service-deep-dive/)** — MCP 直接复用 Superset Python 库与 DAO；图表修改默认预览，持久化显式执行；沿用 RBAC/RLS 并限制响应 token。
+- **2026-10-06 · AWS Security Blog · [Identity-aware AI data agents with AWS Lake Formation and Trusted Identity Propagation](https://aws.amazon.com/blogs/security/identity-aware-ai-data-agents-with-aws-lake-formation-and-trusted-identity-propagation/)** — 贯穿 AgentCore、MCP Gateway、Lambda 和 Athena 传递真实用户身份，由 Lake Formation 授权并用 CloudTrail 核验。
 
 ### 评测、质量与可观测性
 
 - **2026-02-17 · Amplitude · [Can agents take on enterprise analytics? A task-based evaluation](https://amplitude.com/blog/ai-analytics-agents-task-based-evaluation)** — 用描述、诊断、预测、处方四类任务与透明度/证据 rubric 取代单一 Text-to-SQL 分数。
+- **2026-04-22 · Xorq · [Orientation Over Reasoning](https://xorq.dev/blog/orientation-over-reasoning/)** — 固定模型、执行预算与评分器，在 450 个 DABStep 问题上比较原始文件与 33 个命名语义表达式目录，公开环境、日志及评分流程。 **作者明确提示公开题污染，配对成绩不作排行榜依据。**
+- **2026-04-30 · Dot · [From 10% to 90% on Adyen’s DABstep: configuring a data warehouse agent](https://www.getdot.ai/blog/from-10-to-90-percent-on-adyens-dabstep)** — 将业务约定与重复分析路径沉淀为配置，再让 Agent 读取失败、提出修改并重新测量；用版本化实验记录保留成功和回退路径。 **仅覆盖 30 个任务、14 个配置版本；标题中的 90% 不是全量基准得分。**
 - **2026-05-22 · Hex · [How we built a lab to evaluate data agents](https://hex.tech/blog/evaluate-data-agents/)** — candidate-vs-baseline、确定性/LLM/混合评分和带脏 schema 的合成公司数据。
+- **2026-06-11 · Preset · [Preset Agent Skills: Giving Your AI Agent Real Preset Expertise](https://preset.io/blog/building-preset-agent-skills/)** — 以 31 个真实 BI 操作任务成对比较有无 Skills，重复运行并确定性检查工具选择、执行顺序、审批节点与秘密保护。 **结果限于作者任务集，并增加上下文成本。**
 - **2026-08-04 · Hex · [Introducing Evals](https://hex.tech/blog/evals/)** — 版本化 YAML eval suite、Context Preview、定时漂移检测和模型/成本 sweep。
+- **2026-08-13 · Hex · [Introducing DataBench](https://hex.tech/blog/databench-agentic-analytics-benchmark/)** — 在混乱的合成企业数据仓库中设置 100 个问答与开放分析任务，覆盖指标歧义、缺失证据和拒绝作答。 **任务集保持私有，适合研究评测方法。**
 - **2026-09-01 · ClickHouse · [The Agentic Analytics Benchmark](https://clickhouse.com/blog/agentic-analytics-benchmark-data-agent-mnist)** — 201 个生产问题、29 个模型，以通过率、成本、时延和轮次预算联合评测；公开方法和限制。
+- **2026-09-17 更新 · Databricks Documentation · [Test and monitor a Genie Agent](https://docs.databricks.com/aws/en/genie-agents/monitor)** — 串联线上反馈、人工纠错与离线基准；区分 Chat 的 SQL 结果比较和 Agent 的 LLM 评判，适合设计持续维护的验收集。
+- **2026-10-14 更新 · dbt Labs · [Introducing ADE-bench: measuring how AI agents perform data work](https://www.getdbt.com/blog/ade-bench-dbt-data-benchmarking)** — 以真实 dbt 项目、DuckDB 数据与 Docker 环境测试模糊修复任务，并联合观察测试通过率、成本和运行时。 **结果属于发布方特定配置。**
 
 ### 演讲与视频
 
@@ -243,12 +285,31 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 - **eosphoros-ai/[DB-GPT](https://github.com/eosphoros-ai/DB-GPT)** — 通用 Agentic AI 数据助手/应用平台；2026-08 发布 v0.8.2。MIT。
 - **ucbepic/[DataAgentBench](https://github.com/ucbepic/DataAgentBench)** — 企业异构 DB benchmark、验证器与持续榜单。**根目录无 LICENSE，按公开 benchmark 处理。**
 
+### 更多项目与工程组件
+
+按实现类型区分完整 Agent、工作区、工具服务、语义组件和评测环境。每项的机制、技术文档、2026 更新证据与使用边界见 [项目资料路线](PROJECT_GUIDE.md)。
+
+| 项目 | 类型 | 核心机制 / 用途 | 许可证与状态 |
+|---|---|---|---|
+| [Datus Agent](https://github.com/Datus-ai/Datus-agent) | 完整 Agent | 以可演进上下文引擎连接 SQL、指标和知识；v0.4.3 增加 SQL 血缘初始化与有来源的事实沉淀。 | [Apache-2.0](https://github.com/Datus-ai/Datus-agent/blob/main/LICENSE)；2026 有重要更新 |
+| [dbt MCP Server](https://github.com/dbt-labs/dbt-mcp) | 工具服务 | 把 dbt 项目、指标、血缘与执行工具暴露给 Agent；适合把“读上下文—改模型—编译测试”接入同一工作流。 | [Apache-2.0](https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE)；2026 有重要更新 |
+| [dbt Agent Skills](https://github.com/dbt-labs/dbt-agent-skills) | 技能包 | 可安装的 dbt 流程知识：先检查真实数据、迭代建模、再测试验证；包含指标建模与技能 A/B 评估材料。 | [Apache-2.0](https://github.com/dbt-labs/dbt-agent-skills/blob/main/LICENSE)；2026 有重要更新 |
+| [ADE-bench](https://github.com/dbt-labs/ade-bench) | 评测环境 | 用真实 dbt 项目、数据库、隔离容器与结果测试评测数据工作；可比较模型、MCP、技能包带来的效果与成本。 | [Apache-2.0](https://github.com/dbt-labs/ade-bench/blob/main/LICENSE)；2026 有重要更新 |
+| [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) | 工具服务 | 用预置数据库工具或参数化查询为 Agent 接入数据；集中处理连接池、认证与 OpenTelemetry，适合执行层复用。 | [Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)；2026 有重要更新 |
+| [Boring Semantic Layer (BSL)](https://github.com/boringdata/boring-semantic-layer) | 语义组件 | 基于 Ibis 的轻量语义层，将维度与指标封装为可查询模型；可作为 Agent 的指标工具底座，减少临时重写口径。 | [MIT](https://github.com/boringdata/boring-semantic-layer/blob/main/LICENSE)；2026 有重要更新 |
+| [R&D-Agent](https://github.com/microsoft/RD-Agent) | 实验 Agent | 以研究 Agent 提出假设、开发 Agent 编码实验、执行反馈再迭代，覆盖数据科学与建模任务，适合观察实验闭环。 | [MIT](https://github.com/microsoft/RD-Agent/blob/main/LICENSE)；2026 有重要更新 |
+| [Data Formulator](https://github.com/microsoft/data-formulator) | 分析工作区 | 把数据连接、加载 Agent、带记忆的 Data Thread、图表细化和报告分享串在可分支的可视工作区，适合交互式分析。 | [MIT](https://github.com/microsoft/data-formulator/blob/main/LICENSE)；2026 有重要更新 |
+| [Jupyter AI](https://github.com/jupyterlab/jupyter-ai) | Notebook 工作区 | 在 JupyterLab 内让 Agent 编辑、运行和调试 Notebook；以 ACP/MCP 接入工具，适合保留单元格与执行结果作为分析证据。 | [BSD-3-Clause](https://github.com/jupyterlab/jupyter-ai/blob/main/LICENSE)；2026 有重要更新 |
+| [dlt MCP Server](https://github.com/dlt-hub/dlt-mcp) | 工具服务 | 为 Agent 提供 dlt 管道、表结构、增量状态、schema diff 与 SELECT 查询工具，适合数据接入和管道诊断。 | [Apache-2.0](https://github.com/dlt-hub/dlt-mcp/blob/main/LICENSE)；2026 有重要更新 |
+| [Vanna 2.0](https://github.com/vanna-ai/vanna) | 已归档框架 | 用户身份贯穿提示、SQL 工具和行级过滤，并流式输出表格图表；2026-03-29 已归档，适合作为架构研究案例。 | [MIT](https://github.com/vanna-ai/vanna/blob/main/LICENSE)；🗄️ 2026-03-29 已归档 |
+
 ## 论文与评测
 
 ### Benchmark 选择指南
 
 | 你想验证什么 | 可先看 | 主要信号 | 使用时注意 |
 |---|---|---|---|
+| 数据模型变更与管道修复 | [ADE-bench](https://github.com/dbt-labs/ade-bench) | dbt 项目、真实数据、隔离容器和测试 | 固定任务/工具/引擎版本，联合记录成本和运行时 |
 | 企业异构数据库问答 | DAB | 真实企业任务、端到端分析能力 | 以最新版任务和榜单为准，避免混用早期规模 |
 | 跨领域技能覆盖 | AgenticDataBench | 领域与细粒度 Skill 标签 | 适合定位能力缺口，不等于你的生产分布 |
 | 多模态工作区分析 | DataSpace | 六种模态、确定性表格评测 | 需同时评估检索、执行和最终产物 |
@@ -279,6 +340,17 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 - **Alibaba Cloud SLS · [DataAgent core concepts](https://www.alibabacloud.com/help/en/sls/sls-dataagent-core-concept)** — 三层 Context Model 结构；2026-09 更新。
 - **Alibaba Cloud MaxCompute · [Multi-source, multi-engine DataAgent](https://www.alibabacloud.com/help/en/maxcompute/user-guide/multi-source-multi-engine-dataagent)** — 企业数据、对象文件和本地知识的联合分析；2026-10 更新。
 - **Alibaba Cloud AnalyticDB · [Data Agent architecture](https://www.alibabacloud.com/help/en/analyticdb/analyticdb-for-postgresql/data-agent/)** — 四层整体架构与使用边界；2026-09 更新。
+
+### 国际平台接入与实现细节
+
+- **2026-08-28 更新 · Microsoft Learn · [Best practices for improving data agent query generation](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-configuration-best-practices)** — 将上下文落实到 Schema 选择、对象描述、跨表规则和查询示例，尤其适合借鉴表粒度、先聚合后连接、财年及单位说明。
+- **2026-09-01 更新 · Microsoft Learn · [Add Fabric data agents to a Foundry agent with Fabric IQ (preview)](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-foundry-fabric-iq)** — 经 OneLake Catalog 发现多个领域数据 Agent，再由 Foundry 统一调用；包含跨 Agent 问题测试和长任务配置。
+- **2026-09-04 更新 · Microsoft Learn · [Data agent as Model Context Protocol server](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-mcp-server)** — 把已发布数据 Agent 暴露为单个 MCP 工具，附 Python 和编辑器接入；重点关注工具描述与 Bearer token 认证。
+- **2026-10-13 更新 · Microsoft Learn · [Fabric data agent runtime](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-runtime)** — 通过标准与预览运行时理解编排、路由和查询生成的发布边界，可借鉴升级验证、回归评测和生产变更流程。
+- **2026-10-13 更新 · Google Cloud · [Data Engineering Agent API: Build data pipelines with an agent](https://docs.cloud.google.com/gemini/data-agents/data-engineering-agent/api-overview)** — 给出基于 A2A 的 Agent Card、流式与同步消息接口，可用于将数据工程 Agent 接入自有应用并处理权限和完成状态。
+- **2026-10-16 更新 · Databricks Documentation · [Genie One MCP server](https://docs.databricks.com/aws/en/agents/mcp-tools/genie-mcp)** — 经 Unity Gateway 将 Genie 暴露为对话分析工具，按 Unity Catalog 权限访问数据并返回来源链接，适合研究具备业务语义的工具接口。
+- **2026-10-20 更新 · Google Cloud · [Use the Colab Enterprise Data Science Agent with BigQuery](https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent)** — 演示从 BigQuery 或 CSV 进入 Notebook 分析，覆盖探索、缺失值、预测与可视化，并可比较 SQL、DataFrames 和 PySpark 路径。
+- **2026-10-20 更新 · Google Cloud · [Use the Data Engineering Agent to build and modify data pipelines](https://docs.cloud.google.com/bigquery/docs/data-engineering-agent-pipelines)** — 用自然语言生成和审阅 Dataform SQLX 流水线，包含预览与提示示例；明确区分生成代码、应用变更和执行流水线。
 
 ## 贡献与勘误
 

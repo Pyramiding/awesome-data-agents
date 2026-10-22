@@ -39,6 +39,15 @@ Month-only dates use `YYYY-MM`. Event ranges use `YYYY-MM-DD/YYYY-MM-DD`.
 - `agenda`: an official session outline was public at the cutoff, but a completed talk, deck, or recording was not yet verified.
 - `active-project`: an older project with a material 2026 release or update.
 - `early`: public but explicitly experimental, EAP, or otherwise not presented as production-ready.
+- `archived`: a read-only, archived implementation retained for architectural study; it is not counted or recommended as actively maintained.
+
+Implementation entries distinguish complete agents, agent frameworks, tool servers, Skills, semantic layers, workspaces, and evaluation harnesses. A useful component is not automatically a complete Data Agent.
+
+## Machine-readable fields and counting
+
+`resources.json` schema 1.1 retains the original required fields and adds optional evidence and reading fields. Newly researched entries include `summary`, `date_evidence`, and `evidence_url`. Project entries also record `license`, `license_url`, `component_type`, `technical_material_url`, and practical usage notes when available. These fields support verification; release dates do not by themselves prove that a project is production-ready.
+
+The headline total counts resource records, not companies, websites, or unique products. An engineering article, implementation, and separately maintained tutorial for the same project can be distinct records. Supporting release, license, and documentation links inside a project record do not increase the count. The open-source/public-source section count includes explicitly marked archived cases; active and archived status remain separate.
 
 ## Evidence and claims
 
