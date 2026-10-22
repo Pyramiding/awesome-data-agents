@@ -61,9 +61,16 @@ Each resource has one primary `section`:
 
 Tags provide a second axis such as `semantic-layer`, `context`, `mcp`, `multi-agent`, `sandbox`, `governance`, `memory`, `benchmark`, or `text-to-sql`.
 
-## Independence and related work
+## Editorial lens and independence
 
-This repository is independently curated and is not affiliated with the linked organizations. It is not a mirror or fork of [HKUSTDial/awesome-data-agents](https://github.com/HKUSTDial/awesome-data-agents). That repository is acknowledged because it provides a valuable paper-oriented taxonomy and predates this 2026 engineering-focused list.
+Every annotation is edited around four questions:
+
+1. **Problem:** What concrete data task or production constraint is addressed?
+2. **Mechanism:** Which context, planning, execution, verification, or governance mechanism does the resource expose?
+3. **Evidence boundary:** Is the evidence a reproducible artifact, a paper result, an internal benchmark, a vendor claim, or only an event outline?
+4. **Transferability:** What can another team reuse, and what still depends on proprietary data, infrastructure, or organizational process?
+
+This repository is independently edited and is not affiliated with the linked organizations. Inclusion means the resource contributes a useful technical signal; it is not an endorsement, ranking, or claim that results are comparable across organizations.
 
 ## Maintenance checklist
 
