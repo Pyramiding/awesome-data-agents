@@ -1,0 +1,1517 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "scope": "2026-focused Data Agent architectures, public implementations, evaluations, papers, talks, and living documentation",
+  "resources": [
+    {
+      "id": "aws-sagemaker-context",
+      "date": "2026-01-22",
+      "date_basis": "published",
+      "title": "Accelerate context-aware data analysis and ML workflows with Amazon SageMaker Data Agent",
+      "organization": "AWS",
+      "url": "https://aws.amazon.com/blogs/big-data/accelerate-context-aware-data-analysis-and-ml-workflows-with-amazon-sagemaker-data-agent/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "catalog",
+        "governance",
+        "execution"
+      ]
+    },
+    {
+      "id": "openai-inhouse-data-agent",
+      "date": "2026-01-29",
+      "date_basis": "published",
+      "title": "Inside OpenAI’s in-house data agent",
+      "organization": "OpenAI",
+      "url": "https://openai.com/index/inside-our-in-house-data-agent/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "memory",
+        "rag",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "snowflake-agentic-developer-platform",
+      "date": "2026-02-03",
+      "date_basis": "published",
+      "title": "Take Ideas to Production Faster with an Agentic AI Developer Platform",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/agentic-ai-developer-platform/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "governance",
+        "skills"
+      ]
+    },
+    {
+      "id": "pinterest-context-intent-embeddings",
+      "date": "2026-03-06",
+      "date_basis": "published",
+      "title": "Unified Context-Intent Embeddings for Scalable Text-to-SQL",
+      "organization": "Pinterest Engineering",
+      "url": "https://medium.com/pinterest-engineering/unified-context-intent-embeddings-for-scalable-text-to-sql-793635e60aac",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "text-to-sql",
+        "retrieval",
+        "context",
+        "governance"
+      ]
+    },
+    {
+      "id": "snowflake-agent-context-layer",
+      "date": "2026-03-19",
+      "date_basis": "published",
+      "title": "The Agent Context Layer for Trustworthy Data Agents",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/agent-context-layer-trustworthy-data-agents/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "semantic-layer",
+        "governance"
+      ]
+    },
+    {
+      "id": "meta-analytics-agent",
+      "date": "2026-03-30",
+      "date_basis": "published",
+      "title": "Inside Meta’s Home Grown AI Analytics Agent",
+      "organization": "Analytics at Meta",
+      "url": "https://medium.com/@AnalyticsAtMeta/inside-metas-home-grown-ai-analytics-agent-4ea6779acfb3",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "memory",
+        "sql",
+        "evidence"
+      ]
+    },
+    {
+      "id": "google-event-driven-data-agents",
+      "date": "2026-04-11",
+      "date_basis": "published",
+      "title": "Building Event-Driven Data Agents with BigQuery, Pub/Sub, and ADK",
+      "organization": "Google Cloud",
+      "url": "https://cloud.google.com/blog/topics/developers-practitioners/building-event-driven-data-agents-with-bigquery-pubsub-and-adk",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "event-driven",
+        "bigquery",
+        "observability",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "id": "databricks-genie-agent-mode",
+      "date": "2026-04-17",
+      "date_basis": "published",
+      "title": "Introducing Genie Agent Mode",
+      "organization": "Databricks",
+      "url": "https://www.databricks.com/blog/introducing-genie-agent-mode",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "planning",
+        "analytics",
+        "agent-loop"
+      ]
+    },
+    {
+      "id": "snowflake-cortex-code-expands",
+      "date": "2026-04-21",
+      "date_basis": "published",
+      "title": "Cortex Code Expands: One Governed Agent for Your Entire Data Stack",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/cortex-code-governed-agent-data-stack/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "mcp",
+        "sandbox",
+        "governance"
+      ]
+    },
+    {
+      "id": "aws-athena-quick-agentic-analytics",
+      "date": "2026-04-30",
+      "date_basis": "published",
+      "title": "Unleashing agentic AI analytics on Amazon SageMaker with Amazon Athena and Amazon Quick",
+      "organization": "AWS",
+      "url": "https://aws.amazon.com/blogs/machine-learning/unleashing-agentic-ai-analytics-on-amazon-sagemaker-with-amazon-athena-and-amazon-quick/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "structured-data",
+        "unstructured-data",
+        "governance"
+      ]
+    },
+    {
+      "id": "datahub-analytics-agent-post",
+      "date": "2026-04-30",
+      "date_basis": "published",
+      "title": "Introducing the DataHub Analytics Agent",
+      "organization": "DataHub",
+      "url": "https://datahub.com/blog/datahub-analytics-agent/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context-graph",
+        "mcp",
+        "lineage",
+        "semantic-layer"
+      ]
+    },
+    {
+      "id": "databricks-genie-frontier",
+      "date": "2026-05-08",
+      "date_basis": "published",
+      "title": "Pushing the Frontier for Data Agents with Genie",
+      "organization": "Databricks",
+      "url": "https://www.databricks.com/blog/pushing-frontier-data-agents-genie",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "multi-agent",
+        "multi-model",
+        "verification",
+        "retrieval"
+      ]
+    },
+    {
+      "id": "google-data-agent-kit-ide",
+      "date": "2026-05-19",
+      "date_basis": "published",
+      "title": "Data Agent Kit brings data skills and tools to your IDE or CLI",
+      "organization": "Google Cloud",
+      "url": "https://cloud.google.com/blog/products/data-analytics/data-agent-kit-brings-data-skills-and-tools-to-your-ide-or-cli/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "mcp",
+        "skills",
+        "plugin",
+        "data-engineering"
+      ]
+    },
+    {
+      "id": "anthropic-self-service-analytics",
+      "date": "2026-06-03",
+      "date_basis": "published",
+      "title": "How Anthropic enables self-service data analytics with Claude",
+      "organization": "Anthropic",
+      "url": "https://claude.com/resources/articles/how-anthropic-enables-self-service-data-analytics-with-claude",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "skills",
+        "context",
+        "validation",
+        "analytics"
+      ]
+    },
+    {
+      "id": "google-new-data-agents",
+      "date": "2026-06-15",
+      "date_basis": "published",
+      "title": "What’s new in data agents: Supercharging your AI workflows",
+      "organization": "Google Cloud",
+      "url": "https://cloud.google.com/blog/products/data-analytics/new-data-agents-across-the-agentic-data-cloud/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-science",
+        "data-engineering",
+        "observability",
+        "mcp"
+      ]
+    },
+    {
+      "id": "snowflake-cortex-sense",
+      "date": "2026-06-30",
+      "date_basis": "published",
+      "title": "Introducing Cortex Sense: Grounded Context for the Data You Never Modeled",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/enterprise-ai-agents-grounded-context/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "semantic-layer",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "databricks-specialized-vs-general",
+      "date": "2026-07-23",
+      "date_basis": "published",
+      "title": "Why a Frontier Data Agent Outperforms General Coding Agents in Quality and Cost",
+      "organization": "Databricks",
+      "url": "https://www.databricks.com/blog/why-frontier-data-agent-outperforms-general-coding-agents-quality-and-cost",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "memory",
+        "enterprise-context"
+      ]
+    },
+    {
+      "id": "langchain-agent-first-data-stack",
+      "date": "2026-07-27",
+      "date_basis": "published",
+      "title": "How we built LangChain’s agent-first data stack",
+      "organization": "LangChain",
+      "url": "https://www.langchain.com/blog/agent-data-stack",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context-as-code",
+        "dbt",
+        "semantic-layer",
+        "adoption"
+      ]
+    },
+    {
+      "id": "snowflake-internal-context-layer",
+      "date": "2026-08-17",
+      "date_basis": "published",
+      "title": "Building an Internal Context Layer for AI Agents",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/snowflake-internal-context-layer-for-ai-agents/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "semantic-layer",
+        "internal-tooling"
+      ]
+    },
+    {
+      "id": "google-agentic-analytics-tutorial",
+      "date": "2026-09-08",
+      "date_basis": "published",
+      "title": "Agentic analytics with the Data Agent Kit",
+      "organization": "Google Cloud",
+      "url": "https://cloud.google.com/blog/products/data-analytics/agentic-analytics-with-the-data-agent-kit",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "mcp",
+        "multi-source",
+        "tutorial",
+        "root-cause-analysis"
+      ]
+    },
+    {
+      "id": "openai-data-agent-product",
+      "date": "2026-09-10",
+      "date_basis": "published",
+      "title": "Now everyone can put data to work",
+      "organization": "OpenAI",
+      "url": "https://openai.com/index/put-data-to-work/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "analytics",
+        "dashboard",
+        "actions",
+        "governance"
+      ]
+    },
+    {
+      "id": "devconf-rhoai-data-agents",
+      "date": "2026-09-24",
+      "date_basis": "event",
+      "title": "Building In-House Data Agents on RHOAI",
+      "organization": "DevConf.US",
+      "url": "https://pretalx.devconf.info/devconf-us-2026/talk/P9W73V/",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "spark",
+        "openshift",
+        "mcp",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "id": "datus-semantic-layer-loop",
+      "date": "2026-09-29",
+      "date_basis": "published",
+      "title": "The Semantic Layer in the Agent Loop",
+      "organization": "Datus",
+      "url": "https://datus.ai/blog/semantic-layer-in-the-agent-loop/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "ontology",
+        "validation",
+        "sql"
+      ]
+    },
+    {
+      "id": "google-dak-ga",
+      "date": "2026-09-30",
+      "date_basis": "released",
+      "title": "Data Agent Kit is now GA",
+      "organization": "Google Cloud",
+      "url": "https://cloud.google.com/blog/topics/developers-practitioners/data-agent-kit-is-now-ga-bring-google-data-cloud-to-any-coding-agent",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "mcp",
+        "skills",
+        "plugin",
+        "iam"
+      ]
+    },
+    {
+      "id": "google-cross-cloud-analytics",
+      "date": "2026-10-16",
+      "date_basis": "updated",
+      "title": "Implement agentic analytics workflows for distributed data",
+      "organization": "Google Cloud",
+      "url": "https://docs.cloud.google.com/architecture/agentic-ai-cross-cloud-analytics",
+      "section": "architecture",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "reference-architecture",
+        "multi-cloud",
+        "multi-source"
+      ]
+    },
+    {
+      "id": "amplitude-task-evaluation",
+      "date": "2026-02-17",
+      "date_basis": "published",
+      "title": "Can agents take on enterprise analytics? A task-based evaluation",
+      "organization": "Amplitude",
+      "url": "https://amplitude.com/blog/ai-analytics-agents-task-based-evaluation",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "rubric",
+        "analytics",
+        "benchmark"
+      ]
+    },
+    {
+      "id": "hex-eval-lab",
+      "date": "2026-05-22",
+      "date_basis": "published",
+      "title": "How we built a lab to evaluate data agents",
+      "organization": "Hex",
+      "url": "https://hex.tech/blog/evaluate-data-agents/",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "evaluation",
+        "llm-as-judge",
+        "synthetic-data"
+      ]
+    },
+    {
+      "id": "hex-evals",
+      "date": "2026-08-04",
+      "date_basis": "published",
+      "title": "Introducing Evals",
+      "organization": "Hex",
+      "url": "https://hex.tech/blog/evals/",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "evaluation",
+        "ci-cd",
+        "drift",
+        "cost"
+      ]
+    },
+    {
+      "id": "clickhouse-agentic-analytics-benchmark",
+      "date": "2026-09-01",
+      "date_basis": "published",
+      "title": "The Agentic Analytics Benchmark",
+      "organization": "ClickHouse",
+      "url": "https://clickhouse.com/blog/agentic-analytics-benchmark-data-agent-mnist",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "cost",
+        "latency",
+        "open-harness"
+      ]
+    },
+    {
+      "id": "preset-internal-data-agent",
+      "date": "2026-05-21",
+      "date_basis": "event",
+      "title": "Anatomy of our Internal Data Agent",
+      "organization": "Preset",
+      "url": "https://preset.io/events/how-we-built-our-agents/",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "video",
+        "semantic-layer",
+        "internal-tooling"
+      ]
+    },
+    {
+      "id": "open-data-circle-agent-data-plane",
+      "date": "2026-05-26",
+      "date_basis": "published",
+      "title": "Data Agents Need an Agent-facing Data Plane",
+      "organization": "Open Data Circle",
+      "url": "https://speakerdeck.com/opendatacircle/data-agents-need-an-agent-facing-data-plane",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "slides",
+        "data-plane",
+        "governance",
+        "observability"
+      ]
+    },
+    {
+      "id": "shopee-qcon-data-agent",
+      "date": "2026-04-16/2026-04-18",
+      "date_basis": "event",
+      "title": "从 AI 取数到智能分析：企业级数据 Agent 的多阶段演进与工程化落地",
+      "organization": "Shopee / QCon 北京",
+      "url": "https://qcon.infoq.cn/2026/beijing/presentation/7006",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "multi-agent",
+        "file-as-context",
+        "sandbox",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "netease-qcon-dataagent",
+      "date": "2026-04-16/2026-04-18",
+      "date_basis": "event",
+      "title": "从 Copilot 到 DataAgent：企业级智能数据开发治理平台的技术演进和实践",
+      "organization": "网易 / QCon 北京",
+      "url": "https://qcon.infoq.cn/2026/beijing/presentation/7030",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "governance",
+        "copilot"
+      ]
+    },
+    {
+      "id": "meituan-qcon-data-agent",
+      "date": "2026-04-16/2026-04-18",
+      "date_basis": "event",
+      "title": "不止 ChatBI：懂归因、能洞察的美团 Data Agent 落地实践",
+      "organization": "美团 / QCon 北京",
+      "url": "https://qcon.infoq.cn/2026/beijing/presentation/6946",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "knowledge-graph",
+        "memory",
+        "semantic-layer",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "tongcheng-dacon-dataagent",
+      "date": "2026-04-25",
+      "date_basis": "event",
+      "title": "DataAgent 在分析和营销场景的智能化建设探索",
+      "organization": "同程旅行 / DACon 上海",
+      "url": "https://www.bagevent.com/event/9108668/p/569570",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "analytics",
+        "marketing",
+        "multi-agent",
+        "actions"
+      ]
+    },
+    {
+      "id": "tencent-cloud-trustworthy-data-agent",
+      "date": "2026-07-03",
+      "date_basis": "published",
+      "title": "构建可信、可控、可演进的 Data Agent",
+      "organization": "腾讯云大数据",
+      "url": "https://developer.cloud.tencent.cn/article/2703714",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "multi-agent",
+        "skills",
+        "audit"
+      ]
+    },
+    {
+      "id": "datacyber-aicon",
+      "date": "2026-08-21/2026-08-22",
+      "date_basis": "event",
+      "title": "基于 DataCyber 的 Data Agent：构建企业数据智能中枢的工程范式",
+      "organization": "数新智能 / AICon 深圳",
+      "url": "https://aicon.infoq.cn/2026/shenzhen/presentation/7205",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "skills",
+        "workflow",
+        "policy",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "kuaishou-data-agent-salon",
+      "date": "2026-09-19",
+      "date_basis": "event",
+      "title": "Data Agent：数据生产与智能决策新范式",
+      "organization": "快手技术沙龙",
+      "url": "https://www.ithome.com/1/005/819.htm",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "multi-agent",
+        "skills",
+        "trace",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "qcon-shanghai-track",
+      "date": "2026-10-22/2026-10-24",
+      "date_basis": "event",
+      "title": "Agentic 时代的数据系统重构",
+      "organization": "QCon 上海",
+      "url": "https://qcon.infoq.cn/2026/shanghai/track/1976",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "data-systems"
+      ]
+    },
+    {
+      "id": "qcon-shanghai-netease-das",
+      "date": "2026-10-22/2026-10-24",
+      "date_basis": "event",
+      "title": "网易云音乐 DAS：AI 原生一站式数据开发治理平台",
+      "organization": "网易云音乐 / QCon 上海",
+      "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7257",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "data-engineering",
+        "security"
+      ]
+    },
+    {
+      "id": "qcon-shanghai-kuaishou",
+      "date": "2026-10-22/2026-10-24",
+      "date_basis": "event",
+      "title": "快手 Data Agent：数据生产与智能决策新范式",
+      "organization": "快手 / QCon 上海",
+      "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7230",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "multi-agent",
+        "context",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "qcon-shanghai-datus",
+      "date": "2026-10-22/2026-10-24",
+      "date_basis": "event",
+      "title": "Semantic Runtime",
+      "organization": "Datus / QCon 上海",
+      "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7342",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "semantic-layer",
+        "sql"
+      ]
+    },
+    {
+      "id": "qcon-shanghai-rednote",
+      "date": "2026-10-22/2026-10-24",
+      "date_basis": "event",
+      "title": "小红书 DIBP",
+      "organization": "小红书 / QCon 上海",
+      "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7343",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "harness",
+        "multi-agent",
+        "context"
+      ]
+    },
+    {
+      "id": "qcon-shanghai-meituan-aide",
+      "date": "2026-10-22/2026-10-24",
+      "date_basis": "event",
+      "title": "美团 AIDE 数据研发 Agent",
+      "organization": "美团 / QCon 上海",
+      "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7356",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "data-engineering",
+        "guardrails",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "google-data-agent-kit-plugin",
+      "date": "2026-04-02",
+      "date_basis": "repo_created",
+      "title": "data-agent-kit-plugin",
+      "organization": "GoogleCloudPlatform",
+      "url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "mcp",
+        "skills",
+        "plugin",
+        "apache-2.0"
+      ]
+    },
+    {
+      "id": "datahub-analytics-agent",
+      "date": "2026-04-22",
+      "date_basis": "repo_created",
+      "title": "analytics-agent",
+      "organization": "datahub-project",
+      "url": "https://github.com/datahub-project/analytics-agent",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context-graph",
+        "langgraph",
+        "vega-lite",
+        "apache-2.0"
+      ]
+    },
+    {
+      "id": "altimate-code",
+      "date": "2026-02-27",
+      "date_basis": "repo_created",
+      "title": "altimate-code",
+      "organization": "AltimateAI",
+      "url": "https://github.com/AltimateAI/altimate-code",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "dbt",
+        "deterministic-tools",
+        "data-engineering",
+        "mit"
+      ]
+    },
+    {
+      "id": "datafoundry",
+      "date": "2026-06-18",
+      "date_basis": "repo_created",
+      "title": "DataFoundry (repository: dataagent)",
+      "organization": "datagallery-ai",
+      "url": "https://github.com/datagallery-ai/dataagent",
+      "section": "open-source",
+      "language": "en",
+      "status": "early",
+      "tags": [
+        "semantic-layer",
+        "governance",
+        "self-hosted",
+        "apache-2.0"
+      ]
+    },
+    {
+      "id": "aliyun-data-agent-skill",
+      "date": "2026-03-11",
+      "date_basis": "repo_created",
+      "title": "data-agent-skill",
+      "organization": "aliyun",
+      "url": "https://github.com/aliyun/data-agent-skill",
+      "section": "open-source",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "mcp",
+        "skills",
+        "analytics",
+        "no-license"
+      ]
+    },
+    {
+      "id": "aws-duckdb-data-agent",
+      "date": "2026-09-02",
+      "date_basis": "repo_created",
+      "title": "sample-data-agent-on-duckdb",
+      "organization": "aws-samples",
+      "url": "https://github.com/aws-samples/sample-data-agent-on-duckdb",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "duckdb",
+        "s3",
+        "agentcore",
+        "mit-0"
+      ]
+    },
+    {
+      "id": "microsoft-fabric-workshop",
+      "date": "2026-08-28",
+      "date_basis": "repo_created",
+      "title": "fabric-data-agent-workshop",
+      "organization": "microsoft",
+      "url": "https://github.com/microsoft/fabric-data-agent-workshop",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "fabric",
+        "semantic-model",
+        "mlflow",
+        "mit"
+      ]
+    },
+    {
+      "id": "evoontology",
+      "date": "2026-09-15",
+      "date_basis": "repo_created",
+      "title": "EvoOntology",
+      "organization": "ruc-datalab",
+      "url": "https://github.com/ruc-datalab/EvoOntology",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "ontology",
+        "mcp",
+        "self-evolving",
+        "mit"
+      ]
+    },
+    {
+      "id": "dataspace-repo",
+      "date": "2026-07-21",
+      "date_basis": "repo_created",
+      "title": "DataSpace",
+      "organization": "HKUSTDial",
+      "url": "https://github.com/HKUSTDial/DataSpace",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "multimodal",
+        "evaluator",
+        "mit"
+      ]
+    },
+    {
+      "id": "agenticdatabench-repo",
+      "date": "2026-04-09",
+      "date_basis": "repo_created",
+      "title": "AgenticDataBench",
+      "organization": "AgenticDataBench",
+      "url": "https://github.com/AgenticDataBench/AgenticDataBench",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "data-science",
+        "skills",
+        "apache-2.0"
+      ]
+    },
+    {
+      "id": "kddcup-data-agent-starter",
+      "date": "2026-03-24",
+      "date_basis": "repo_created",
+      "title": "KDD Cup 2026 DataAgent-Bench Starter Kit",
+      "organization": "HKUSTDial",
+      "url": "https://github.com/HKUSTDial/kddcup2026-data-agents-starter-kit",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "react",
+        "benchmark",
+        "starter-kit",
+        "no-license"
+      ]
+    },
+    {
+      "id": "automattic-agentic-analytics",
+      "date": "2026-05-22",
+      "date_basis": "repo_created",
+      "title": "agentic-analytics",
+      "organization": "Automattic",
+      "url": "https://github.com/Automattic/agentic-analytics",
+      "section": "open-source",
+      "language": "en",
+      "status": "early",
+      "tags": [
+        "plugin",
+        "duckdb",
+        "reporting",
+        "no-license"
+      ]
+    },
+    {
+      "id": "spring-ai-alibaba-dataagent",
+      "date": "2026-09-20",
+      "date_basis": "updated",
+      "title": "DataAgent",
+      "organization": "spring-ai-alibaba",
+      "url": "https://github.com/spring-ai-alibaba/DataAgent",
+      "section": "open-source",
+      "language": "zh",
+      "status": "active-project",
+      "tags": [
+        "text-to-sql",
+        "python",
+        "mcp",
+        "apache-2.0"
+      ]
+    },
+    {
+      "id": "nao",
+      "date": "2026-02-10",
+      "date_basis": "released",
+      "title": "nao",
+      "organization": "getnao",
+      "url": "https://github.com/getnao/nao",
+      "section": "open-source",
+      "language": "en",
+      "status": "active-project",
+      "tags": [
+        "context-as-code",
+        "evaluation",
+        "self-hosted",
+        "mixed-license"
+      ]
+    },
+    {
+      "id": "databao-agent",
+      "date": "2026-01-16",
+      "date_basis": "released",
+      "title": "databao-agent",
+      "organization": "JetBrains",
+      "url": "https://github.com/JetBrains/databao-agent",
+      "section": "open-source",
+      "language": "en",
+      "status": "early",
+      "tags": [
+        "semantic-layer",
+        "python",
+        "eap"
+      ]
+    },
+    {
+      "id": "wrenai",
+      "date": "2026-10-16",
+      "date_basis": "released",
+      "title": "WrenAI",
+      "organization": "Canner",
+      "url": "https://github.com/Canner/WrenAI",
+      "section": "open-source",
+      "language": "en",
+      "status": "active-project",
+      "tags": [
+        "semantic-layer",
+        "text-to-sql",
+        "multi-license"
+      ]
+    },
+    {
+      "id": "db-gpt",
+      "date": "2026-08-26",
+      "date_basis": "released",
+      "title": "DB-GPT",
+      "organization": "eosphoros-ai",
+      "url": "https://github.com/eosphoros-ai/DB-GPT",
+      "section": "open-source",
+      "language": "en",
+      "status": "active-project",
+      "tags": [
+        "data-assistant",
+        "platform",
+        "mit"
+      ]
+    },
+    {
+      "id": "dataagentbench-repo",
+      "date": "2026-10-07",
+      "date_basis": "updated",
+      "title": "DataAgentBench",
+      "organization": "ucbepic",
+      "url": "https://github.com/ucbepic/DataAgentBench",
+      "section": "open-source",
+      "language": "en",
+      "status": "active-project",
+      "tags": [
+        "benchmark",
+        "multi-database",
+        "no-license"
+      ]
+    },
+    {
+      "id": "deepeye",
+      "date": "2026-05",
+      "date_basis": "released",
+      "title": "DeepEye",
+      "organization": "HKUSTDial",
+      "url": "https://github.com/HKUSTDial/DeepEye",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "typed-dag",
+        "validator",
+        "optimizer",
+        "apache-2.0"
+      ]
+    },
+    {
+      "id": "openai-cookbook-data-analyst",
+      "date": "2026-09-16",
+      "date_basis": "published",
+      "title": "Data Analyst app walkthrough",
+      "organization": "OpenAI Cookbook",
+      "url": "https://github.com/openai/openai-cookbook/tree/main/examples/agents_api/apps/data_analyst",
+      "section": "open-source",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "tools",
+        "read-only",
+        "memory",
+        "sql"
+      ]
+    },
+    {
+      "id": "datacross",
+      "date": "2026-01-29",
+      "date_basis": "published",
+      "title": "DataCross: A Unified Benchmark and Agent Framework for Cross-Modal Heterogeneous Data Analysis",
+      "organization": "Research paper",
+      "url": "https://arxiv.org/abs/2601.21403",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "multimodal",
+        "multi-agent"
+      ]
+    },
+    {
+      "id": "data-agents-levels",
+      "date": "2026-02-04",
+      "date_basis": "published",
+      "title": "Data Agents: Levels, State of the Art, and Open Problems",
+      "organization": "SIGMOD 2026 Tutorial",
+      "url": "https://arxiv.org/abs/2602.04261",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "taxonomy",
+        "survey",
+        "autonomy-levels"
+      ]
+    },
+    {
+      "id": "dab-paper",
+      "date": "2026-03-21",
+      "date_basis": "published",
+      "title": "Can AI Agents Answer Your Data Questions? A Benchmark for Data Agents",
+      "organization": "UC Berkeley EPIC et al.",
+      "url": "https://arxiv.org/abs/2603.20576",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "enterprise",
+        "multi-database"
+      ]
+    },
+    {
+      "id": "agenticdatabench-paper",
+      "date": "2026-07-02",
+      "date_basis": "published",
+      "title": "AgenticDataBench: A Comprehensive Benchmark for Data Agents",
+      "organization": "Research paper",
+      "url": "https://arxiv.org/abs/2607.01647",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "data-science",
+        "skills"
+      ]
+    },
+    {
+      "id": "unidatabench",
+      "date": "2026-07",
+      "date_basis": "published",
+      "title": "UniDataBench: Evaluating Data Analytics Agents Across Structured and Unstructured Data",
+      "organization": "ACL 2026",
+      "url": "https://aclanthology.org/2026.acl-long.1556/",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "structured-data",
+        "unstructured-data"
+      ]
+    },
+    {
+      "id": "datasage",
+      "date": "2026-07",
+      "date_basis": "published",
+      "title": "DataSage: Multi-agent Collaboration for Insight Discovery",
+      "organization": "ACL Findings 2026",
+      "url": "https://aclanthology.org/2026.findings-acl.309/",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "multi-agent",
+        "insight-discovery",
+        "debate"
+      ]
+    },
+    {
+      "id": "dataspace-paper",
+      "date": "2026-08-04",
+      "date_basis": "published",
+      "title": "DataSpace: Benchmarking Data Agents for Verifiable Analytics over Heterogeneous Workspaces",
+      "organization": "HKUST DIAL et al.",
+      "url": "https://arxiv.org/abs/2608.03451",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "multimodal",
+        "verifiable"
+      ]
+    },
+    {
+      "id": "enterprise-analytics-evaluation",
+      "date": "2026-08-28",
+      "date_basis": "published",
+      "title": "Evaluating Enterprise Analytics Agents: An End-to-End, Trace-Backed Methodology",
+      "organization": "KDD 2026 Workshop",
+      "url": "https://arxiv.org/abs/2609.09182",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "evaluation",
+        "traces",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "agentic-data-systems",
+      "date": "2026-09-21",
+      "date_basis": "published",
+      "title": "Data Agents: Agentic Data Systems",
+      "organization": "IEEE TKDE",
+      "url": "https://arxiv.org/abs/2609.24137",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "architecture",
+        "semantic-operators",
+        "memory"
+      ]
+    },
+    {
+      "id": "learned-enterprise-comprehension",
+      "date": "2026-09-21",
+      "date_basis": "published",
+      "title": "Learned Enterprise Data Comprehension: Compression and Routing for Data Agents",
+      "organization": "Research preprint",
+      "url": "https://arxiv.org/abs/2609.25286",
+      "section": "research",
+      "language": "en",
+      "status": "early",
+      "tags": [
+        "context",
+        "routing",
+        "compression"
+      ]
+    },
+    {
+      "id": "fabric-data-agent-concepts",
+      "date": "2026-05-11",
+      "date_basis": "updated",
+      "title": "Fabric data agent concepts",
+      "organization": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "fabric",
+        "orchestrator",
+        "purview",
+        "semantic-model"
+      ]
+    },
+    {
+      "id": "fabric-data-agent-evaluation",
+      "date": "2026-09-01",
+      "date_basis": "updated",
+      "title": "Evaluate your data agent",
+      "organization": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/fabric/data-science/evaluate-data-agent",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "fabric",
+        "sdk",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "alibaba-dms-openapi",
+      "date": "2026-06-05",
+      "date_basis": "updated",
+      "title": "Data Agent OpenAPI integration guide",
+      "organization": "Alibaba Cloud DMS",
+      "url": "https://www.alibabacloud.com/help/en/dms/data-agent-openapi-integration-guide",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "api",
+        "integration",
+        "architecture"
+      ]
+    },
+    {
+      "id": "alibaba-dataworks-agent",
+      "date": "2026-10-09",
+      "date_basis": "updated",
+      "title": "New Data Agent",
+      "organization": "Alibaba Cloud DataWorks",
+      "url": "https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "qwen-code",
+        "skills",
+        "data-engineering",
+        "governance"
+      ]
+    },
+    {
+      "id": "alibaba-sls-dataagent",
+      "date": "2026-09-10",
+      "date_basis": "updated",
+      "title": "DataAgent core concepts",
+      "organization": "Alibaba Cloud SLS",
+      "url": "https://www.alibabacloud.com/help/en/sls/sls-dataagent-core-concept",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "context-model",
+        "logging"
+      ]
+    },
+    {
+      "id": "alibaba-maxcompute-dataagent",
+      "date": "2026-10-12",
+      "date_basis": "updated",
+      "title": "Multi-source, multi-engine DataAgent",
+      "organization": "Alibaba Cloud MaxCompute",
+      "url": "https://www.alibabacloud.com/help/en/maxcompute/user-guide/multi-source-multi-engine-dataagent",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "multi-source",
+        "multi-engine",
+        "files"
+      ]
+    },
+    {
+      "id": "alibaba-analyticdb-dataagent",
+      "date": "2026-09-14",
+      "date_basis": "updated",
+      "title": "Data Agent architecture",
+      "organization": "Alibaba Cloud AnalyticDB",
+      "url": "https://www.alibabacloud.com/help/en/analyticdb/analyticdb-for-postgresql/data-agent/",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "architecture",
+        "database",
+        "analytics"
+      ]
+    },
+    {
+      "id": "china-data-agent-report-2026",
+      "date": "2026-08-17",
+      "date_basis": "published",
+      "title": "数据智能体研究报告（2026）（征求意见稿）",
+      "organization": "中国互联网协会人工智能工作委员会 / 中国信通院",
+      "url": "https://www.isc.org.cn/article/30075177847877632.html",
+      "section": "research",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "report",
+        "taxonomy",
+        "reference-architecture",
+        "draft"
+      ]
+    },
+    {
+      "id": "shopee-qcon-transcript",
+      "date": "2026-07-14",
+      "date_basis": "published",
+      "title": "从 AI 取数到智能分析：企业级数据 Agent 的多阶段演进与工程化落地（全文实录）",
+      "organization": "Shopee / InfoQ",
+      "url": "https://www.infoq.cn/article/LfO7mzdhxMWTtICFuTNb",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "transcript",
+        "multi-agent",
+        "file-as-context",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "tencent-databuddy-runtime",
+      "date": "2026-09-01",
+      "date_basis": "published",
+      "title": "数据语义驱动的企业 Agent Runtime 实践",
+      "organization": "腾讯 DataBuddy",
+      "url": "https://developer.cloud.tencent.cn/article/2735067",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "runtime",
+        "semantic-layer",
+        "sandbox",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "id": "yunqi-production-data-agent",
+      "date": "2026-09-09",
+      "date_basis": "published",
+      "title": "从 Tool Calling 到 Data Agent：企业数据智能体的生产化路径",
+      "organization": "云器科技",
+      "url": "https://www.yunqi.tech/resource/blogs/enterprise-data-agent-production",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "sandbox",
+        "traces",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "tencent-cloud-data-guide-2026",
+      "date": "2026-09-10",
+      "date_basis": "published",
+      "title": "2026 腾讯云大数据年度精选技术实践指南",
+      "organization": "腾讯云大数据 / InfoQ",
+      "url": "https://www.infoq.cn/minibook/W2lxNULd8rJGsXWjEgMX",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "report",
+        "databuddy",
+        "data-platform",
+        "analytics"
+      ]
+    },
+    {
+      "id": "dacon-beijing-2026-agenda",
+      "date": "2026-10-23/2026-10-24",
+      "date_basis": "event",
+      "title": "DACon 北京 2026 Data Agent 相关议程",
+      "organization": "DACon 北京",
+      "url": "https://www.bagevent.com/event/9196611",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "agenda",
+        "semantic-layer",
+        "ontology",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "sigmod-data-agents-slides",
+      "date": "2026-06-03",
+      "date_basis": "event",
+      "title": "Data Agents: From Text-to-SQL to Autonomous Data Intelligence — Tutorial Slides",
+      "organization": "SIGMOD 2026",
+      "url": "https://2026.sigmod.org/slides/DataAgents-SIGMOD2026.pdf",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "tutorial",
+        "taxonomy",
+        "slides"
+      ]
+    },
+    {
+      "id": "data-agents-under-attack",
+      "date": "2026-06-07",
+      "date_basis": "published",
+      "title": "Data Agents Under Attack: A Systematic Study of Security Vulnerabilities",
+      "organization": "Research paper",
+      "url": "https://arxiv.org/abs/2606.08661",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "security",
+        "threat-model",
+        "attacks"
+      ]
+    },
+    {
+      "id": "dataclaweval",
+      "date": "2026-07-30",
+      "date_basis": "published",
+      "title": "DataClawEval: Benchmarking Data Agents on End-to-End Data Engineering",
+      "organization": "Research paper",
+      "url": "https://arxiv.org/abs/2607.28033",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "data-engineering",
+        "pyspark",
+        "sql"
+      ]
+    },
+    {
+      "id": "kddcup-2026-data-agents",
+      "date": "2026-08-12",
+      "date_basis": "event",
+      "title": "KDD Cup 2026: Data Agents for Complex Data Analysis",
+      "organization": "KDD Cup 2026",
+      "url": "https://dataagent.top/",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "competition",
+        "benchmark",
+        "multimodal"
+      ]
+    }
+  ]
+}
+
