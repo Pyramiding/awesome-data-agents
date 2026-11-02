@@ -15,8 +15,9 @@
 
 </details>
 
-**133 条资料** · `45` 架构与实践 · `31` 公开实现 · `18` 分享与议程 · `13` 研究 · `15` 持续文档 · `11` 评测  
-**资料截止：2026-10-22（Asia/Shanghai）**
+**150 条资料** · `52` 架构与实践 · `31` 公开实现 · `20` 分享与议程 · `16` 研究 · `17` 持续文档 · `14` 评测
+
+**资料截止：2026-11-02（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
 
 [先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [国际导航](#国际资料导航) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开实现](#开源实现与公开源码) · [项目路线](PROJECT_GUIDE.md) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
 
@@ -28,6 +29,16 @@
 A source-checked, 2026-focused field guide to Data Agent architectures, production write-ups, public implementations, benchmarks, papers, and talks. Beyond indexing links, it synthesizes an engineering model for context, execution, verification, and governance. Chinese annotations stay concise while original titles and first-party links are preserved.
 
 </details>
+
+## 本轮更新：2026-10-23—11-02
+
+本轮新增 **17 条**原始资料，更新 **7 个**既有条目；项目的新版本更新原记录，不重复增加项目数量。完整变更与日期证据见 [更新记录](UPDATES.md) 和 [机器索引](resources.json)。
+
+本轮值得带着问题读的三个变化（本仓编辑归纳）：
+
+- **上下文要能执行，也要能被改对。** [DOSI](https://datus.ai/blog/datus-dosi-executable-business-context/) 展示语义编译与错误契约，[Cube](https://cube.dev/blog/data-modeling-is-becoming-system-design) 把生产反馈、模型变更和人工评审串起来。
+- **评测不能只跑一次，也不能只看组件分数。** [动态参考查询](https://data-marc.com/2026/10/27/can-you-trust-your-fabric-data-agent-programmatically-testing-accuracy-and-determinism/)、[跨会话重复评测](https://michaeljohnpena.com/blog/2026-10-29-fabric-data-agent-determinism-real-nem-data/) 与 [ClickHouse 的检索负结果](https://clickhouse.com/blog/agentic-analytics-benchmark-jev) 分别补上真值时效、运行波动和端到端收益检查。
+- **可信来源策略不是访问权限。** [Hex Governed mode](https://learn.hex.tech/docs/agent-management/governed-mode) 明确区分 Agent 来源引导与数据授权；上线评审仍需检查数仓和连接权限。
 
 ## 先看结论
 
@@ -165,6 +176,8 @@ Trace → Evals → 回归 → 反馈/记忆
 - **2026-08-17 · Snowflake · [Building an Internal Context Layer for AI Agents](https://www.snowflake.com/en/blog/snowflake-internal-context-layer-for-ai-agents/)** — 产品数据科学团队如何用内部语义层回答跨团队产品问题。
 - **2026-09-16 · dbt Labs · [dbt_context_engineering: modeling the context your AI agents read](https://docs.getdbt.com/blog/dbt-context-engineering)** — 将工单、通话和合同等非结构化材料建模为 Agent 可检索、可引用的上下文，沿用版本、测试与血缘管理。
 - **2026-09-29 · Datus · [The Semantic Layer in the Agent Loop](https://datus.ai/blog/semantic-layer-in-the-agent-loop/)** — 把语义层放进推理循环，作为 grain、fan-out、歧义与指标定义的确定性检查器。
+- **2026-10-28 · Datus · [Introducing DOSI: Executable Business Context for AI Agents](https://datus.ai/blog/datus-dosi-executable-business-context/)** — 将经审核的 Ossie 模型编译为 SQL，暴露指标、血缘与稳定错误契约，并检查关联歧义和 fan-out；业务口径与源数据仍需验证。
+- **2026-10-29 · Cube · [Building the Data Model Factory](https://cube.dev/blog/data-modeling-is-becoming-system-design)** — 从模式、查询日志与对话发现上下文缺口，生成语义模型变更 PR，由人定义验收并独立审查；是实践方案，不是公开对照评测。
 
 ### 编排、执行与数据工程
 
@@ -191,6 +204,10 @@ Trace → Evals → 回归 → 反馈/记忆
 - **2026-10-09 更新 · Snowflake Developers · [Getting Started with the Cortex Agent SDK](https://www.snowflake.com/en/developers/guides/getting-started-with-cortex-agent-sdk/)** — 五个递进示例覆盖流式结果、多轮会话、后台运行与代码沙箱，最终组成检查流水线、数据质量并按需诊断事故的运维 Agent。
 - **2026-10-14 · dbt Labs · [Inside the dbt Wizard harness: building an agent that thinks in DAGs](https://docs.getdbt.com/blog/wizard-agent-harness)** — 拆解 DAG 上下文、编译反馈、专用验证 Agent、批准范围内构建与 deferral；将数据差异交给人工评审。
 - **2026-10-16 · Google Cloud · [Cross-cloud agentic analytics reference architecture](https://docs.cloud.google.com/architecture/agentic-ai-cross-cloud-analytics)** — 面向多云数据湖、仓库和非结构化数据的高层参考架构。
+- **2026-10-23 · Keyhole Software · [White Paper – Agentic Harness Architecture in 2026: Components, Vendors, and a Reference Design for Data Engineering](https://keyholesoftware.com/agentic-harness/)** — 将只读发现、计划审批、确定性测试、PR/CI 晋级与目录登记组成数据工程交付门禁。**端到端示例是复合参考场景，不是单个客户实测。**
+- **2026-10-23 · KX · [Natural Language to qSQL with the MCP qSQL Suggester](https://kx.com/blog/natural-language-to-qsql-mcp-suggester/)** — 专用模型 + MCP/Skills，结合候选一致性、解析/qlint/执行检查与按需参考结果对比；**一致性不证明语义正确，自托管仍需 q/kdb+ 许可。**
+- **2026-10-27 · Hex · [Introducing Hex 4.0](https://hex.tech/blog/introducing-hex-4-0/)** — 显式依赖 DAG、数字血缘、独立步骤并行和受影响依赖局部重跑。**发布时为 private beta；性能示例来自内部应用。**
+- **2026-10-29 · MotherDuck · [Introducing Dive Apps: Superpowers for AI Builders](https://motherduck.com/blog/dive-apps-superpowers-for-ai-builders/)** — MCP 构建数据应用，交互触发 serverless Python Flights、Agent harness 与写回；写操作仍需设计授权、审批和回滚。
 
 ### 身份、权限与接入治理
 
@@ -210,11 +227,15 @@ Trace → Evals → 回归 → 反馈/记忆
 - **2026-09-01 · ClickHouse · [The Agentic Analytics Benchmark](https://clickhouse.com/blog/agentic-analytics-benchmark-data-agent-mnist)** — 201 个生产问题、29 个模型，以通过率、成本、时延和轮次预算联合评测；公开方法和限制。
 - **2026-09-17 更新 · Databricks Documentation · [Test and monitor a Genie Agent](https://docs.databricks.com/aws/en/genie-agents/monitor)** — 串联线上反馈、人工纠错与离线基准；区分 Chat 的 SQL 结果比较和 Agent 的 LLM 评判，适合设计持续维护的验收集。
 - **2026-10-14 更新 · dbt Labs · [Introducing ADE-bench: measuring how AI agents perform data work](https://www.getdbt.com/blog/ade-bench-dbt-data-benchmarking)** — 以真实 dbt 项目、DuckDB 数据与 Docker 环境测试模糊修复任务，并联合观察测试通过率、成本和运行时。 **结果属于发布方特定配置。**
+- **2026-10-27 · Data–Marc · [Can You Trust Your Fabric Data Agent? Programmatically Testing Accuracy and Determinism](https://data-marc.com/2026/10/27/can-you-trust-your-fabric-data-agent-programmatically-testing-accuracy-and-determinism/)** — 保存参考查询，每次从当前数据计算期望值，再运行 SDK 评测并留存步骤。参考查询的身份、权限与数据快照必须和被测 Agent 对齐。
+- **2026-10-27 · ClickHouse · [The Agentic Analytics Benchmark: ranking tables and labeling failures with Jev](https://clickhouse.com/blog/agentic-analytics-benchmark-jev)** — 表排序、类型化失败归因与确定性事实检查；**检索组件表现较好，但跨 20 个模型未出现显著端到端准确率提升**，保留负结果与开发/保留集边界。
+- **2026-10-29 · Michael John Peña · [Fabric Data Agent Accuracy Is a Distribution, Not a Number](https://michaeljohnpena.com/blog/2026-10-29-fabric-data-agent-determinism-real-nem-data/)** — 对 24 问题、三种表述做多次新会话评测，比较数值判定、SDK judge 与 pass^k。仅覆盖指定电力数据、Standard runtime 和预览 SDK，不代表所有 Fabric Agent。
 
 ### 演讲与视频
 
 - **2026-05-21 · Preset · [Anatomy of our Internal Data Agent](https://preset.io/events/how-we-built-our-agents/)** — 公开 Live Talk，覆盖内部数据专家、工具、语义层和数据团队工作方式。
 - **2026-05-26 · Open Data Circle · [Data Agents Need an Agent-facing Data Plane](https://speakerdeck.com/opendatacircle/data-agents-need-an-agent-facing-data-plane)** — freshness、semantics、multimodality、governance、actionability、observability 六维框架与演进图。
+- **2026-10-28 · Atlan Context Conference · [The Post-AI Data Stack: A blueprint for analytics agents](https://atlan.com/context-conference/post-ai-data-stack/)** — **36:55 公开视频与逐字稿**；指标、Ontology、Skills 上下文及客户落地讨论，覆盖认证指标优先、标注推断、版本治理与评测回流。准确率陈述属于发布方内部经验。
 
 ## 中文与国内实践
 
@@ -231,21 +252,23 @@ Trace → Evals → 回归 → 反馈/记忆
 - **2026-09-09 · 云器科技 · [从 Tool Calling 到 Data Agent：企业数据智能体的生产化路径](https://www.yunqi.tech/resource/blogs/enterprise-data-agent-production)** — 语义层、长工作流、Sandbox、Trace 与评测闭环；效果数字属于厂商案例口径。
 - **2026-09-10 · 腾讯云大数据 · [2026 腾讯云大数据年度精选技术实践指南](https://www.infoq.cn/minibook/W2lxNULd8rJGsXWjEgMX)** — 汇总 DataBuddy、WeData、Agent-Ready 数据平台与 ChatBI → 决策智能体实践。
 - **2026-09-19 · 快手技术沙龙 · [Data Agent：数据生产与智能决策新范式](https://www.ithome.com/1/005/819.htm)** — 父子 Agent、Skills、知识/记忆、Trace 与评测准入；当前可得页面是媒体回顾，数字应视为“据快手分享”。
+- **2026-10-27 · 云器科技 @ DACon 北京 · [从数据底座到 AI 知识底座，云器在 DACon 带来了什么？｜附演讲材料](https://www.yunqi.tech/resource/blogs/dacon-ai-lakehouse)** — 官方会后复盘，说明抽取、语义对齐、认证和运行反馈的知识生产链，以及 AI ETL、Semantic View、SingSight 的分工。**正文可读；完整 PPT 需扫码小程序，本轮未核验直接下载或录像。**
+- **2026-10-29 · 云器科技 · [让 AI Agent 真正理解业务：云器 Semantic View 如何提供统一语义与可信数据上下文](https://www.yunqi.tech/resource/blogs/semantic-view-ai-agent)** — 从内省命令与 `semantic_view()` 先确认指标、粒度、关联再计算；对象授权不等于行列隔离，语义层也不会自动修复源数据质量。
 
-### 观察名单：截止日后议程
+### 会议议程与公开材料核验
 
 <details>
-<summary><strong>展开 2026-10-22 截止时尚未发生的 Data Agent 场次</strong></summary>
+<summary><strong>展开已举办、但具体录像或幻灯片尚未核验的场次</strong></summary>
 
-QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均排在 **10 月 23 日**。因此链接只是官方议题大纲，不能写成已有演讲成果、录像或 PPT：
+QCon 上海 **2026-10-22–24** 与 DACon 北京 **10 月 23–24 日**均已举办。本轮截至 **2026-11-02** 复查后，下列记录仍仅确认官方大纲；大会结束或出现 PPT 汇总入口，不等于已核验该场次的可读录像、实录或幻灯片，因此继续标记为 `agenda`：
 
 - [专题总页：Agentic 时代的数据系统重构](https://qcon.infoq.cn/2026/shanghai/track/1976)
-- [网易云音乐 DAS：AI 原生一站式数据开发治理平台](https://qcon.infoq.cn/2026/shanghai/presentation/7257) — 五层 AI Infra、安全纵深、数据虚拟化与语义知识库。
-- [快手：Data Agent 数据生产与智能决策新范式](https://qcon.infoq.cn/2026/shanghai/presentation/7230) — 父子 Agent、动态上下文管理、知识飞轮与自动评测。
-- [Datus：Semantic Runtime](https://qcon.infoq.cn/2026/shanghai/presentation/7342) — 语义模型到 SQL 编译、grain/cardinality/fan-out 与 Ontology tools。
-- [小红书 DIBP](https://qcon.infoq.cn/2026/shanghai/presentation/7343) — 单 Agent → Harness → Multi-Agent 与 Context Layer。
-- [美团 AIDE 数据研发 Agent](https://qcon.infoq.cn/2026/shanghai/presentation/7356) — 需求、开发测试、审批上线、高风险护栏与真实会话评测。
-- [DACon 北京 2026 议程](https://www.bagevent.com/event/9196611) — 10 月 23–24 日包含 360、高德、京东、理想汽车和 OntoOS 等 Data Agent/本体相关场次；截至截止日同样属于 upcoming agenda。
+- [DAS：当 Data 遇见 Agent——网易云音乐大数据 AI Infra 的共生之路](https://qcon.infoq.cn/2026/shanghai/presentation/7257) — 五层 AI Infra、安全纵深、数据虚拟化与语义知识库。
+- [Data Agent - 快手大数据智能化探索之路](https://qcon.infoq.cn/2026/shanghai/presentation/7230) — 父子 Agent、动态上下文管理、知识飞轮与自动评测。
+- [如何构建 AI Native 的数据语义层：从 Data Agent 实践到可执行的 Semantic Runtime](https://qcon.infoq.cn/2026/shanghai/presentation/7342) — 语义模型到 SQL 编译、grain/cardinality/fan-out 与 Ontology tools。
+- [DIBP-小红书数据 Agent 的语义层建设实践](https://qcon.infoq.cn/2026/shanghai/presentation/7343) — 单 Agent → Harness → Multi-Agent 与 Context Layer。
+- [从代码生成到可信交付：美团 AIDE 数据研发 Agent 实践](https://qcon.infoq.cn/2026/shanghai/presentation/7356) — 需求、开发测试、审批上线、高风险护栏与真实会话评测。
+- [DACon 北京 2026 议程](https://www.bagevent.com/event/9196611) — 包含 360、高德、京东、理想汽车和 OntoOS 等 Data Agent/本体相关场次；保留议程入口，不把扫码领取材料视为已公开可读取的完整 PPT。
 
 </details>
 
@@ -272,7 +295,7 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 
 - **GoogleCloudPlatform/[data-agent-kit-plugin](https://github.com/GoogleCloudPlatform/data-agent-kit-plugin)** — 15+ Google Data Cloud 服务的 MCP tools + Agent Skills；面向 Codex、Claude Code 等插件客户端。Apache-2.0。
 - **datahub-project/[analytics-agent](https://github.com/datahub-project/analytics-agent)** — DataHub Context Graph/MCP → SQL warehouse → LangGraph/LLM → Vega-Lite，并能把缺失术语和文档反馈给上下文图。Apache-2.0。
-- **AltimateAI/[altimate-code](https://github.com/AltimateAI/altimate-code)** — dbt/SQL/数据工程 Agent harness，强调大量确定性工具和编译引擎校验。MIT。
+- **AltimateAI/[altimate-code](https://github.com/AltimateAI/altimate-code)** — dbt/SQL/数据工程 Agent harness；10 月 23 日 v0.12.8 补充列值画像、工作区记忆/Skills 与 fail-closed 校验。MIT。
 - **datagallery-ai/[dataagent](https://github.com/datagallery-ai/dataagent)**（DataFoundry）— 28 类数据源、统一语义、只读边界、凭据隔离、字段脱敏与全链路回放。Apache-2.0；项目自标 early but usable。
 - **aliyun/[data-agent-skill](https://github.com/aliyun/data-agent-skill)** — 阿里云 Data Agent 的 CLI 与 MCP 两套 Skills，支持数据库/文件分析、深度报告与会话复用；仓库当前未声明项目级许可证时应按公开源码处理。
 - **aws-samples/[sample-data-agent-on-duckdb](https://github.com/aws-samples/sample-data-agent-on-duckdb)** — AgentCore 内进程 DuckDB，直接查询 S3 Parquet、S3 Tables、Glue Catalog 与 DuckLake。MIT-0。
@@ -288,9 +311,9 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 ### ♻️ 2026 重要更新 / 持续活跃
 
 - **spring-ai-alibaba/[DataAgent](https://github.com/spring-ai-alibaba/DataAgent)** — Spring AI Alibaba Graph 上的企业数据分析 Agent，覆盖 Text-to-SQL、Python 深度分析、报告、MCP 与 RAG。Apache-2.0。
-- **getnao/[nao](https://github.com/getnao/nao)** — context-as-code、版本化评测、自托管 UI 与 MCP；2026-02 公开发布。**Open-core / mixed license**。
+- **getnao/[nao](https://github.com/getnao/nao)** — context-as-code、评测、自托管 UI 与 MCP；10 月 30 日 v0.3.31 延续分组 Skills、查询边界与接入改进。**根 Apache-2.0 + Enterprise 文件商业条款，仍属混合许可。**
 - **JetBrains/[databao-agent](https://github.com/JetBrains/databao-agent)** — Context engine/语义层驱动的本地 Python Data Agent，连接 SQL、dbt 与 Vega-Lite。**EAP，不建议生产使用。**
-- **Canner/[WrenAI](https://github.com/Canner/WrenAI)** — 开放上下文层/语义模型驱动的 governed text-to-SQL 和图表；2026-10 有重要版本。**多许可证，按子目录核对。**
+- **Canner/[WrenAI](https://github.com/Canner/WrenAI)** — 开放上下文层/语义模型驱动问数；wren 0.17 新增 Ossie/OpenMetadata 互操作，10 月 30 日 0.17.1 修复兼容性。**版本与多许可证均按组件核对。**
 - **eosphoros-ai/[DB-GPT](https://github.com/eosphoros-ai/DB-GPT)** — 通用 Agentic AI 数据助手/应用平台；2026-08 发布 v0.8.2。MIT。
 - **ucbepic/[DataAgentBench](https://github.com/ucbepic/DataAgentBench)** — 企业异构 DB benchmark、验证器与持续榜单。**根目录无 LICENSE，按公开 benchmark 处理。**
 
@@ -300,11 +323,11 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 
 | 项目 | 类型 | 核心机制 / 用途 | 许可证与状态 |
 |---|---|---|---|
-| [Datus Agent](https://github.com/Datus-ai/Datus-agent) | 完整 Agent | 以可演进上下文引擎连接 SQL、指标和知识；v0.4.3 增加 SQL 血缘初始化与有来源的事实沉淀。 | [Apache-2.0](https://github.com/Datus-ai/Datus-agent/blob/main/LICENSE)；2026 有重要更新 |
-| [dbt MCP Server](https://github.com/dbt-labs/dbt-mcp) | 工具服务 | 把 dbt 项目、指标、血缘与执行工具暴露给 Agent；适合把“读上下文—改模型—编译测试”接入同一工作流。 | [Apache-2.0](https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE)；2026 有重要更新 |
+| [Datus Agent](https://github.com/Datus-ai/Datus-agent) | 完整 Agent | v0.4.4 接入 OntologyAnalyst 与数据源映射，补充执行适配器及工具隔离。 | [Apache-2.0](https://github.com/Datus-ai/Datus-agent/blob/main/LICENSE)；2026-10-28 release |
+| [dbt MCP Server](https://github.com/dbt-labs/dbt-mcp) | 工具服务 | v2.9–2.10 补充 Mesh 发现、子进程超时与环境级授权；将上下文、编译测试接入同一工具层。 | [Apache-2.0](https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE)；2026-10-30 release |
 | [dbt Agent Skills](https://github.com/dbt-labs/dbt-agent-skills) | 技能包 | 可安装的 dbt 流程知识：先检查真实数据、迭代建模、再测试验证；包含指标建模与技能 A/B 评估材料。 | [Apache-2.0](https://github.com/dbt-labs/dbt-agent-skills/blob/main/LICENSE)；2026 有重要更新 |
 | [ADE-bench](https://github.com/dbt-labs/ade-bench) | 评测环境 | 用真实 dbt 项目、数据库、隔离容器与结果测试评测数据工作；可比较模型、MCP、技能包带来的效果与成本。 | [Apache-2.0](https://github.com/dbt-labs/ade-bench/blob/main/LICENSE)；2026 有重要更新 |
-| [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) | 工具服务 | 用预置数据库工具或参数化查询为 Agent 接入数据；集中处理连接池、认证与 OpenTelemetry，适合执行层复用。 | [Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)；2026 有重要更新 |
+| [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) | 工具服务 | v1.15 扩展数据 Agent 管理与保存查询，并集中认证检查；管理写操作需单独授权。 | [Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)；2026-10-23 release |
 | [Boring Semantic Layer (BSL)](https://github.com/boringdata/boring-semantic-layer) | 语义组件 | 基于 Ibis 的轻量语义层，将维度与指标封装为可查询模型；可作为 Agent 的指标工具底座，减少临时重写口径。 | [MIT](https://github.com/boringdata/boring-semantic-layer/blob/main/LICENSE)；2026 有重要更新 |
 | [R&D-Agent](https://github.com/microsoft/RD-Agent) | 实验 Agent | 以研究 Agent 提出假设、开发 Agent 编码实验、执行反馈再迭代，覆盖数据科学与建模任务，适合观察实验闭环。 | [MIT](https://github.com/microsoft/RD-Agent/blob/main/LICENSE)；2026 有重要更新 |
 | [Data Formulator](https://github.com/microsoft/data-formulator) | 分析工作区 | 把数据连接、加载 Agent、带记忆的 Data Thread、图表细化和报告分享串在可分支的可视工作区，适合交互式分析。 | [MIT](https://github.com/microsoft/data-formulator/blob/main/LICENSE)；2026 有重要更新 |
@@ -339,13 +362,16 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 - **2026-08-28 · [Evaluating Enterprise Analytics Agents](https://arxiv.org/abs/2609.09182)** — 端到端、trace-backed 的企业分析 Agent 评测方法，覆盖语义、执行、拒答与升级。
 - **2026-09-21 · [Data Agents: Agentic Data Systems](https://arxiv.org/abs/2609.24137)** — TKDE accepted；语义数据组织、语义算子、Agentic pipeline、反馈、记忆与主动适应六组件。
 - **2026-09-21 · [Learned Enterprise Data Comprehension](https://arxiv.org/abs/2609.25286)** 🧪 — 通过学习式压缩与路由处理 schema、关系、政策和业务角色；强结果尚待独立复现。
+- **2026-10-23 · [AdaPRA: Process Reward Agents with Adaptive Rubrics for Data Science](https://arxiv.org/abs/2610.33245)** — 持久工作区与跨尝试记忆，过程奖励 Agent 实际检查轨迹和代码，再按任务调整 rubric。收益属于论文给定模型、预算和 DSPredict 任务，不等于通用 BI 验收结果。
+- **2026-10-25 · [CaliMem: Search-Efficient Data Agent via Calibrated Memory](https://arxiv.org/abs/2610.34500)** — 数据整理策略执行前先预测结果，再以实测偏差校准记忆中的结论与适用条件，减少一次失败后过度概括；面向训练数据整理，不是企业问数框架。
+- **2026-10-27 · [M4Bench: Evaluating Procedural Specification for Clinical EHR Derivation Agents](https://arxiv.org/abs/2610.37459)** — 用 28 个 EHR 派生任务检验时间窗、缺失规则与输出粒度。**Skills 提升部分一致性奖励，不等于任务完全通过；严格全通过仍低，源数据有独立访问条件。**
 
 ## 持续更新的产品与架构文档
 
 - **Microsoft Fabric · [Data agent concepts](https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent)** — Orchestrator、OneLake 数据源、语义模型、Purview 策略与多 Agent 集成；2026-05 更新。
 - **Microsoft Fabric · [Evaluate your data agent](https://learn.microsoft.com/fabric/data-science/evaluate-data-agent)** — SDK 化测试与质量评估；2026-09 更新。
 - **Alibaba Cloud DMS · [Data Agent OpenAPI integration guide](https://www.alibabacloud.com/help/en/dms/data-agent-openapi-integration-guide)** — 核心抽象、API 调用流程和两类集成场景；2026-06 更新。
-- **Alibaba Cloud DataWorks · [New Data Agent](https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent)** — 基于 Qwen Code 的数据开发/治理 Agent 与 DataWorks Skills；2026-10 更新。
+- **Alibaba Cloud DataWorks · [Data Agent 简介（中文）](https://help.aliyun.com/zh/dataworks/user-guide/new-data-agent)** — **2026-10-29 中文版更新**，展开八层架构、Context Graph、Agent 管控、自动化、工作流与 IM；[英文旧版](https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent)仍为 10 月 9 日，不混用日期。
 - **Alibaba Cloud SLS · [DataAgent core concepts](https://www.alibabacloud.com/help/en/sls/sls-dataagent-core-concept)** — 三层 Context Model 结构；2026-09 更新。
 - **Alibaba Cloud MaxCompute · [Multi-source, multi-engine DataAgent](https://www.alibabacloud.com/help/en/maxcompute/user-guide/multi-source-multi-engine-dataagent)** — 企业数据、对象文件和本地知识的联合分析；2026-10 更新。
 - **Alibaba Cloud AnalyticDB · [Data Agent architecture](https://www.alibabacloud.com/help/en/analyticdb/analyticdb-for-postgresql/data-agent/)** — 四层整体架构与使用边界；2026-09 更新。
@@ -360,6 +386,8 @@ QCon 上海大会时间为 **2026-10-22–24**，但以下 Data Agent 场次均�
 - **2026-10-16 更新 · Databricks Documentation · [Genie One MCP server](https://docs.databricks.com/aws/en/agents/mcp-tools/genie-mcp)** — 经 Unity Gateway 将 Genie 暴露为对话分析工具，按 Unity Catalog 权限访问数据并返回来源链接，适合研究具备业务语义的工具接口。
 - **2026-10-20 更新 · Google Cloud · [Use the Colab Enterprise Data Science Agent with BigQuery](https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent)** — 演示从 BigQuery 或 CSV 进入 Notebook 分析，覆盖探索、缺失值、预测与可视化，并可比较 SQL、DataFrames 和 PySpark 路径。
 - **2026-10-20 更新 · Google Cloud · [Use the Data Engineering Agent to build and modify data pipelines](https://docs.cloud.google.com/bigquery/docs/data-engineering-agent-pipelines)** — 用自然语言生成和审阅 Dataform SQLX 流水线，包含预览与提示示例；明确区分生成代码、应用变更和执行流水线。
+- **2026-10-23 更新 · Atlan AI Labs · [The FDE Playbook for Analytics Agents](https://analytics-playbook.atlan.com/)** — V4 实施手册，从封存黄金集到指标生成、按题检索、轨迹改进和发布门禁，附模板及故障排查；内部仓库评测与复合案例不能外推为独立生产证明。
+- **2026-10-30 发布 · Hex · [Governed mode](https://learn.hex.tech/docs/agent-management/governed-mode)** — 按资产类型和状态引导 Agent 来源选择。**官方明确不是硬安全边界，不替代数仓或数据连接权限**；[独立发布记录](https://learn.hex.tech/changelog/2026-10-30)提供日期证据。
 
 ## 贡献与勘误
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-10-22",
+  "as_of": "2026-11-02",
   "timezone": "Asia/Shanghai",
   "scope": "2026-focused Data Agent architectures, public implementations, evaluations, papers, talks, and living documentation",
   "resources": [
@@ -651,13 +651,21 @@
       "tags": [
         "agenda",
         "data-systems"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://qcon.infoq.cn/2026/shanghai/schedule",
+        "note": "官网日程将该专题列于2026-10-23，现有议题页仍主要提供讲师和提纲；日程增加“点击查看全部PPT”入口，但未核验具体 Data Agent deck 文件。",
+        "materials_portal_url": "https://ppt.infoq.cn/list/173"
+      }
     },
     {
       "id": "qcon-shanghai-netease-das",
-      "date": "2026-10-22/2026-10-24",
+      "date": "2026-10-23",
       "date_basis": "event",
-      "title": "网易云音乐 DAS：AI 原生一站式数据开发治理平台",
+      "title": "DAS ：当 Data 遇见 Agent——网易云音乐大数据 AI Infra 的共生之路",
       "organization": "网易云音乐 / QCon 上海",
       "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7257",
       "section": "talk",
@@ -667,13 +675,20 @@
         "agenda",
         "data-engineering",
         "security"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://qcon.infoq.cn/2026/shanghai/schedule",
+        "note": "以官方日程核对正式标题与具体日期；未核验到可打开的具体PPT或录像，保留agenda。"
+      }
     },
     {
       "id": "qcon-shanghai-kuaishou",
-      "date": "2026-10-22/2026-10-24",
+      "date": "2026-10-23",
       "date_basis": "event",
-      "title": "快手 Data Agent：数据生产与智能决策新范式",
+      "title": "Data Agent - 快手大数据智能化探索之路",
       "organization": "快手 / QCon 上海",
       "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7230",
       "section": "talk",
@@ -684,13 +699,20 @@
         "multi-agent",
         "context",
         "evaluation"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://qcon.infoq.cn/2026/shanghai/presentation/7230",
+        "note": "原始议题页提供父子Agent+Skill、知识飞轮及Trace评测提纲；未核验具体公开deck或录像，保留agenda。"
+      }
     },
     {
       "id": "qcon-shanghai-datus",
-      "date": "2026-10-22/2026-10-24",
+      "date": "2026-10-23",
       "date_basis": "event",
-      "title": "Semantic Runtime",
+      "title": "如何构建 AI Native 的数据语义层：从 Data Agent 实践到可执行的 Semantic Runtime",
       "organization": "Datus / QCon 上海",
       "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7342",
       "section": "talk",
@@ -700,13 +722,20 @@
         "agenda",
         "semantic-layer",
         "sql"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://qcon.infoq.cn/2026/shanghai/schedule",
+        "note": "官方日程与同专题其他议题页交叉核对完整标题；具体议题页本次工具不可达，未核验deck或录像。"
+      }
     },
     {
       "id": "qcon-shanghai-rednote",
-      "date": "2026-10-22/2026-10-24",
+      "date": "2026-10-23",
       "date_basis": "event",
-      "title": "小红书 DIBP",
+      "title": "DIBP-小红书数据 Agent 的语义层建设实践",
       "organization": "小红书 / QCon 上海",
       "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7343",
       "section": "talk",
@@ -717,13 +746,20 @@
         "harness",
         "multi-agent",
         "context"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://qcon.infoq.cn/2026/shanghai/presentation/7343",
+        "note": "原始议题页公开Context Layer生产、治理与消费等提纲；未核验deck或录像，保留agenda。"
+      }
     },
     {
       "id": "qcon-shanghai-meituan-aide",
-      "date": "2026-10-22/2026-10-24",
+      "date": "2026-10-23",
       "date_basis": "event",
-      "title": "美团 AIDE 数据研发 Agent",
+      "title": "从代码生成到可信交付：美团 AIDE 数据研发 Agent 实践",
       "organization": "美团 / QCon 上海",
       "url": "https://qcon.infoq.cn/2026/shanghai/presentation/7356",
       "section": "talk",
@@ -734,7 +770,14 @@
         "data-engineering",
         "guardrails",
         "evaluation"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://qcon.infoq.cn/2026/shanghai/presentation/7356",
+        "note": "原始议题页公开交付验证、专家委派、知识审核等提纲；未核验deck或录像，保留agenda。"
+      }
     },
     {
       "id": "google-data-agent-kit-plugin",
@@ -772,19 +815,33 @@
     },
     {
       "id": "altimate-code",
-      "date": "2026-02-27",
-      "date_basis": "repo_created",
+      "date": "2026-10-23",
+      "date_basis": "released",
       "title": "altimate-code",
       "organization": "AltimateAI",
       "url": "https://github.com/AltimateAI/altimate-code",
       "section": "open-source",
       "language": "en",
-      "status": "published",
+      "status": "active-project",
       "tags": [
         "dbt",
         "deterministic-tools",
         "data-engineering",
         "mit"
+      ],
+      "summary": "v0.12.8 丰富列值画像，让分析 Agent 读取工作区记忆和 Skills；当策略或语义分析被跳过时采用 fail-closed，并将工具失败如实反馈，适合研究数据探索、上下文与安全检查的执行链。",
+      "date_evidence": "GitHub Release v0.12.8 published_at 2026-10-23T19:37:02Z；变更明确列出 schema_inspect、workspace memory/skills、tool failure reporting 与 fail-closed policy/semantic analysis。",
+      "evidence_url": "https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.8",
+      "license": "MIT",
+      "license_url": "https://github.com/AltimateAI/altimate-code/blob/main/LICENSE",
+      "notes": "同一版本变更中先加入后移除了 text_label 批量标注工具，不能将该工具列为最终可用能力。2026-11-02 已核对 MIT LICENSE 和 archived=false。",
+      "last_verified": "2026-11-02",
+      "release_updates": [
+        {
+          "version": "v0.12.8",
+          "published_at": "2026-10-23T19:37:02Z",
+          "url": "https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.8"
+        }
       ]
     },
     {
@@ -959,7 +1016,7 @@
     },
     {
       "id": "nao",
-      "date": "2026-02-10",
+      "date": "2026-10-30",
       "date_basis": "released",
       "title": "nao",
       "organization": "getnao",
@@ -972,6 +1029,31 @@
         "evaluation",
         "self-hosted",
         "mixed-license"
+      ],
+      "summary": "v0.3.29–31 增加按组开放 Skills、受表列边界约束的 DuckLake 查询、Agent 引导的仓库接入与真实工具错误评测输出；上下文管理、权限和验收共同演进，适合研究数据分析工作区的完整运行链。",
+      "date_evidence": "GitHub v0.3.29 published_at 2026-10-25T14:27:21Z；v0.3.30 为 2026-10-28T14:43:09Z；v0.3.31 为 2026-10-30T10:15:24Z。",
+      "evidence_url": "https://github.com/getnao/nao/releases/tag/v0.3.31",
+      "license": "Apache-2.0 + commercial (Enterprise-marked files)",
+      "license_url": "https://github.com/getnao/nao/blob/main/LICENSE",
+      "license_note": "v0.3.30 将企业条款拆到 LICENSE-ENTERPRISE；2026-11-02 直接核对根 LICENSE 为 Apache-2.0，但标记 @license Enterprise 的文件仍受商业条款限制，因此不应将整个仓库笼统写为纯 Apache-2.0。archived=false。",
+      "notes": "release 中的 subagents beta 明确针对 nao cloud，不代表所有自托管安装默认启用；图表、评测、接入流程也需按所安装版本核对。",
+      "last_verified": "2026-11-02",
+      "release_updates": [
+        {
+          "version": "v0.3.29",
+          "published_at": "2026-10-25T14:27:21Z",
+          "url": "https://github.com/getnao/nao/releases/tag/v0.3.29"
+        },
+        {
+          "version": "v0.3.30",
+          "published_at": "2026-10-28T14:43:09Z",
+          "url": "https://github.com/getnao/nao/releases/tag/v0.3.30"
+        },
+        {
+          "version": "v0.3.31",
+          "published_at": "2026-10-30T10:15:24Z",
+          "url": "https://github.com/getnao/nao/releases/tag/v0.3.31"
+        }
       ]
     },
     {
@@ -992,7 +1074,7 @@
     },
     {
       "id": "wrenai",
-      "date": "2026-10-16",
+      "date": "2026-10-30",
       "date_basis": "released",
       "title": "WrenAI",
       "organization": "Canner",
@@ -1004,6 +1086,25 @@
         "semantic-layer",
         "text-to-sql",
         "multi-license"
+      ],
+      "summary": "wren v0.17 增加 Ossie 上下文导入导出和 OpenMetadata 项目导入，让语义资产在目录与 Agent 查询层之间转换；同时修复派生指标、引用列与模型作用域问题，适合研究上下文互操作。",
+      "date_evidence": "wren-v0.17.0 的 changelog 标为 2026-10-23，但 GitHub published_at 为 2026-10-27T03:02:08Z；wren-v0.17.1 published_at 为 2026-10-30T02:01:05Z，后者修复 DuckDB 2.0 Arrow table 兼容性。",
+      "evidence_url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1",
+      "license": "Multi-license; check component paths",
+      "license_url": "https://github.com/Canner/WrenAI/blob/main/LICENSE",
+      "notes": "仓库同时发布 wren、semantic-core、Python bindings 等组件；不能把单个 tag 当作全部组件统一版本。根 LICENSE 明确说明按路径适用不同许可证；archived=false。",
+      "last_verified": "2026-11-02",
+      "release_updates": [
+        {
+          "version": "wren-v0.17.0",
+          "published_at": "2026-10-27T03:02:08Z",
+          "url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.0"
+        },
+        {
+          "version": "wren-v0.17.1",
+          "published_at": "2026-10-30T02:01:05Z",
+          "url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1"
+        }
       ]
     },
     {
@@ -1283,20 +1384,34 @@
     },
     {
       "id": "alibaba-dataworks-agent",
-      "date": "2026-10-09",
+      "date": "2026-10-29",
       "date_basis": "updated",
-      "title": "New Data Agent",
+      "title": "Data Agent 简介",
       "organization": "Alibaba Cloud DataWorks",
-      "url": "https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent",
+      "url": "https://help.aliyun.com/zh/dataworks/user-guide/new-data-agent",
       "section": "living-doc",
-      "language": "en",
+      "language": "zh",
       "status": "living-doc",
       "tags": [
-        "qwen-code",
+        "context-graph",
         "skills",
         "data-engineering",
-        "governance"
-      ]
+        "governance",
+        "workflow",
+        "human-in-the-loop"
+      ],
+      "summary": "中文简介展开八层架构：专家套件、Context Graph、企业级 Agent 管控与多计算引擎协同，并补充自动化、工作流、IM 协作和审批模式。适合借鉴平台原生数据资产与生产权限的结合；功能受版本、地域和实际配置约束，完全访问模式不等于安全默认。",
+      "date_evidence": "中文原页 HTML 的 meta name=last-modified 为 2026-10-29T16:06:28+08:00；阿里云国际站中文版也显示 2026-10-29。英文同路径仍标注 Oct 09, 2026，因此本次仅以中文版本的八层架构及治理扩展作为更新证据。",
+      "evidence_url": "https://help.aliyun.com/zh/dataworks/user-guide/new-data-agent",
+      "related_materials": [
+        {
+          "title": "New Data Agent — English documentation (older version)",
+          "url": "https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent",
+          "date": "2026-10-09",
+          "note": "英文版本日期与内容不同，未将其标记为10月29日更新。"
+        }
+      ],
+      "last_verified": "2026-11-02"
     },
     {
       "id": "alibaba-sls-dataagent",
@@ -1445,7 +1560,14 @@
         "semantic-layer",
         "ontology",
         "evaluation"
-      ]
+      ],
+      "last_verified": "2026-11-02",
+      "material_review": {
+        "checked_on": "2026-11-02",
+        "status": "event-held-material-unverified",
+        "evidence_url": "https://www.bagevent.com/event/9196611",
+        "note": "官方活动页仍可打开且有详细技术提纲，但本次未核验统一公开PPT/录像。云器会后复盘作为独立新文收录，不能据此把全部DACon议程升级为published。"
+      }
     },
     {
       "id": "sigmod-data-agents-slides",
@@ -2148,7 +2270,7 @@
     },
     {
       "id": "datus-agent",
-      "date": "2026-10-15",
+      "date": "2026-10-28",
       "date_basis": "released",
       "title": "Datus Agent",
       "organization": "Datus AI",
@@ -2163,21 +2285,29 @@
         "lineage",
         "mcp"
       ],
-      "summary": "以可演进上下文引擎连接 SQL、指标和知识；v0.4.3 增加 SQL 血缘初始化与有来源的事实沉淀。",
-      "date_evidence": "v0.4.3 published_at 2026-10-15T10:39:16Z；版本新增 SQL/Python DAG 静态血缘分析，并将 Dosi 指标引擎嵌入 Agent。",
-      "evidence_url": "https://github.com/Datus-ai/Datus-agent/releases/tag/v0.4.3",
+      "summary": "v0.4.4 将本体问答、语义模型和数据源映射接入 OntologyAnalyst，补充 Athena/HANA 等执行适配器；同时改进长目录初始化、指标解释、同步 MCP 工具隔离和数据库超时，适合研究语义与执行边界。",
+      "date_evidence": "GitHub Release v0.4.4 published_at 2026-10-28T14:22:18Z。发布说明列出 OntologyAnalyst、Athena/HANA 适配器、长目录初始化与 bounded executor 等实质变更。",
+      "evidence_url": "https://github.com/Datus-ai/Datus-agent/releases/tag/v0.4.4",
       "license": "Apache-2.0",
       "license_url": "https://github.com/Datus-ai/Datus-agent/blob/main/LICENSE",
       "mechanism": "按业务域组织 schema、参考 SQL、指标和业务知识，检索后调用数据库/语义工具；修正反馈回流上下文；提供 CLI、Web、API 和 MCP。",
       "use_case": "适合研究数据工程 Agent 的上下文资产化、领域子 Agent 和指标优先查询。",
-      "caveat": "部署时需按所用数据库安装适配器；v0.4.3 移除了旧 gen_metrics/gen_semantic_model 工作流，阅读旧教程时需核对版本。",
-      "technical_material_url": "https://docs.datus.ai/0.4/semantic/dosi_engine/",
-      "license_note": "GitHub API 的识别结果为 NOASSERTION；已直接核对 LICENSE 正文，内容为 Apache License Version 2.0。",
-      "component_type": "agent"
+      "caveat": "数据库能力依赖所安装适配器与 Dosi build；Agent 的 300 秒等待上限不证明远端查询已经终止，不能据此自动安全重试写入。v0.4.3 移除的旧语义工作流仍需与旧教程区分。",
+      "technical_material_url": "https://docs.datus.ai/dev/subagent/ontology_analyst/",
+      "license_note": "2026-11-02 已核对 LICENSE 正文为 Apache License Version 2.0；GitHub API 仍识别为 NOASSERTION；archived=false。",
+      "component_type": "agent",
+      "last_verified": "2026-11-02",
+      "release_updates": [
+        {
+          "version": "v0.4.4",
+          "published_at": "2026-10-28T14:22:18Z",
+          "url": "https://github.com/Datus-ai/Datus-agent/releases/tag/v0.4.4"
+        }
+      ]
     },
     {
       "id": "dbt-mcp-server",
-      "date": "2026-10-13",
+      "date": "2026-10-30",
       "date_basis": "released",
       "title": "dbt MCP Server",
       "organization": "dbt Labs",
@@ -2192,16 +2322,30 @@
         "data-engineering",
         "governance"
       ],
-      "summary": "把 dbt 项目、指标、血缘与执行工具暴露给 Agent；适合把“读上下文—改模型—编译测试”接入同一工作流。",
-      "date_evidence": "v2.8.0 published_at 2026-10-13T15:04:47Z；发布说明标题标为 2026-10-12。该版统一工具上下文映射、目标授权和输入校验。",
-      "evidence_url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.8.0",
+      "summary": "v2.9–2.10 增加跨生产者项目发现公开 Mesh 模型、构造跨项目引用所需身份信息，并改进作业列举与环境级写授权；超时会终止 dbt 子进程，CLI 工具移出事件循环，便于研究可控数据工程工具层。",
+      "date_evidence": "GitHub v2.9.0 published_at 2026-10-27T15:06:49Z；v2.10.0 published_at 2026-10-30T20:00:14Z。前者新增 Mesh discovery 及进程超时处理，后者修正作业过滤与所属环境授权。",
+      "evidence_url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.0",
       "license": "Apache-2.0",
       "license_url": "https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE",
       "mechanism": "通过 MCP 提供本地 dbt CLI、manifest 查询、Semantic Layer、Discovery、Admin API 与 SQL 工具，让通用 Agent 复用 dbt 上下文。",
       "use_case": "适合已采用 dbt 的团队构建分析工程助手、指标问答与作业诊断工具。",
       "caveat": "它是工具服务；本地 CLI 与平台 API 的依赖不同。Semantic Layer、Discovery 和平台 SQL 等能力需要对应 dbt Platform 配置与权限。",
       "technical_material_url": "https://docs.getdbt.com/docs/dbt-ai/about-mcp",
-      "component_type": "tool-server"
+      "component_type": "tool-server",
+      "notes": "Mesh discovery 仅支持 multi-project 配置；它是工具服务而非完整 Agent。已核对项目未归档与 Apache-2.0 LICENSE。",
+      "last_verified": "2026-11-02",
+      "release_updates": [
+        {
+          "version": "v2.9.0",
+          "published_at": "2026-10-27T15:06:49Z",
+          "url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.9.0"
+        },
+        {
+          "version": "v2.10.0",
+          "published_at": "2026-10-30T20:00:14Z",
+          "url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.0"
+        }
+      ]
     },
     {
       "id": "dbt-agent-skills",
@@ -2261,7 +2405,7 @@
     },
     {
       "id": "google-mcp-toolbox-databases",
-      "date": "2026-10-08",
+      "date": "2026-10-23",
       "date_basis": "released",
       "title": "MCP Toolbox for Databases",
       "organization": "Google",
@@ -2276,17 +2420,25 @@
         "authentication",
         "observability"
       ],
-      "summary": "用预置数据库工具或参数化查询为 Agent 接入数据；集中处理连接池、认证与 OpenTelemetry，适合执行层复用。",
-      "date_evidence": "官方 v1.14.0 changelog 标注 2026-10-08；该版增加 BigQuery authorized views 的数据集限制支持与 LookML dashboard 发现。",
-      "evidence_url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.14.0",
+      "summary": "v1.15 增加数据 Agent 创建、更新与删除工具，并支持按 query_id 执行 Looker 保存查询及 MCP Apps；同时集中执行认证检查，适合研究数据库工具服务的管理能力与查询治理边界。",
+      "date_evidence": "GitHub v1.15.0 published_at 2026-10-23T00:14:18Z，在上次上传之后；changelog 的版本日期为 2026-10-22，两者在此区分。",
+      "evidence_url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.15.0",
       "license": "Apache-2.0",
       "license_url": "https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE",
       "mechanism": "将数据源连接和工具声明集中在配置中，向 MCP 客户端或 Agent SDK 暴露预置查询及定制工具，并提供认证、连接池和可观测性。",
       "use_case": "适合搭建统一数据库工具服务，或将受控查询封装成可复用工具供多个数据 Agent 调用。",
       "caveat": "它是数据库接入与执行基础设施；仍需应用层提供业务语义、规划、结果验证和权限配置。",
       "technical_material_url": "https://mcp-toolbox.dev/documentation/introduction/",
-      "notes": "原 googleapis/genai-toolbox 已正式改名为 googleapis/mcp-toolbox；使用当前规范地址。",
-      "component_type": "tool-server"
+      "notes": "创建/更新/删除数据 Agent 是管理能力，不等于查询能力，仍需应用方明确授权；它是工具服务，业务语义与分析验证仍由上层系统负责。2026-11-02 已核对 LICENSE 与 archived=false。",
+      "component_type": "tool-server",
+      "last_verified": "2026-11-02",
+      "release_updates": [
+        {
+          "version": "v1.15.0",
+          "published_at": "2026-10-23T00:14:18Z",
+          "url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.15.0"
+        }
+      ]
     },
     {
       "id": "boring-semantic-layer",
@@ -2457,7 +2609,470 @@
       "caveat": "项目已归档且只读，不能按活跃维护项目推荐；新系统选型需自行评估维护与依赖成本。",
       "technical_material_url": "https://github.com/vanna-ai/vanna/blob/main/MIGRATION_GUIDE.md",
       "component_type": "agent-framework"
+    },
+    {
+      "id": "adapra-paper",
+      "date": "2026-10-23",
+      "date_basis": "published",
+      "title": "AdaPRA: Process Reward Agents with Adaptive Rubrics for Data Science",
+      "organization": "Carnegie Mellon University / Microsoft",
+      "url": "https://arxiv.org/abs/2610.33245",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-science",
+        "process-supervision",
+        "rubrics",
+        "memory",
+        "verification"
+      ],
+      "summary": "将跨尝试保留的工作区与自适应检查准则结合：独立过程监督 Agent 读取轨迹和产物、执行检查，只反馈相关失败项，并把任务特有错误转成后续准则；适合研究分析过程中的静默错误与验证泄漏。",
+      "notes": "公开预印本。论文的 24.5/14.8 点是每任务五次尝试中 best-attempt 的平均 Kaggle 百分位增益，不是成功率；监督器也消耗额外成本。作者项目页仍写 Code (coming soon)，但已直接核验 GitHub 完整实现与 MIT LICENSE；运行输出标为正在上传，不能据此声称所有轨迹已公开。",
+      "date_evidence": "arXiv submission history: [v1] Fri, 23 Oct 2026 19:46:55 UTC。",
+      "evidence_url": "https://arxiv.org/abs/2610.33245",
+      "technical_material_url": "https://github.com/atharva-naik/AdaPRA",
+      "supporting_urls": [
+        "https://atharva-naik.github.io/AdaPRA/",
+        "https://github.com/atharva-naik/AdaPRA/blob/main/LICENSE"
+      ],
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "atlan-analytics-agent-fde-playbook",
+      "date": "2026-10-23",
+      "date_basis": "updated",
+      "title": "The FDE Playbook for Analytics Agents",
+      "organization": "Atlan AI Labs",
+      "url": "https://analytics-playbook.atlan.com/",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "semantic-layer",
+        "metrics",
+        "evaluation",
+        "context",
+        "production"
+      ],
+      "summary": "从封存真实问题黄金集开始，依次生成指标、按题检索上下文、从轨迹修正并设发布门禁；区分受治理指标回答与探索 SQL，附模板和故障排查。示例项目为复合场景，评测来自作者内部仓库。",
+      "date_evidence": "作者 CHANGELOG.md 标注 V4.0, 2026-10-23，重组问题、方法与参考章节并新增原则页；同一日志列最早 V1.0 为 2026-09-27，因此按实质更新收录，而非用 10-27 仓库创建时间声称首次发布。",
+      "evidence_url": "https://github.com/atlanai/analytics-playbook/blob/main/CHANGELOG.md",
+      "caveat": "这是实施方法手册，不是完整 Agent 软件。作者内部 107 问题的分数不能外推到其他企业或当作独立排行榜；内容 CC BY 4.0，构建代码 MIT。",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "keyhole-agentic-harness-data-engineering",
+      "date": "2026-10-23",
+      "date_basis": "published",
+      "title": "White Paper – Agentic Harness Architecture in 2026: Components, Vendors, and a Reference Design for Data Engineering",
+      "organization": "Keyhole Software / Zach Gardner",
+      "url": "https://keyholesoftware.com/agentic-harness/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "harness",
+        "governance",
+        "verification",
+        "human-in-the-loop"
+      ],
+      "summary": "将通用 Harness 的模型网关、最小权限工具、检查点与确定性检查器扩展到数据工程，以只读发现、计划审批、测试、PR/CI 晋级和目录登记串起交付。文中端到端流程是复合参考场景，不是单个客户实测。",
+      "date_evidence": "作者官网正文标注 October 23, 2026；参考架构与 One Request, Start to Finish 部分说明数据工程扩展及其验收门禁，并明确示例为 representative composite。",
+      "evidence_url": "https://keyholesoftware.com/agentic-harness/",
+      "caveat": "用于参考架构与治理检查；文中跨厂商数字来自不同研究，不能合并为统一 Data Agent 排行榜。",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "kx-qsql-mcp-verification",
+      "date": "2026-10-23",
+      "date_basis": "published",
+      "title": "Natural Language to qSQL with the MCP qSQL Suggester",
+      "organization": "KX",
+      "url": "https://kx.com/blog/natural-language-to-qsql-mcp-suggester/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "qsql",
+        "mcp",
+        "skills",
+        "verification",
+        "self-hosted"
+      ],
+      "summary": "把专用 qSQL 模型、MCP 和 Skills 组合为草稿—候选一致性—解析/qlint/执行检查链，并按需与参考查询比较结果。候选一致不代表语义正确；完整自托管仍需 q/kdb+ 许可。",
+      "date_evidence": "官方文章 JSON-LD datePublished 为 2026-10-23T12:38:32+01:00（dateModified 为 2026-10-28）；KX 官方资源列表同样列出 23 October, 2026。",
+      "evidence_url": "https://kx.com/blog/natural-language-to-qsql-mcp-suggester/",
+      "technical_material_url": "https://github.com/KxSystems/mcp-qsql-suggester",
+      "caveat": "这是专用查询生成与验证组件，不是通用企业分析 Agent；发布方的机器生成任务集与训练分布相近，不作为跨模型榜单。",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "calimem-paper",
+      "date": "2026-10-25",
+      "date_basis": "published",
+      "title": "CaliMem: Search-Efficient Data Agent via Calibrated Memory",
+      "organization": "Virginia Tech / University of Southern California / Princeton University",
+      "url": "https://arxiv.org/abs/2610.34500",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-curation",
+        "memory",
+        "calibration",
+        "experimentation",
+        "feedback"
+      ],
+      "summary": "在数据整理策略搜索中先预测实验结果，再用预测与实测的偏差修正持久记忆中的结论及适用条件，避免一次失败便否定整类策略；其借鉴点是可检验、带条件的记忆，而不只是累积历史文本。",
+      "notes": "公开预印本；评估覆盖生物数据整理和 LLM 后训练，不是企业问数通用基准。作者称代码已公开，正文指向 anonymous.4open.science 的匿名工件，本次未独立验证其可访问性与许可证，因此不新增为已核验开源项目。性能提升来自论文实验，尚非独立复现。",
+      "date_evidence": "arXiv submission history: [v1] Sun, 25 Oct 2026 18:55:44 UTC。",
+      "evidence_url": "https://arxiv.org/abs/2610.34500",
+      "technical_material_url": "https://arxiv.org/html/2610.34500v1",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "clickhouse-jev-retrieval-failure-labeling",
+      "date": "2026-10-27",
+      "date_basis": "published",
+      "title": "The Agentic Analytics Benchmark: ranking tables and labeling failures with Jev",
+      "organization": "ClickHouse",
+      "url": "https://clickhouse.com/blog/agentic-analytics-benchmark-jev",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "retrieval",
+        "failure-analysis",
+        "trace",
+        "evaluation"
+      ],
+      "summary": "用类型化分类器做表排序和细粒度失败归因，可从 SQL 确定的事实先由代码判定。作者公开了检索提示的成对实验：组件排序表现较好，但跨 20 个模型未带来显著端到端准确率收益；不要把检索指标等同于 Agent 提升。",
+      "date_evidence": "ClickHouse 原文作者栏下标注 Oct 27, 2026；区分 136 题开发集与 201 题保留评测集，并公开配套 harness 入口。",
+      "evidence_url": "https://clickhouse.com/blog/agentic-analytics-benchmark-jev",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "data-marc-dynamic-data-agent-evaluation",
+      "date": "2026-10-27",
+      "date_basis": "published",
+      "title": "Can You Trust Your Fabric Data Agent? Programmatically Testing Accuracy and Determinism",
+      "organization": "Data – Marc",
+      "url": "https://data-marc.com/2026/10/27/can-you-trust-your-fabric-data-agent-programmatically-testing-accuracy-and-determinism/",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "fabric",
+        "evaluation",
+        "ground-truth",
+        "regression",
+        "determinism"
+      ],
+      "summary": "将参考查询而非固定答案存入测试集，每次先从当前数据计算期望值，再用 Fabric SDK 留存评测与步骤结果。公开 Notebook 代码示例；查询使用测试执行者身份，需对齐权限与数据快照，不能把动态答案当成无需审核的真值。",
+      "date_evidence": "作者原文标题下标注 October 27, 2026；正文给出动态参考结果生成和 SDK 评测代码。",
+      "evidence_url": "https://data-marc.com/2026/10/27/can-you-trust-your-fabric-data-agent-programmatically-testing-accuracy-and-determinism/",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "hex-4-agent-native-execution-architecture",
+      "date": "2026-10-27",
+      "date_basis": "published",
+      "title": "Introducing Hex 4.0",
+      "organization": "Hex",
+      "url": "https://hex.tech/blog/introducing-hex-4-0/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "dag",
+        "lineage",
+        "human-in-the-loop",
+        "execution",
+        "mcp"
+      ],
+      "summary": "以代码文件和显式依赖 DAG 支持 Agent 构建、人类检查数字血缘；执行器并行运行独立步骤、流式返回结果，只重跑被变更影响的依赖。发布时仍为 private beta，性能图来自内部应用，不是通用对照评测。",
+      "date_evidence": "Hex 产品原文标题下标注 October 27, 2026；正文分别解释代码框架、可检查依赖和新执行器，末节注明 private beta。",
+      "evidence_url": "https://hex.tech/blog/introducing-hex-4-0/",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "m4bench-paper",
+      "date": "2026-10-27",
+      "date_basis": "published",
+      "title": "M4Bench: Evaluating Procedural Specification for Clinical EHR Derivation Agents",
+      "organization": "Hannes Ill et al.",
+      "url": "https://arxiv.org/abs/2610.37459",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "benchmark",
+        "data-engineering",
+        "skills",
+        "semantic-validation",
+        "sandbox"
+      ],
+      "summary": "用 MIMIC-IV/eICU 的二十八个数据派生任务检验 Agent 能否遵守编码、时间窗、缺失值规则与输出粒度；以操作规格、Skills、原始参考 SQL 和模式变体作对照，区分知识完整性与交付形式的影响。",
+      "notes": "公开预印本。reward 提升是与参考结果的部分一致性，不等于全任务完成：with-skill 仅 25/280 次 Codex 运行通过全部严格检查，no-skill 为 13/280。基准代码为 MIT；MIMIC-IV/eICU 原始数据、任务数据库与参考输出不随代码分发，完整复现仍需 PhysioNet 资质及相应数据使用协议。",
+      "date_evidence": "arXiv submission history: [v1] Tue, 27 Oct 2026 15:59:13 UTC；代码与复现说明链接由论文 Comments 明确提供。",
+      "evidence_url": "https://arxiv.org/abs/2610.37459",
+      "technical_material_url": "https://github.com/hannesill/m4/tree/m4bench-neurips2026-camera-ready/benchmark",
+      "supporting_urls": [
+        "https://github.com/hannesill/m4/blob/m4bench-neurips2026-camera-ready/benchmark/REPRODUCIBILITY.md",
+        "https://github.com/hannesill/m4/blob/main/LICENSE"
+      ],
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "yunqi-dacon-knowledge-ontology-recap",
+      "date": "2026-10-27",
+      "date_basis": "published",
+      "title": "从数据底座到 AI 知识底座，云器在 DACon 带来了什么？｜附演讲材料",
+      "organization": "云器科技 / DACon 北京",
+      "url": "https://www.yunqi.tech/resource/blogs/dacon-ai-lakehouse",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "recap",
+        "ontology",
+        "knowledge-engineering",
+        "semantic-layer",
+        "observability"
+      ],
+      "summary": "官方会后复盘把抽取、语义对齐、评估认证与运行反馈串成知识生产链，并说明 AI ETL、Semantic View、SingSight 的分工。公开的是复盘正文；完整 PPT 需扫码小程序获取，本次未验证可直接下载的幻灯片或录像。",
+      "date_evidence": "官方原文标注 2026年10月27日，正文回顾 10月23—24日 DACon 北京活动；该日期为复盘文章发布日期，不是 PPT 公布时间。",
+      "evidence_url": "https://www.yunqi.tech/resource/blogs/dacon-ai-lakehouse",
+      "material_access": "public-recap; deck-request-via-qr-unverified",
+      "event_date": "2026-10-23/2026-10-24",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "atlan-post-ai-data-stack-context-conference",
+      "date": "2026-10-28",
+      "date_basis": "event",
+      "title": "The Post-AI Data Stack: A blueprint for analytics agents",
+      "organization": "Atlan / Context Conference / Workday / DocuSign / Upwork",
+      "url": "https://atlan.com/context-conference/post-ai-data-stack/",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "ontology",
+        "skills",
+        "evaluation",
+        "human-in-the-loop"
+      ],
+      "summary": "36:55 公开视频与逐字稿，拆解指标、Ontology、Skills 三类上下文，以及引导生成、版本治理和评测迭代；客户讨论认证指标优先、标注推断与人工回流。内部准确率陈述仅作发布方经验。",
+      "date_evidence": "大会原始页面标注 Builder session + customer panel Oct 28, 2026 36:55，并提供 Play 播放入口、12 个章节和可定位时间的完整 Transcript。",
+      "evidence_url": "https://atlan.com/context-conference/post-ai-data-stack/",
+      "material_type": [
+        "video",
+        "transcript"
+      ],
+      "caveat": "视频与逐字稿已公开，相关实施手册另作持续文档条目；分享中的内部评测不等于独立可复现 benchmark。",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "datus-dosi-executable-business-context",
+      "date": "2026-10-28",
+      "date_basis": "published",
+      "title": "Introducing DOSI: Executable Business Context for AI Agents",
+      "organization": "Datus",
+      "url": "https://datus.ai/blog/datus-dosi-executable-business-context/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "ontology",
+        "mcp",
+        "lineage",
+        "verification"
+      ],
+      "summary": "将经审核的 Ossie 语义模型编译为 SQL，通过 MCP 等接口执行指标；用稳定错误码、关联歧义与 fan-out 检查降低盲目重试，并让结果关联定义、查询和血缘。业务定义、源数据及模型兼容性仍需人工验证。",
+      "date_evidence": "Datus 原文首行同时标注发布与更新日期 Oct 28, 2026；功能段解释 MCP 错误契约、join 检查及可检查 SQL/血缘。",
+      "evidence_url": "https://datus.ai/blog/datus-dosi-executable-business-context/",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "cube-data-model-factory",
+      "date": "2026-10-29",
+      "date_basis": "published",
+      "title": "Building the Data Model Factory",
+      "organization": "Cube",
+      "url": "https://cube.dev/blog/data-modeling-is-becoming-system-design",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "context",
+        "feedback",
+        "human-in-the-loop",
+        "data-engineering"
+      ],
+      "summary": "把语义建模当成可维护系统：监测模式、查询日志和对话，生成模型变更 PR，由工程师定义验收并独立审查；Semantic SQL 组合既有受治理指标。属于作者方案与实践观察，不代表无需人工决定业务口径，也不是公开对照评测。",
+      "date_evidence": "Cube 原文标题下标注 October 29, 2026；正文描述生产反馈、PR 审查、验收标准与 Semantic SQL 示例。",
+      "evidence_url": "https://cube.dev/blog/data-modeling-is-becoming-system-design",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "motherduck-dive-apps-agent-actions",
+      "date": "2026-10-29",
+      "date_basis": "published",
+      "title": "Introducing Dive Apps: Superpowers for AI Builders",
+      "organization": "MotherDuck",
+      "url": "https://motherduck.com/blog/dive-apps-superpowers-for-ai-builders/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "mcp",
+        "execution",
+        "human-in-the-loop",
+        "data-apps",
+        "write-back"
+      ],
+      "summary": "通过 MCP 让 Agent 构建数据应用，Dive 交互触发 serverless Python Flights，支持调用 Agent harness、写回源系统及人工介入。是产品方架构和示例说明，不是完整权限/审批安全证明；写操作需单独设计授权与回滚。",
+      "date_evidence": "MotherDuck 原文标题下标注 Oct 29, 2026；首节解释 Dive 到 Flights 的触发关系，并链接写回、邮件及 harness 示例。",
+      "evidence_url": "https://motherduck.com/blog/dive-apps-superpowers-for-ai-builders/",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "pena-fabric-data-agent-repeatability",
+      "date": "2026-10-29",
+      "date_basis": "published",
+      "title": "Fabric Data Agent Accuracy Is a Distribution, Not a Number",
+      "organization": "Michael John Peña",
+      "url": "https://michaeljohnpena.com/blog/2026-10-29-fabric-data-agent-determinism-real-nem-data/",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "fabric",
+        "evaluation",
+        "determinism",
+        "trace",
+        "regression"
+      ],
+      "summary": "对 24 个问题、三种表述和多次全新会话保留重写、路由、查询与答案，并比较确定性数值判定和 SDK judge，报告准确率及 pass^k。结果仅覆盖一个电力数据集、Standard runtime 与指定预览 SDK，不能外推为所有 Fabric Agent 的成绩。",
+      "date_evidence": "作者原文标题前标注 October 29, 2026；正文列出数据、运行环境、重复次数和 harness 代码，并明确范围限制。",
+      "evidence_url": "https://michaeljohnpena.com/blog/2026-10-29-fabric-data-agent-determinism-real-nem-data/",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "yunqi-semantic-view-trusted-context",
+      "date": "2026-10-29",
+      "date_basis": "published",
+      "title": "让 AI Agent 真正理解业务：云器 Semantic View 如何提供统一语义与可信数据上下文",
+      "organization": "云器科技",
+      "url": "https://www.yunqi.tech/resource/blogs/semantic-view-ai-agent",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "context",
+        "metrics",
+        "governance",
+        "verification"
+      ],
+      "summary": "以可发现、可查询的 Semantic View 复用指标、粒度与关联定义，通过内省命令先确认口径再计算。明确区分对象 SELECT 授权与行列隔离，强调澄清/停止仍需 Agent 策略，语义层不自动修复源数据质量；文中零售案例是流程示例而非客户实测。",
+      "date_evidence": "云器官方原文标题下标注 2026年10月29日，作者为产品负责人郭天琪；正文公开 semantic_view()、SHOW SEMANTIC METRICS、DESC EXTENDED 等机制与限制。",
+      "evidence_url": "https://www.yunqi.tech/resource/blogs/semantic-view-ai-agent",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    },
+    {
+      "id": "hex-governed-mode",
+      "date": "2026-10-30",
+      "date_basis": "released",
+      "title": "Governed mode",
+      "organization": "Hex Technologies",
+      "url": "https://learn.hex.tech/docs/agent-management/governed-mode",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "governance",
+        "context",
+        "semantic-layer",
+        "permissions"
+      ],
+      "summary": "按资产类型和状态引导 Agent 使用仓库表、语义模型与既有项目，可采用仅语义模型或自定义组合。文档明确它不是硬安全边界，不能代替数据连接和数仓权限。",
+      "date_evidence": "官方独立更新日志 Governed mode for the Hex Agent 标注 October 30, 2026，并链接到该配置文档；日期对应功能发布，不将页面抓取日期视为更新时间。",
+      "evidence_url": "https://learn.hex.tech/changelog/2026-10-30",
+      "caveat": "来源选择策略与访问授权必须分开；关闭某类 Agent 来源不会撤销用户原有的数据查询权限。",
+      "added_on": "2026-11-02",
+      "last_verified": "2026-11-02"
+    }
+  ],
+  "refresh_history": [
+    {
+      "as_of": "2026-11-02",
+      "window_start": "2026-10-23",
+      "previous_as_of": "2026-10-22",
+      "base_commit": "228d833f557175f3ce06242c413f532df59c52d9",
+      "previous_total": 133,
+      "added_total": 17,
+      "updated_total": 7,
+      "added_ids": [
+        "adapra-paper",
+        "atlan-analytics-agent-fde-playbook",
+        "keyhole-agentic-harness-data-engineering",
+        "kx-qsql-mcp-verification",
+        "calimem-paper",
+        "clickhouse-jev-retrieval-failure-labeling",
+        "data-marc-dynamic-data-agent-evaluation",
+        "hex-4-agent-native-execution-architecture",
+        "m4bench-paper",
+        "yunqi-dacon-knowledge-ontology-recap",
+        "atlan-post-ai-data-stack-context-conference",
+        "datus-dosi-executable-business-context",
+        "cube-data-model-factory",
+        "motherduck-dive-apps-agent-actions",
+        "pena-fabric-data-agent-repeatability",
+        "yunqi-semantic-view-trusted-context",
+        "hex-governed-mode"
+      ],
+      "updated_ids": [
+        "datus-agent",
+        "dbt-mcp-server",
+        "wrenai",
+        "nao",
+        "google-mcp-toolbox-databases",
+        "altimate-code",
+        "alibaba-dataworks-agent"
+      ],
+      "agenda_reviewed_ids": [
+        "qcon-shanghai-track",
+        "qcon-shanghai-netease-das",
+        "qcon-shanghai-kuaishou",
+        "qcon-shanghai-datus",
+        "qcon-shanghai-rednote",
+        "qcon-shanghai-meituan-aide",
+        "dacon-beijing-2026-agenda"
+      ]
     }
   ]
 }
-

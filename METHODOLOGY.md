@@ -2,7 +2,8 @@
 
 ## Snapshot
 
-- Cutoff: **2026-10-22 23:59 Asia/Shanghai**
+- Snapshot date: **2026-11-02 (Asia/Shanghai)**
+- Latest incremental review: **2026-10-23–2026-11-02**, after the 2026-10-22 snapshot
 - Scope: Data Agents for analytics, data science, data engineering, data management, and data governance
 - Default evidence: the author, project, vendor, paper, or conference's own page
 - Working language: Chinese annotations with original-language titles and links
@@ -36,7 +37,7 @@ Month-only dates use `YYYY-MM`. Event ranges use `YYYY-MM-DD/YYYY-MM-DD`.
 
 - `published`: the linked article, paper, video, deck, code, or benchmark is public.
 - `living-doc`: product or architecture documentation that can change after the snapshot date.
-- `agenda`: an official session outline was public at the cutoff, but a completed talk, deck, or recording was not yet verified.
+- `agenda`: an official session outline is public, but a readable completed talk, deck, or recording has not been verified. The event may already have taken place; elapsed time or a generic deck portal does not upgrade the status.
 - `active-project`: an older project with a material 2026 release or update.
 - `early`: public but explicitly experimental, EAP, or otherwise not presented as production-ready.
 - `archived`: a read-only, archived implementation retained for architectural study; it is not counted or recommended as actively maintained.
@@ -48,6 +49,15 @@ Implementation entries distinguish complete agents, agent frameworks, tool serve
 `resources.json` schema 1.1 retains the original required fields and adds optional evidence and reading fields. Newly researched entries include `summary`, `date_evidence`, and `evidence_url`. Project entries also record `license`, `license_url`, `component_type`, `technical_material_url`, and practical usage notes when available. These fields support verification; release dates do not by themselves prove that a project is production-ready.
 
 The headline total counts resource records, not companies, websites, or unique products. An engineering article, implementation, and separately maintained tutorial for the same project can be distinct records. Supporting release, license, and documentation links inside a project record do not increase the count. The open-source/public-source section count includes explicitly marked archived cases; active and archived status remain separate.
+
+## Incremental refreshes
+
+- [UPDATES.md](UPDATES.md) records each review window, genuinely added records, material changes to existing records, and unresolved material-access checks. A refresh is a curated search, not a claim of exhaustive coverage.
+- The latest review uses original publication dates, dated release notes, or specific material documentation updates after the previous cutoff. Search-engine crawl dates, newly discovered old pages, cosmetic edits, and ordinary repository pushes are not treated as new releases.
+- A new version of an existing implementation updates the same resource ID and does not increase the project count. Release notes and the previous snapshot preserve the historical context.
+- Optional `added_on`, `last_verified`, `related_materials`, and `material_review` fields preserve discovery and access-check history separately from the source's `date`. The top-level `refresh_history` records the added and materially updated IDs; agenda reviews are listed separately.
+- A localized document can materially differ from its other language versions. The DataWorks update in this review is based on the Chinese page dated 2026-10-29; the English page remains dated 2026-10-09 and is retained as related material, not relabeled.
+- A public conference recap can be a published resource without its full slides or video being open. Such entries explicitly identify the available material and any request/QR gate.
 
 ## Evidence and claims
 

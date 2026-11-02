@@ -4,6 +4,8 @@
 
 从要完成的任务选择实现入口，再结合官方技术说明和更新证据阅读。下列类型与阅读路线为本仓编辑归纳；项目能力、许可证和维护状态以各自原始页面为准。
 
+**本轮复查：2026-11-02。** 六个已有项目的实质版本变化见 [增量记录](UPDATES.md#已有项目与文档更新原-id)；新版本沿用原条目，不重复计数。
+
 ## 按任务选择起点
 
 | 目标 | 可先研究 | 第一轮验证应看到什么 |
@@ -20,19 +22,21 @@
 
 ### Datus Agent · 完整 Agent
 
-[实现](https://github.com/Datus-ai/Datus-agent) · [技术资料](https://docs.datus.ai/0.4/semantic/dosi_engine/) · [2026 更新证据](https://github.com/Datus-ai/Datus-agent/releases/tag/v0.4.3) · [许可证 Apache-2.0](https://github.com/Datus-ai/Datus-agent/blob/main/LICENSE)
+[实现](https://github.com/Datus-ai/Datus-agent) · [OntologyAnalyst 技术资料](https://docs.datus.ai/dev/subagent/ontology_analyst/) · [v0.4.4 更新证据](https://github.com/Datus-ai/Datus-agent/releases/tag/v0.4.4) · [许可证 Apache-2.0](https://github.com/Datus-ai/Datus-agent/blob/main/LICENSE)
 
 - **机制：** 按业务域组织 schema、参考 SQL、指标和业务知识，检索后调用数据库/语义工具；修正反馈回流上下文；提供 CLI、Web、API 和 MCP。
 - **适合：** 研究数据工程 Agent 的上下文资产化、领域子 Agent 和指标优先查询。
 - **使用前了解：** 部署时需按所用数据库安装适配器；v0.4.3 移除了旧 gen_metrics/gen_semantic_model 工作流，阅读旧教程时需核对版本。
+- **本轮变化：** v0.4.4 补充 OntologyAnalyst 与数据源映射、执行适配器及工具隔离。Agent 等待超时不保证远端查询已经终止，不应据此直接重试写入；dev 技术文档可能领先稳定版本。
 
 ### dbt MCP Server · 工具服务
 
-[实现](https://github.com/dbt-labs/dbt-mcp) · [技术资料](https://docs.getdbt.com/docs/dbt-ai/about-mcp) · [2026 更新证据](https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.8.0) · [许可证 Apache-2.0](https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE)
+[实现](https://github.com/dbt-labs/dbt-mcp) · [技术资料](https://docs.getdbt.com/docs/dbt-ai/about-mcp) · [v2.10.0 更新证据](https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.0) · [许可证 Apache-2.0](https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE)
 
 - **机制：** 通过 MCP 提供本地 dbt CLI、manifest 查询、Semantic Layer、Discovery、Admin API 与 SQL 工具，让通用 Agent 复用 dbt 上下文。
 - **适合：** 已采用 dbt 的团队构建分析工程助手、指标问答与作业诊断工具。
 - **使用前了解：** 它是工具服务；本地 CLI 与平台 API 的依赖不同。Semantic Layer、Discovery 和平台 SQL 等能力需要对应 dbt Platform 配置与权限。
+- **本轮变化：** v2.9–2.10 增加多项目 Mesh 模型发现、终止超时 dbt 子进程，并修正环境级授权。跨项目能力需使用 multi-project 配置，不应只从工具名称推断可用范围。
 
 ### dbt Agent Skills · 技能包
 
@@ -52,11 +56,12 @@
 
 ### MCP Toolbox for Databases · 工具服务
 
-[实现](https://github.com/googleapis/mcp-toolbox) · [技术资料](https://mcp-toolbox.dev/documentation/introduction/) · [2026 更新证据](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.14.0) · [许可证 Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)
+[实现](https://github.com/googleapis/mcp-toolbox) · [技术资料](https://mcp-toolbox.dev/documentation/introduction/) · [v1.15.0 更新证据](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.15.0) · [许可证 Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)
 
 - **机制：** 将数据源连接和工具声明集中在配置中，向 MCP 客户端或 Agent SDK 暴露预置查询及定制工具，并提供认证、连接池和可观测性。
 - **适合：** 搭建统一数据库工具服务，或将受控查询封装成可复用工具供多个数据 Agent 调用。
 - **使用前了解：** 它是数据库接入与执行基础设施；仍需应用层提供业务语义、规划、结果验证和权限配置。
+- **本轮变化：** v1.15 新增 Conversational Analytics 数据 Agent 管理和 Looker 保存查询工具。创建、更新、删除 Agent 属于管理写操作，需与只读查询分开授权；release 于 10 月 23 日公开，早于该日的 changelog 标签不作为本轮发布日期。
 
 ### Boring Semantic Layer (BSL) · 语义组件
 
