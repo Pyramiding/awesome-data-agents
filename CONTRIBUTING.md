@@ -72,3 +72,8 @@ If your system exposes Python as `python3`, use `python3` instead. This checks J
 
 When adding or removing records, keep README totals and section counts consistent with `resources.json`. Do not advance the snapshot date for a navigation-only change. For substantive resource refreshes, follow the incremental review rules in [METHODOLOGY.md](METHODOLOGY.md) and record the changes in [UPDATES.md](UPDATES.md).
 
+## Contribution license
+
+By submitting original content for inclusion in this repository, you agree to make that contribution available under [CC BY 4.0](LICENSE), to the extent you hold the relevant copyright and similar rights. You retain ownership of your contribution.
+
+Submit only material you created or have sufficient permission to contribute under these terms. Clearly identify any third-party material and preserve its attribution and license notices. Linking to a resource does not relicense it, and public availability alone does not grant permission to copy it. See the [repository license scope](README.md#许可--license).

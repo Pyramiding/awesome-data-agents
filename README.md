@@ -416,3 +416,12 @@ QCon 上海 **2026-10-22–24** 与 DACon 北京 **10 月 23–24 日**均已举
 
 本仓提供资料索引、编辑归纳与工程评审模板，不代表对任何产品、论文结果或许可证状态的背书。链接内容与许可证可能变化，采用前请再次核验。
 
+## 许可 / License
+
+本仓库的原创文字、注释、资料的选择与编排，以及原创图示，采用 [Creative Commons Attribution 4.0 International（CC BY 4.0）](LICENSE) 许可，且仅限于贡献者有权授予的著作权及类似权利。允许转载、改编和商用；分享时须适当署名、附许可链接并说明是否修改。可署名为「Pyramiding 与贡献者，Awesome Data Agents」，并链接到[本仓库](https://github.com/Pyramiding/awesome-data-agents)。
+
+外链文章、论文、代码、数据集和其他第三方材料仍适用各自的权利与许可；收录或引用不意味着本仓库授予其使用权。商标权不在本许可范围内。不受著作权或类似权利保护的材料，以及法律允许的例外使用，不受本许可新增限制。
+
+Original text, annotations, selection and arrangement of resources, and original diagrams in this repository are licensed under [CC BY 4.0](LICENSE), only to the extent the contributors hold the relevant copyright and similar rights. You may share and adapt this material, including commercially, with appropriate attribution, a license link, and an indication of changes. Suggested attribution: “Pyramiding and contributors, Awesome Data Agents,” with a link to [this repository](https://github.com/Pyramiding/awesome-data-agents).
+
+Linked articles, papers, code, datasets, and other third-party materials remain subject to their respective rights and licenses. Inclusion or citation does not grant rights to those materials. Trademark rights are not licensed. Material not protected by copyright or similar rights, and uses permitted by applicable exceptions or limitations, remain unaffected. See the [license summary](https://creativecommons.org/licenses/by/4.0/) and [full legal text](LICENSE).
