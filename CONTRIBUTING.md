@@ -2,6 +2,16 @@
 
 Thanks for helping keep this list accurate and useful.
 
+中文和英文都欢迎。推荐资料或报告错误可以直接提交 Issue，不需要先修改 JSON。
+
+## Choose a contribution path
+
+- **Suggest a resource:** use the [resource suggestion form](https://github.com/Pyramiding/awesome-data-agents/issues/new?template=resource.yml). An issue needs source evidence and a short explanation, not a repository edit.
+- **Correct an entry:** use the [correction form](https://github.com/Pyramiding/awesome-data-agents/issues/new?template=correction.yml) for a broken link, incorrect date, changed license, archive status, or overstated claim.
+- **Submit a ready edit:** open a pull request using the checks below. Small, focused corrections are welcome.
+
+Before adding a resource, search `README.md`, `resources.json`, and existing issues for its title or canonical URL. A new version of an existing project normally updates the same resource ID rather than creating another project entry. See [METHODOLOGY.md](METHODOLOGY.md).
+
 ## Add a resource
 
 Open an issue or pull request containing:
@@ -13,7 +23,7 @@ Open an issue or pull request containing:
 - Language and useful tags
 - Any caveat: vendor-reported result, internal benchmark, agenda only, early/EAP, archived project, or unclear license
 
-Please update both `README.md` and `resources.json`. Keep entries concise and use your own summary rather than copying source text.
+For pull requests that add or change resource records, update both `README.md` and `resources.json` where applicable. Pure navigation or wording fixes do not need unrelated JSON changes. Keep entries concise and use your own summary rather than copying source text.
 
 For new machine-readable entries, include `summary`, `date_evidence`, and `evidence_url`. For implementations, also specify the component type, license, technical documentation, and maintenance status. Update `PROJECT_GUIDE.md` when a project adds a useful implementation path.
 
@@ -49,4 +59,16 @@ For new machine-readable entries, include `summary`, `date_evidence`, and `evide
 - `resources.json` is valid JSON.
 - The README does not imply that an agenda page is a recording or completed talk.
 - License labels are specific and current.
+
+## Validate a pull request locally
+
+From the repository root, check the machine-readable index:
+
+```sh
+python -m json.tool resources.json > /dev/null
+```
+
+If your system exposes Python as `python3`, use `python3` instead. This checks JSON syntax only; source accuracy, dates, IDs, duplicate entries, and license claims still need review.
+
+When adding or removing records, keep README totals and section counts consistent with `resources.json`. Do not advance the snapshot date for a navigation-only change. For substantive resource refreshes, follow the incremental review rules in [METHODOLOGY.md](METHODOLOGY.md) and record the changes in [UPDATES.md](UPDATES.md).
 

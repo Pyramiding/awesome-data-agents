@@ -1,0 +1,30 @@
+name: 提交勘误 / Correct an entry
+description: 修正链接、日期、状态、许可证或表述，并附核验证据。
+title: "[Correction] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        中文和英文都欢迎。一个条目的小修正也很有帮助。
+  - type: textarea
+    id: entry
+    attributes:
+      label: 涉及条目 / Affected entry
+      description: 提供标题、README 小节链接或 resources.json 中的 ID。
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: 问题与建议修正 / Problem and correction
+      description: 说明当前表述哪里不准确，以及建议如何修改；若只是链接无法访问，也请说明。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 核验证据 / Supporting evidence
+      description: 附原始页面、发布记录或许可证链接；写明检查日期。暂时没有替代链接时可填“暂无”。
+    validations:
+      required: true
+

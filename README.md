@@ -2,6 +2,40 @@
 
 > 一份把公开资料变成工程决策地图的 Data Agent 索引：从“能写 SQL”走向“可验证地完成数据工作”。
 
+A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
+
+**150 条资料** · `52` 架构与实践 · `31` 公开实现 · `20` 分享与议程 · `16` 研究 · `17` 持续文档 · `14` 评测
+
+**资料截止：2026-11-02（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
+
+## 从这里开始 · Start here
+
+| 你想做什么 / Your goal | 先看这里 / Start here |
+|---|---|
+| 建立全景认识 / Get oriented | [先看结论](#先看结论) → [2026 十个起点](#2026-十个起点) |
+| 选项目、组件或接入方案 / Choose an implementation | [项目资料路线](PROJECT_GUIDE.md) → [实现选型快表](#选型快表) |
+| 设计自己的 Data Agent / Design a system | [参考架构](#一眼看懂-data-agent) → [工程模式与反模式](#工程模式与反模式) |
+| 评估质量与上线条件 / Evaluate readiness | [Benchmark 选择指南](#benchmark-选择指南) → [设计评审模板](DESIGN_REVIEW.md) |
+| 查新增资料或参与维护 / Follow changes or contribute | [更新记录](UPDATES.md) → [推荐资料 / 提交勘误](https://github.com/Pyramiding/awesome-data-agents/issues/new/choose) |
+
+[收录规则](METHODOLOGY.md) · [贡献指南](CONTRIBUTING.md) · [机器可读索引](resources.json)
+
+<details>
+<summary><strong>完整导航 / Full contents</strong></summary>
+
+[先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [国际导航](#国际资料导航) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开实现](#开源实现与公开源码) · [项目路线](PROJECT_GUIDE.md) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
+
+</details>
+
+这里不追求链接数量。每条资料都尽量回到作者、项目或大会原始页面，并回答三个问题：**它解决什么、采用什么机制、证据边界在哪里。** 仓库进一步把分散材料提炼成参考架构、交付成熟度与设计检查表，帮助读者做方案判断，而不只是收藏链接。
+
+<details>
+<summary><strong>English summary</strong></summary>
+
+A source-checked, 2026-focused field guide to Data Agent architectures, production write-ups, public implementations, benchmarks, papers, and talks. Beyond indexing links, it synthesizes an engineering model for context, execution, verification, and governance. Chinese annotations stay concise while original titles and first-party links are preserved.
+
+</details>
+
 ![Data Agent 原创系统参考图：跨层控制面约束身份、策略、预算审批与审计；Know 组织元数据、指标语义、血缘和已审核记忆；Act 通过任务 DAG、检查点及 SQL/Python/API 沙箱执行并观察；Prove 分别检查执行、数据与业务语义，附带来源、查询和限制，证据不足则澄清或升级；轨迹经评测、人工审核后形成获准的改进。](data-agent-system-map-v2.png)
 
 *原创工程参考图：上层治理贯穿全程；中部展开上下文、任务 DAG、工具沙箱与分层验证；下层单独呈现经人工审核的评测改进。点击图片可查看细节。*
@@ -12,21 +46,6 @@
 - **上下文不等于原始数据。** 目录、指标定义、粒度、关联关系和新鲜度帮助规划；实际查询与计算进入受控工具运行时，不要求把全部数据塞进模型。
 - **执行成功不等于答案正确。** 执行、数据质量和业务语义分别校验，并保留来源、查询与限制。图中 Verified 表示通过所配置的检查并附有证据，不是正确性的绝对保证；证据不足应澄清、局部修复或升级处理。
 - **评测改进不等于自动自我训练。** Traces → Eval suite → Human review → Approved updates 是经审核的改进链；失败修复只重跑受影响步骤，不默认重启整个流程，也不直接把未验证结论写入长期记忆。
-
-</details>
-
-**150 条资料** · `52` 架构与实践 · `31` 公开实现 · `20` 分享与议程 · `16` 研究 · `17` 持续文档 · `14` 评测
-
-**资料截止：2026-11-02（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
-
-[先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [国际导航](#国际资料导航) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开实现](#开源实现与公开源码) · [项目路线](PROJECT_GUIDE.md) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
-
-这里不追求链接数量。每条资料都尽量回到作者、项目或大会原始页面，并回答三个问题：**它解决什么、采用什么机制、证据边界在哪里。** 仓库进一步把分散材料提炼成参考架构、交付成熟度与设计检查表，帮助读者做方案判断，而不只是收藏链接。
-
-<details>
-<summary><strong>English summary</strong></summary>
-
-A source-checked, 2026-focused field guide to Data Agent architectures, production write-ups, public implementations, benchmarks, papers, and talks. Beyond indexing links, it synthesizes an engineering model for context, execution, verification, and governance. Chinese annotations stay concise while original titles and first-party links are preserved.
 
 </details>
 
@@ -391,6 +410,9 @@ QCon 上海 **2026-10-22–24** 与 DACon 北京 **10 月 23–24 日**均已举
 
 ## 贡献与勘误
 
-欢迎提交 Issue 或 PR。请提供原始 URL、可核验日期、资料类型、核心技术点，以及是否为产品方自述/议程/转载。详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+发现值得加入的原始资料，或已有条目的日期、链接、许可证、状态有误？可以[推荐资料或提交勘误](https://github.com/Pyramiding/awesome-data-agents/issues/new/choose)，中文和英文都欢迎；提交 Issue 不需要先编辑 JSON。
+
+直接提交 PR 时，请同步涉及的 README 与机器索引字段。请提供原始 URL、可核验日期、资料类型、核心技术点，以及是否为产品方自述/议程/转载。完整收录标准与检查步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 本仓提供资料索引、编辑归纳与工程评审模板，不代表对任何产品、论文结果或许可证状态的背书。链接内容与许可证可能变化，采用前请再次核验。
+
