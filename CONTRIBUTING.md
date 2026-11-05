@@ -72,6 +72,8 @@ If your system exposes Python as `python3`, use `python3` instead. This checks J
 
 When adding or removing records, keep README totals and section counts consistent with `resources.json`. Do not advance the snapshot date for a navigation-only change. For substantive resource refreshes, follow the incremental review rules in [METHODOLOGY.md](METHODOLOGY.md) and record the changes in [UPDATES.md](UPDATES.md).
 
+The [web browser](https://pyramiding.github.io/awesome-data-agents/) reads this same index and reuses existing README annotations. For changes to the site or its data handling, run `npm test` and `npm run check`; no dependency installation is required. See [WEB.md](WEB.md) for preview and publishing details.
+
 ## Contribution license
 
 By submitting original content for inclusion in this repository, you agree to make that contribution available under [CC BY 4.0](LICENSE), to the extent you hold the relevant copyright and similar rights. You retain ownership of your contribution.
