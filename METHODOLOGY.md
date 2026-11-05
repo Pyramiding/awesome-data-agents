@@ -2,8 +2,8 @@
 
 ## Snapshot
 
-- Snapshot date: **2026-11-02 (Asia/Shanghai)**
-- Latest incremental review: **2026-10-23–2026-11-02**, after the 2026-10-22 snapshot
+- Snapshot date: **2026-11-05 (Asia/Shanghai)**
+- Latest incremental review: **2026-11-03–2026-11-05**, after the 2026-11-02 snapshot
 - Scope: Data Agents for analytics, data science, data engineering, data management, and data governance
 - Default evidence: the author, project, vendor, paper, or conference's own page
 - Working language: Chinese annotations with original-language titles and links
@@ -55,8 +55,9 @@ The headline total counts resource records, not companies, websites, or unique p
 - [UPDATES.md](UPDATES.md) records each review window, genuinely added records, material changes to existing records, and unresolved material-access checks. A refresh is a curated search, not a claim of exhaustive coverage.
 - The latest review uses original publication dates, dated release notes, or specific material documentation updates after the previous cutoff. Search-engine crawl dates, newly discovered old pages, cosmetic edits, and ordinary repository pushes are not treated as new releases.
 - A new version of an existing implementation updates the same resource ID and does not increase the project count. Release notes and the previous snapshot preserve the historical context.
-- Optional `added_on`, `last_verified`, `related_materials`, and `material_review` fields preserve discovery and access-check history separately from the source's `date`. The top-level `refresh_history` records the added and materially updated IDs; agenda reviews are listed separately.
-- A localized document can materially differ from its other language versions. The DataWorks update in this review is based on the Chinese page dated 2026-10-29; the English page remains dated 2026-10-09 and is retained as related material, not relabeled.
+- Optional `added_on`, `last_verified`, `related_materials`, and `material_review` fields preserve discovery and access-check history separately from the source's `date`. The top-level `refresh_history` records added, materially updated, and corrected IDs separately; agenda reviews are listed only when performed in that review.
+- A localized document can materially differ from its other language versions. On November 2, the DataWorks Chinese page was dated October 29 while the English page still showed October 9. The November 5 review found the English page now dated October 29 and containing the eight-layer architecture. This corrects the language-version state without counting the older material as a new November publication.
+- Release dates follow the source's UTC `published_at` date, with the full timestamp retained. For example, Altimate Code v0.12.9 was published at 2026-11-04T23:16:13Z, already November 5 in Asia/Shanghai. A changelog heading is recorded separately when it differs from the public release timestamp.
 - A public conference recap can be a published resource without its full slides or video being open. Such entries explicitly identify the available material and any request/QR gate.
 
 ## Evidence and claims
@@ -64,7 +65,7 @@ The headline total counts resource records, not companies, websites, or unique p
 - Performance and adoption figures from vendor or project posts are summarized as publisher claims, not independent comparisons.
 - Internal benchmarks are not compared across organizations because tasks, data, models, prompts, and graders differ.
 - Paper numbers follow the cited version. If an arXiv paper changed materially, the README calls out the preferred version.
-- Repository licenses were checked at the snapshot date. “Public source” is used when a repository has no project-level license; this does not grant reuse rights.
+- Repository license checks refer to each entry's `last_verified` date when present; advancing the collection cutoff does not imply that every old license was rechecked. “Public source” is used when a repository has no project-level license; this does not grant reuse rights.
 - A GitHub repository's creation date is not treated as the project's release date unless the project gives no stronger signal.
 
 ## Taxonomy

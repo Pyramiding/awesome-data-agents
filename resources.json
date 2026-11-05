@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-05",
   "timezone": "Asia/Shanghai",
   "scope": "2026-focused Data Agent architectures, public implementations, evaluations, papers, talks, and living documentation",
   "resources": [
@@ -815,7 +815,7 @@
     },
     {
       "id": "altimate-code",
-      "date": "2026-10-23",
+      "date": "2026-11-04",
       "date_basis": "released",
       "title": "altimate-code",
       "organization": "AltimateAI",
@@ -829,18 +829,23 @@
         "data-engineering",
         "mit"
       ],
-      "summary": "v0.12.8 丰富列值画像，让分析 Agent 读取工作区记忆和 Skills；当策略或语义分析被跳过时采用 fail-closed，并将工具失败如实反馈，适合研究数据探索、上下文与安全检查的执行链。",
-      "date_evidence": "GitHub Release v0.12.8 published_at 2026-10-23T19:37:02Z；变更明确列出 schema_inspect、workspace memory/skills、tool failure reporting 与 fail-closed policy/semantic analysis。",
-      "evidence_url": "https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.8",
+      "summary": "v0.12.9 提供不依赖模型的 tool CLI 与 MCP server，让外部 Coding Agent 复用数据工具；dbt_lineage 返回结构化模型血缘，工作区规则经提案与 Owner 审查后进入会话，并修复配置授权下分析角色仍须禁止写工具的边界。",
+      "date_evidence": "GitHub Release v0.12.9 published_at 为 2026-11-04T23:16:13Z（Asia/Shanghai 为11月5日）；date 沿用来源 UTC 日期，完整时间保留在 release_updates。",
+      "evidence_url": "https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.9",
       "license": "MIT",
       "license_url": "https://github.com/AltimateAI/altimate-code/blob/main/LICENSE",
-      "notes": "同一版本变更中先加入后移除了 text_label 批量标注工具，不能将该工具列为最终可用能力。2026-11-02 已核对 MIT LICENSE 和 archived=false。",
-      "last_verified": "2026-11-02",
+      "notes": "v0.12.8 曾先加入后移除 text_label，不能据旧变更声称该工具可用；v0.12.9 的 analyst 修复是在配置授权下仍拒绝写工具。2026-11-05 核对 MIT LICENSE 与 archived=false。",
+      "last_verified": "2026-11-05",
       "release_updates": [
         {
           "version": "v0.12.8",
           "published_at": "2026-10-23T19:37:02Z",
           "url": "https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.8"
+        },
+        {
+          "version": "v0.12.9",
+          "published_at": "2026-11-04T23:16:13Z",
+          "url": "https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.9"
         }
       ]
     },
@@ -1016,7 +1021,7 @@
     },
     {
       "id": "nao",
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "date_basis": "released",
       "title": "nao",
       "organization": "getnao",
@@ -1030,14 +1035,14 @@
         "self-hosted",
         "mixed-license"
       ],
-      "summary": "v0.3.29–31 增加按组开放 Skills、受表列边界约束的 DuckLake 查询、Agent 引导的仓库接入与真实工具错误评测输出；上下文管理、权限和验收共同演进，适合研究数据分析工作区的完整运行链。",
-      "date_evidence": "GitHub v0.3.29 published_at 2026-10-25T14:27:21Z；v0.3.30 为 2026-10-28T14:43:09Z；v0.3.31 为 2026-10-30T10:15:24Z。",
-      "evidence_url": "https://github.com/getnao/nao/releases/tag/v0.3.31",
+      "summary": "v0.3.32–33 引入实验性 codemode 并移除旧 Python interpreter；语义查询在刷新时重编译并可在图表编辑器修改，补充指标元数据同步、画像分区过滤与 GitHub Enterprise Server 接入，适合跟踪上下文到分析工作区的执行链。",
+      "date_evidence": "GitHub v0.3.32 published_at 为 2026-11-03T08:54:14Z；v0.3.33 为 2026-11-03T11:55:58Z。前者含实验 codemode、移除 Python interpreter 与语义查询刷新，后者含 GitHub Enterprise Server 支持。",
+      "evidence_url": "https://github.com/getnao/nao/releases/tag/v0.3.33",
       "license": "Apache-2.0 + commercial (Enterprise-marked files)",
       "license_url": "https://github.com/getnao/nao/blob/main/LICENSE",
-      "license_note": "v0.3.30 将企业条款拆到 LICENSE-ENTERPRISE；2026-11-02 直接核对根 LICENSE 为 Apache-2.0，但标记 @license Enterprise 的文件仍受商业条款限制，因此不应将整个仓库笼统写为纯 Apache-2.0。archived=false。",
-      "notes": "release 中的 subagents beta 明确针对 nao cloud，不代表所有自托管安装默认启用；图表、评测、接入流程也需按所安装版本核对。",
-      "last_verified": "2026-11-02",
+      "license_note": "2026-11-05 核对根 LICENSE 为 Apache-2.0；LICENSE-ENTERPRISE 仍限制标记 @license Enterprise 的文件，不能将整个仓库概括为纯 Apache-2.0。GitHub API 识别为 NOASSERTION，正文及文件范围优先；archived=false。",
+      "notes": "codemode 明确为 experimental；旧 Python interpreter 已移除，旧执行示例需核对版本。先前 subagents beta 针对 nao cloud，不表示所有自托管安装默认具备；新 release 不改变混合许可边界。",
+      "last_verified": "2026-11-05",
       "release_updates": [
         {
           "version": "v0.3.29",
@@ -1053,6 +1058,16 @@
           "version": "v0.3.31",
           "published_at": "2026-10-30T10:15:24Z",
           "url": "https://github.com/getnao/nao/releases/tag/v0.3.31"
+        },
+        {
+          "version": "v0.3.32",
+          "published_at": "2026-11-03T08:54:14Z",
+          "url": "https://github.com/getnao/nao/releases/tag/v0.3.32"
+        },
+        {
+          "version": "v0.3.33",
+          "published_at": "2026-11-03T11:55:58Z",
+          "url": "https://github.com/getnao/nao/releases/tag/v0.3.33"
         }
       ]
     },
@@ -1401,17 +1416,17 @@
         "human-in-the-loop"
       ],
       "summary": "中文简介展开八层架构：专家套件、Context Graph、企业级 Agent 管控与多计算引擎协同，并补充自动化、工作流、IM 协作和审批模式。适合借鉴平台原生数据资产与生产权限的结合；功能受版本、地域和实际配置约束，完全访问模式不等于安全默认。",
-      "date_evidence": "中文原页 HTML 的 meta name=last-modified 为 2026-10-29T16:06:28+08:00；阿里云国际站中文版也显示 2026-10-29。英文同路径仍标注 Oct 09, 2026，因此本次仅以中文版本的八层架构及治理扩展作为更新证据。",
+      "date_evidence": "中文原页 meta name=last-modified 为 2026-10-29T16:06:28+08:00。11月2日复查时英文页仍显示 Oct 09；11月5日重开英文页现显示 Last Updated: Oct 29, 2026，并已包含八层架构。本轮仅校正语言版本状态，不把10月29日的内容计为11月新增。",
       "evidence_url": "https://help.aliyun.com/zh/dataworks/user-guide/new-data-agent",
       "related_materials": [
         {
-          "title": "New Data Agent — English documentation (older version)",
+          "title": "DataWorks: Data Agent introduction — English documentation",
           "url": "https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent",
-          "date": "2026-10-09",
-          "note": "英文版本日期与内容不同，未将其标记为10月29日更新。"
+          "date": "2026-10-29",
+          "note": "2026-11-05 复查：英文页当前显示 Oct 29, 2026，含八层架构、Context Graph 与企业治理；替换上次保留的英文旧页状态，不另增条目。"
         }
       ],
-      "last_verified": "2026-11-02"
+      "last_verified": "2026-11-05"
     },
     {
       "id": "alibaba-sls-dataagent",
@@ -2307,7 +2322,7 @@
     },
     {
       "id": "dbt-mcp-server",
-      "date": "2026-10-30",
+      "date": "2026-11-03",
       "date_basis": "released",
       "title": "dbt MCP Server",
       "organization": "dbt Labs",
@@ -2322,9 +2337,9 @@
         "data-engineering",
         "governance"
       ],
-      "summary": "v2.9–2.10 增加跨生产者项目发现公开 Mesh 模型、构造跨项目引用所需身份信息，并改进作业列举与环境级写授权；超时会终止 dbt 子进程，CLI 工具移出事件循环，便于研究可控数据工程工具层。",
-      "date_evidence": "GitHub v2.9.0 published_at 2026-10-27T15:06:49Z；v2.10.0 published_at 2026-10-30T20:00:14Z。前者新增 Mesh discovery 及进程超时处理，后者修正作业过滤与所属环境授权。",
-      "evidence_url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.0",
+      "summary": "v2.10.1 将 job/run 访问描述改为 Owner 目标与共享列举策略，授权宿主需处理 JOBS_LISTING、RUNS_LISTING；移除未使用的全文文档助手，但保留 llms.txt 搜索与单页读取。此前 Mesh 发现、超时处理和环境授权仍按对应配置使用。",
+      "date_evidence": "GitHub v2.10.1 published_at 为 2026-11-03T16:45:17Z，release 正文标题却写 2026-11-02；索引按可核验的公开发布时间记为11月3日，并保留差异。",
+      "evidence_url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.1",
       "license": "Apache-2.0",
       "license_url": "https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE",
       "mechanism": "通过 MCP 提供本地 dbt CLI、manifest 查询、Semantic Layer、Discovery、Admin API 与 SQL 工具，让通用 Agent 复用 dbt 上下文。",
@@ -2332,8 +2347,8 @@
       "caveat": "它是工具服务；本地 CLI 与平台 API 的依赖不同。Semantic Layer、Discovery 和平台 SQL 等能力需要对应 dbt Platform 配置与权限。",
       "technical_material_url": "https://docs.getdbt.com/docs/dbt-ai/about-mcp",
       "component_type": "tool-server",
-      "notes": "Mesh discovery 仅支持 multi-project 配置；它是工具服务而非完整 Agent。已核对项目未归档与 Apache-2.0 LICENSE。",
-      "last_verified": "2026-11-02",
+      "notes": "v2.10.1 调整授权宿主的访问描述与 listing policy 契约，不代表扩大为无条件账户级权限，也没有移除全部产品文档工具。Mesh discovery 仍需 multi-project 配置；2026-11-05 核对 Apache-2.0 LICENSE 与 archived=false。",
+      "last_verified": "2026-11-05",
       "release_updates": [
         {
           "version": "v2.9.0",
@@ -2344,6 +2359,11 @@
           "version": "v2.10.0",
           "published_at": "2026-10-30T20:00:14Z",
           "url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.0"
+        },
+        {
+          "version": "v2.10.1",
+          "published_at": "2026-11-03T16:45:17Z",
+          "url": "https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.1"
         }
       ]
     },
@@ -3025,9 +3045,182 @@
       "caveat": "来源选择策略与访问授权必须分开；关闭某类 Agent 来源不会撤销用户原有的数据查询权限。",
       "added_on": "2026-11-02",
       "last_verified": "2026-11-02"
+    },
+    {
+      "id": "snowflake-agent-gateway-security-governance",
+      "date": "2026-11-03",
+      "date_basis": "published",
+      "title": "Build Trust in AI Agents with Governed Business Context and AI Security",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/ai-agents-governance-ai-security-cost-control/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "identity",
+        "mcp",
+        "governance",
+        "observability",
+        "cost-control",
+        "sandbox"
+      ],
+      "summary": "从控制面拆解 Agent 接入：Cortex AI Gateway 集中策略，MCP 工具携带最终用户身份并在执行前检查权限；再结合隔离执行、运行观测与费用治理。适合对照语义定义治理与实际动作授权应分别落实的位置。",
+      "date_evidence": "Snowflake 原文标题前标注 Nov 3, 2026；Govern, observe and optimize every agent action 章节说明 Gateway、执行前策略和沙箱的发布阶段。",
+      "evidence_url": "https://www.snowflake.com/en/blog/ai-agents-governance-ai-security-cost-control/",
+      "caveat": "Gateway/Tools 为 public preview，Cortex Sandboxes 为 private preview；治理文章不构成所有攻击均可阻断的证明。预算目标、费用告警与异常检测不应直接解释成所有任务的强制停止机制。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "snowflake-business-ontology-stewardship",
+      "date": "2026-11-03",
+      "date_basis": "published",
+      "title": "Meaning Before Metrics: How We Built a Governed Business Ontology for AI Agents",
+      "organization": "Snowflake Engineering",
+      "url": "https://www.snowflake.com/en/blog/engineering/business-ontology-context/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "ontology",
+        "semantic-layer",
+        "context",
+        "human-in-the-loop",
+        "governance"
+      ],
+      "summary": "以带业务域的概念、类型化关系和资产引用组织业务定义；修改先形成提案，经 steward 批准才替换 Agent 使用的版本。Ontology 解释含义，Semantic Views 执行计算，Cortex Sense 提供推断线索；三者互补，不是强制串行配置。",
+      "date_evidence": "Snowflake Engineering 原文标题前标注 Nov 3, 2026；正文公开概念图、域权限、审批及 business_ontology 检索工具的设计。",
+      "evidence_url": "https://www.snowflake.com/en/blog/engineering/business-ontology-context/",
+      "caveat": "文章公开不表示产品已全面开放：文首标注 Business Ontology 为 private preview，文末说明 public preview soon。示例为概念说明，不可直接执行或导入；子域权限不自动继承，资产引用本身不执行指标。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "snowflake-coco-cloud-agents-automations",
+      "date": "2026-11-03",
+      "date_basis": "published",
+      "title": "Snowflake CoCo: Agentic Development on Data Without Limits",
+      "organization": "Snowflake",
+      "url": "https://www.snowflake.com/en/blog/snowflake-coco-cloud-agents-automations/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "sandbox",
+        "automation",
+        "mcp",
+        "memory",
+        "governance"
+      ],
+      "summary": "托管 Cloud Agents 在沙箱中推进长任务，以 Git 分支和 PR 交付变更；自动化由定时、事件或 webhook 触发，以创建者身份运行并记录每次轨迹。Profiles 组织模型、Skills、工具与上下文，项目级记忆支持跨会话复用。",
+      "date_evidence": "Snowflake 原文标题前标注 Nov 3, 2026；Cloud Agents 与 Automations 段落说明运行时、触发方式、创建者身份及审计。",
+      "evidence_url": "https://www.snowflake.com/en/blog/snowflake-coco-cloud-agents-automations/",
+      "caveat": "MCP Gateway Tools、Memory 与动态模型路由均标注 public preview；不能把整组能力统称 GA。后台任务继承创建者授权，PR 和工具审批仍需按具体配置核验。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "vidueu-data-curation-agent-paper",
+      "date": "2026-11-03",
+      "date_basis": "published",
+      "title": "VidUEU-Agent: A Data-Curation Agent for Multimodal Understanding, Editing, and Unified Tasks",
+      "organization": "Tengju Ru et al.",
+      "url": "https://arxiv.org/abs/2611.04418",
+      "section": "research",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-curation",
+        "multimodal",
+        "training-feedback",
+        "data-quality"
+      ],
+      "summary": "将原始视频依次做全局感知与低质量镜头过滤、关键帧/多模态信号挖掘、元数据构建和指令样本路由；再依据下游训练反馈调整数据分布。适合研究数据整理 Agent 的生产—测量—再整理闭环。",
+      "date_evidence": "arXiv Submitted on 3 Nov 2026；Submission history v1 为 2026-11-03T07:02:55Z。",
+      "evidence_url": "https://arxiv.org/abs/2611.04418",
+      "caveat": "这是多模态训练数据整理预印本，不是企业 BI/问数框架。VidUEU-100K 规模与训练收益属于论文自述；本轮仅收录论文，未另行宣称代码或数据集的开放许可已核验。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "hengshi-agent-tasks-analytics-assets",
+      "date": "2026-11-04",
+      "date_basis": "published",
+      "title": "从问数到分析资产：衡石 Data Agent 的任务拆解、辅助创作与持续优化",
+      "organization": "衡石科技",
+      "url": "https://www.hengshi.com/blog/hengshi-data-agent-tasks-analytics-assets.html",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "task-planning",
+        "semantic-layer",
+        "visualization",
+        "tool-feedback",
+        "recovery"
+      ],
+      "summary": "把数据发现、HQL 指标、多步查询、建模与看板创作接成分析交付链；通过工具返回继续推进任务。恢复时分别检查查询、页面修改和资产保存状态，先读取已有资源再补做缺失步骤，减少重试造成重复资产。",
+      "date_evidence": "衡石官网技术博客原文标题下标注 2026/11/4；正文给出任务拆解、工具协作、失败恢复和分析资产验收方法。",
+      "evidence_url": "https://www.hengshi.com/blog/hengshi-data-agent-tasks-analytics-assets.html",
+      "caveat": "销售分析流程是任务设计示例，不是客户实测或固定内部协议。不同能力不必机械串行；可调用范围、写入确认和保存方式依实际版本与入口核验，不能推断存在统一事务或自动回滚。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "oceanbase-ontology-driven-enterprise-data-agents",
+      "date": "2026-11-04",
+      "date_basis": "published",
+      "title": "Ontology-Driven Enterprise Data Agents: From Retrieving Numbers to Explaining Why",
+      "organization": "OceanBase / Macro Ji",
+      "url": "https://en.oceanbase.com/blog/ontology-driven-enterprise-data-agents",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "ontology",
+        "semantic-layer",
+        "progressive-context",
+        "verification",
+        "human-in-the-loop"
+      ],
+      "summary": "DataPilot 以业务对象、关系、属性和指标定义组织本体，按业务域逐步收窄候选，再沿关系寻找分析维度并用明细验证。先用 Schema、历史 SQL、ETL 和文档生成场景草稿，再由业务专家通过真实问题修订。",
+      "date_evidence": "OceanBase 原文标注 Published on November 4, 2026，当前 Updated on 2026-11-05；索引使用首次发表日期，不将后续页更新重复计数。",
+      "evidence_url": "https://en.oceanbase.com/blog/ontology-driven-enterprise-data-agents",
+      "caveat": "物理可关联不等于业务关系，变化贡献也不证明因果。文中示例解释方法，不是可复现实验成绩；主动探索不等于已授权写数据或触发外部流程。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
     }
   ],
   "refresh_history": [
+    {
+      "as_of": "2026-11-05",
+      "window_start": "2026-11-03",
+      "previous_as_of": "2026-11-02",
+      "base_commit": "0334da5b7a7df8369bd4b2c820f7792addc7e02c",
+      "previous_total": 150,
+      "added_total": 6,
+      "updated_total": 3,
+      "corrected_total": 1,
+      "added_ids": [
+        "snowflake-agent-gateway-security-governance",
+        "snowflake-business-ontology-stewardship",
+        "snowflake-coco-cloud-agents-automations",
+        "vidueu-data-curation-agent-paper",
+        "hengshi-agent-tasks-analytics-assets",
+        "oceanbase-ontology-driven-enterprise-data-agents"
+      ],
+      "updated_ids": [
+        "altimate-code",
+        "nao",
+        "dbt-mcp-server"
+      ],
+      "corrected_ids": [
+        "alibaba-dataworks-agent"
+      ],
+      "agenda_reviewed_ids": [],
+      "review_note": "复查31个已收录公开实现的近期 release；不把日常提交计为新发布。会议议程沿用11月2日的材料核验状态，本轮未宣称完成全量会后材料复查。"
+    },
     {
       "as_of": "2026-11-02",
       "window_start": "2026-10-23",

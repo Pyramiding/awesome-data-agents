@@ -4,6 +4,45 @@
 
 这里记录每轮真正新增的资料、已有条目的实质更新，以及仍未核验的公开材料。日期来自原始发布页或版本记录，不把抓取时间当作发表时间；这是有边界的编辑检索，不是全网穷尽抓取。
 
+## 2026-11-05
+
+- **检索窗口：** 2026-11-03—2026-11-05，接续 11 月 2 日资料截止日；在保留新导航、贡献入口与许可说明的 [当前版本](https://github.com/Pyramiding/awesome-data-agents/tree/0334da5b7a7df8369bd4b2c820f7792addc7e02c)上更新。
+- **新增：** 6 条，包含 5 篇架构实践与 1 篇研究。
+- **原记录更新：** 3 个项目、4 个 release；另校正 1 处 DataWorks 中英文文档状态，不重复增加条目。
+- **复查范围：** 31 个已收录公开实现的近期 release；对本轮更新的 3 个项目重新核对许可证与未归档状态。会议议程沿用 11 月 2 日材料核验结果，本轮未宣称新增回放或幻灯片。
+- **累计：** 150 → **156 条**；`refresh_history` 分别记录新增、版本更新与勘误 ID。
+- **验证：** 索引、计数、去重与文内导航检查通过；27 个新增或关联链接中，26 个直接访问正常，OceanBase 对自动请求限流，已另行读取官网正文核实。
+
+### 新增资料
+
+| 原始日期 | 资料 | 值得复用的机制与边界 |
+|---|---|---|
+| 11-03 | [Snowflake Engineering：Meaning Before Metrics](https://www.snowflake.com/en/blog/engineering/business-ontology-context/) | 域限定概念、类型化关系、steward 审批与版本生效；定义与计算分工明确。Business Ontology 当前 private preview，public preview soon。 |
+| 11-03 | [Snowflake CoCo：Cloud Agents 与 Automations](https://www.snowflake.com/en/blog/snowflake-coco-cloud-agents-automations/) | 沙箱长任务、Git/PR 交付、以创建者身份运行的自动化及逐次审计；Memory、MCP Gateway Tools 和动态模型路由为 public preview。 |
+| 11-03 | [Snowflake：Governed Business Context and AI Security](https://www.snowflake.com/en/blog/ai-agents-governance-ai-security-cost-control/) | Gateway 集中策略，工具调用按最终用户身份在执行前授权；Gateway/Tools 为 public preview，Cortex Sandboxes 为 private preview。 |
+| 11-03 | [VidUEU-Agent](https://arxiv.org/abs/2611.04418) | 视频到指令数据的四阶段整理，再用下游训练反馈调整分布；属于多模态训练数据研究，非企业 BI 框架。 |
+| 11-04 | [衡石：从问数到分析资产](https://www.hengshi.com/blog/hengshi-data-agent-tasks-analytics-assets.html) | 语义指标、查询与看板创作连接交付；恢复前检查已有资产，区分计算、页面操作与保存完成。销售分析是设计示例。 |
+| 11-04 | [OceanBase：Ontology-Driven Enterprise Data Agents](https://en.oceanbase.com/blog/ontology-driven-enterprise-data-agents) | 业务对象到指标的渐进探索，场景草稿经专家与真实问题校验；关系、贡献分析与因果判断分开。页面另标 11-05 更新，仍按首次发表日期计数。 |
+
+Snowflake 三篇分别覆盖**定义治理、任务运行时、动作控制面**，具有不同可复用机制；同日的综合发布汇总不再重复收录。VidUEU-Agent 按 arXiv v1 的 **2026-11-03T07:02:55Z** 收录，本轮没有另增未经许可核验的实现或数据集。
+
+### 已有项目：更新原 ID
+
+| 条目 | 本轮证据 | 主要变化与采用前检查 |
+|---|---|---|
+| Altimate Code | [v0.12.9 · 11-04 UTC](https://github.com/AltimateAI/altimate-code/releases/tag/v0.12.9) | model-free tool CLI/MCP、结构化 dbt 血缘与工作区规则提案/Owner 审查；分析角色在配置授权下仍须拒绝写工具。MIT。 |
+| nao | [v0.3.32 · 11-03](https://github.com/getnao/nao/releases/tag/v0.3.32) → [v0.3.33 · 11-03](https://github.com/getnao/nao/releases/tag/v0.3.33) | 实验性 codemode 替换旧 Python interpreter，语义查询刷新时重编译，增加 GitHub Enterprise Server 接入；保留根 Apache-2.0 与 Enterprise 标记文件的商业条款区分。 |
+| dbt MCP Server | [v2.10.1 · 11-03](https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.1) | job/run 访问描述采用 Owner 目标和共享列举策略，授权宿主需处理 `JOBS_LISTING`、`RUNS_LISTING`；仅移除未使用的全文助手，文档搜索和单页读取仍在。Apache-2.0。 |
+
+Altimate Code 的 `published_at` 为 **2026-11-04T23:16:13Z**，在 Asia/Shanghai 已是 11 月 5 日；索引保留来源 UTC 日期和完整时间。dbt MCP 的 release 标题写 11 月 2 日，实际 `published_at` 为 **2026-11-03T16:45:17Z**，本轮按公开 release 时间归入窗口。
+
+### 文档勘误与未扩大收录的内容
+
+- [DataWorks 英文简介](https://www.alibabacloud.com/help/en/dataworks/user-guide/new-data-agent)在 11 月 5 日重开时已显示 **Oct 29, 2026**，并包含八层架构。更新上轮“英文仍为 10 月 9 日”的观察记录；主条目日期仍是 10 月 29 日，不计为本轮新文档。下方 11 月 2 日记录保留当时核验状态。
+- 衡石《让多轮问数保持口径一致》的转载页标注 11 月 3 日，但官网原文为 **11 月 2 日**，因此没有按转载日期计入窗口。相同规则也适用于新出现的旧产品发布译文。
+- 不把大会已举办、预告页或可访问的演示应用直接视为新发布的完整分享材料；不把项目日常提交自动计为实质版本更新。
+- 预览产品的公开文章标记为 `published`，只表示文章可读。产品的 private/public preview 状态另行说明，不据此宣称生产可用或所有能力均已 GA。
+
 ## 2026-11-02
 
 - **检索窗口：** 2026-10-23—2026-11-02，接续 [2026-10-22 快照](https://github.com/Pyramiding/awesome-data-agents/tree/228d833f557175f3ce06242c413f532df59c52d9)。
