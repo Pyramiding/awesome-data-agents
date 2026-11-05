@@ -33,8 +33,18 @@ export const TAG_LABELS = {
   transcript: '实录', video: '视频', 'video-page': '视频入口', api: 'API', chatbi: 'ChatBI'
 };
 
+// Editorial navigation lenses. A resource can belong to more than one topic.
+export const TOPICS = [
+  { id: 'context', label: '语义与上下文', en: 'CONTEXT', icon: 'layers', description: '指标、本体、元数据与记忆，先让 Agent 理解业务。', tags: ['semantic-layer', 'ontology', 'context', 'context-graph', 'memory', 'context-as-code', 'semantic-model', 'semantic-catalog', 'semantic-view', 'knowledge-graph', 'enterprise-context', 'context-model', 'catalog', 'metrics', 'metric-contract', 'retrieval', 'rag', 'schema', 'knowledge-engineering'] },
+  { id: 'analysis', label: '问数与分析', en: 'ANALYSIS', icon: 'chart', description: '从自然语言问数到 SQL、分析、图表与报告交付。', tags: ['text-to-sql', 'sql', 'analytics', 'chatbi', 'data-science', 'visualization', 'report', 'reporting', 'notebook', 'dashboard', 'insight-discovery', 'root-cause-analysis', 'data-assistant', 'qsql', 'semantic-sql', 'data-apps'] },
+  { id: 'execution', label: '执行与编排', en: 'RUNTIME', icon: 'code', description: '任务规划、工具执行、隔离环境与失败恢复。', tags: ['execution', 'planning', 'task-planning', 'workflow', 'multi-agent', 'sandbox', 'skills', 'data-engineering', 'python', 'harness', 'agent-loop', 'orchestration', 'orchestrator', 'runtime', 'automation', 'recovery', 'dag', 'typed-dag', 'pipeline', 'supervisor', 'tool-routing'] },
+  { id: 'integration', label: 'MCP 与接入', en: 'CONNECT', icon: 'link', description: '工具协议、API、SDK 与数据平台的连接方式。', tags: ['mcp', 'a2a', 'api', 'sdk', 'plugin', 'integration', 'tools', 'tool-design', 'tool-selection', 'data-platform', 'multi-database', 'multi-source', 'acp', 'database', 'warehouse', 'multi-engine'] },
+  { id: 'evaluation', label: '评测与验证', en: 'EVALUATE', icon: 'flask', description: '基准、轨迹、回归与证据，判断结果能否交付。', tags: ['evaluation', 'benchmark', 'verification', 'observability', 'validation', 'regression', 'trace', 'traces', 'evidence', 'data-quality', 'lineage', 'determinism', 'testing', 'reproducibility', 'llm-as-judge', 'llm-judge', 'evaluator', 'verifiable', 'ground-truth', 'failure-analysis', 'calibration', 'citations', 'rubrics', 'rubric', 'semantic-validation'] },
+  { id: 'governance', label: '权限与治理', en: 'GOVERN', icon: 'check', description: '身份、权限、审批与成本，明确谁能做什么。', tags: ['governance', 'identity', 'human-in-the-loop', 'security', 'authentication', 'permissions', 'iam', 'oauth', 'rbac', 'audit', 'cost-control', 'read-only', 'policy', 'runtime-policy', 'guardrails', 'masking', 'workspace-isolation', 'multi-tenant', 'threat-model', 'impersonation', 'agent-management'] }
+];
+
 export const DEFAULT_STATE = Object.freeze({
-  q: '', section: '', lang: '', status: '', tag: '', sort: 'date', saved: false, latest: false, resource: ''
+  q: '', section: '', topic: '', lang: '', status: '', tag: '', sort: 'date', saved: false, latest: false, resource: ''
 });
 const sorts = new Set(['date', 'added', 'name']);
 const collator = new Intl.Collator('zh-Hans-CN', { sensitivity: 'base', numeric: true });
@@ -54,6 +64,7 @@ export function readState(search = '') {
   return {
     q: (p.get('q') || '').slice(0, 256).trim(),
     section: SECTIONS.some(s => s.id === section) ? section : '',
+    topic: TOPICS.some(t => t.id === p.get('topic')) ? p.get('topic') : '',
     lang: ['zh', 'en'].includes(p.get('lang')) ? p.get('lang') : '',
     status: Object.hasOwn(STATUSES, status) ? status : '',
     tag: (p.get('tag') || '').slice(0, 80).trim(),
@@ -67,6 +78,7 @@ export function stateSearch(state) {
   const p = new URLSearchParams();
   if (state.q) p.set('q', state.q);
   if (state.section) p.set('type', state.section);
+  if (state.topic) p.set('topic', state.topic);
   if (state.lang) p.set('lang', state.lang);
   if (state.status) p.set('status', state.status);
   if (state.tag) p.set('tag', state.tag);
@@ -116,6 +128,7 @@ export function prepareResources(resources, markdown = '') {
     const r = { ...resource };
     r.display_summary = r.summary || notes.get(r.url) || r.mechanism || '';
     r.summary_source = r.summary ? 'index' : notes.has(r.url) ? 'readme' : r.mechanism ? 'index' : '';
+    r.topics = TOPICS.filter(topic => topic.tags.some(tag => (r.tags || []).includes(tag))).map(topic => topic.id);
     r.search_text = [r.title, r.organization, r.display_summary, r.mechanism, r.use_case, r.caveat,
       r.license, r.date, SECTIONS.find(s => s.id === r.section)?.label,
       ...(r.tags || []).flatMap(tag => [tag, TAG_LABELS[tag] || '']),
@@ -129,6 +142,7 @@ export function selectResources(resources, state, { saved = new Set(), latest = 
   const words = String(state.q || '').toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const selected = resources.filter(r =>
     (!state.section || r.section === state.section) &&
+    (!state.topic || (r.topics || []).includes(state.topic)) &&
     (!state.lang || r.language === state.lang) &&
     (!state.status || r.status === state.status) &&
     (!state.tag || (r.tags || []).includes(state.tag)) &&
@@ -150,4 +164,43 @@ export function sectionCounts(resources) {
   const counts = Object.fromEntries(SECTIONS.map(s => [s.id, 0]));
   for (const r of resources) if (Object.hasOwn(counts, r.section)) counts[r.section]++;
   return counts;
+}
+
+export function topicCounts(resources) {
+  return Object.fromEntries(TOPICS.map(topic => [topic.id, resources.filter(r => (r.topics || []).includes(topic.id)).length]));
+}
+
+// Return text fragments instead of HTML so queries are always rendered as text.
+export function highlightSegments(text, query) {
+  const value = String(text || '');
+  const words = [...new Set(String(query || '').toLocaleLowerCase().split(/\s+/).filter(Boolean))].slice(0, 12);
+  const lower = value.toLocaleLowerCase();
+  const ranges = [];
+  for (const word of words) {
+    let from = 0, position;
+    while ((position = lower.indexOf(word, from)) !== -1) {
+      ranges.push([position, position + word.length]); from = position + word.length;
+    }
+  }
+  ranges.sort((a, b) => a[0] - b[0]);
+  const merged = [];
+  for (const range of ranges) {
+    const last = merged.at(-1);
+    if (last && range[0] <= last[1]) last[1] = Math.max(last[1], range[1]);
+    else merged.push([...range]);
+  }
+  const segments = []; let cursor = 0;
+  for (const [start, end] of merged) {
+    if (start > cursor) segments.push({ text: value.slice(cursor, start), match: false });
+    segments.push({ text: value.slice(start, end), match: true }); cursor = end;
+  }
+  if (cursor < value.length || !segments.length) segments.push({ text: value.slice(cursor), match: false });
+  return segments;
+}
+
+export function readingContext(resources, matches, id) {
+  const filteredIndex = matches.findIndex(r => r.id === id);
+  const items = filteredIndex >= 0 ? matches : resources;
+  const index = filteredIndex >= 0 ? filteredIndex : items.findIndex(r => r.id === id);
+  return { items, index, filtered: filteredIndex >= 0 };
 }

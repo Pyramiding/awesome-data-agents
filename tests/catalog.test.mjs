@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { SECTIONS, STATUSES, DEFAULT_STATE, safeUrl, readState, stateSearch, dateKey,
-  displayDate, readmeNotes, prepareResources, selectResources, sectionCounts
+import { SECTIONS, TOPICS, STATUSES, DEFAULT_STATE, safeUrl, readState, stateSearch, dateKey,
+  displayDate, readmeNotes, prepareResources, selectResources, sectionCounts,
+  topicCounts, highlightSegments, readingContext
 } from '../assets/catalog.js';
 
 const fixtures = [
@@ -28,9 +29,9 @@ test('date ordering respects month precision and event ranges', () => {
 });
 
 test('shared URLs preserve Unicode, punctuation and combined filters', () => {
-  const original = state({ q: '语义层 & "SQL" #1', section: 'architecture', lang: 'zh', status: 'published', tag: 'context', sort: 'added', latest: true, saved: true, resource: 'a/b' });
+  const original = state({ q: '语义层 & "SQL" #1', section: 'architecture', topic: 'context', lang: 'zh', status: 'published', tag: 'context', sort: 'added', latest: true, saved: true, resource: 'a/b' });
   assert.deepEqual(readState(stateSearch(original)), original);
-  assert.deepEqual(readState('?type=unknown&status=__proto__&sort=bad&lang=other'), state({}));
+  assert.deepEqual(readState('?type=unknown&topic=__proto__&status=__proto__&sort=bad&lang=other'), state({}));
   assert.equal(readState('?q=' + 'x'.repeat(300)).q.length, 256);
 });
 
@@ -70,6 +71,40 @@ test('sort by source date and discovery date are independent', () => {
   assert.deepEqual(prepared.map(r => r.id), ['context', 'sandbox', 'agenda']);
 });
 
+test('engineering topics intersect material types and count overlapping resources once per topic', () => {
+  assert.deepEqual(selectResources(prepared, state({ topic: 'integration', section: 'talk' })).map(r => r.id), ['agenda']);
+  assert.deepEqual(selectResources(prepared, state({ topic: 'execution', lang: 'zh' })).map(r => r.id), ['sandbox']);
+  assert.equal(selectResources(prepared, state({ topic: 'context', tag: 'mcp' })).length, 0);
+  const overlapping = prepareResources([{ ...fixtures[1], tags: ['mcp', 'api', 'sandbox'] }]);
+  const counts = topicCounts(overlapping);
+  assert.equal(counts.integration, 1);
+  assert.equal(counts.execution, 1);
+  assert.equal(counts.context, 0);
+  assert.deepEqual(overlapping[0].topics, ['execution', 'integration']);
+});
+
+test('highlighting preserves source text, handles overlap and treats query markup literally', () => {
+  const text = 'SQL / sql · 语义层 · C++ <img>';
+  const parts = highlightSegments(text, 'SQL sql 语义 C++ <img>');
+  assert.equal(parts.map(p => p.text).join(''), text);
+  assert.deepEqual(parts.filter(p => p.match).map(p => p.text), ['SQL', 'sql', '语义', 'C++', '<img>']);
+  assert.deepEqual(highlightSegments('Data Agent', 'data agent Agent'), [{ text: 'Data', match: true }, { text: ' ', match: false }, { text: 'Agent', match: true }]);
+  assert.deepEqual(highlightSegments('Data Agent', ''), [{ text: 'Data Agent', match: false }]);
+});
+
+test('reader respects filtered order and still opens a shared resource outside current filters', () => {
+  const all = selectResources(prepared, state({}));
+  const matches = selectResources(prepared, state({ topic: 'integration' }));
+  const filtered = readingContext(all, matches, 'sandbox');
+  assert.equal(filtered.filtered, true);
+  assert.equal(filtered.index, 1);
+  assert.deepEqual(filtered.items.map(r => r.id), ['agenda', 'sandbox']);
+  const shared = readingContext(all, matches, 'context');
+  assert.equal(shared.filtered, false);
+  assert.equal(shared.items[shared.index].id, 'context');
+  assert.equal(readingContext(all, [], 'missing').index, -1);
+});
+
 test('real catalog has unique IDs, safe sources, supported facets and exact counts', () => {
   const data = JSON.parse(fs.readFileSync(new URL('../resources.json', import.meta.url), 'utf8'));
   const markdown = fs.readFileSync(new URL('../README.md', import.meta.url), 'utf8');
@@ -81,9 +116,11 @@ test('real catalog has unique IDs, safe sources, supported facets and exact coun
     assert(SECTIONS.some(s => s.id === r.section), 'Unsupported category: ' + r.id);
     assert(Object.hasOwn(STATUSES, r.status), 'Unsupported status: ' + r.id);
     assert(['zh', 'en'].includes(r.language), 'Unsupported language: ' + r.id);
+    assert(r.topics.every(id => TOPICS.some(t => t.id === id)));
   }
   assert.equal(Object.values(sectionCounts(records)).reduce((a, b) => a + b, 0), records.length);
   assert.equal(selectResources(records, state({})).length, data.resources.length);
   assert(records.filter(r => r.display_summary).length > records.length * .8, 'README annotations should cover most entries');
   assert(data.refresh_history[0].added_ids.every(id => ids.has(id)));
+  for (const count of Object.values(topicCounts(records))) assert(count > 0 && count <= records.length);
 });

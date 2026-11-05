@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="436" viewBox="0 0 640 436" fill="none">
+  <defs>
+    <pattern id="mesh" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" stroke="#243955" stroke-opacity=".48" stroke-width=".7"/></pattern>
+    <radialGradient id="aura"><stop stop-color="#286981" stop-opacity=".28"/><stop offset="1" stop-color="#0c1628" stop-opacity="0"/></radialGradient>
+    <linearGradient id="core" x1="234" y1="144" x2="406" y2="276" gradientUnits="userSpaceOnUse"><stop stop-color="#20385b"/><stop offset="1" stop-color="#0d213a"/></linearGradient>
+    <linearGradient id="edge" x1="240" y1="144" x2="403" y2="279" gradientUnits="userSpaceOnUse"><stop stop-color="#7b9aff"/><stop offset="1" stop-color="#53e8d2"/></linearGradient>
+    <linearGradient id="trail" x1="48" y1="200" x2="584" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#8591fd"/><stop offset=".5" stop-color="#70bfff"/><stop offset="1" stop-color="#67e3cf"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="640" height="436" fill="#0c1628"/><rect width="640" height="436" fill="url(#mesh)"/>
+  <ellipse cx="328" cy="207" rx="260" ry="212" fill="url(#aura)"/>
+  <ellipse cx="320" cy="225" rx="238" ry="114" stroke="#42617f" stroke-opacity=".4" stroke-dasharray="3 7"/>
+  <ellipse cx="320" cy="225" rx="268" ry="147" stroke="#42617f" stroke-opacity=".18"/>
+  <path d="M320 89v53M187 206h55m156 0h54M320 278v43" stroke="url(#trail)" stroke-width="1.5"/>
+  <path d="M189 250h29q12 0 12 12v45q0 17 18 17h25m180-74h-29q-12 0-12 12v45q0 17-18 17h-25" stroke="#53748e" stroke-dasharray="3 5"/>
+  <path d="M178 168V65h83m201 103V65h-83" stroke="#456184" stroke-opacity=".7" stroke-dasharray="3 6"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">
+    <rect x="253" y="40" width="134" height="52" rx="9" fill="#111f35" stroke="#456a92"/><circle cx="272" cy="59" r="3" fill="#8bb7fa"/>
+    <text x="283" y="63" fill="#b4c8e1" font-size="11" letter-spacing="1">INTENT</text><text x="271" y="80" fill="#7f99b7" font-size="10">Question → task plan</text>
+    <rect x="44" y="162" width="146" height="107" rx="10" fill="#151e36" stroke="#6861a1"/><rect x="44" y="162" width="3" height="107" rx="1.5" fill="#9b92f0"/>
+    <text x="62" y="185" fill="#b6b1f5" font-size="11" font-weight="600" letter-spacing="1">CONTEXT</text><path d="M62 195h110" stroke="#343752"/>
+    <text x="62" y="216" fill="#c9d2e5" font-size="12">Schema · Semantics</text><text x="62" y="237" fill="#91a0bb" font-size="11">Memory · Retrieval</text><circle cx="181" cy="206" r="3" fill="#b2a6ff"/>
+    <rect x="450" y="162" width="146" height="107" rx="10" fill="#102b33" stroke="#3c807a"/><rect x="593" y="162" width="3" height="107" rx="1.5" fill="#64d4be"/>
+    <text x="467" y="185" fill="#85d9cd" font-size="11" font-weight="600" letter-spacing="1">EXECUTION</text><path d="M467 195h111" stroke="#285153"/>
+    <text x="467" y="216" fill="#c1e3dc" font-size="12">SQL · Python · MCP</text><text x="467" y="237" fill="#8bb7b2" font-size="11">Tools · Sandbox</text><circle cx="459" cy="206" r="3" fill="#77e7d3"/>
+    <rect x="238" y="146" width="164" height="132" rx="18" fill="#62c6fb" fill-opacity=".12" filter="url(#blur)"/>
+    <rect x="240" y="144" width="160" height="132" rx="15" fill="url(#core)" stroke="url(#edge)" stroke-width="1.3"/>
+    <path d="M240 166v-10q0-12 12-12h14m108 0h14q12 0 12 12v10M240 254v10q0 12 12 12h14m108 0h14q12 0 12-12v-10" stroke="#a4d8ef" stroke-width="2"/>
+    <rect x="300" y="161" width="40" height="34" rx="9" fill="#7dbaff" fill-opacity=".13" stroke="#5277a3"/>
+    <path d="m310 174 10-5 10 5-10 5zM310 181l10 5 10-5" stroke="#96d9fb" stroke-width="1.5" stroke-linejoin="round"/>
+    <text x="320" y="220" text-anchor="middle" fill="#e2f1ff" font-size="18" font-weight="600">Agent runtime</text><text x="320" y="240" text-anchor="middle" fill="#a2b6d0" font-size="11">Plan · Act · Observe</text><path d="M277 257h28m7 0h14m7 0h28" stroke="#68adc9" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="212" y="321" width="216" height="58" rx="10" fill="#122536" stroke="#43718b"/><circle cx="232" cy="342" r="3" fill="#7ed6d8"/>
+    <text x="244" y="346" fill="#a5d7e6" font-size="11" font-weight="600" letter-spacing="1">EVIDENCE</text><text x="230" y="365" fill="#97b7cc" font-size="11">Trace → Checks → Human review</text>
+    <circle cx="214" cy="206" r="3" fill="#9ebdfa"/><circle cx="425" cy="206" r="3" fill="#7ae0d1"/><path d="m316 311 4 5 4-5M320 119v10" stroke="#84c3de" stroke-width="1.5"/>
+    <path d="M52 409h192m152 0h192" stroke="#314964"/><text x="320" y="413" text-anchor="middle" fill="#758eac" font-size="10" letter-spacing="1.5">POLICY · IDENTITY · LIMITS</text>
+    <text x="50" y="53" fill="#607792" font-size="9" letter-spacing="1.4">REFERENCE SYSTEM</text><text x="511" y="53" fill="#607792" font-size="9" letter-spacing="1.4">DATA / AGENTS</text>
+  </g>
+</svg>

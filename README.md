@@ -1,6 +1,6 @@
 # Awesome Data Agents · 2026
 
-**[打开网页版 →](https://pyramiding.github.io/awesome-data-agents/)** · 搜索、分类筛选、阅读路线与条目收藏 · [网页维护说明](WEB.md)
+**[打开网页版 →](https://pyramiding.github.io/awesome-data-agents/)** · 双维分类、关键词搜索、连续阅读、收藏与深浅主题 · [网页维护说明](WEB.md)
 
 > 一份把公开资料变成工程决策地图的 Data Agent 索引：从“能写 SQL”走向“可验证地完成数据工作”。
 
