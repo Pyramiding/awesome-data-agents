@@ -781,8 +781,8 @@
     },
     {
       "id": "google-data-agent-kit-plugin",
-      "date": "2026-04-02",
-      "date_basis": "repo_created",
+      "date": "2026-10-30",
+      "date_basis": "released",
       "title": "data-agent-kit-plugin",
       "organization": "GoogleCloudPlatform",
       "url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin",
@@ -794,12 +794,52 @@
         "skills",
         "plugin",
         "apache-2.0"
+      ],
+      "summary": "给现有Coding Agent提供Google Data Cloud的Skills与MCP工具；1.2.0补充数据库接入、BigQuery/Spark运维技能及评测套件。本轮连接安装、云端授权与完整动手案例。",
+      "date_evidence": "原索引使用2026-04-02T14:10:44Z仓库创建时间；本轮改用GitHub 1.2.0 published_at 2026-10-30T02:52:43Z，不将本次发现日期当作发布时间。",
+      "evidence_url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/releases/tag/1.2.0",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/blob/main/LICENSE",
+      "component_type": "skills-and-tool-plugin",
+      "technical_material_url": "https://docs.cloud.google.com/data-agent-kit",
+      "mechanism": "插件把数据工作流程Skills与MCP工具交给宿主Agent；实际云资源访问由调用身份、IAM及具体服务权限约束。",
+      "use_case": "沿用Coding Agent开展多源分析、数据工程与Notebook任务，或比较流程指引与强制授权的作用。",
+      "caveat": "插件与IDE扩展是不同安装入口；免费插件不代表模型、计算和存储免费。Skills中的确认指令不等于云端权限执行；示例资源与生产配置应分别评审。本轮未调用模型或创建云资源。",
+      "reading_path": [
+        {
+          "title": "插件安装与配置",
+          "url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/blob/main/README.md",
+          "focus": "先核对宿主客户端、ADC和插件配置。"
+        },
+        {
+          "title": "远程MCP与授权",
+          "url": "https://docs.cloud.google.com/data-agent-kit/use-mcp-servers",
+          "focus": "检查工具调用角色、产品权限和服务账号模拟。"
+        },
+        {
+          "title": "原始数据到预测Codelab",
+          "url": "https://codelabs.developers.google.com/next26/gen-keynote/raw-data-forecasting",
+          "focus": "跟踪文档抽取、Iceberg/BigQuery和Spark分析链路；示例授权不照搬生产。"
+        },
+        {
+          "title": "Data Apps技术实现指南",
+          "url": "https://googlecloudplatform.github.io/cloud-solutions/agentic-coding-with-data-agent-kit-demo/",
+          "focus": "从项目环境、数据库能力到应用交付组织复现。"
+        }
+      ],
+      "last_verified": "2026-11-05",
+      "release_updates": [
+        {
+          "version": "1.2.0",
+          "published_at": "2026-10-30T02:52:43Z",
+          "url": "https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/releases/tag/1.2.0"
+        }
       ]
     },
     {
       "id": "datahub-analytics-agent",
-      "date": "2026-04-22",
-      "date_basis": "repo_created",
+      "date": "2026-07-29",
+      "date_basis": "released",
       "title": "analytics-agent",
       "organization": "datahub-project",
       "url": "https://github.com/datahub-project/analytics-agent",
@@ -811,6 +851,41 @@
         "langgraph",
         "vega-lite",
         "apache-2.0"
+      ],
+      "summary": "LangGraph ReAct应用连接目录上下文与查询引擎并生成Vega-Lite图表；v0.4.0增加DuckDB引擎、连接池配置和合成零售样例。本轮补齐从本地演示到目录反馈的路线。",
+      "date_evidence": "原索引以2026-04-22T20:43:55Z仓库创建时间为证据；本轮改用更明确的v0.4.0 published_at 2026-07-29T19:44:12Z，并与main README分开核验。",
+      "evidence_url": "https://github.com/datahub-project/analytics-agent/releases/tag/v0.4.0",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/datahub-project/analytics-agent/blob/main/LICENSE",
+      "component_type": "agent-application",
+      "technical_material_url": "https://github.com/datahub-project/analytics-agent/blob/main/README.md",
+      "mechanism": "分析Agent调用目录/引擎工具生成并执行SQL，通过上下文改进建议由用户确认后回写目录；DataHub连接可选。",
+      "use_case": "研究可启动的分析工作区、DuckDB本地演示和人工确认的目录反馈。",
+      "caveat": "DataHub上下文质量分数不是答案正确率；元数据工具开关不替代数仓授权。release包含DDL/DML提交行为，不能把整个应用笼统描述成强制只读，需限制具体引擎身份与工具。",
+      "reading_path": [
+        {
+          "title": "启动与开发说明",
+          "url": "https://github.com/datahub-project/analytics-agent/blob/main/README.md",
+          "focus": "选择CLI快速启动或合成Fiction Retail演示。"
+        },
+        {
+          "title": "v0.4.0能力与变更",
+          "url": "https://github.com/datahub-project/analytics-agent/releases/tag/v0.4.0",
+          "focus": "核对DuckDB、连接池和错误处理能力。"
+        },
+        {
+          "title": "Agent Context Kit教程",
+          "url": "https://datahub.com/blog/building-autonomous-data-agents/",
+          "focus": "比较嵌入SDK与远程MCP；历史代码按当前SDK修正。"
+        }
+      ],
+      "last_verified": "2026-11-05",
+      "release_updates": [
+        {
+          "version": "v0.4.0",
+          "published_at": "2026-07-29T19:44:12Z",
+          "url": "https://github.com/datahub-project/analytics-agent/releases/tag/v0.4.0"
+        }
       ]
     },
     {
@@ -1004,8 +1079,8 @@
     },
     {
       "id": "spring-ai-alibaba-dataagent",
-      "date": "2026-09-20",
-      "date_basis": "updated",
+      "date": "2026-07-29",
+      "date_basis": "released",
       "title": "DataAgent",
       "organization": "spring-ai-alibaba",
       "url": "https://github.com/spring-ai-alibaba/DataAgent",
@@ -1017,6 +1092,46 @@
         "python",
         "mcp",
         "apache-2.0"
+      ],
+      "summary": "Spring AI Alibaba Graph驱动的SQL/Python/报告应用；本轮补齐架构、三类知识配置与任务级Python沙箱阅读路线，明确人工计划反馈、执行重试与API鉴权的实现边界。",
+      "date_evidence": "将原索引未附证据的2026-09-20更新日期改为可核验的GitHub 1.0.0-rc7 published_at 2026-07-29T15:44:52Z；文档按2026-11-05 main快照另行核验，不宣称本日新release。",
+      "evidence_url": "https://github.com/spring-ai-alibaba/DataAgent/releases/tag/1.0.0-rc7",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/spring-ai-alibaba/DataAgent/blob/main/LICENSE",
+      "component_type": "agent-application",
+      "technical_material_url": "https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/ARCHITECTURE.md",
+      "mechanism": "证据/Schema召回、表关系推理、可行性评估和规划，经StateGraph调度SQL、Python及报告节点；可在计划阶段加入人工反馈。",
+      "use_case": "Java团队研究可扩展数据分析应用、知识配置与容器执行的端到端实现。",
+      "caveat": "当前main高级文档明确X-API-Key尚未在后端执行权限校验；管理入口存在不等于认证已生效。1.0.0-rc7名称为RC，不能因GitHub prerelease=false推定为稳定GA；main文档和所固定tag需分别核对。",
+      "reading_path": [
+        {
+          "title": "快速开始",
+          "url": "https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/QUICK_START.md",
+          "focus": "准备示例数据库、模型和数据源，再提交第一个任务。"
+        },
+        {
+          "title": "架构设计",
+          "url": "https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/ARCHITECTURE.md",
+          "focus": "对照运行时节点、HITL和SQL/Python结果回传。"
+        },
+        {
+          "title": "知识配置",
+          "url": "https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/KNOWLEDGE_USAGE.md",
+          "focus": "区分字段映射、业务定义和文档/问答知识。"
+        },
+        {
+          "title": "高级功能",
+          "url": "https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/ADVANCED_FEATURES.md",
+          "focus": "查看API鉴权缺口、MCP与任务容器的依赖/资源边界。"
+        }
+      ],
+      "last_verified": "2026-11-05",
+      "release_updates": [
+        {
+          "version": "1.0.0-rc7",
+          "published_at": "2026-07-29T15:44:52Z",
+          "url": "https://github.com/spring-ai-alibaba/DataAgent/releases/tag/1.0.0-rc7"
+        }
       ]
     },
     {
@@ -1107,8 +1222,8 @@
       "evidence_url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1",
       "license": "Multi-license; check component paths",
       "license_url": "https://github.com/Canner/WrenAI/blob/main/LICENSE",
-      "notes": "仓库同时发布 wren、semantic-core、Python bindings 等组件；不能把单个 tag 当作全部组件统一版本。根 LICENSE 明确说明按路径适用不同许可证；archived=false。",
-      "last_verified": "2026-11-02",
+      "notes": "2026-11-05重读LICENSE：core/sdk/skills/examples为Apache-2.0，docs为CC BY4.0；AGPL正文预置不表示现有路径均为AGPL。发布包以各自manifest为准；archived=false。保留原release历史，文档快照可能跨组件版本。",
+      "last_verified": "2026-11-05",
       "release_updates": [
         {
           "version": "wren-v0.17.0",
@@ -1119,6 +1234,33 @@
           "version": "wren-v0.17.1",
           "published_at": "2026-10-30T02:01:05Z",
           "url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1"
+        }
+      ],
+      "technical_material_url": "https://github.com/Canner/WrenAI/blob/main/docs/core/reference/architecture.md",
+      "component_type": "semantic-layer-and-tooling",
+      "mechanism": "MDL项目定义业务模型和关联；CLI/SDK通过规划、语义展开与连接器执行，将知识文件和可重建记忆索引分开。",
+      "use_case": "为现有Agent提供可版本化业务语义、SQL执行与查询证据。",
+      "caveat": "main架构文档把golden NL-SQL eval标为开发中；dry-plan只展示规划，dry-run与业务语义验收也不同。行列安全、团队访问和商业交付能力不能由CLI存在直接推断。",
+      "reading_path": [
+        {
+          "title": "官方快速开始",
+          "url": "https://docs.getwren.ai/oss/get_started/quickstart",
+          "focus": "用固定版本和样例先完成一次查询。"
+        },
+        {
+          "title": "架构原稿",
+          "url": "https://github.com/Canner/WrenAI/blob/main/docs/core/reference/architecture.md",
+          "focus": "区分技能、项目上下文、规划引擎与执行连接器。"
+        },
+        {
+          "title": "MDL参考",
+          "url": "https://github.com/Canner/WrenAI/blob/main/docs/core/reference/mdl.md",
+          "focus": "追踪模型、关系、指标和知识目录的表示。"
+        },
+        {
+          "title": "许可范围",
+          "url": "https://github.com/Canner/WrenAI/blob/main/LICENSE",
+          "focus": "先按路径确认代码、文档和发布组件的许可。"
         }
       ]
     },
@@ -1136,6 +1278,46 @@
         "data-assistant",
         "platform",
         "mit"
+      ],
+      "summary": "DB-GPT把数据连接、ReAct规划、SQL/代码工具、Skills、上下文压缩与报告组织为应用平台；v0.8.2包含多文件分析、并行子任务和Agentic知识检索，本轮补齐规划与工具层的文档路线。",
+      "date_evidence": "GitHub v0.8.2 published_at为2026-08-26T11:10:31Z；上下文管理文档的对应提交9470ea03ff4dcf12d586dc08e3351eed1890d60b于2026-05-18增加分层压缩与任务计划跟踪。本轮为历史资料补充。",
+      "evidence_url": "https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2",
+      "license": "MIT",
+      "license_url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/LICENSE",
+      "component_type": "agent-platform",
+      "technical_material_url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/data_analysis_planning_agent.md",
+      "mechanism": "ReAct任务计划与工具循环结合；长任务按阈值压缩观察和历史，并把完整工具结果保留为快照路径。",
+      "use_case": "自托管分析工作区、SQL/代码混合任务，或研究长会话上下文管理。",
+      "caveat": "规划说明含伪代码和未来规划，不等于每个列举工具都有开箱即用实现；sql_query的只读约束也不代表所有Shell、Python或其他工具均只读。官方文档站本轮超时，路线使用可读的官方仓库原稿。",
+      "reading_path": [
+        {
+          "title": "项目与启动",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/README.md",
+          "focus": "确认安装方式、模型提供商和运行入口。"
+        },
+        {
+          "title": "分析规划设计",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/data_analysis_planning_agent.md",
+          "focus": "区分计划状态、工具接口与设计示例。"
+        },
+        {
+          "title": "上下文管理",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/context-management.md",
+          "focus": "查看分层压缩、token预算和工具结果快照。"
+        },
+        {
+          "title": "SQL工具契约",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/resource/tools/sql-query.md",
+          "focus": "核对只读范围与前50行显示截断。"
+        }
+      ],
+      "last_verified": "2026-11-05",
+      "release_updates": [
+        {
+          "version": "v0.8.2",
+          "published_at": "2026-08-26T11:10:31Z",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2"
+        }
       ]
     },
     {
@@ -3190,9 +3372,408 @@
       "caveat": "物理可关联不等于业务关系，变化贡献也不证明因果。文中示例解释方法，不是可复现实验成绩；主动探索不等于已授权写数据或触发外部流程。",
       "added_on": "2026-11-05",
       "last_verified": "2026-11-05"
+    },
+    {
+      "id": "datahub-agent-context-kit-walkthrough",
+      "date": "2026-04-07",
+      "date_basis": "published",
+      "title": "Building Autonomous Data Agents with DataHub Agent Context Kit",
+      "organization": "DataHub / Nick Adams",
+      "url": "https://datahub.com/blog/building-autonomous-data-agents/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context-graph",
+        "mcp",
+        "sdk",
+        "snowflake",
+        "langchain"
+      ],
+      "summary": "通过目录检索、字段语义、样例 SQL 与血缘工具，为查询规划补齐上下文；比较直接嵌入 SDK 与远程 MCP 两种集成，并以 Snowflake 和 LangChain 展开教程。上下文发现与数仓查询各有工具边界。",
+      "date_evidence": "作者原页标注 04.07.26，即2026-04-07；正文含 Agent Context Kit 工具表、Snowflake 接入及 LangChain 示例。",
+      "evidence_url": "https://datahub.com/blog/building-autonomous-data-agents/",
+      "caveat": "4月教程反映当时的产品与 SDK 接口，代码中的历史命名/拼写需按当前 SDK 文档核对，未在本仓执行。文中 Snowsight 当时不支持 MCP 的描述不能当作11月状态；元数据 mutation 与数据库写权限须分别限制。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "volcengine-private-dataagent-v321",
+      "date": "2026-07-01",
+      "date_basis": "updated",
+      "title": "V3.21.0 — 数据智能体 DataAgent（私有化）",
+      "organization": "火山引擎",
+      "url": "https://docs.volcengine.com/docs/data-agent-private/v3-21-0?lang=zh",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "retrieval-scope",
+        "tools",
+        "skills",
+        "governance",
+        "private-deployment"
+      ],
+      "summary": "3.21 系列文档（含3.21.1修订）公开知识库/全域资产检索配置、会话级范围切换、SQL/Python/联网工具独立开关与指定知识库的 OpenAPI。适合研究数据发现范围、可用工具和接口凭证如何分层配置。",
+      "date_evidence": "原页列出基础版本发布时间2026-04-15，并在文末标注最近更新时间2026.07.01 15:06:25；本条使用文档更新日期，不把3.21.1各项修订都推定为4月15日发布。",
+      "evidence_url": "https://docs.volcengine.com/docs/data-agent-private/v3-21-0?lang=zh",
+      "caveat": "引擎嵌入版与标准版能力不同；检索优先范围不等于数据库硬授权，资产配置还注明T+1更新。文档日期不能作为所有地域、购买版本均已具备功能的证明。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "paras-seven-ai-analysis-checks-slides",
+      "date": "2026-07-10",
+      "date_basis": "published",
+      "title": "Catch 7 AI Analysis Mistakes Before They Drive Decisions",
+      "organization": "Paras Doshi / Maven Lightning Lesson",
+      "url": "https://www.insightextractor.com/p/maven-session-slide-deck-download",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "slides",
+        "verification",
+        "metric-contract",
+        "grain",
+        "causality"
+      ],
+      "summary": "18页讲义以虚构分析案例检查决策问题、指标口径、粒度、时间覆盖、来源对账、因果表述与交付状态，要求保存查询和数值证据；适合转成业务分析 Agent 的验收问题清单。",
+      "date_evidence": "作者发布页标注 Jul 10, 2026；公开PDF共18页，题名及作者与页面一致。",
+      "evidence_url": "https://www.insightextractor.com/p/maven-session-slide-deck-download",
+      "material_type": [
+        "slides"
+      ],
+      "materials_url": "https://www.insightextractor.com/api/v1/file/162a46cb-90f0-42da-9c25-6bde530522be.pdf",
+      "caveat": "已核验可读讲义；页面提到的录像未单独核验。案例数字明确为虚构教学数据，阈值与检查严度需按任务调整，不是统一行业标准。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "paras-three-analytics-harnesses-slides",
+      "date": "2026-07-16",
+      "date_basis": "published",
+      "title": "Build 3 AI Harnesses for Trustworthy Analytics",
+      "organization": "Paras Doshi / Maven Lightning Lesson",
+      "url": "https://www.insightextractor.com/p/session-slide-and-recording-build",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "slides",
+        "harness",
+        "metric-contract",
+        "validation",
+        "evidence",
+        "memory"
+      ],
+      "summary": "15页讲义把上下文、校验和证据复用拆成三个 harness，以版本化指标文件、独立检查职责和含失效条件的证据记录串联；展示可审阅的文件布局，适合设计分析 Agent 的交付门禁。",
+      "date_evidence": "作者发布页标注 Jul 16, 2026；公开PDF为15页，首页标注 MAVEN LIVE JUL16，已读取全文并查看文件布局页。",
+      "evidence_url": "https://www.insightextractor.com/p/session-slide-and-recording-build",
+      "material_type": [
+        "slides"
+      ],
+      "materials_url": "https://www.insightextractor.com/api/v1/file/c04ec353-b782-4432-b631-1a0d42353cbb.pdf",
+      "caveat": "示例 Stop hook 只输出提醒，不是强制拦截；reopen_if 也需实际实现检查，写入YAML不会自动失效。另一个模型不天然构成独立真值，需确定性校验、查询对账与人工判断。本轮未独立验证录像。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "aws-multimodal-data-agent-orchestration",
+      "date": "2026-08-04",
+      "date_basis": "published",
+      "title": "Multi-Agent Multimodal Data Analysis on AWS – Part 2: Multi-Agent Orchestration and Predictive Analytics",
+      "organization": "AWS for Industries",
+      "url": "https://aws.amazon.com/blogs/industries/multi-agent-multimodal-data-analysis-on-aws-part-2-multi-agent-orchestration-and-predictive-analytics/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "multimodal",
+        "supervisor",
+        "a2a",
+        "mcp",
+        "governance",
+        "data-science"
+      ],
+      "summary": "以 Strands 与 AgentCore 部署专门的数据/知识 Agent，MCP 连接不同模态的数据服务，Supervisor 通过 A2A 调用并综合结果；提供身份校验、共享客户端和超时的编排细节。前篇负责目录、订阅与数据准备。",
+      "date_evidence": "AWS Part 2 与前篇均标注04 AUG 2026；Part2正文逐项说明专门Agent、Supervisor、Cognito与A2A部署。",
+      "evidence_url": "https://aws.amazon.com/blogs/industries/multi-agent-multimodal-data-analysis-on-aws-part-2-multi-agent-orchestration-and-predictive-analytics/",
+      "related_materials": [
+        {
+          "title": "Part 1: Data Governance and Visualization",
+          "url": "https://aws.amazon.com/blogs/industries/multi-agent-multimodal-data-analysis-on-aws-part-1-data-governance-and-visualization/",
+          "date": "2026-08-04",
+          "note": "先读目录、订阅授权与Synthea合成数据准备，再读多Agent编排。"
+        }
+      ],
+      "caveat": "使用Synthea相关合成数据演示研究架构，不是临床有效性验证。本仓未部署云资源、运行模型或复现预测成绩，服务配置、数据授权与成本需另行评估。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "volcengine-analysis-agent-build-video",
+      "date": "2026-08-20",
+      "date_basis": "published",
+      "title": "分析洞察快速入门-04 搭建流程概览",
+      "organization": "火山引擎数智平台 VeDI",
+      "url": "https://developer.volcengine.com/videos/7566240392669528073",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "video-page",
+        "tutorial",
+        "configuration",
+        "analytics"
+      ],
+      "summary": "官方培训页面按管理员、分析师和技术人员的分工介绍企业分析智能体从前置准备到搭建配置的总体流程，适合作为产品文档前的入门导航。",
+      "date_evidence": "公开页面元数据 publish_time 为1787192306，即2026-08-20T02:18:26Z；搜索页显示2026-08-20，标题与发布方均匹配。",
+      "evidence_url": "https://developer.volcengine.com/videos/7566240392669528073",
+      "material_type": [
+        "video-page"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-05",
+        "status": "page-and-description-verified",
+        "note": "已核验官方视频页面、发布日期与简介；未独立测试完整播放或获取逐字稿。"
+      },
+      "caveat": "作为官方视频入口收录，不把页面可访问写成完整回放已逐段验证；具体参数与执行能力需结合当前产品版本文档。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "datahub-secupi-agent-runtime-governance",
+      "date": "2026-09-10",
+      "date_basis": "published",
+      "title": "Enhancing Agent Governance with DataHub and SecuPi: From Trusted Context to Runtime Control",
+      "organization": "DataHub / Stephen Goldbaum",
+      "url": "https://datahub.com/blog/agent-governance-with-datahub-and-secupi/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "identity",
+        "context-graph",
+        "runtime-policy",
+        "masking",
+        "audit"
+      ],
+      "summary": "将 DataHub 的语义、血缘和质量上下文，与 SecuPi 的用户身份保留、字段级屏蔽和查询时策略执行分开，串起谁提问、用何上下文、访问哪些数据与哪些字段被屏蔽的审计链。",
+      "date_evidence": "作者原页标注09.10.26，即2026-09-10；正文明确上下文层与运行时授权的分工。",
+      "evidence_url": "https://datahub.com/blog/agent-governance-with-datahub-and-secupi/",
+      "caveat": "属于厂商集成方案，Context Intelligence/Context Hub与SecuPi有产品配置依赖；不把文中客户准确率作为本仓复现结果，也不将预告的9月22日webinar自动标为已核验录像。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "aws-atscale-agentcore-semantic-layer",
+      "date": "2026-10-20",
+      "date_basis": "published",
+      "title": "Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore",
+      "organization": "AWS / AtScale",
+      "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "mcp",
+        "identity",
+        "agentcore",
+        "sml",
+        "deployment"
+      ],
+      "summary": "将 Git 中的 SML 维度、层级与指标通过 MCP 提供给 Strands Agent；拆解入口JWT、出口凭证、AtScale角色及查询时过滤，计算下推Redshift。可与同系列图谱/虚拟化方案比较数据放置与授权路径。",
+      "date_evidence": "AWS原文署名行标注20 OCT 2026，示例以AtScale C2026.7为版本依据；正文含语义建模、MCP注册、身份路径与EKS部署。",
+      "evidence_url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/",
+      "related_materials": [
+        {
+          "title": "Stardog semantic layer + AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-stardog-and-amazon-bedrock-agentcore/",
+          "date": "2026-07-10",
+          "note": "同一C360问题，图谱与跨源联邦路线；MCP路径有产品API可用性前提。"
+        },
+        {
+          "title": "Denodo semantic layer + AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/",
+          "note": "同系列数据虚拟化路线，作为对照材料，不另增加条目。"
+        }
+      ],
+      "caveat": "SML规范开放不等于AtScale产品免费或开源；示例将分析数据预先汇集到Redshift，并不是每次查询直接跨多个引擎。未部署、压测或复现厂商效果。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "google-dak-remote-mcp-governance-guide",
+      "date": "2026-10-26",
+      "date_basis": "updated",
+      "title": "Use MCP servers — Google Cloud Data Agent Kit",
+      "organization": "Google Cloud",
+      "url": "https://docs.cloud.google.com/data-agent-kit/use-mcp-servers",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "mcp",
+        "iam",
+        "impersonation",
+        "model-armor",
+        "tools"
+      ],
+      "summary": "说明远程MCP连接、MCP Tool User与产品数据权限、服务账号模拟、Model Armor检查/阻断模式及按工具属性编写IAM策略。适合把Agent的过程指引与云端实际授权分开设计。",
+      "date_evidence": "Google官方文档末尾标注 Last updated 2026-10-26 UTC；本条是该文档快照，不把日期当作全部MCP功能的首次发布日。",
+      "evidence_url": "https://docs.cloud.google.com/data-agent-kit/use-mcp-servers",
+      "caveat": "MCP调用权限不替代具体服务的数据权限；IDE扩展与Coding Agent插件入口不同，配置方式不能照搬。Model Armor支持地域和跨项目检查行为需逐项核对。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "sqlbot-chatbi-mcp-application",
+      "date": "2026-10-29",
+      "date_basis": "released",
+      "title": "SQLBot",
+      "organization": "DataEase / FIT2CLOUD",
+      "url": "https://github.com/dataease/SQLBot",
+      "section": "open-source",
+      "language": "zh",
+      "status": "active-project",
+      "tags": [
+        "chatbi",
+        "rag",
+        "mcp",
+        "embedding",
+        "workspace-isolation",
+        "modified-gpl"
+      ],
+      "summary": "面向嵌入式ChatBI的应用与MCP提供方，以术语、SQL示例、RAG及工作空间组织问数和图表；v1.10.3增加动态向量检索策略并修正数据源、审计和会话鉴权问题。",
+      "date_evidence": "GitHub Release v1.10.3 published_at为2026-10-29T04:24:34Z；不是本日新发布。2026-11-05核对archived=false及LICENSE正文。",
+      "evidence_url": "https://github.com/dataease/SQLBot/releases/tag/v1.10.3",
+      "license": "FIT2CLOUD modified GPLv3 (additional conditions)",
+      "license_url": "https://github.com/dataease/SQLBot/blob/main/LICENSE",
+      "license_note": "LICENSE说明以GPLv3为基础并附加LOGO、版权信息及贡献条款；GitHub API为NOASSERTION，因此不标为无附加条件的标准GPLv3，也不据公开源码自动认定OSI开源。",
+      "component_type": "chatbi-application-and-mcp-provider",
+      "technical_material_url": "https://github.com/dataease/SQLBot/blob/main/README.md",
+      "mechanism": "RAG与可维护术语/SQL示例提供问数上下文，应用执行查询与可视化，并通过嵌入和MCP向外提供能力。",
+      "use_case": "研究中文ChatBI、企业嵌入和工具接入，或比较应用层隔离与数据库权限的关系。",
+      "caveat": "是ChatBI应用/工具提供方，不能据此假定具备完整自主分析验证闭环。README部署示例包含privileged选项，需与生产权限配置分开评审；许可边界以实际分发组件为准。",
+      "release_updates": [
+        {
+          "version": "v1.10.3",
+          "published_at": "2026-10-29T04:24:34Z",
+          "url": "https://github.com/dataease/SQLBot/releases/tag/v1.10.3"
+        }
+      ],
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "databricks-genie-agent-api-guide",
+      "date": "2026-10-30",
+      "date_basis": "updated",
+      "title": "Use the Genie Agents API",
+      "organization": "Databricks",
+      "url": "https://docs.databricks.com/aws/en/genie-agents/conversation-api",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "api",
+        "oauth",
+        "governance",
+        "agent-management",
+        "ci-cd"
+      ],
+      "summary": "区分有状态Chat、Agent mode与管理API，说明OAuth主体、Agent ACL、Unity Catalog权限，以及如何把示例SQL、指令和基准题随Agent配置跨工作区维护。适合自建应用接入与配置交付。",
+      "date_evidence": "官方文档顶端标注 Last updated on Oct 30, 2026；旧 /genie/conversation-api 已重定向到 /genie-agents/conversation-api，本条使用当前规范URL。",
+      "evidence_url": "https://docs.databricks.com/aws/en/genie-agents/conversation-api",
+      "caveat": "查询接口与创建/更新Agent的管理接口权限不同；U2M与服务主体M2M应按调用主体授权。接口接通不证明业务答案准确，端点、报告流与功能阶段仍以对应REST文档为准。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
+    },
+    {
+      "id": "hengshi-multiturn-context-preferences-learning",
+      "date": "2026-11-02",
+      "date_basis": "published",
+      "title": "让多轮问数保持口径一致：Data Agent 的上下文、偏好与学习开关",
+      "organization": "衡石科技",
+      "url": "https://www.hengshi.com/blog/hengshi-data-agent-context-preferences-learning.html",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "multi-turn",
+        "context",
+        "memory",
+        "preferences",
+        "regression"
+      ],
+      "summary": "分开维护当前分析条件、个人展示偏好、正式指标知识和后台学习；用同会话/新会话/不同角色对照检查条件延续，再以原问题和相邻问法复测修正。提供人工回归记录示例。",
+      "date_evidence": "官网原文标注2026/11/2；此前11月3日转载日期不是首次发表日。本轮按专题补录11月2日原文，不把它称为11月5日新发布。",
+      "evidence_url": "https://www.hengshi.com/blog/hengshi-data-agent-context-preferences-learning.html",
+      "caveat": "SELF_EVOLUTION_ENABLED是独立管理员配置项，默认关闭不等于本轮对话不能承接上下文；实际值依部署版本核对。JSON是本地人工验收示例，不是产品会话API；不能承诺越用越准。",
+      "added_on": "2026-11-05",
+      "last_verified": "2026-11-05"
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-05-project-docs-talks",
+      "kind": "thematic-enrichment",
+      "as_of": "2026-11-05",
+      "window_start": "2026-01-01",
+      "previous_as_of": "2026-11-05",
+      "base_commit": "e6686da961fbf417c15d342ee3d29f97c6abab61",
+      "previous_total": 156,
+      "added_total": 12,
+      "updated_total": 5,
+      "added_ids": [
+        "datahub-agent-context-kit-walkthrough",
+        "volcengine-private-dataagent-v321",
+        "paras-seven-ai-analysis-checks-slides",
+        "paras-three-analytics-harnesses-slides",
+        "aws-multimodal-data-agent-orchestration",
+        "volcengine-analysis-agent-build-video",
+        "datahub-secupi-agent-runtime-governance",
+        "aws-atscale-agentcore-semantic-layer",
+        "google-dak-remote-mcp-governance-guide",
+        "sqlbot-chatbi-mcp-application",
+        "databricks-genie-agent-api-guide",
+        "hengshi-multiturn-context-preferences-learning"
+      ],
+      "updated_ids": [
+        "spring-ai-alibaba-dataagent",
+        "db-gpt",
+        "wrenai",
+        "datahub-analytics-agent",
+        "google-data-agent-kit-plugin"
+      ],
+      "agenda_reviewed_ids": [],
+      "review_note": "专题补录2026年技术文档与公开分享，不声称全部为上次上传后的新发布；五个既有项目补充阅读路线与证据，支持链接不另计项目数。",
+      "metadata_changes": [
+        {
+          "id": "spring-ai-alibaba-dataagent",
+          "field": "date_basis/date",
+          "before": "updated/2026-09-20",
+          "after": "released/2026-07-29",
+          "reason": "原日期未附证据；改用可核验RC发布记录。"
+        },
+        {
+          "id": "datahub-analytics-agent",
+          "field": "date_basis/date",
+          "before": "repo_created/2026-04-22",
+          "after": "released/2026-07-29",
+          "reason": "已有明确release，替换较弱的创建时间证据。"
+        },
+        {
+          "id": "google-data-agent-kit-plugin",
+          "field": "date_basis/date",
+          "before": "repo_created/2026-04-02",
+          "after": "released/2026-10-30",
+          "reason": "已有明确release，替换较弱的创建时间证据。"
+        }
+      ]
+    },
     {
       "as_of": "2026-11-05",
       "window_start": "2026-11-03",

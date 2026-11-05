@@ -4,6 +4,41 @@
 
 这里记录每轮真正新增的资料、已有条目的实质更新，以及仍未核验的公开材料。日期来自原始发布页或版本记录，不把抓取时间当作发表时间；这是有边界的编辑检索，不是全网穷尽抓取。
 
+## 2026-11-05：项目技术文档与公开分享扩充
+
+- **范围：** 专题补录 2026 年资料，接续 [上一版 156 条快照](https://github.com/Pyramiding/awesome-data-agents/tree/e6686da961fbf417c15d342ee3d29f97c6abab61)。这轮不是“上次上传后的新发布”检索，资料截止日仍为 11 月 5 日。
+- **新增：** 12 条，包含 5 篇架构实践、3 份持续文档、3 条分享入口与 1 个公开实现，累计 **156 → 168 条**。
+- **补齐项目路线：** Spring AI Alibaba DataAgent、DB-GPT、WrenAI、DataHub Analytics Agent、Google Data Agent Kit，共 5 个已有条目；文档与支持链接不再重复计数为新项目。
+- **阅读体验：** 新增 [公开分享导航](TALKS.md)，在 [项目资料路线](PROJECT_GUIDE.md)加入 4 条动手路线、6 个重点项目入口及后续扩展优先级；README 给出主题判断和本轮明细。
+- **验证：** 索引、计数、去重、文内导航和改动范围检查通过；59 个新增/关联链接中，56 个完整请求正常、1 个大 PDF 响应头正常，2 个旧分享入口直接访问受限但经原站页面读取确认，访问说明已写入分享导航。
+
+### 本轮资料结构
+
+| 类别 | 补入内容 | 证据边界 |
+|---|---|---|
+| 中文工程实践 | 衡石多轮问数，火山引擎 3.21 系列文档与培训页，SQLBot | 以官网原文、文档日期和公开 release 为准；视频页面与完整播放分开记录，SQLBot 标明附加许可条件 |
+| 国际架构与文档 | DataHub Context Kit / SecuPi，AWS 多模态编排 / AtScale，Google MCP，Databricks API | 分清上下文与授权、查询与管理接口、联邦查询与预先汇集数据；教程未在本仓部署或压测 |
+| 可读公开分享 | Paras Doshi 的 7 项分析检查与 3 个分析 Harness | 分别核验 18 页、15 页 PDF；页面提到的录像未单独核验，不将教学数字当项目实测 |
+
+一手链接与原始日期列在 [README 本轮表格](README.md#本轮扩充技术文档项目路线与公开分享)及机器索引中。AWS 系列前篇和对照方案作为支持材料，不因链接多就增加独立条目数。
+
+### 已有项目的文档与日期证据
+
+| 原条目 | 本轮补充 | 日期 / 版本处理 |
+|---|---|---|
+| Spring AI Alibaba DataAgent | 架构、快速开始、三类知识与高级功能；指出 API Key 后端校验缺口 | 原索引 09-20 更新日期未附证据，改用 [1.0.0-rc7 · 07-29](https://github.com/spring-ai-alibaba/DataAgent/releases/tag/1.0.0-rc7)；RC 名称与 main 文档分开说明 |
+| DB-GPT | 分析规划、分层上下文压缩、工具快照与只读 SQL 契约 | 保留 [v0.8.2 · 08-26](https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2)；文档站超时，改链可读的官方仓库原稿 |
+| WrenAI | 架构、MDL、知识源与记忆索引；评测开发状态与许可路径 | 保留既有 release 历史；main 文档和不同发行组件不能视为同一版本 |
+| DataHub Analytics Agent | 启动/合成演示、上下文接入与写回边界 | 用 [v0.4.0 · 07-29](https://github.com/datahub-project/analytics-agent/releases/tag/v0.4.0)替代较弱的仓库创建时间证据 |
+| Google Data Agent Kit | 安装、MCP 授权、Codelab 与数据应用技术指南 | 用 [1.2.0 · 10-30](https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/releases/tag/1.2.0)替代仓库创建时间；不是本日新版本 |
+
+### 没有扩大结论
+
+- 本轮核验文档与材料，没有执行教程中的云资源创建、模型调用、项目安装或基准评测；项目路线中的产物是建议的验收项。
+- 讲义中的提醒 hook 不等于强制门禁，写下失效条件不等于系统已实现自动失效；Agent 自述“已检查”也不等于留下了独立执行证据。
+- 无可核验 2026 实质更新的候选项目未强行归为今年新项目；普通提交、近期抓取和新转载不等于新发布。
+- 此前 `agenda` 记录继续保留原状态，本轮新增分享导航不表示所有大会录像/PPT 均已公开。
+
 ## 2026-11-05
 
 - **检索窗口：** 2026-11-03—2026-11-05，接续 11 月 2 日资料截止日；在保留新导航、贡献入口与许可说明的 [当前版本](https://github.com/Pyramiding/awesome-data-agents/tree/0334da5b7a7df8369bd4b2c820f7792addc7e02c)上更新。

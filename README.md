@@ -4,7 +4,7 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**156 条资料** · `57` 架构与实践 · `31` 公开实现 · `20` 分享与议程 · `17` 研究 · `17` 持续文档 · `14` 评测
+**168 条资料** · `62` 架构与实践 · `32` 公开实现 · `23` 分享与议程 · `17` 研究 · `20` 持续文档 · `14` 评测
 
 **资料截止：2026-11-05（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
 
@@ -16,6 +16,7 @@ A source-checked guide to AI data agents: architectures, implementations, semant
 | 选项目、组件或接入方案 / Choose an implementation | [项目资料路线](PROJECT_GUIDE.md) → [实现选型快表](#选型快表) |
 | 设计自己的 Data Agent / Design a system | [参考架构](#一眼看懂-data-agent) → [工程模式与反模式](#工程模式与反模式) |
 | 评估质量与上线条件 / Evaluate readiness | [Benchmark 选择指南](#benchmark-选择指南) → [设计评审模板](DESIGN_REVIEW.md) |
+| 看公开分享或讲义 / Explore talks and slides | [公开分享导航](TALKS.md) → 按问题选择实录、幻灯片与官方培训入口 |
 | 查新增资料或参与维护 / Follow changes or contribute | [更新记录](UPDATES.md) → [推荐资料 / 提交勘误](https://github.com/Pyramiding/awesome-data-agents/issues/new/choose) |
 
 [收录规则](METHODOLOGY.md) · [贡献指南](CONTRIBUTING.md) · [机器可读索引](resources.json)
@@ -23,7 +24,7 @@ A source-checked guide to AI data agents: architectures, implementations, semant
 <details>
 <summary><strong>完整导航 / Full contents</strong></summary>
 
-[先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [国际导航](#国际资料导航) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开实现](#开源实现与公开源码) · [项目路线](PROJECT_GUIDE.md) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
+[先看结论](#先看结论) · [参考架构](#一眼看懂-data-agent) · [交付成熟度](#交付成熟度从会回答到可托付) · [反模式](#工程模式与反模式) · [10 个起点](#2026-十个起点) · [国际导航](#国际资料导航) · [工程实践](#工程实践与公开分享) · [中文分享](#中文与国内实践) · [公开分享导航](TALKS.md) · [公开实现](#开源实现与公开源码) · [项目路线](PROJECT_GUIDE.md) · [论文评测](#论文与评测) · [设计评审模板](DESIGN_REVIEW.md) · [机器索引](resources.json)
 
 </details>
 
@@ -49,15 +50,37 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 
 </details>
 
-## 本轮更新：2026-11-03—11-05
+## 本轮扩充：技术文档、项目路线与公开分享
 
-本轮新增 **6 条**原始资料，更新 **3 个**已有项目，另校正 **1 处**中英文文档状态；新版本沿用原记录，不重复增加项目数量。完整变更、上一轮更新与日期证据见 [更新记录](UPDATES.md) 和 [机器索引](resources.json)。
+本轮补录 **12 条** 2026 年资料，并为 **5 个**已有项目补齐官方阅读路线。它是按主题补强，不将这些历史材料写成上次上传后的新发布；原始日期、版本与核验时间分别记录。
 
-本轮值得带着问题读的三个变化（本仓编辑归纳）：
+从 [四条动手阅读路线](PROJECT_GUIDE.md#四条动手阅读路线)进入，或按 [公开分享导航](TALKS.md)选择实录、PDF 和培训页。完整明细见 [更新记录](UPDATES.md) 与 [机器索引](resources.json)。
 
-- **业务含义、计算与关系探索要分别验证。** [Snowflake Business Ontology](https://www.snowflake.com/en/blog/engineering/business-ontology-context/) 把审批后的定义与指标执行分开；[OceanBase DataPilot](https://en.oceanbase.com/blog/ontology-driven-enterprise-data-agents) 展示沿业务关系逐步分析，也明确关系图不能自动证明因果。
-- **长任务的交付标准要落到身份与产物。** [CoCo](https://www.snowflake.com/en/blog/snowflake-coco-cloud-agents-automations/) 用创建者身份运行自动化并保留审计；[衡石](https://www.hengshi.com/blog/hengshi-data-agent-tasks-analytics-assets.html) 分开检查查询、页面修改和资产保存，恢复前先确认已有资源。
-- **版本升级需要重新检查执行与授权接口。** [nao v0.3.32](https://github.com/getnao/nao/releases/tag/v0.3.32) 移除旧 Python interpreter、加入实验性 codemode；[dbt MCP v2.10.1](https://github.com/dbt-labs/dbt-mcp/releases/tag/v2.10.1) 调整 job/run 的授权描述与列举策略。旧教程不能直接代表当前版本。
+这轮更值得带着问题读的三个工程判断（本仓编辑归纳）：
+
+- **看到配置入口，还要找到实际执行约束的位置。** [Spring AI Alibaba 高级文档](https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/ADVANCED_FEATURES.md)明确 API Key 后端校验尚未完成；[Google MCP 文档](https://docs.cloud.google.com/data-agent-kit/use-mcp-servers)则把工具调用与数据服务授权分开说明。
+- **有流程说明，还要检查它是否真的阻止错误交付。** [三个分析 Harness 讲义](https://www.insightextractor.com/p/session-slide-and-recording-build)给出可审阅的文件布局，但示例 hook 只是提醒；指标变化后的证据失效也需要实际实现。
+- **同样叫语义层，数据放置与执行路径可能不同。** [AWS / AtScale 教程](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/)将分析数据先汇入 Redshift；对照系列中的图谱和虚拟化方案，选型时应把上下文、计算位置和身份路径一起比较。
+
+<details>
+<summary><strong>展开本轮补录的 12 条资料</strong></summary>
+
+| 原始日期 | 一手资料 | 类型 / 阅读价值 |
+|---|---|---|
+| 04-07 | [DataHub Agent Context Kit：从目录上下文到分析 Agent](https://datahub.com/blog/building-autonomous-data-agents/) | 架构教程；SDK 与 MCP 两条接入路径，历史代码需核对当前版本 |
+| 07-01 更新 | [火山引擎 DataAgent 私有化：3.21 系列文档](https://docs.volcengine.com/docs/data-agent-private/v3-21-0?lang=zh) | 持续文档；检索范围、版本形态、工具开关与接口凭证 |
+| 07-10 | [Catch 7 AI Analysis Mistakes](https://www.insightextractor.com/p/maven-session-slide-deck-download) | 公开讲义；18 页检查指标、粒度、时期、来源与证据 |
+| 07-16 | [Build 3 AI Harnesses for Trustworthy Analytics](https://www.insightextractor.com/p/session-slide-and-recording-build) | 公开讲义；15 页上下文、校验与证据复用设计 |
+| 08-04 | [AWS 多模态数据分析：MCP / A2A 与 Supervisor](https://aws.amazon.com/blogs/industries/multi-agent-multimodal-data-analysis-on-aws-part-2-multi-agent-orchestration-and-predictive-analytics/) | 架构教程；配套前篇的数据治理，使用合成数据演示 |
+| 08-20 | [火山引擎：分析洞察搭建流程概览](https://developer.volcengine.com/videos/7566240392669528073) | 官方视频页；已核验简介和日期，完整播放未独立测试 |
+| 09-10 | [DataHub + SecuPi：上下文与运行时控制](https://datahub.com/blog/agent-governance-with-datahub-and-secupi/) | 架构；用户身份、字段屏蔽和审计链分工 |
+| 10-20 | [AWS + AtScale：语义模型与 AgentCore](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/) | 架构教程；SML、MCP、身份传播与部署 |
+| 10-26 更新 | [Google Data Agent Kit：Use MCP servers](https://docs.cloud.google.com/data-agent-kit/use-mcp-servers) | 持续文档；工具角色、服务权限、账号模拟与策略执行 |
+| 10-29 release | [SQLBot](https://github.com/dataease/SQLBot) | ChatBI 应用 / MCP 提供方；附加条件的 modified GPLv3 |
+| 10-30 更新 | [Databricks：Use the Genie Agents API](https://docs.databricks.com/aws/en/genie-agents/conversation-api) | 持续文档；会话、Agent mode 与管理 API 分开授权 |
+| 11-02 | [衡石：多轮问数的上下文、偏好与学习开关](https://www.hengshi.com/blog/hengshi-data-agent-context-preferences-learning.html) | 架构实践；会话条件、业务定义和长期复用分别验收 |
+
+</details>
 
 ## 先看结论
 
@@ -358,6 +381,7 @@ QCon 上海 **2026-10-22–24** 与 DACon 北京 **10 月 23–24 日**均已举
 | [Jupyter AI](https://github.com/jupyterlab/jupyter-ai) | Notebook 工作区 | 在 JupyterLab 内让 Agent 编辑、运行和调试 Notebook；以 ACP/MCP 接入工具，适合保留单元格与执行结果作为分析证据。 | [BSD-3-Clause](https://github.com/jupyterlab/jupyter-ai/blob/main/LICENSE)；2026 有重要更新 |
 | [dlt MCP Server](https://github.com/dlt-hub/dlt-mcp) | 工具服务 | 为 Agent 提供 dlt 管道、表结构、增量状态、schema diff 与 SELECT 查询工具，适合数据接入和管道诊断。 | [Apache-2.0](https://github.com/dlt-hub/dlt-mcp/blob/main/LICENSE)；2026 有重要更新 |
 | [Vanna 2.0](https://github.com/vanna-ai/vanna) | 已归档框架 | 用户身份贯穿提示、SQL 工具和行级过滤，并流式输出表格图表；2026-03-29 已归档，适合作为架构研究案例。 | [MIT](https://github.com/vanna-ai/vanna/blob/main/LICENSE)；🗄️ 2026-03-29 已归档 |
+| [SQLBot](https://github.com/dataease/SQLBot) | ChatBI 应用 / MCP 提供方 | 术语与 SQL 示例辅助问数，支持工作空间和嵌入式接入；v1.10.3 增加动态检索策略等。 | [FIT2CLOUD modified GPLv3](https://github.com/dataease/SQLBot/blob/main/LICENSE)，含附加条件；2026-10-29 release |
 
 ## 论文与评测
 

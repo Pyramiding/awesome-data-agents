@@ -1,10 +1,10 @@
 # Data Agent 项目资料路线
 
-[返回总览](README.md) · [机器索引](resources.json) · [设计评审模板](DESIGN_REVIEW.md)
+[返回总览](README.md) · [公开分享导航](TALKS.md) · [机器索引](resources.json) · [设计评审模板](DESIGN_REVIEW.md)
 
 从要完成的任务选择实现入口，再结合官方技术说明和更新证据阅读。下列类型与阅读路线为本仓编辑归纳；项目能力、许可证和维护状态以各自原始页面为准。
 
-**本轮复查：2026-11-05。** Altimate Code、nao 与 dbt MCP 的版本变化见 [增量记录](UPDATES.md#2026-11-05)；其他项目保留各自已核验的版本，新版本沿用原条目，不重复计数。
+**本轮专题扩充：2026-11-05。** 为 5 个已有项目补齐官方阅读路线，增加 SQLBot 应用案例；既有版本更新仍见 [增量记录](UPDATES.md)。文档核验、项目发布与实际运行是不同证据：本轮没有部署项目、调用模型或测量项目成绩。
 
 ## 按任务选择起点
 
@@ -17,6 +17,77 @@
 | Notebook 数据科学与可视分析 | Jupyter AI / Data Formulator | 单元格、运行输出或分析分支可审阅与继续执行 |
 | 自动实验与模型改进 | R&D-Agent | 假设、实验代码、实际测量与反馈完整闭环 |
 | 数据工程能力验收 | ADE-bench | 固定环境中的任务通过率、成本、运行时和失败记录 |
+
+## 四条动手阅读路线
+
+| 路线 | 建议顺序 | 第一轮应留下的产物 |
+|---|---|---|
+| **中文实现：从业务问题到分析报告** | [Spring AI Alibaba](#spring-ai-alibaba-dataagent) 的启动 → 知识配置 → 架构 → 高级功能；再对照 [DB-GPT](#db-gpt) | 一份明确业务口径的任务、执行查询、报告，以及中断或权限不足时的记录 |
+| **给现有 Agent 增加数据能力** | [Google Data Agent Kit](#google-data-agent-kit) 的安装 → MCP 授权 → Codelab；再读 dbt MCP / Toolbox 的工具契约 | 客户端与调用身份、实际工具清单、一次有证据的查询，以及调用失败时的原始错误 |
+| **语义与上下文：把定义接到计算** | [WrenAI](#wrenai) 的模型与规划 → [DataHub](#datahub-analytics-agent) 的上下文检索 → [AWS 语义层对照](#托管平台沿官方教程复现) | 术语到指标/表的映射、展开后的查询、来源对账和角色差异；不只看最终回答 |
+| **生产治理与验收** | [公开讲义](TALKS.md) → [设计评审](DESIGN_REVIEW.md) → ADE-bench / 自有任务回归 | 一个能失败的验收条件、具体证据、人工接手点，以及定义变化后应重开的任务 |
+
+这些是本仓建议的阅读与复现顺序，不代表项目必须使用相同内部流程，也不把读完教程视为已完成生产验证。
+
+## 本轮补齐的项目路线
+
+### Spring AI Alibaba DataAgent
+
+**类型：分析应用。** [实现](https://github.com/spring-ai-alibaba/DataAgent) · [1.0.0-rc7](https://github.com/spring-ai-alibaba/DataAgent/releases/tag/1.0.0-rc7) · [Apache-2.0](https://github.com/spring-ai-alibaba/DataAgent/blob/main/LICENSE)
+
+[快速开始](https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/QUICK_START.md) → [知识配置](https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/KNOWLEDGE_USAGE.md) → [架构设计](https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/ARCHITECTURE.md) → [高级功能](https://github.com/spring-ai-alibaba/DataAgent/blob/main/docs/ADVANCED_FEATURES.md)
+
+- **重点读什么：** 证据与 Schema 召回、表关系、可行性和规划如何接入 SQL/Python/报告；字段映射、业务知识与文档/问答知识分别放在哪里。
+- **怎样检查：** 用同一个业务问题追踪计划、生成查询、Python 输出和报告；需要 Python 时，再核对任务容器的依赖安装、资源限制与清理记录。
+- **关键边界：** 当前 main 高级文档明确说明后端尚未对 `X-API-Key` 做权限校验。API Key 管理入口存在不等于认证已生效。RC 标签、main 文档和固定版本需要分别核对。
+
+### DB-GPT
+
+**类型：Agent 应用平台。** [实现与启动](https://github.com/eosphoros-ai/DB-GPT/blob/main/README.md) · [v0.8.2](https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2) · [MIT](https://github.com/eosphoros-ai/DB-GPT/blob/main/LICENSE)
+
+[分析规划](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/data_analysis_planning_agent.md) → [上下文管理](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/context-management.md) → [SQL 工具契约](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/resource/tools/sql-query.md)
+
+- **重点读什么：** 计划状态与工具循环如何协作；长会话怎样逐层压缩观察和历史，同时保留完整工具结果的快照路径。
+- **怎样检查：** 在结果较大的任务中区分“显示的前 50 行”“完整工具结果”和“完整数据集”，再检查压缩后的分析是否仍保留筛选条件。
+- **关键边界：** 规划页含设计示例与未来规划，不能把每个工具名称当作稳定功能承诺；`sql_query` 的只读契约不代表所有 Python、Shell 和其他工具均只读。文档站本轮超时，故链接到官方仓库原稿。
+
+### SQLBot
+
+**类型：ChatBI 应用与 MCP 提供方。** [实现与部署说明](https://github.com/dataease/SQLBot/blob/main/README.md) · [v1.10.3](https://github.com/dataease/SQLBot/releases/tag/v1.10.3) · [许可证原文](https://github.com/dataease/SQLBot/blob/main/LICENSE)
+
+- **重点读什么：** 术语、SQL 示例和向量检索怎样辅助问数；工作空间、嵌入入口和 MCP 调用怎样组织数据访问。适合与完整自主分析 Agent 比较应用层职责。
+- **怎样检查：** 固定业务定义后，分别从原生页面与嵌入入口问同一问题，保留选表、查询、图表和调用身份；再用不同工作空间的授权账号复测。
+- **关键边界：** 许可证是附加条件的 FIT2CLOUD modified GPLv3，不能简写成标准 GPLv3。部署示例包含 `privileged` 选项，应与生产配置分开评审；本仓没有运行该部署示例。
+
+### Google Data Agent Kit
+
+**类型：Skills 与工具插件。** [插件说明](https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/blob/main/README.md) · [1.2.0](https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/releases/tag/1.2.0) · [Apache-2.0](https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/blob/main/LICENSE)
+
+[插件安装](https://github.com/GoogleCloudPlatform/data-agent-kit-plugin/blob/main/README.md) → [MCP 与授权](https://docs.cloud.google.com/data-agent-kit/use-mcp-servers) → [原始数据到预测 Codelab](https://codelabs.developers.google.com/next26/gen-keynote/raw-data-forecasting) → [Data Apps 技术实现指南](https://googlecloudplatform.github.io/cloud-solutions/agentic-coding-with-data-agent-kit-demo/)
+
+- **重点读什么：** 宿主 Agent、Skills 和 MCP 各自负责什么；工具调用角色、产品数据权限与服务账号模拟如何组合。
+- **怎样检查：** 先完成受限数据范围内的查询，再按教程跟踪文档抽取、结构化数据与分析步骤。保存实际身份和工具结果，避免只记录自然语言总结。
+- **关键边界：** 插件与 IDE 扩展的安装方式不同；Skills 的确认指令不能代替 IAM 授权。Codelab 中的演示角色、资源公开配置和生产配置应分别评审；插件免费不代表云计算与模型使用免费。
+
+### DataHub Analytics Agent
+
+**类型：分析应用。** [启动与开发说明](https://github.com/datahub-project/analytics-agent/blob/main/README.md) · [v0.4.0](https://github.com/datahub-project/analytics-agent/releases/tag/v0.4.0) · [Apache-2.0](https://github.com/datahub-project/analytics-agent/blob/main/LICENSE)
+
+[快速启动与合成零售演示](https://github.com/datahub-project/analytics-agent/blob/main/README.md) → [Context Kit 接入教程](https://datahub.com/blog/building-autonomous-data-agents/) → [运行时授权分工](https://datahub.com/blog/agent-governance-with-datahub-and-secupi/)
+
+- **重点读什么：** LangGraph ReAct 如何使用目录和引擎工具；DataHub 连接可选，不能假设启动演示必然具备完整企业上下文；目录改进建议如何经用户确认后写回。
+- **怎样检查：** 对同一问题记录所选表、业务定义、查询和图表；比较加入上下文前后的变化，同时检查数据权限是否保持一致。
+- **关键边界：** 界面的上下文质量分数不是业务答案正确率。v0.4.0 release 包含 DDL/DML 提交处理，不能将整个应用描述为强制只读；元数据工具开关与数仓身份权限须分别核对。4 月 Context Kit 教程的历史 SDK 示例需按当前版本修正。
+
+### WrenAI
+
+**类型：语义层与 Agent 工具。** [实现](https://github.com/Canner/WrenAI) · [wren-v0.17.1](https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1) · [分路径许可证](https://github.com/Canner/WrenAI/blob/main/LICENSE)
+
+[快速开始](https://docs.getwren.ai/oss/get_started/quickstart) → [架构原稿](https://github.com/Canner/WrenAI/blob/main/docs/core/reference/architecture.md) → [MDL 参考](https://github.com/Canner/WrenAI/blob/main/docs/core/reference/mdl.md)
+
+- **重点读什么：** 项目中的业务模型和知识如何编译为查询；知识源文件与可重建记忆索引如何分开；Agent 如何使用规划、校验和结构化错误。
+- **怎样检查：** 对同一指标保存模型定义、展开 SQL、执行结果与对账证据，分别看 `dry-plan`、`dry-run` 和业务语义检查覆盖了什么。
+- **关键边界：** main 架构把 golden NL-SQL eval 标为开发中，不能据文档中的名称写成已具备完整验收系统。代码、文档按路径采用不同许可；行列安全和商业交付能力也需逐项核对。
 
 ## 实现与组件
 
@@ -120,6 +191,10 @@
 | Snowflake：从数据到运行时 | [从零搭建](https://www.snowflake.com/en/developers/guides/build-a-cortex-agent-from-scratch-with-snowflake/) · [Agent SDK](https://www.snowflake.com/en/developers/guides/getting-started-with-cortex-agent-sdk/) | 语义视图 + 检索工具、多轮状态、后台任务、代码沙箱 |
 | Databricks：接入和验收 | [Genie MCP](https://docs.databricks.com/aws/en/agents/mcp-tools/genie-mcp) · [Test and monitor](https://docs.databricks.com/aws/en/genie-agents/monitor) | Catalog 权限、来源链接、SQL 结果比较与 Agent 任务评分 |
 | AWS：用户身份贯穿访问链 | [Lake Formation + Trusted Identity Propagation](https://aws.amazon.com/blogs/security/identity-aware-ai-data-agents-with-aws-lake-formation-and-trusted-identity-propagation/) | 真实用户身份如何穿过 AgentCore、MCP、Lambda 与 Athena，并留下访问证据 |
+| AWS：同一问题比较语义层实现 | [Stardog 图谱](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-stardog-and-amazon-bedrock-agentcore/) · [Denodo 虚拟化](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/) · [AtScale 维度模型](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/) | 比较同一 C360 场景的数据放置、查询语言、模型和身份路径；AtScale 示例将分析数据先汇入 Redshift，不能与联邦查询混为一谈 |
+| AWS：跨模态与专门 Agent | [数据治理与准备](https://aws.amazon.com/blogs/industries/multi-agent-multimodal-data-analysis-on-aws-part-1-data-governance-and-visualization/) → [MCP / A2A 编排](https://aws.amazon.com/blogs/industries/multi-agent-multimodal-data-analysis-on-aws-part-2-multi-agent-orchestration-and-predictive-analytics/) | 先理解目录和订阅，再看 Supervisor 的调用身份、超时与证据综合；是合成数据研究示例 |
+| 火山引擎：检索范围与工具配置 | [3.21 系列文档](https://docs.volcengine.com/docs/data-agent-private/v3-21-0?lang=zh) · [官方培训入口](https://developer.volcengine.com/videos/7566240392669528073) | 分开核对版本形态、会话检索范围、SQL/Python/联网工具与接口凭证；视频完整播放未独立测试 |
+| Databricks：应用接入与配置交付 | [Genie Agents API](https://docs.databricks.com/aws/en/genie-agents/conversation-api) | 查询会话、Agent mode 与管理 API 分开授权；接入成功后仍需运行基准问题验证答案 |
 
 ## 将项目资料变成一次可检查的实验
 
@@ -130,3 +205,14 @@
 5. 把失败和修正写入回归集，再决定是否进入下一阶段；可配合 [设计评审模板](DESIGN_REVIEW.md) 使用。
 
 评测材料可交叉阅读 [ADE-bench 方法](https://www.getdbt.com/blog/ade-bench-dbt-data-benchmarking)、[Preset Skills 对照](https://preset.io/blog/building-preset-agent-skills/) 与 [Xorq 语义目录实验](https://xorq.dev/blog/orientation-over-reasoning/)。开放式分析还需检查证据是否充足和是否应该拒答；[Hex DataBench](https://hex.tech/blog/databench-agentic-analytics-benchmark/) 提供方法参考，其任务集并未公开。
+
+## 后续扩展优先级
+
+| 优先级 | 下一步补什么 | 收录完成的标准 |
+|---|---|---|
+| 1 | 为更多项目补齐“架构 → 启动 → 工具/权限 → 评测”的资料包 | 每一步都有一手入口、对应版本和证据边界；无独立日期的文档作为项目支持材料 |
+| 2 | 按真实任务比较实现路径 | 用相同问题比较语义建模、执行位置、人工接手和交付证据；有实际运行才填写成绩 |
+| 3 | 增加可复现实验记录 | 固定样例数据、项目/模型版本与权限，保留查询和失败；同时报告成本与运行时间 |
+| 4 | 持续补全中文大会实录与海外讲义 | 找到具体场次的可读材料后才升级状态；只有大会入口、报名页或二维码时继续保留限制 |
+
+这轮已完成资料包与分享入口的扩充。上表后续实验尚未运行，不把建议的验收产物写成已经取得的测试结果。
