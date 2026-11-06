@@ -6,6 +6,8 @@
 
 **本轮专题扩充：2026-11-05。** 为 5 个已有项目补齐官方阅读路线，增加 SQLBot 应用案例；既有版本更新仍见 [增量记录](UPDATES.md)。文档核验、项目发布与实际运行是不同证据：本轮没有部署项目、调用模型或测量项目成绩。
 
+**2026-11-06 定向复核：** WrenAI、DB-GPT、MCP Toolbox、Data Formulator、Jupyter AI 与 Vanna 六个既有条目补齐固定提交证据、版本和许可证范围。其余项目保持原核验日期；未部署运行这些项目。
+
 ## 按任务选择起点
 
 | 目标 | 可先研究 | 第一轮验证应看到什么 |
@@ -43,13 +45,13 @@
 
 ### DB-GPT
 
-**类型：Agent 应用平台。** [实现与启动](https://github.com/eosphoros-ai/DB-GPT/blob/main/README.md) · [v0.8.2](https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2) · [MIT](https://github.com/eosphoros-ai/DB-GPT/blob/main/LICENSE)
+**类型：Agent 应用平台。** [实现与启动](https://github.com/eosphoros-ai/DB-GPT/blob/main/README.md) · [v0.8.2](https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2) · [MIT](https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/LICENSE)
 
-[分析规划](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/data_analysis_planning_agent.md) → [上下文管理](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/context-management.md) → [SQL 工具契约](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/resource/tools/sql-query.md)
+[分析规划](https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/data_analysis_planning_agent.md) → [上下文管理](https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/docs/docs/agents/modules/context-management.md) → [SQL 工具契约](https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/docs/docs/agents/modules/resource/tools/sql-query.md)
 
 - **重点读什么：** 计划状态与工具循环如何协作；长会话怎样逐层压缩观察和历史，同时保留完整工具结果的快照路径。
 - **怎样检查：** 在结果较大的任务中区分“显示的前 50 行”“完整工具结果”和“完整数据集”，再检查压缩后的分析是否仍保留筛选条件。
-- **关键边界：** 规划页含设计示例与未来规划，不能把每个工具名称当作稳定功能承诺；`sql_query` 的只读契约不代表所有 Python、Shell 和其他工具均只读。文档站本轮超时，故链接到官方仓库原稿。
+- **关键边界：** 规划页含设计示例与未来规划，不能把每个工具名称当作稳定功能承诺；`sql_query` 的只读契约不代表所有 Python、Shell 和其他工具均只读。11 月 5 日核验时文档站超时，故链接到官方仓库原稿。
 
 ### SQLBot
 
@@ -81,9 +83,9 @@
 
 ### WrenAI
 
-**类型：语义层与 Agent 工具。** [实现](https://github.com/Canner/WrenAI) · [wren-v0.17.1](https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1) · [分路径许可证](https://github.com/Canner/WrenAI/blob/main/LICENSE)
+**类型：语义层与 Agent 工具。** [实现](https://github.com/Canner/WrenAI) · [wren-v0.17.1](https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1) · [分路径许可证](https://github.com/Canner/WrenAI/blob/548eee3e864b11e7f11eee15ae82be178a295f22/LICENSE)
 
-[快速开始](https://docs.getwren.ai/oss/get_started/quickstart) → [架构原稿](https://github.com/Canner/WrenAI/blob/main/docs/core/reference/architecture.md) → [MDL 参考](https://github.com/Canner/WrenAI/blob/main/docs/core/reference/mdl.md)
+[快速开始](https://docs.getwren.ai/oss/get_started/quickstart) → [架构原稿](https://github.com/Canner/WrenAI/blob/548eee3e864b11e7f11eee15ae82be178a295f22/docs/core/reference/architecture.md) → [MDL 参考](https://github.com/Canner/WrenAI/blob/main/docs/core/reference/mdl.md)
 
 - **重点读什么：** 项目中的业务模型和知识如何编译为查询；知识源文件与可重建记忆索引如何分开；Agent 如何使用规划、校验和结构化错误。
 - **怎样检查：** 对同一指标保存模型定义、展开 SQL、执行结果与对账证据，分别看 `dry-plan`、`dry-run` 和业务语义检查覆盖了什么。
@@ -127,12 +129,13 @@
 
 ### MCP Toolbox for Databases · 工具服务
 
-[实现](https://github.com/googleapis/mcp-toolbox) · [技术资料](https://mcp-toolbox.dev/documentation/introduction/) · [v1.15.0 更新证据](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.15.0) · [许可证 Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)
+[实现](https://github.com/googleapis/mcp-toolbox) · [技术资料](https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/docs/en/documentation/introduction/_index.md) · [v1.16.0 更新证据](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0) · [许可证 Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/LICENSE)
 
 - **机制：** 将数据源连接和工具声明集中在配置中，向 MCP 客户端或 Agent SDK 暴露预置查询及定制工具，并提供认证、连接池和可观测性。
 - **适合：** 搭建统一数据库工具服务，或将受控查询封装成可复用工具供多个数据 Agent 调用。
-- **使用前了解：** 它是数据库接入与执行基础设施；仍需应用层提供业务语义、规划、结果验证和权限配置。
-- **近期变化（10 月 23 日）：** v1.15 新增 Conversational Analytics 数据 Agent 管理和 Looker 保存查询工具。创建、更新、删除 Agent 属于管理写操作，需与只读查询分开授权；release 于 10 月 23 日公开，早于该日的 changelog 标签不作为公开发布日期。
+- **使用前了解：** bigquery-execute-sql 官方定位为有人监督的开发助手工具，不建议直接用于生产 Agent；默认 readOnly=false、writeMode=allowed。protected 模式仍允许经验证的会话临时写入，不等于严格只读；生产应配置最小权限与受控工具。
+- **本次变化（11 月 6 日核验）：** v1.16.0 于 2026-11-05T19:56:15Z 发布（上海时间 11 月 6 日）。protected 拒绝无法证明属于当前会话临时数据集的非 SELECT 写入；默认 allowed 并未因此变成只读。详见 [工具说明](https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/docs/en/integrations/bigquery/tools/bigquery-execute-sql.md)。
+- **历史变化（10 月 23 日）：** v1.15 新增 Conversational Analytics 数据 Agent 管理和 Looker 保存查询工具。创建、更新、删除 Agent 属于管理写操作，需与只读查询分开授权；release 于 10 月 23 日公开，早于该日的 changelog 标签不作为公开发布日期。
 
 ### Boring Semantic Layer (BSL) · 语义组件
 
@@ -152,19 +155,19 @@
 
 ### Data Formulator · 分析工作区
 
-[实现](https://github.com/microsoft/data-formulator) · [技术资料](https://github.com/microsoft/data-formulator/blob/main/DEVELOPMENT.md) · [2026 更新证据](https://github.com/microsoft/data-formulator/releases/tag/0.7.0) · [许可证 MIT](https://github.com/microsoft/data-formulator/blob/main/LICENSE)
+[实现](https://github.com/microsoft/data-formulator) · [技术资料](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/DEVELOPMENT.md) · [2026 更新证据](https://github.com/microsoft/data-formulator/releases/tag/0.7.0) · [许可证 MIT](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/LICENSE)
 
 - **机制：** 通过数据连接器和数据记忆理解多源数据，在 Data Thread 中保留分析路径，支持从历史节点分支、图表编辑和自然语言继续探索。
 - **适合：** 交互式 EDA、图表与报告体验原型，也适合研究用户如何审阅和纠正 Agent 的分析过程。
-- **使用前了解：** 2026-08-15 的 0.8.0b1 仍为 beta；复现时可优先固定稳定版 0.7.0，再按需试用预览版。
+- **使用前了解：** 稳定复现仍可固定 0.7.0；GitHub 最新 tag 为 0.8b1，README 对应包版本 0.8.0b1，官方称为 beta，虽然 GitHub prerelease 字段为 false。当前开发文档默认面向单用户本地运行；匿名多用户部署应关闭数据连接器、自定义模型和密钥显示，正式团队部署需认证身份，不能把浏览器 UUID 当作安全身份。
 
 ### Jupyter AI · Notebook 工作区
 
-[实现](https://github.com/jupyterlab/jupyter-ai) · [技术资料](https://jupyter-ai.readthedocs.io/en/stable/users/index.html) · [2026 更新证据](https://jupyter-ai.readthedocs.io/en/stable/releases/v3.2.0.html) · [许可证 BSD-3-Clause](https://github.com/jupyterlab/jupyter-ai/blob/main/LICENSE)
+[实现](https://github.com/jupyterlab/jupyter-ai) · [技术资料](https://github.com/jupyterlab/jupyter-ai/blob/995b53b651c39bf9a7744bfe0d2d85b0967b672c/docs/source/releases/v3.2.0.md) · [2026 更新证据](https://jupyter-ai.readthedocs.io/en/stable/releases/v3.2.0.html) · [许可证 BSD-3-Clause](https://github.com/jupyterlab/jupyter-ai/blob/dc4d493031484480040a89e68ecea8d49f1665e2/LICENSE)
 
 - **机制：** 在 JupyterLab 原生聊天中连接 Agent，通过内置 MCP 和前端命令操作 Notebook 与文件，并在写入和执行前进行权限审批。
 - **适合：** 需要人工审阅的 Notebook 分析、数据科学协作，以及将步骤和输出留在可继续运行的工作区。
-- **使用前了解：** v3.2.0 起代码拆入多个子包，主项目发布记录侧重汇总；部署与开发应以官方子包兼容版本及 release notes 为准。
+- **使用前了解：** v3.2.0 的 Notebook 编辑、运行和调试可不依赖 RTC，但官方明确说明：外部直接修改磁盘上的 Notebook 不会因此实时刷新到界面，文件刷新还可能丢失滚动位置。聊天工具实时操作与任意磁盘修改自动同步是不同能力；主仓库发布还需结合子包 release notes 阅读。
 
 ### dlt MCP Server · 工具服务
 
@@ -178,9 +181,9 @@
 
 ### Vanna 2.0 · 2026-03-29 已归档
 
-[源码](https://github.com/vanna-ai/vanna) · [迁移与架构说明](https://github.com/vanna-ai/vanna/blob/main/MIGRATION_GUIDE.md) · [版本证据](https://github.com/vanna-ai/vanna/releases/tag/v2.0.2) · [许可证 MIT](https://github.com/vanna-ai/vanna/blob/main/LICENSE)
+[源码](https://github.com/vanna-ai/vanna) · [迁移与架构说明](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/MIGRATION_GUIDE.md) · [版本证据](https://github.com/vanna-ai/vanna/releases/tag/v2.0.2) · [许可证 MIT](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/LICENSE)
 
-将 UserResolver 得到的身份和组成员信息传入 Agent 与工具；工具根据用户权限执行 SQL，向 Web 组件流式发送表格、图表与总结。 项目已归档且只读，不能按活跃维护项目推荐；新系统选型需自行评估维护与依赖成本。
+由应用实现 UserResolver，将经认证的身份和组信息交给 Agent 与工具注册表；工具组权限、SQL 执行与流式 UI 在同一调用链中协作。 项目已于 2026-03-29 归档。LegacyVannaAdapter 共享同一 VannaBase 实例，官方迁移指南明确说明不能利用行级安全；身份传递和工具组权限不能直接当作数据库行级隔离保证。
 
 ## 托管平台：沿官方教程复现
 

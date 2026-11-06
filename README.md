@@ -8,7 +8,7 @@ A source-checked guide to AI data agents: architectures, implementations, semant
 
 **168 条资料** · `62` 架构与实践 · `32` 公开实现 · `23` 分享与议程 · `17` 研究 · `20` 持续文档 · `14` 评测
 
-**资料截止：2026-11-05（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
+**资料截止：2026-11-06（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
 
 ## 从这里开始 · Start here
 
@@ -51,6 +51,16 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 - **评测改进不等于自动自我训练。** Traces → Eval suite → Human review → Approved updates 是经审核的改进链；失败修复只重跑受影响步骤，不默认重启整个流程，也不直接把未验证结论写入长期记忆。
 
 </details>
+
+## 2026-11-06：重点项目证据复核
+
+定向复核 **6 个已有项目**，总数保持 **168**。版本日期、文档提交与核验日期分别记录，不代表全库重新验证或项目实际运行测试。
+
+- **MCP Toolbox v1.16.0：** [发布证据](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0)与固定提交的 SQL 工具说明分开呈现；protected 仍允许经验证的会话临时写入，不等于严格只读。
+- **Vanna / Data Formulator：** 前者修正“身份传递等于行级过滤”的过宽措辞；后者保留稳定 0.7.0，并单列官方称为 beta 的 0.8b1，不能仅凭 GitHub prerelease=false 判作稳定版。
+- **WrenAI / DB-GPT / Jupyter AI：** 固定许可证和已读技术文档的提交，补充评测、结果截断和 Notebook 同步边界。全部核验范围见条目详情及 [更新记录](UPDATES.md)。
+
+新增自动结构校验与桌面/手机 Chromium 关键路径测试；检查方法见 [网页维护说明](WEB.md)。
 
 ## 本轮扩充：技术文档、项目路线与公开分享
 
@@ -376,13 +386,13 @@ QCon 上海 **2026-10-22–24** 与 DACon 北京 **10 月 23–24 日**均已举
 | [dbt MCP Server](https://github.com/dbt-labs/dbt-mcp) | 工具服务 | v2.10.1 调整 job/run 的 Owner 目标与共享列举策略；授权宿主需处理相应 listing 策略。 | [Apache-2.0](https://github.com/dbt-labs/dbt-mcp/blob/main/LICENSE)；2026-11-03 release |
 | [dbt Agent Skills](https://github.com/dbt-labs/dbt-agent-skills) | 技能包 | 可安装的 dbt 流程知识：先检查真实数据、迭代建模、再测试验证；包含指标建模与技能 A/B 评估材料。 | [Apache-2.0](https://github.com/dbt-labs/dbt-agent-skills/blob/main/LICENSE)；2026 有重要更新 |
 | [ADE-bench](https://github.com/dbt-labs/ade-bench) | 评测环境 | 用真实 dbt 项目、数据库、隔离容器与结果测试评测数据工作；可比较模型、MCP、技能包带来的效果与成本。 | [Apache-2.0](https://github.com/dbt-labs/ade-bench/blob/main/LICENSE)；2026 有重要更新 |
-| [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) | 工具服务 | v1.15 扩展数据 Agent 管理与保存查询，并集中认证检查；管理写操作需单独授权。 | [Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE)；2026-10-23 release |
+| [MCP Toolbox for Databases](https://github.com/googleapis/mcp-toolbox) | 工具服务 | v1.16.0 增加 MCP Skills / UI 资源并修复 protected 写入检查；bigquery-execute-sql 默认可写，官方建议用于有人监督的开发流程，不建议生产 Agent 直接使用。 | [Apache-2.0](https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/LICENSE)；2026-11-05 UTC release |
 | [Boring Semantic Layer (BSL)](https://github.com/boringdata/boring-semantic-layer) | 语义组件 | 基于 Ibis 的轻量语义层，将维度与指标封装为可查询模型；可作为 Agent 的指标工具底座，减少临时重写口径。 | [MIT](https://github.com/boringdata/boring-semantic-layer/blob/main/LICENSE)；2026 有重要更新 |
 | [R&D-Agent](https://github.com/microsoft/RD-Agent) | 实验 Agent | 以研究 Agent 提出假设、开发 Agent 编码实验、执行反馈再迭代，覆盖数据科学与建模任务，适合观察实验闭环。 | [MIT](https://github.com/microsoft/RD-Agent/blob/main/LICENSE)；2026 有重要更新 |
-| [Data Formulator](https://github.com/microsoft/data-formulator) | 分析工作区 | 把数据连接、加载 Agent、带记忆的 Data Thread、图表细化和报告分享串在可分支的可视工作区，适合交互式分析。 | [MIT](https://github.com/microsoft/data-formulator/blob/main/LICENSE)；2026 有重要更新 |
-| [Jupyter AI](https://github.com/jupyterlab/jupyter-ai) | Notebook 工作区 | 在 JupyterLab 内让 Agent 编辑、运行和调试 Notebook；以 ACP/MCP 接入工具，适合保留单元格与执行结果作为分析证据。 | [BSD-3-Clause](https://github.com/jupyterlab/jupyter-ai/blob/main/LICENSE)；2026 有重要更新 |
+| [Data Formulator](https://github.com/microsoft/data-formulator) | 分析工作区 | 把数据连接、加载 Agent、带记忆的 Data Thread、图表细化和报告分享串在可分支的可视工作区，适合交互式分析。 | [MIT](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/LICENSE)；2026 有重要更新 |
+| [Jupyter AI](https://github.com/jupyterlab/jupyter-ai) | Notebook 工作区 | 在 JupyterLab 内让 Agent 编辑、运行和调试 Notebook；以 ACP/MCP 接入工具，适合保留单元格与执行结果作为分析证据。 | [BSD-3-Clause](https://github.com/jupyterlab/jupyter-ai/blob/dc4d493031484480040a89e68ecea8d49f1665e2/LICENSE)；2026 有重要更新 |
 | [dlt MCP Server](https://github.com/dlt-hub/dlt-mcp) | 工具服务 | 为 Agent 提供 dlt 管道、表结构、增量状态、schema diff 与 SELECT 查询工具，适合数据接入和管道诊断。 | [Apache-2.0](https://github.com/dlt-hub/dlt-mcp/blob/main/LICENSE)；2026 有重要更新 |
-| [Vanna 2.0](https://github.com/vanna-ai/vanna) | 已归档框架 | 用户身份贯穿提示、SQL 工具和行级过滤，并流式输出表格图表；2026-03-29 已归档，适合作为架构研究案例。 | [MIT](https://github.com/vanna-ai/vanna/blob/main/LICENSE)；🗄️ 2026-03-29 已归档 |
+| [Vanna 2.0](https://github.com/vanna-ai/vanna) | 已归档框架 | 由应用提供身份和组信息，贯穿 Agent、SQL 工具与流式表格图表；兼容适配器不保证行级安全。2026-03-29 已归档，保留作架构研究案例。 | [MIT](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/LICENSE)；🗄️ 2026-03-29 已归档 |
 | [SQLBot](https://github.com/dataease/SQLBot) | ChatBI 应用 / MCP 提供方 | 术语与 SQL 示例辅助问数，支持工作空间和嵌入式接入；v1.10.3 增加动态检索策略等。 | [FIT2CLOUD modified GPLv3](https://github.com/dataease/SQLBot/blob/main/LICENSE)，含附加条件；2026-10-29 release |
 
 ## 论文与评测

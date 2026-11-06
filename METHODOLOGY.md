@@ -2,7 +2,8 @@
 
 ## Snapshot
 
-- Snapshot date: **2026-11-05 (Asia/Shanghai)**
+- Snapshot date: **2026-11-06 (Asia/Shanghai)**
+- Latest targeted evidence review: **2026-11-06**, six existing projects only; other records retain their own verification dates
 - Latest incremental review: **2026-11-03–2026-11-05**, after the 2026-11-02 snapshot
 - Latest thematic enrichment: **2026-11-05**, backfilling 2026 project documentation and public sharing materials without advancing the cutoff
 - Scope: Data Agents for analytics, data science, data engineering, data management, and data governance
@@ -49,7 +50,9 @@ Implementation entries distinguish complete agents, agent frameworks, tool serve
 
 `resources.json` schema 1.1 retains the original required fields and adds optional evidence and reading fields. Newly researched entries include `summary`, `date_evidence`, and `evidence_url`. Project entries also record `license`, `license_url`, `component_type`, `technical_material_url`, and practical usage notes when available. These fields support verification; release dates do not by themselves prove that a project is production-ready.
 
-Optional `reading_path` arrays organize supporting material into a recommended order, with a title, URL, and reading focus for each step. These are editorial routes, not claims that the examples have been executed. Undated supporting documentation can be attached to a dated project without becoming another independently counted resource. `material_type: video-page` identifies a public video landing page; it does not claim that full playback was tested.
+Optional `reading_path` arrays organize supporting material into a recommended order, with a title, URL, and reading focus for each step. These are editorial routes, not claims that the examples have been executed. Undated supporting documentation can be attached to a dated project without becoming another independently counted resource. `material_type: ["video-page"]` identifies a public video landing page; it does not claim that full playback was tested.
+
+Optional `verification_scope` states what a dated review actually checked and what it did not. Pin license and technical evidence to a commit when possible; a documentation commit can differ from the release commit and must not be presented as release-specific acceptance testing. `release_updates[].prerelease` is an editorial preview label based on the release text and package documentation, not an uncritical copy of GitHub’s flag. For example, Data Formulator calls 0.8b1 a beta even though its GitHub prerelease flag is false.
 
 The headline total counts resource records, not companies, websites, or unique products. An engineering article, implementation, and separately maintained tutorial for the same project can be distinct records. Supporting release, license, and documentation links inside a project record do not increase the count. The open-source/public-source section count includes explicitly marked archived cases; active and archived status remain separate.
 
@@ -59,6 +62,7 @@ The headline total counts resource records, not companies, websites, or unique p
 - The latest review uses original publication dates, dated release notes, or specific material documentation updates after the previous cutoff. Search-engine crawl dates, newly discovered old pages, cosmetic edits, and ordinary repository pushes are not treated as new releases.
 - A new version of an existing implementation updates the same resource ID and does not increase the project count. Release notes and the previous snapshot preserve the historical context.
 - A thematic enrichment can backfill relevant materials from earlier in the year. Such history entries use `kind: thematic-enrichment`, preserve the original dates and unchanged cutoff, and explicitly separate discovery from publication. Documentation enrichment and metadata corrections to existing projects are recorded as updates to their original IDs, not new implementations.
+- A targeted evidence refresh uses `kind: evidence-refresh` and names the reviewed IDs. It can advance the collection cutoff without changing the total; this is not a claim that all earlier entries or their supporting links were rechecked. The website’s latest-added filter uses the most recent nonempty addition batch.
 - Optional `added_on`, `last_verified`, `related_materials`, and `material_review` fields preserve discovery and access-check history separately from the source's `date`. The top-level `refresh_history` records added, materially updated, and corrected IDs separately; agenda reviews are listed only when performed in that review.
 - A localized document can materially differ from its other language versions. On November 2, the DataWorks Chinese page was dated October 29 while the English page still showed October 9. The November 5 review found the English page now dated October 29 and containing the eight-layer architecture. This corrects the language-version state without counting the older material as a new November publication.
 - Release dates follow the source's UTC `published_at` date, with the full timestamp retained. For example, Altimate Code v0.12.9 was published at 2026-11-04T23:16:13Z, already November 5 in Asia/Shanghai. A changelog heading is recorded separately when it differs from the public release timestamp.
@@ -105,5 +109,5 @@ When refreshing the list:
 3. Check whether an agenda item now has a deck, recording, or transcript.
 4. Re-check repository archive state and license.
 5. Update the cutoff in `README.md`, this file, and `resources.json` together.
-6. Run `python3 -m json.tool resources.json >/dev/null` and a link checker before merging.
+6. Run `npm run check` and `npm test`; run `npm run test:browser` for the web UI. Review changed remote sources separately. The deterministic validator checks structure, dates, evidence links, history and README counts, but cannot prove that a live source supports a claim or that a URL still opens.
 

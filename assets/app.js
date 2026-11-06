@@ -1,7 +1,7 @@
 import { SECTIONS, TOPICS, STATUSES, DATE_LABELS, TAG_LABELS, DEFAULT_STATE,
   safeUrl, readState, stateSearch, displayDate, prepareResources, selectResources, sectionCounts,
   topicCounts, highlightSegments, readingContext
-} from './catalog.js?v=2';
+} from './catalog.js?v=3';
 
 const $ = id => document.getElementById(id);
 const NS = 'http://www.w3.org/2000/svg';
@@ -11,7 +11,7 @@ const THEME_KEY = 'awesome-data-agents:theme:v1';
 const PAGE_SIZE = 24;
 let state = readState(location.search);
 let resources = [], latest = new Set(), saved = readSaved(), visibleCount = PAGE_SIZE;
-let searchTimer, toastTimer, activeDialogId = '', isComposing = false, tocFrame;
+let searchTimer, toastTimer, activeDialogId = '', readerReturnId = '', isComposing = false, tocFrame;
 let view = readPreference(VIEW_KEY, 'grid') === 'list' ? 'list' : 'grid';
 let readerItems = [], readerScope = '筛选结果';
 const dialog = $('resource-dialog');
@@ -327,10 +327,11 @@ function showResource(resource) {
   appendTextSection(body, '日期依据', resource.date_evidence);
   if (resource.evidence_url) appendLinkSection(body, '核验出处', [{ title: '查看原始日期 / 版本证据', url: resource.evidence_url }]);
   if (resource.last_verified) appendTextSection(body, '本仓核验日期', resource.last_verified);
+  appendTextSection(body, '本次核验范围', resource.verification_scope);
   if (resource.release_updates?.length) {
     const versions = element('details', 'detail-versions');
     versions.append(element('summary', '', resource.release_updates.length + ' 个版本证据'));
-    appendLinkSection(versions, '已收录的版本记录', resource.release_updates.map(r => ({ title: r.version, url: r.url, note: r.published_at })));
+    appendLinkSection(versions, '已收录的版本记录', resource.release_updates.map(r => ({ title: r.version + (r.prerelease ? '（预览版）' : ''), url: r.url, note: r.published_at })));
     body.append(versions);
   }
   const tags = element('div', 'detail-tags');
@@ -384,6 +385,7 @@ function syncReaderNavigation() {
 
 function openResource(id, push = true, keepQueue = false) {
   const resource = resources.find(r => r.id === id); if (!resource) return;
+  if (!dialog.open) readerReturnId = id;
   if (!keepQueue) {
     const all = selectResources(resources, { ...DEFAULT_STATE, sort: state.sort });
     const matches = selectResources(resources, state, { saved, latest });
@@ -454,6 +456,10 @@ dialog.addEventListener('close', () => {
   document.body.classList.remove('dialog-open');
   if (state.resource === activeDialogId) { state.resource = ''; writeUrl(); }
   activeDialogId = '';
+  // Rendering after Back, reload or unsaving may detach the original opener.
+  const returnTo = document.querySelector('.resource-card[data-id="' + CSS.escape(readerReturnId) + '"] .resource-title');
+  (returnTo || $('results-heading')).focus({ preventScroll: true });
+  readerReturnId = '';
 });
 $('copy-link').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(location.href); toast('条目链接已复制，可直接分享。'); }
@@ -484,7 +490,8 @@ try {
   resources = prepareResources(data.resources, markdown);
   const validIds = new Set(resources.map(r => r.id));
   saved = new Set([...saved].filter(id => validIds.has(id)));
-  latest = new Set((data.refresh_history?.[0]?.added_ids || []).filter(id => validIds.has(id)));
+  // An evidence-only refresh should not erase the latest batch of additions.
+  latest = new Set((data.refresh_history?.find(review => review.added_ids?.length)?.added_ids || []).filter(id => validIds.has(id)));
   const counts = sectionCounts(resources);
   $('stat-total').textContent = resources.length;
   $('stat-projects').textContent = counts['open-source'];

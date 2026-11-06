@@ -62,17 +62,20 @@ For new machine-readable entries, include `summary`, `date_evidence`, and `evide
 
 ## Validate a pull request locally
 
-From the repository root, check the machine-readable index:
+From the repository root, run the dependency-free structural and unit checks with Node.js 22+:
 
 ```sh
-python -m json.tool resources.json > /dev/null
+npm run check
+npm test
 ```
 
-If your system exposes Python as `python3`, use `python3` instead. This checks JSON syntax only; source accuracy, dates, IDs, duplicate entries, and license claims still need review.
+These checks validate required fields, unique IDs and canonical URLs, allowed facets, real calendar dates, nested evidence URLs, paired license/date sources, release timestamps, refresh-history references and totals, README counts and cutoff, and local site assets. Negative fixtures verify that malformed data is rejected. They do not verify remote availability, source accuracy, actual licenses of dependencies, or production readiness.
+
+For a source review, record `last_verified` only for checks actually performed. Use `verification_scope` to distinguish release, license and documentation review from running the project. Pin sources to a commit when possible, keep release and documentation revisions separate, and label beta releases using the publisher’s wording even if an API marks them otherwise.
 
 When adding or removing records, keep README totals and section counts consistent with `resources.json`. Do not advance the snapshot date for a navigation-only change. For substantive resource refreshes, follow the incremental review rules in [METHODOLOGY.md](METHODOLOGY.md) and record the changes in [UPDATES.md](UPDATES.md).
 
-The [web browser](https://pyramiding.github.io/awesome-data-agents/) reads this same index and reuses existing README annotations. For changes to the site or its data handling, run `npm test` and `npm run check`; no dependency installation is required. See [WEB.md](WEB.md) for preview and publishing details.
+The [web browser](https://pyramiding.github.io/awesome-data-agents/) reads this same index and reuses existing README annotations. For changes to the site or its data handling, also install locked development dependencies with `npm ci`, install Chromium with `npx playwright install chromium`, then run `npm run test:browser`. See [WEB.md](WEB.md) for preview and publishing details. GitHub Actions runs structural, unit and desktop/mobile Chromium checks on pushes and pull requests.
 
 ## Contribution license
 

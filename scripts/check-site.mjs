@@ -18,6 +18,9 @@ for (const file of ['assets/catalog.js', 'assets/app.js', 'assets/theme.js']) {
   assert.equal(checked.status, 0, checked.stderr);
 }
 const app = fs.readFileSync(path.join(root, 'assets/app.js'), 'utf8');
+const versions = [...html.matchAll(/(?:href|src)="\.\/assets\/[^"?]+\?v=([^"&]+)"/g)].map(m => m[1]);
+const moduleVersion = app.match(/from '\.\/catalog\.js\?v=([^']+)'/)?.[1];
+assert(versions.length >= 3 && new Set([...versions, moduleVersion]).size === 1, 'Entry assets and module imports must share one cache version');
 for (const match of app.matchAll(/\$\('([^']+)'\)/g)) assert(ids.includes(match[1]), 'Missing application element ' + match[1]);
 assert(!/<script(?![^>]*\bsrc=)[^>]*>/i.test(html), 'Keep executable scripts in local files');
 assert(html.includes('script-src \'self\''), 'Missing script policy');

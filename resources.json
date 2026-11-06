@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-06",
   "timezone": "Asia/Shanghai",
   "scope": "2026-focused Data Agent architectures, public implementations, evaluations, papers, talks, and living documentation",
   "resources": [
@@ -1220,10 +1220,10 @@
       "summary": "wren v0.17 增加 Ossie 上下文导入导出和 OpenMetadata 项目导入，让语义资产在目录与 Agent 查询层之间转换；同时修复派生指标、引用列与模型作用域问题，适合研究上下文互操作。",
       "date_evidence": "wren-v0.17.0 的 changelog 标为 2026-10-23，但 GitHub published_at 为 2026-10-27T03:02:08Z；wren-v0.17.1 published_at 为 2026-10-30T02:01:05Z，后者修复 DuckDB 2.0 Arrow table 兼容性。",
       "evidence_url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1",
-      "license": "Multi-license; check component paths",
-      "license_url": "https://github.com/Canner/WrenAI/blob/main/LICENSE",
-      "notes": "2026-11-05重读LICENSE：core/sdk/skills/examples为Apache-2.0，docs为CC BY4.0；AGPL正文预置不表示现有路径均为AGPL。发布包以各自manifest为准；archived=false。保留原release历史，文档快照可能跨组件版本。",
-      "last_verified": "2026-11-05",
+      "license": "Multi-license: Apache-2.0 code; CC-BY-4.0 docs; package manifests govern published package artifacts",
+      "license_url": "https://github.com/Canner/WrenAI/blob/548eee3e864b11e7f11eee15ae82be178a295f22/LICENSE",
+      "notes": "2026-11-06 核对发布、仓库状态、路径许可与架构原稿；发布为 wren-v0.17.1，技术文档固定至 548eee3e864b11e7f11eee15ae82be178a295f22，二者不是同一快照。",
+      "last_verified": "2026-11-06",
       "release_updates": [
         {
           "version": "wren-v0.17.0",
@@ -1236,11 +1236,11 @@
           "url": "https://github.com/Canner/WrenAI/releases/tag/wren-v0.17.1"
         }
       ],
-      "technical_material_url": "https://github.com/Canner/WrenAI/blob/main/docs/core/reference/architecture.md",
+      "technical_material_url": "https://github.com/Canner/WrenAI/blob/548eee3e864b11e7f11eee15ae82be178a295f22/docs/core/reference/architecture.md",
       "component_type": "semantic-layer-and-tooling",
       "mechanism": "MDL项目定义业务模型和关联；CLI/SDK通过规划、语义展开与连接器执行，将知识文件和可重建记忆索引分开。",
       "use_case": "为现有Agent提供可版本化业务语义、SQL执行与查询证据。",
-      "caveat": "main架构文档把golden NL-SQL eval标为开发中；dry-plan只展示规划，dry-run与业务语义验收也不同。行列安全、团队访问和商业交付能力不能由CLI存在直接推断。",
+      "caveat": "架构文档仍将 golden NL-SQL eval 标为开发中；dry-plan 展示规划，dry-run 检查数据库执行条件，都不等于业务语义验收。行列安全、团队访问和商业交付能力不能由 CLI 存在直接推断。",
       "reading_path": [
         {
           "title": "官方快速开始",
@@ -1249,7 +1249,7 @@
         },
         {
           "title": "架构原稿",
-          "url": "https://github.com/Canner/WrenAI/blob/main/docs/core/reference/architecture.md",
+          "url": "https://github.com/Canner/WrenAI/blob/548eee3e864b11e7f11eee15ae82be178a295f22/docs/core/reference/architecture.md",
           "focus": "区分技能、项目上下文、规划引擎与执行连接器。"
         },
         {
@@ -1259,10 +1259,12 @@
         },
         {
           "title": "许可范围",
-          "url": "https://github.com/Canner/WrenAI/blob/main/LICENSE",
+          "url": "https://github.com/Canner/WrenAI/blob/548eee3e864b11e7f11eee15ae82be178a295f22/LICENSE",
           "focus": "先按路径确认代码、文档和发布组件的许可。"
         }
-      ]
+      ],
+      "verification_scope": "核对官方 release、仓库归档状态、所列根许可证及固定提交的技术文档；未部署运行、复现基准或审计依赖许可证。历史支持链接并非本轮全部重验。",
+      "license_note": "根 LICENSE 按路径区分代码与文档；预置 AGPL 正文不表示现有组件均为 AGPL，发布包须核对各自 manifest。"
     },
     {
       "id": "db-gpt",
@@ -1280,15 +1282,15 @@
         "mit"
       ],
       "summary": "DB-GPT把数据连接、ReAct规划、SQL/代码工具、Skills、上下文压缩与报告组织为应用平台；v0.8.2包含多文件分析、并行子任务和Agentic知识检索，本轮补齐规划与工具层的文档路线。",
-      "date_evidence": "GitHub v0.8.2 published_at为2026-08-26T11:10:31Z；上下文管理文档的对应提交9470ea03ff4dcf12d586dc08e3351eed1890d60b于2026-05-18增加分层压缩与任务计划跟踪。本轮为历史资料补充。",
+      "date_evidence": "GitHub v0.8.2 published_at 为 2026-08-26T11:10:31Z；本轮技术文档固定至 9d50d0a55071a040a8cb7684b3b6acfa13cc7c47，与 release 提交不同，不把文档核验日期改写为版本发布日期。",
       "evidence_url": "https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2",
       "license": "MIT",
-      "license_url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/LICENSE",
+      "license_url": "https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/LICENSE",
       "component_type": "agent-platform",
-      "technical_material_url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/data_analysis_planning_agent.md",
-      "mechanism": "ReAct任务计划与工具循环结合；长任务按阈值压缩观察和历史，并把完整工具结果保留为快照路径。",
+      "technical_material_url": "https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/docs/docs/agents/modules/context-management.md",
+      "mechanism": "在模型调用前计量上下文，按观察截断、历史轮次裁剪、LLM 摘要和溢出重试逐层压缩；完整工具结果另存操作快照，提示保留可回查路径。",
       "use_case": "自托管分析工作区、SQL/代码混合任务，或研究长会话上下文管理。",
-      "caveat": "规划说明含伪代码和未来规划，不等于每个列举工具都有开箱即用实现；sql_query的只读约束也不代表所有Shell、Python或其他工具均只读。官方文档站本轮超时，路线使用可读的官方仓库原稿。",
+      "caveat": "sql_query 文档规定只读且只显示前 50 行，不能把显示截断当作完整结果，或把该工具的只读保证推广到 Python、Shell 等工具。上下文压缩会裁剪或概括历史，精确结果应回查快照；文档固定于 main 的后续提交，不等于 v0.8.2 的逐项验收。",
       "reading_path": [
         {
           "title": "项目与启动",
@@ -1302,23 +1304,24 @@
         },
         {
           "title": "上下文管理",
-          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/context-management.md",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/docs/docs/agents/modules/context-management.md",
           "focus": "查看分层压缩、token预算和工具结果快照。"
         },
         {
           "title": "SQL工具契约",
-          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/main/docs/docs/agents/modules/resource/tools/sql-query.md",
+          "url": "https://github.com/eosphoros-ai/DB-GPT/blob/9d50d0a55071a040a8cb7684b3b6acfa13cc7c47/docs/docs/agents/modules/resource/tools/sql-query.md",
           "focus": "核对只读范围与前50行显示截断。"
         }
       ],
-      "last_verified": "2026-11-05",
+      "last_verified": "2026-11-06",
       "release_updates": [
         {
           "version": "v0.8.2",
           "published_at": "2026-08-26T11:10:31Z",
           "url": "https://github.com/eosphoros-ai/DB-GPT/releases/tag/v0.8.2"
         }
-      ]
+      ],
+      "verification_scope": "核对官方 release、仓库归档状态、所列根许可证及固定提交的技术文档；未部署运行、复现基准或审计依赖许可证。历史支持链接并非本轮全部重验。"
     },
     {
       "id": "dataagentbench-repo",
@@ -2607,7 +2610,7 @@
     },
     {
       "id": "google-mcp-toolbox-databases",
-      "date": "2026-10-23",
+      "date": "2026-11-05",
       "date_basis": "released",
       "title": "MCP Toolbox for Databases",
       "organization": "Google",
@@ -2622,23 +2625,46 @@
         "authentication",
         "observability"
       ],
-      "summary": "v1.15 增加数据 Agent 创建、更新与删除工具，并支持按 query_id 执行 Looker 保存查询及 MCP Apps；同时集中执行认证检查，适合研究数据库工具服务的管理能力与查询治理边界。",
-      "date_evidence": "GitHub v1.15.0 published_at 2026-10-23T00:14:18Z，在上次上传之后；changelog 的版本日期为 2026-10-22，两者在此区分。",
-      "evidence_url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.15.0",
+      "summary": "v1.16.0 增加通过 MCP 提供 Skills 和动态 UI 资源，并修复 BigQuery protected 写入模式：非 SELECT 若无法证明目标属于当前会话临时数据集则拒绝执行；仍需区分开发期通用 SQL 工具与生产定制工具。",
+      "date_evidence": "v1.16.0 published_at 为 2026-11-05T19:56:15Z，即 Asia/Shanghai 2026-11-06 03:56:15；按本仓 release 日期规则保留 UTC 日期 2026-11-05，changelog 也标注 2026-11-05。",
+      "evidence_url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0",
       "license": "Apache-2.0",
-      "license_url": "https://github.com/googleapis/mcp-toolbox/blob/main/LICENSE",
+      "license_url": "https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/LICENSE",
       "mechanism": "将数据源连接和工具声明集中在配置中，向 MCP 客户端或 Agent SDK 暴露预置查询及定制工具，并提供认证、连接池和可观测性。",
       "use_case": "适合搭建统一数据库工具服务，或将受控查询封装成可复用工具供多个数据 Agent 调用。",
-      "caveat": "它是数据库接入与执行基础设施；仍需应用层提供业务语义、规划、结果验证和权限配置。",
-      "technical_material_url": "https://mcp-toolbox.dev/documentation/introduction/",
-      "notes": "创建/更新/删除数据 Agent 是管理能力，不等于查询能力，仍需应用方明确授权；它是工具服务，业务语义与分析验证仍由上层系统负责。2026-11-02 已核对 LICENSE 与 archived=false。",
+      "caveat": "bigquery-execute-sql 官方定位为有人监督的开发助手工具，不建议直接用于生产 Agent；默认 readOnly=false、writeMode=allowed。protected 模式仍允许经验证的会话临时写入，不等于严格只读；生产应配置最小权限与受控工具。",
+      "technical_material_url": "https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/docs/en/documentation/introduction/_index.md",
+      "notes": "本次核验 v1.16.0、Apache-2.0 与 archived=false。创建/更新/删除数据 Agent 是管理能力，不能等同查询权限；工具服务仍需上层系统提供业务语义、规划与结果验证。",
       "component_type": "tool-server",
-      "last_verified": "2026-11-02",
+      "last_verified": "2026-11-06",
       "release_updates": [
         {
           "version": "v1.15.0",
           "published_at": "2026-10-23T00:14:18Z",
           "url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.15.0"
+        },
+        {
+          "version": "v1.16.0",
+          "published_at": "2026-11-05T19:56:15Z",
+          "url": "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.16.0"
+        }
+      ],
+      "verification_scope": "核对官方 release、仓库归档状态、所列根许可证及固定提交的技术文档；未部署运行、复现基准或审计依赖许可证。历史支持链接并非本轮全部重验。",
+      "reading_path": [
+        {
+          "title": "工具服务架构",
+          "url": "https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/docs/en/documentation/introduction/_index.md",
+          "focus": "区分连接、工具配置、认证与上层 Agent。"
+        },
+        {
+          "title": "BigQuery 通用 SQL 工具边界",
+          "url": "https://github.com/googleapis/mcp-toolbox/blob/06ea49d9a487a72c22419b5a8d5c22c11f0d7485/docs/en/integrations/bigquery/tools/bigquery-execute-sql.md",
+          "focus": "核对默认写入权限、开发期用途和 protected 模式。"
+        },
+        {
+          "title": "protected 写入修复及测试",
+          "url": "https://github.com/googleapis/mcp-toolbox/commit/426fb4e8074b873dc53b74bd259540d01684fa17",
+          "focus": "核对临时表允许范围、永久目标拒绝与未知语句类型的处理。"
         }
       ]
     },
@@ -2719,12 +2745,35 @@
       "date_evidence": "稳定版 0.7.0 published_at 2026-05-28T08:55:51Z；引入统一分析 Agent、数据加载 Agent、线程记忆与持久工作区。",
       "evidence_url": "https://github.com/microsoft/data-formulator/releases/tag/0.7.0",
       "license": "MIT",
-      "license_url": "https://github.com/microsoft/data-formulator/blob/main/LICENSE",
+      "license_url": "https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/LICENSE",
       "mechanism": "通过数据连接器和数据记忆理解多源数据，在 Data Thread 中保留分析路径，支持从历史节点分支、图表编辑和自然语言继续探索。",
       "use_case": "适合交互式 EDA、图表与报告体验原型，也适合研究用户如何审阅和纠正 Agent 的分析过程。",
-      "caveat": "2026-08-15 的 0.8.0b1 仍为 beta；复现时可优先固定稳定版 0.7.0，再按需试用预览版。",
-      "technical_material_url": "https://github.com/microsoft/data-formulator/blob/main/DEVELOPMENT.md",
-      "component_type": "workspace"
+      "caveat": "稳定复现仍可固定 0.7.0；GitHub 最新 tag 为 0.8b1，README 对应包版本 0.8.0b1，官方称为 beta，虽然 GitHub prerelease 字段为 false。当前开发文档默认面向单用户本地运行；匿名多用户部署应关闭数据连接器、自定义模型和密钥显示，正式团队部署需认证身份，不能把浏览器 UUID 当作安全身份。",
+      "technical_material_url": "https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/DEVELOPMENT.md",
+      "component_type": "workspace",
+      "last_verified": "2026-11-06",
+      "verification_scope": "核对官方 release、仓库归档状态、所列根许可证及固定提交的技术文档；未部署运行、复现基准或审计依赖许可证。历史支持链接并非本轮全部重验。",
+      "notes": "稳定版记录保留 0.7.0 的发布日期；预览版和当前开发文档单列，不能视为稳定版已具备全部后续能力。",
+      "release_updates": [
+        {
+          "version": "0.7.0",
+          "published_at": "2026-05-28T08:55:51Z",
+          "url": "https://github.com/microsoft/data-formulator/releases/tag/0.7.0"
+        },
+        {
+          "version": "0.8b1",
+          "published_at": "2026-08-15T20:54:12Z",
+          "url": "https://github.com/microsoft/data-formulator/releases/tag/0.8b1",
+          "prerelease": true
+        }
+      ],
+      "related_materials": [
+        {
+          "title": "Beta 名称与包版本说明",
+          "url": "https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/README.md",
+          "note": "本仓根据发布正文和 README 标记预览版，不仅依赖 GitHub prerelease 字段。"
+        }
+      ]
     },
     {
       "id": "jupyter-ai",
@@ -2744,15 +2793,24 @@
         "human-in-the-loop"
       ],
       "summary": "在 JupyterLab 内让 Agent 编辑、运行和调试 Notebook；以 ACP/MCP 接入工具，适合保留单元格与执行结果作为分析证据。",
-      "date_evidence": "官方 v3.2.0 文档明确写明 Published on September 3, 2026；该版让编辑、执行和调试工具在无 RTC 环境下工作。",
-      "evidence_url": "https://jupyter-ai.readthedocs.io/en/stable/releases/v3.2.0.html",
+      "date_evidence": "官方 v3.2.0 发布文档标注 Published on September 3, 2026；GitHub published_at 为 2026-09-03T17:43:30Z（Asia/Shanghai 为 2026-09-04）。本条采用发布方标注且与 UTC 一致的日期，不将核验日期或时区换算误作新发布。",
+      "evidence_url": "https://github.com/jupyterlab/jupyter-ai/blob/995b53b651c39bf9a7744bfe0d2d85b0967b672c/docs/source/releases/v3.2.0.md",
       "license": "BSD-3-Clause",
-      "license_url": "https://github.com/jupyterlab/jupyter-ai/blob/main/LICENSE",
+      "license_url": "https://github.com/jupyterlab/jupyter-ai/blob/dc4d493031484480040a89e68ecea8d49f1665e2/LICENSE",
       "mechanism": "在 JupyterLab 原生聊天中连接 Agent，通过内置 MCP 和前端命令操作 Notebook 与文件，并在写入和执行前进行权限审批。",
       "use_case": "适合需要人工审阅的 Notebook 分析、数据科学协作，以及将步骤和输出留在可继续运行的工作区。",
-      "caveat": "v3.2.0 起代码拆入多个子包，主项目发布记录侧重汇总；部署与开发应以官方子包兼容版本及 release notes 为准。",
-      "technical_material_url": "https://jupyter-ai.readthedocs.io/en/stable/users/index.html",
-      "component_type": "workspace"
+      "caveat": "v3.2.0 的 Notebook 编辑、运行和调试可不依赖 RTC，但官方明确说明：外部直接修改磁盘上的 Notebook 不会因此实时刷新到界面，文件刷新还可能丢失滚动位置。聊天工具实时操作与任意磁盘修改自动同步是不同能力；主仓库发布还需结合子包 release notes 阅读。",
+      "technical_material_url": "https://github.com/jupyterlab/jupyter-ai/blob/995b53b651c39bf9a7744bfe0d2d85b0967b672c/docs/source/releases/v3.2.0.md",
+      "component_type": "workspace",
+      "last_verified": "2026-11-06",
+      "verification_scope": "核对官方 release、仓库归档状态、所列根许可证及固定提交的技术文档；未部署运行、复现基准或审计依赖许可证。历史支持链接并非本轮全部重验。",
+      "release_updates": [
+        {
+          "version": "v3.2.0",
+          "published_at": "2026-09-03T17:43:30Z",
+          "url": "https://github.com/jupyterlab/jupyter-ai/releases/tag/v3.2.0"
+        }
+      ]
     },
     {
       "id": "dlt-mcp-server",
@@ -2799,18 +2857,27 @@
         "governance",
         "streaming"
       ],
-      "summary": "用户身份贯穿提示、SQL 工具和行级过滤，并流式输出表格图表；2026-03-29 已归档，适合作为架构研究案例。",
+      "summary": "由应用提供身份和组信息，贯穿 Agent、SQL 工具与流式表格图表；兼容适配器不保证行级安全。2026-03-29 已归档，保留作架构研究案例。",
       "date_evidence": "v2.0.2 published_at 2026-02-02T14:14:20Z，修正 ChromaDB 检索时多余 embedding 初始化；GitHub 项目页显示 2026-03-29 归档。",
       "evidence_url": "https://github.com/vanna-ai/vanna/releases/tag/v2.0.2",
       "license": "MIT",
-      "license_url": "https://github.com/vanna-ai/vanna/blob/main/LICENSE",
+      "license_url": "https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/LICENSE",
       "archived": true,
       "archived_date": "2026-03-29",
-      "mechanism": "将 UserResolver 得到的身份和组成员信息传入 Agent 与工具；工具根据用户权限执行 SQL，向 Web 组件流式发送表格、图表与总结。",
+      "mechanism": "由应用实现 UserResolver，将经认证的身份和组信息交给 Agent 与工具注册表；工具组权限、SQL 执行与流式 UI 在同一调用链中协作。",
       "use_case": "适合研究如何把身份、SQL 执行、审计和可嵌入分析 UI 串成同一数据 Agent 调用链。",
-      "caveat": "项目已归档且只读，不能按活跃维护项目推荐；新系统选型需自行评估维护与依赖成本。",
-      "technical_material_url": "https://github.com/vanna-ai/vanna/blob/main/MIGRATION_GUIDE.md",
-      "component_type": "agent-framework"
+      "caveat": "项目已于 2026-03-29 归档。LegacyVannaAdapter 共享同一 VannaBase 实例，官方迁移指南明确说明不能利用行级安全；身份传递和工具组权限不能直接当作数据库行级隔离保证。",
+      "technical_material_url": "https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/MIGRATION_GUIDE.md",
+      "component_type": "agent-framework",
+      "last_verified": "2026-11-06",
+      "verification_scope": "核对官方 release、仓库归档状态、所列根许可证及固定提交的技术文档；未部署运行、复现基准或审计依赖许可证。历史支持链接并非本轮全部重验。",
+      "release_updates": [
+        {
+          "version": "v2.0.2",
+          "published_at": "2026-02-02T14:14:20Z",
+          "url": "https://github.com/vanna-ai/vanna/releases/tag/v2.0.2"
+        }
+      ]
     },
     {
       "id": "adapra-paper",
@@ -3717,6 +3784,28 @@
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-06-project-evidence",
+      "kind": "evidence-refresh",
+      "as_of": "2026-11-06",
+      "window_start": "2026-11-06",
+      "previous_as_of": "2026-11-05",
+      "base_commit": "1dbf24e299420c718893ef45429ae9a127f16f36",
+      "previous_total": 168,
+      "added_total": 0,
+      "updated_total": 6,
+      "added_ids": [],
+      "updated_ids": [
+        "wrenai",
+        "vanna-agent-framework",
+        "db-gpt",
+        "google-mcp-toolbox-databases",
+        "microsoft-data-formulator",
+        "jupyter-ai"
+      ],
+      "agenda_reviewed_ids": [],
+      "review_note": "定向复核六个已有项目的 release、根许可、归档状态与固定提交技术文档；无新增条目。MCP Toolbox 更新至 v1.16.0，Data Formulator 明确 beta，Vanna 修正行级安全措辞；不表示其余条目或历史支持链接全部重验，也没有部署和基准复现。"
+    },
     {
       "id": "2026-11-05-project-docs-talks",
       "kind": "thematic-enrichment",
