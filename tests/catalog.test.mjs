@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { SECTIONS, TOPICS, STATUSES, DEFAULT_STATE, safeUrl, readState, stateSearch, dateKey,
   displayDate, readmeNotes, prepareResources, selectResources, sectionCounts,
-  topicCounts, highlightSegments, readingContext
+  topicCounts, highlightSegments, readingContext, recentHistory, relatedResources
 } from '../assets/catalog.js';
 
 const fixtures = [
@@ -29,7 +29,7 @@ test('date ordering respects month precision and event ranges', () => {
 });
 
 test('shared URLs preserve Unicode, punctuation and combined filters', () => {
-  const original = state({ q: '语义层 & "SQL" #1', section: 'architecture', topic: 'context', lang: 'zh', status: 'published', tag: 'context', sort: 'added', latest: true, saved: true, resource: 'a/b' });
+  const original = state({ q: '语义层 & "SQL" #1', section: 'architecture', topic: 'context', lang: 'zh', status: 'published', tag: 'context', sort: 'added', latest: true, saved: true, recent: true, resource: 'a/b' });
   assert.deepEqual(readState(stateSearch(original)), original);
   assert.deepEqual(readState('?type=unknown&topic=__proto__&status=__proto__&sort=bad&lang=other'), state({}));
   assert.equal(readState('?q=' + 'x'.repeat(300)).q.length, 256);
@@ -103,6 +103,35 @@ test('reader respects filtered order and still opens a shared resource outside c
   assert.equal(shared.filtered, false);
   assert.equal(shared.items[shared.index].id, 'context');
   assert.equal(readingContext(all, [], 'missing').index, -1);
+});
+
+test('smart search ranks an exact project ahead of a newer incidental mention', () => {
+  const records = prepareResources([
+    { ...fixtures[0], id: 'project', title: 'WrenAI', date: '2026-01-01' },
+    { ...fixtures[1], id: 'article', title: 'Production field notes', summary: 'WrenAI latest production notes', date: '2026-11-06' }
+  ]);
+  assert.deepEqual(selectResources(records, state({ q: 'WrenAI' })).map(r => r.id), ['project', 'article']);
+  assert.deepEqual(selectResources(records, state({ q: 'WrenAI', sort: 'date' })).map(r => r.id), ['article', 'project']);
+  assert.equal(readState('?sort=date').sort, 'date');
+  assert.equal(readState('?saved=1').saved, true);
+});
+
+test('recent browsing is bounded, deduplicated, pruned and ordered independently of source dates', () => {
+  assert.deepEqual(recentHistory(['context', 'missing', 'context', null, 'agenda'], new Set(['context', 'agenda'])), ['context', 'agenda']);
+  assert.deepEqual(recentHistory({}), []);
+  assert.equal(recentHistory(Array.from({ length: 40 }, (_, i) => String(i))).length, 30);
+  assert.deepEqual(selectResources(prepared, state({ recent: true }), { recent: ['context', 'agenda'] }).map(r => r.id), ['context', 'agenda']);
+  assert.equal(selectResources(prepared, state({ recent: true })).length, 0);
+});
+
+test('related resources explain real shared tags and exclude the current or unrelated item', () => {
+  const before = JSON.stringify(prepared);
+  const related = relatedResources(prepared, prepared[1]);
+  assert.deepEqual(related.map(item => item.resource.id), ['agenda']);
+  assert.deepEqual(related[0].sharedTags, ['mcp']);
+  assert.equal(related[0].sameOrganization, false);
+  assert.deepEqual(relatedResources(prepared, prepared[0]), []);
+  assert.equal(JSON.stringify(prepared), before);
 });
 
 test('real catalog has unique IDs, safe sources, supported facets and exact counts', () => {

@@ -44,9 +44,9 @@ export const TOPICS = [
 ];
 
 export const DEFAULT_STATE = Object.freeze({
-  q: '', section: '', topic: '', lang: '', status: '', tag: '', sort: 'date', saved: false, latest: false, resource: ''
+  q: '', section: '', topic: '', lang: '', status: '', tag: '', sort: 'smart', saved: false, latest: false, recent: false, resource: ''
 });
-const sorts = new Set(['date', 'added', 'name']);
+const sorts = new Set(['smart', 'date', 'added', 'name']);
 const collator = new Intl.Collator('zh-Hans-CN', { sensitivity: 'base', numeric: true });
 
 export function safeUrl(value) {
@@ -68,8 +68,9 @@ export function readState(search = '') {
     lang: ['zh', 'en'].includes(p.get('lang')) ? p.get('lang') : '',
     status: Object.hasOwn(STATUSES, status) ? status : '',
     tag: (p.get('tag') || '').slice(0, 80).trim(),
-    sort: sorts.has(p.get('sort')) ? p.get('sort') : 'date',
+    sort: sorts.has(p.get('sort')) ? p.get('sort') : 'smart',
     saved: p.get('saved') === '1', latest: p.get('latest') === '1',
+    recent: p.get('recent') === '1',
     resource: (p.get('resource') || '').slice(0, 160)
   };
 }
@@ -82,9 +83,10 @@ export function stateSearch(state) {
   if (state.lang) p.set('lang', state.lang);
   if (state.status) p.set('status', state.status);
   if (state.tag) p.set('tag', state.tag);
-  if (state.sort && state.sort !== 'date') p.set('sort', state.sort);
+  if (state.sort && state.sort !== 'smart') p.set('sort', state.sort);
   if (state.saved) p.set('saved', '1');
   if (state.latest) p.set('latest', '1');
+  if (state.recent) p.set('recent', '1');
   if (state.resource) p.set('resource', state.resource);
   return p.size ? '?' + p.toString() : '';
 }
@@ -138,8 +140,24 @@ export function prepareResources(resources, markdown = '') {
   });
 }
 
-export function selectResources(resources, state, { saved = new Set(), latest = new Set() } = {}) {
+export function searchScore(resource, query) {
+  const text = String(query || '').trim().toLocaleLowerCase();
+  if (!text) return 0;
+  const title = resource.title.toLocaleLowerCase();
+  const organization = (resource.organization || '').toLocaleLowerCase();
+  const tags = (resource.tags || []).flatMap(tag => [tag, TAG_LABELS[tag] || '']).join(' ').toLocaleLowerCase();
+  let score = title === text ? 120 : title.includes(text) ? 40 : 0;
+  for (const word of text.split(/\s+/)) {
+    if (title.includes(word)) score += 20;
+    if (organization.includes(word)) score += 12;
+    if (tags.includes(word)) score += 8;
+  }
+  return score;
+}
+
+export function selectResources(resources, state, { saved = new Set(), latest = new Set(), recent = [] } = {}) {
   const words = String(state.q || '').toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  const recency = new Map(recent.map((id, index) => [id, index]));
   const selected = resources.filter(r =>
     (!state.section || r.section === state.section) &&
     (!state.topic || (r.topics || []).includes(state.topic)) &&
@@ -148,9 +166,15 @@ export function selectResources(resources, state, { saved = new Set(), latest = 
     (!state.tag || (r.tags || []).includes(state.tag)) &&
     (!state.saved || saved.has(r.id)) &&
     (!state.latest || latest.has(r.id)) &&
+    (!state.recent || recency.has(r.id)) &&
     words.every(word => (r.search_text || '').includes(word))
   );
   return selected.sort((a, b) => {
+    if (state.sort === 'smart') {
+      const relevance = words.length ? searchScore(b, state.q) - searchScore(a, state.q) : 0;
+      if (relevance) return relevance;
+      if (state.recent) return recency.get(a.id) - recency.get(b.id);
+    }
     if (state.sort === 'name') return collator.compare(a.title, b.title);
     if (state.sort === 'added') {
       const delta = dateKey(b.added_on) - dateKey(a.added_on);
@@ -203,4 +227,21 @@ export function readingContext(resources, matches, id) {
   const items = filteredIndex >= 0 ? matches : resources;
   const index = filteredIndex >= 0 ? filteredIndex : items.findIndex(r => r.id === id);
   return { items, index, filtered: filteredIndex >= 0 };
+}
+
+export function recentHistory(value, knownIds) {
+  const ids = Array.isArray(value) ? value : [];
+  return [...new Set(ids.filter(id => typeof id === 'string' && (!knownIds || knownIds.has(id))))].slice(0, 30);
+}
+
+export function relatedResources(resources, current, limit = 3) {
+  const navigationTags = new Set(['agenda', 'slides', 'video', 'video-page', 'transcript', 'recap', 'mit', 'mit-0', 'apache-2.0', 'no-license', 'multi-license', 'mixed-license', 'modified-gpl']);
+  const tags = new Set((current.tags || []).filter(tag => !navigationTags.has(tag)));
+  return resources.filter(r => r.id !== current.id).map(resource => {
+    const sharedTags = (resource.tags || []).filter(tag => tags.has(tag));
+    const sameOrganization = Boolean(current.organization && resource.organization === current.organization);
+    return { resource, sharedTags, sameOrganization, score: sharedTags.length * 3 + (sameOrganization ? 4 : 0) };
+  }).filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score || dateKey(b.resource.date) - dateKey(a.resource.date) || collator.compare(a.resource.title, b.resource.title))
+    .slice(0, limit);
 }

@@ -13,8 +13,8 @@
   <meta property="og:image" content="https://pyramiding.github.io/awesome-data-agents/data-agent-system-map-v2.png">
   <link rel="canonical" href="https://pyramiding.github.io/awesome-data-agents/">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <script src="./assets/theme.js?v=3"></script>
-  <link rel="stylesheet" href="./assets/styles.css?v=3">
+  <script src="./assets/theme.js?v=4"></script>
+  <link rel="stylesheet" href="./assets/styles.css?v=4">
   <title>Awesome Data Agents · 工程资料地图</title>
 </head>
 <body>
@@ -38,12 +38,15 @@
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.7 13.2A9 9 0 0 1 10.8 3.3a9 9 0 1 0 9.9 9.9Z"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 6M3 4v7h7m2-4v6l4 2"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m15 5v-4c0-1-.3-1.7-.8-2.2 2.8-.3 5.8-1.4 5.8-6.2 0-1.4-.5-2.5-1.3-3.5.1-.4.6-1.7-.1-3.5 0 0-1.1-.4-3.6 1.3a12 12 0 0 0-6.5 0C9 2.2 8 2.6 8 2.6c-.7 1.8-.3 3.1-.1 3.5-.8 1-1.3 2.1-1.3 3.5 0 4.8 3 5.9 5.8 6.2-.5.5-.8 1.3-.8 2.2v4" transform="translate(-2 -1) scale(1.05)"/></symbol>
   </svg>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="./" aria-label="Awesome Data Agents 首页"><img src="./assets/favicon.svg" width="36" height="36" alt=""><span>DATA<span class="brand-slash">/</span>AGENTS<span class="brand-sub">THE ENGINEERING ATLAS</span></span></a>
       <nav aria-label="主导航"><a href="#library">探索资料</a><a href="#paths">阅读路线</a><a href="#architecture">系统参考图</a></nav>
+      <button id="command-trigger" class="command-trigger" type="button" data-open-search aria-haspopup="dialog" aria-label="打开全站搜索"><svg class="icon small"><use href="#i-search"/></svg><span>全站搜索</span><kbd>⌘ K</kbd></button>
       <div class="header-actions">
         <button id="theme-toggle" class="icon-button theme-toggle" type="button" aria-label="切换到浅色主题" title="切换阅读主题"><svg class="icon theme-sun"><use href="#i-sun"/></svg><svg class="icon theme-moon"><use href="#i-moon"/></svg></button>
         <button id="saved-view" class="saved-view" type="button" aria-pressed="false"><svg class="icon"><use href="#i-bookmark"/></svg><span>收藏</span><span id="saved-count" class="mini-count">0</span></button>
@@ -52,14 +55,14 @@
     </div>
   </header>
   <main>
-    <section class="hero-shell" aria-labelledby="hero-title">
+    <section class="hero-shell workspace-hero" aria-labelledby="hero-title">
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero container">
         <div class="hero-copy">
           <div class="eyebrow"><span class="signal-dot"></span> THE DATA AGENT FIELD GUIDE <span class="year">2026</span></div>
-          <h1 id="hero-title">Data Agents.<span>从理解，到可靠行动。</span></h1>
-          <p class="hero-description">连接业务语义、执行系统与验证证据。<br>沿着架构、项目与公开分享，找到你的下一步。</p>
-          <div class="hero-actions"><a class="button primary" href="#library">探索资料库 <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-link" href="#paths">从一个工程问题开始 <svg class="icon small"><use href="#i-arrow"/></svg></a></div>
+          <h1 id="hero-title">Data Agent 工程资料地图<span>从一个问题，找到下一步。</span></h1>
+          <p class="hero-description">沿架构、项目与公开分享，读懂业务语义、执行机制和验证边界。</p>
+          <div class="hero-actions"><button id="hero-command-trigger" class="button primary" type="button" data-open-search><svg class="icon small"><use href="#i-search"/></svg>搜索全站 <kbd>⌘ K</kbd></button><a class="text-link" href="#paths">选择阅读路线 <svg class="icon small"><use href="#i-arrow"/></svg></a></div>
           <div class="hero-meta"><span class="snapshot-label">SOURCE SNAPSHOT</span><span>资料截止 <strong id="as-of">—</strong></span></div>
         </div>
         <div class="hero-visual">
@@ -75,10 +78,8 @@
         <a href="https://github.com/Pyramiding/awesome-data-agents/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">原始来源 · 中文导读 · 证据边界 <svg class="icon small"><use href="#i-external"/></svg></a>
       </div>
     </section>
-    <section id="library" class="container library-section" aria-labelledby="library-title">
-      <div class="section-heading"><div><div class="eyebrow muted">01 / EXPLORE THE ATLAS</div><h2 id="library-title">从资料，走向工程判断<span>.</span></h2></div><span class="section-note">先选工程主题，再按资料类型深入</span></div>
-      <div class="topic-heading"><h3>工程主题</h3><span>资料可跨主题，支持交叉筛选</span><button id="all-topics" type="button" aria-pressed="true">全部主题</button></div>
-      <div id="topics" class="topic-strip" aria-label="工程主题"></div>
+    <section id="library" class="container library-section workspace-library" aria-labelledby="library-title">
+      <h2 id="library-title" class="sr-only">资料库</h2>
       <div class="library-layout">
         <aside class="filter-sidebar" aria-label="资料类型"><div class="sidebar-sticky">
           <p class="sidebar-label">资料类型 <span>COLLECTIONS</span></p>
@@ -86,11 +87,14 @@
           <div class="sidebar-note"><svg class="icon"><use href="#i-check"/></svg><p>看懂它解决什么，<br>也看懂证据到哪里。</p><a href="https://github.com/Pyramiding/awesome-data-agents/blob/main/DESIGN_REVIEW.md" target="_blank" rel="noopener noreferrer">设计评审模板 <svg class="icon small"><use href="#i-arrow"/></svg></a></div>
         </div></aside>
         <div class="library-main">
+          <nav class="collection-tabs" aria-label="资料视图"><button type="button" data-collection="all" aria-pressed="true">全部资料</button><button id="latest-toggle" type="button" data-collection="latest" aria-pressed="false">本轮补录 <span id="latest-count">—</span></button><button type="button" data-collection="saved" aria-pressed="false">我的收藏 <span class="collection-count"></span></button><button id="recent-view" type="button" data-collection="recent" aria-pressed="false">最近浏览 <span id="recent-count">0</span></button></nav>
           <div class="catalog-controls">
-            <div class="search-box"><svg class="icon"><use href="#i-search"/></svg><label class="sr-only" for="search">搜索资料、项目、作者或技术关键词</label><input id="search" type="search" placeholder="搜索项目、作者或关键词：语义层、MCP、沙箱…" maxlength="256" autocomplete="off" spellcheck="false"><kbd aria-hidden="true">/</kbd></div>
-            <div class="filter-toolbar"><div class="filter-selects"><label><span class="sr-only">资料语言</span><select id="language"><option value="">全部语言</option><option value="zh">中文资料</option><option value="en">English</option></select></label><label><span class="sr-only">公开状态</span><select id="status"><option value="">全部公开状态</option></select></label></div><label><span class="sr-only">排序方式</span><select id="sort"><option value="date">原始日期 · 最新</option><option value="added">最近收录</option><option value="name">名称 A–Z</option></select></label></div>
+            <div class="search-box"><svg class="icon"><use href="#i-search"/></svg><label class="sr-only" for="search">搜索资料、项目、作者或技术关键词</label><input id="search" type="search" placeholder="在当前范围内搜索项目、作者或技术关键词…" maxlength="256" autocomplete="off" spellcheck="false"><kbd aria-hidden="true">/</kbd></div>
+            <div class="filter-toolbar desktop-filters"><div class="filter-selects"><label><span class="sr-only">资料语言</span><select id="language"><option value="">全部语言</option><option value="zh">中文资料</option><option value="en">English</option></select></label><label><span class="sr-only">公开状态</span><select id="status"><option value="">全部公开状态</option></select></label><label><span class="sr-only">技术标签</span><select id="tag-filter"><option value="">全部技术标签</option></select></label></div><label><span class="sr-only">排序方式</span><select id="sort"><option value="smart">智能排序</option><option value="date">原始日期 · 最新</option><option value="added">最近收录</option><option value="name">名称 A–Z</option></select></label></div>
+            <div class="mobile-filter-bar"><span id="mobile-context">全部资料 · 智能排序</span><button id="filters-open" type="button" aria-haspopup="dialog"><svg class="icon small"><use href="#i-filter"/></svg>筛选 <span id="filter-count" hidden>0</span></button></div>
           </div>
-          <div class="collection-intro"><div><h3 id="collection-title">全部资料</h3><p id="collection-description">从机制、实现到验证，沿原始资料建立工程判断。</p></div><button id="latest-toggle" type="button" aria-pressed="false"><span class="small-dot"></span>本轮补录 <span id="latest-count">—</span></button></div>
+          <div class="topic-row desktop-filters"><span>工程主题</span><button id="all-topics" type="button" aria-pressed="true">全部</button><div id="topics" class="topic-strip" aria-label="工程主题"></div></div>
+          <div class="collection-intro sr-only"><div><h3 id="collection-title">全部资料</h3><p id="collection-description">从机制、实现到验证，沿原始资料建立工程判断。</p></div></div>
           <div id="active-filters" class="active-filters"></div>
           <div class="results-toolbar"><h3 id="results-heading" tabindex="-1">正在读取资料…</h3><div class="results-actions"><button id="clear-filters" type="button" hidden>重置筛选</button><span id="shown-count"></span><div class="view-toggle" role="group" aria-label="资料显示方式"><button type="button" data-view="grid" aria-label="卡片视图" aria-pressed="true" title="卡片视图"><svg class="icon"><use href="#i-grid"/></svg></button><button type="button" data-view="list" aria-label="列表视图" aria-pressed="false" title="列表视图"><svg class="icon"><use href="#i-list"/></svg></button></div></div></div>
           <p id="result-announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -116,16 +120,29 @@
   </main>
   <footer class="site-footer">
     <div class="container footer-inner"><div><a class="footer-brand" href="./">AWESOME DATA AGENTS <span>2026</span></a><p>独立整理，持续核验。为更可靠的数据工作而建。</p></div><div class="footer-links"><a href="https://github.com/Pyramiding/awesome-data-agents/blob/main/UPDATES.md" target="_blank" rel="noopener noreferrer">更新记录</a><a href="https://github.com/Pyramiding/awesome-data-agents/issues/new/choose" target="_blank" rel="noopener noreferrer">推荐资料 / 勘误</a><a href="https://github.com/Pyramiding/awesome-data-agents/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div></div>
-    <div class="container footer-bottom"><span>外部资料的版权与许可证归原作者；收藏和阅读偏好只保存在当前浏览器。</span><a href="./resources.json" target="_blank" rel="noopener noreferrer">查看机器索引 ↗</a></div>
+    <div class="container footer-bottom"><span>外部资料的版权与许可证归原作者；收藏、最近浏览和阅读偏好仅保存在当前浏览器。</span><a href="./resources.json" target="_blank" rel="noopener noreferrer">查看机器索引 ↗</a></div>
   </footer>
+  <dialog id="command-dialog" class="command-dialog" aria-labelledby="command-title">
+    <div class="command-heading"><h2 id="command-title">全站搜索</h2><span>⌘ / Ctrl K</span><button id="command-close" class="icon-button" type="button" aria-label="关闭全站搜索"><svg class="icon small"><use href="#i-close"/></svg></button></div>
+    <div class="command-input-row"><svg class="icon"><use href="#i-search"/></svg><label class="sr-only" for="command-search">搜索全部资料</label><input id="command-search" type="search" placeholder="输入项目、机构或技术关键词…" maxlength="256" autocomplete="off" spellcheck="false" role="combobox" aria-controls="command-results" aria-expanded="true" aria-autocomplete="list" aria-describedby="command-hint"></div>
+    <p id="command-status" class="command-status" role="status" aria-live="polite"></p><ul id="command-results" role="listbox" aria-label="全站搜索结果"></ul>
+    <div id="command-empty" class="command-empty" hidden><p>没有找到匹配的资料</p><span>试试项目名称、机构或更短的技术关键词。</span></div>
+    <button id="command-all" class="command-show-all" type="button" hidden>在资料库查看全部匹配结果 <svg class="icon small"><use href="#i-arrow"/></svg></button>
+    <div class="command-footer" id="command-hint"><span><kbd>↑</kbd><kbd>↓</kbd> 选择 <kbd>Enter</kbd> 打开</span><span><kbd>Esc</kbd> 关闭 · 搜索全部资料</span></div>
+  </dialog>
+  <dialog id="filter-dialog" class="filter-dialog" aria-labelledby="filter-title">
+    <div class="filter-dialog-heading"><div><span>REFINE YOUR VIEW</span><h2 id="filter-title">筛选资料</h2></div><button id="filters-close" class="icon-button" type="button" aria-label="关闭筛选"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <div class="filter-fields"><label for="mobile-section">资料类型</label><select id="mobile-section"><option value="">全部资料类型</option></select><label for="mobile-topic">工程主题</label><select id="mobile-topic"><option value="">全部工程主题</option></select><label for="mobile-language">资料语言</label><select id="mobile-language"><option value="">全部语言</option><option value="zh">中文资料</option><option value="en">English</option></select><label for="mobile-status">公开状态</label><select id="mobile-status"><option value="">全部公开状态</option></select><label for="mobile-tag">技术标签</label><select id="mobile-tag"><option value="">全部技术标签</option></select><label for="mobile-sort">排序方式</label><select id="mobile-sort"><option value="smart">智能排序</option><option value="date">原始日期 · 最新</option><option value="added">最近收录</option><option value="name">名称 A–Z</option></select><p>资料类型与工程主题可以交叉筛选；保留当前关键词和资料视图。</p></div>
+    <div class="filter-dialog-actions"><button id="filters-reset" class="text-link" type="button">清空条件</button><button id="filters-apply" class="button primary" type="button">查看资料</button></div>
+  </dialog>
   <dialog id="resource-dialog" aria-labelledby="detail-title">
     <div class="dialog-top"><span id="detail-category" class="detail-eyebrow"></span><button id="close-dialog" class="icon-button" type="button" aria-label="关闭条目详情" autofocus><span class="escape-hint">ESC</span><svg class="icon"><use href="#i-close"/></svg></button></div>
-    <div class="reader-toolbar"><span id="reader-position" aria-live="polite"></span><div class="reader-navigation"><button id="reader-prev" class="icon-button" type="button" aria-label="上一条资料" title="上一条资料 · ←"><svg class="icon previous"><use href="#i-chevron"/></svg></button><button id="reader-next" class="icon-button" type="button" aria-label="下一条资料" title="下一条资料 · →"><svg class="icon"><use href="#i-chevron"/></svg></button><span class="toolbar-divider"></span><button id="detail-save" class="reader-save" type="button" aria-pressed="false"><svg class="icon small"><use href="#i-bookmark"/></svg><span>加入收藏</span></button></div></div>
+    <div class="reader-toolbar"><span id="reader-position" aria-live="polite"></span><div class="reader-navigation"><button id="reader-prev" class="icon-button" type="button" aria-label="上一条资料" title="上一条资料 · ←"><svg class="icon previous"><use href="#i-chevron"/></svg></button><button id="reader-next" class="icon-button" type="button" aria-label="下一条资料" title="下一条资料 · →"><svg class="icon"><use href="#i-chevron"/></svg></button><span class="toolbar-divider"></span><button id="reader-size" class="reader-save" type="button" aria-pressed="false" aria-label="使用大字号阅读" title="切换大字号">Aa</button><button id="detail-save" class="reader-save" type="button" aria-pressed="false"><svg class="icon small"><use href="#i-bookmark"/></svg><span>加入收藏</span></button></div></div>
     <div class="reader-layout"><aside class="reader-sidebar"><p>本条导览 <span>CONTENTS</span></p><nav id="detail-toc" aria-label="条目内容导览"></nav></aside><div id="reader-scroll" class="reader-scroll" tabindex="0" aria-label="条目阅读区"><div class="dialog-content"><div id="detail-meta" class="detail-meta"></div><h2 id="detail-title"></h2><div id="detail-body"></div></div></div></div>
     <div class="dialog-actions"><button id="copy-link" class="button secondary" type="button"><svg class="icon small"><use href="#i-link"/></svg>分享条目</button><a id="detail-source" class="button primary" target="_blank" rel="noopener noreferrer">阅读原文 <svg class="icon small"><use href="#i-external"/></svg></a></div>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <noscript><div class="noscript-note">请启用 JavaScript 使用搜索与筛选，也可以直接阅读 <a href="https://github.com/Pyramiding/awesome-data-agents">GitHub 资料总览</a>。</div></noscript>
-  <script type="module" src="./assets/app.js?v=3"></script>
+  <script type="module" src="./assets/app.js?v=4"></script>
 </body>
 </html>
