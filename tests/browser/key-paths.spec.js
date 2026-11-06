@@ -31,7 +31,7 @@ test('catalog loads, pagination repeats safely and source links remain usable', 
 test('search and crossed filters survive reload, then recover from zero results', async ({ page }) => {
   await load(page);
   await page.locator('#search').fill('WrenAI');
-  await page.locator('[data-section="open-source"]').click();
+  await page.locator('button[data-section="open-source"]').click();
   await page.locator('#language').selectOption('en');
   await page.locator('#status').selectOption('active-project');
   await page.locator('#sort').selectOption('name');
@@ -51,7 +51,7 @@ test('search and crossed filters survive reload, then recover from zero results'
 test('topic/type intersection and latest-added batch have working clear controls', async ({ page }) => {
   await load(page);
   await page.locator('[data-topic="integration"]').click();
-  await page.locator('[data-section="open-source"]').click();
+  await page.locator('button[data-section="open-source"]').click();
   await expect(page).toHaveURL(/type=open-source.*topic=integration/);
   expect(await cards(page).count()).toBeGreaterThan(0);
   const visibleIds = await cards(page).evaluateAll(nodes => nodes.map(n => n.dataset.id));
