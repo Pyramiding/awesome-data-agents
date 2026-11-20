@@ -4,6 +4,13 @@
 
 这里记录每轮真正新增的资料、已有条目的实质更新，以及仍未核验的公开材料。日期来自原始发布页或版本记录，不把抓取时间当作发表时间；这是有边界的编辑检索，不是全网穷尽抓取。
 
+## 2026-11-20：技术博客与公开分享
+
+- **检索窗口** 为 2026-11-07 至 2026-11-20（Asia/Shanghai），接续 [上一版快照](https://github.com/Pyramiding/awesome-data-agents/tree/91e539ddd4f44fa99fc29cac09f6fa1f37d4aa56)。
+- **新增 16 条**，包括 6 篇架构与实践、6 篇评测与验收、4 条公开分享资料，累计 **168 → 184 条**。每条都补充原始日期依据、中文导读及证据边界。配套视频、评测和大会总览随主记录收录。 [新增明细](README.md#2026-11-20增量更新)
+- 两篇复盘按文章发出日收录，Stockholm Summit 在 10 月 14 日举行，Apache Doris Summit 在 10 月 21 至 22 日举行。Databricks 回放条目沿用主办方公布的美洲首场日期。COSCon'26 有场次和提纲，当前仍待讲义、实录或回放核验。 [分享材料与日期](TALKS.md#11-月新增的复盘回放入口与议程)
+- **评测对照** 聚焦可借鉴的实验设计。Atlan 固定数据快照与标准答案，Onehouse 比较原始数据探索与预设语义路由，Data Crafters 则按关系追踪与聚合题型拆分结果。各自结论的适用范围见对应条目。 [Atlan](https://atlan.com/frontier/essays/a-context-bench-for-analytics-agents/) · [Onehouse](https://www.onehouse.ai/blog/announcing-onehouse-semantic-layer) · [Data Crafters](https://datacrafters.io/ontology-powered-data-agents-in-microsoft-fabric-a-step-up-from-semantic-models/)
+
 ## 2026-11-07：检索优先的资料工作台
 
 - 参考 Linear 的信息层级、Raycast Store 的检索与分组方式、Mintlify 的文档导航，缩短首页展示区，统一工具栏、资料视图和结果区。参考链接与实现取舍见 [网页版维护](WEB.md#设计参考与取舍2026-11-07)。

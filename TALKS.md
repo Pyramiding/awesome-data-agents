@@ -2,7 +2,18 @@
 
 [返回总览](README.md) · [项目资料路线](PROJECT_GUIDE.md) · [机器索引](resources.json) · [更新记录](UPDATES.md)
 
-**资料截止：2026-11-05。** 按“要解决的问题”和“实际可读的材料”选择入口。下表重新编排已有收录，并补入本轮核验的讲义与官方培训页；不是把所有链接都算作本日新分享。
+**资料截止：2026-11-20。** 按要解决的问题和已核验的可读材料选择入口。
+
+## 11 月新增的复盘、回放入口与议程
+
+| 日期依据 | 讲者 / 场次 | 已核验的材料 | 建议关注 |
+|---|---|---|---|
+| 2026-11-18 · 复盘发布 | 许继良，正泰集团 / Doris Summit | [SelectDB 官网复盘](https://www.selectdb.com/blog/chint-selectdb-ai-agent-vector-search-practice) · [大会 10 月 21–22 日总览](https://www.selectdb.com/blog/apache-doris-summit-2026-agentic-ai-md) | 先读第 4 节。对照应用服务按权限获取数据、临时 DuckDB 承载结果集、Agent 执行分析三段边界。 |
+| 2026-11-15 · 复盘发布 | Robert Sahlin，Data & AI Stockholm Summit | [讲者复盘](https://robertsahlin.substack.com/p/building-data-platforms-by-for-and) · [演讲视频页](https://www.youtube.com/watch?v=MTWM-xFE4b0) · [大会 10 月 14 日议程](https://dataaistockholm.com/summit) | 从上游数据故障的案例读起，看看 Agent 如何获知一张表虽可查却已过时。 |
+| 2026-11-14 · 场次 | 刘镔辉，COSCon'26 / Datastrato | [官方议程](https://www.bagevent.com/event/coscon26)，16:00–16:30。已确认讲者与提纲，讲义、实录及回放待核验。 | 用 GMV 下滑案例梳理跨源数据发现、口径、查询前校验和错误回归问题。 |
+| 2026-11-11 · 美洲首场 | Ali Ghodsi、Greg Brockman，Databricks DATA + AI LIVE | [按需页](https://www.databricks.com/resources/webinar/context-is-just-the-beginning) · [官方视频页](https://www.youtube.com/watch?v=BsVfRCNI8IY) · [各场次安排](https://community.databricks.com/t5/learning-events/data-ai-live-context-is-just-the-beginning-meet-your-data-smart/ec-p/174147) | 看销售表现和 AI 支出示例怎样结合企业语境推进工作，再对照 [Genie Ontology 架构说明](https://www.databricks.com/blog/announcing-ga-genie-ontology)。 |
+
+本轮阅读了两篇复盘，并核对视频入口与大会日程。两条视频的完整播放未独立测试。
 
 ## 先按问题选择
 
@@ -17,13 +28,15 @@
 
 ## 公开实录与幻灯片
 
+下表沿用 11 月 5 日补录时的材料核验记录。
+
 | 日期依据 | 分享 | 已确认的材料 | 建议关注 |
 |---|---|---|---|
 | 2026-05-26 · 发布 | Open Data Circle · [Data Agents Need an Agent-facing Data Plane](https://speakerdeck.com/opendatacircle/data-agents-need-an-agent-facing-data-plane) | 幻灯片页；本轮直接请求超时，另经原站页面读取确认 | 将数据面、权限和观测作为 Agent 接入的一部分，而不只关注模型调用 |
 | 2026-06-03 · 教程日期 | SIGMOD · [Data Agents 教程讲义](https://2026.sigmod.org/slides/DataAgents-SIGMOD2026.pdf) | PDF，沿用既有收录；文件较大，本轮响应头正常，完整下载超时 | 自治分级与数据生命周期；分级本身不等于生产验收结论 |
-| 2026-07-10 · 发布 | Paras Doshi · [Catch 7 AI Analysis Mistakes Before They Drive Decisions](https://www.insightextractor.com/p/maven-session-slide-deck-download) | **本轮新增：[18 页 PDF](https://www.insightextractor.com/api/v1/file/162a46cb-90f0-42da-9c25-6bde530522be.pdf)** | 指标定义、粒度、时期覆盖与来源对账；案例数字是虚构教学数据，不能当作项目实测 |
+| 2026-07-10 · 发布 | Paras Doshi · [Catch 7 AI Analysis Mistakes Before They Drive Decisions](https://www.insightextractor.com/p/maven-session-slide-deck-download) | [18 页 PDF](https://www.insightextractor.com/api/v1/file/162a46cb-90f0-42da-9c25-6bde530522be.pdf) | 指标定义、粒度、时期覆盖与来源对账；案例数字是虚构教学数据，不能当作项目实测 |
 | 2026-07-14 · 实录发布 | Shopee / InfoQ · [从 AI 取数到智能分析：企业级数据 Agent 的多阶段演进与工程化落地](https://www.infoq.cn/article/LfO7mzdhxMWTtICFuTNb) | 实录正文可读取；本轮直接请求受限（451）；原 QCon 北京场次在 4 月 | 从链路到多阶段编排，结合 File-as-Context、Sandbox、Skills 与评测运营 |
-| 2026-07-16 · 发布 | Paras Doshi · [Build 3 AI Harnesses for Trustworthy Analytics](https://www.insightextractor.com/p/session-slide-and-recording-build) | **本轮新增：[15 页 PDF](https://www.insightextractor.com/api/v1/file/c04ec353-b782-4432-b631-1a0d42353cbb.pdf)** | 上下文、校验、证据复用的文件布局；示例 hook 只是提醒，证据失效条件仍需实际实现 |
+| 2026-07-16 · 发布 | Paras Doshi · [Build 3 AI Harnesses for Trustworthy Analytics](https://www.insightextractor.com/p/session-slide-and-recording-build) | [15 页 PDF](https://www.insightextractor.com/api/v1/file/c04ec353-b782-4432-b631-1a0d42353cbb.pdf) | 上下文、校验、证据复用的文件布局；示例 hook 只是提醒，证据失效条件仍需实际实现 |
 | 2026-10-28 · 场次日期 | Atlan · [The Post-AI Data Stack: A blueprint for analytics agents](https://atlan.com/context-conference/post-ai-data-stack/) | 36:55 视频与可定位逐字稿，沿用 11 月 2 日核验 | 指标、Ontology、Skills 的分工，以及人工审核和迭代评测；客户数字属于分享方经验 |
 
 两份 Paras Doshi 发布页都提到录像，本轮只核验了可读讲义，不据页面标题宣称录像已完整验证。保留作者原始页面与 PDF 链接，便于材料更新后继续定位。
@@ -32,7 +45,7 @@
 
 | 日期 | 入口 | 本轮或既有核验边界 | 配套阅读 |
 |---|---|---|---|
-| 2026-08-20 | 火山引擎 VeDI · [分析洞察快速入门-04 搭建流程概览](https://developer.volcengine.com/videos/7566240392669528073) | **本轮新增。** 已核验官方页面、发布元数据与简介；未独立测试完整播放，未取得逐字稿 | [3.21 系列文档](https://docs.volcengine.com/docs/data-agent-private/v3-21-0?lang=zh)；版本形态和参数以实际安装版本为准 |
+| 2026-08-20 | 火山引擎 VeDI · [分析洞察快速入门-04 搭建流程概览](https://developer.volcengine.com/videos/7566240392669528073) | 11 月 5 日核验官方页面、发布元数据与简介。完整播放及逐字稿待核验 | [3.21 系列文档](https://docs.volcengine.com/docs/data-agent-private/v3-21-0?lang=zh)，版本形态和参数以实际安装版本为准 |
 | 2026-10-27 | 云器科技 · [DACon 北京会后复盘](https://www.yunqi.tech/resource/blogs/dacon-ai-lakehouse) | 正文复盘可读；完整 PPT 需扫码小程序，沿用既有访问限制 | [Semantic View 技术文章](https://www.yunqi.tech/resource/blogs/semantic-view-ai-agent) |
 
 ## 只有议程时怎样使用

@@ -6,9 +6,9 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**168 条资料** · `62` 架构与实践 · `32` 公开实现 · `23` 分享与议程 · `17` 研究 · `20` 持续文档 · `14` 评测
+**184 条资料** · `68` 架构与实践 · `32` 公开实现 · `27` 分享与议程 · `17` 研究 · `20` 持续文档 · `20` 评测
 
-**资料截止：2026-11-06（Asia/Shanghai）** · [增量更新记录](UPDATES.md)
+**资料截止：2026-11-20（Asia/Shanghai）** · [查看本轮新增](#2026-11-20增量更新) · [增量更新记录](UPDATES.md)
 
 ## 从这里开始 · Start here
 
@@ -52,6 +52,42 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 
 </details>
 
+## 2026-11-20：增量更新
+
+这轮收录 11 月 7 日至 20 日的 **16 条资料**，包括 12 篇技术文章、两篇大会复盘、一条按需回放入口和一条中文会议议程。按实际要解决的问题，可以从下面三处读起。
+
+- **语义层怎么选。** 先把验收题拆成关系追踪、指标聚合和两者结合，再拿同一份数据比较上下文方案。Atlan 的内部评测提供了固定数据快照与比较答对成本的做法，Data Crafters 则展示了如何按题型对照本体和星型语义模型。 [Atlan](https://atlan.com/frontier/essays/a-context-bench-for-analytics-agents/) · [Data Crafters](https://datacrafters.io/ontology-powered-data-agents-in-microsoft-fabric-a-step-up-from-semantic-models/)
+- **指标怎么变成可执行约束。** 用一个含重试的成功率问题同时检查指标粒度、分母和时间窗，再追踪回答里的数字能否回到认证口径及查询。 [Onehouse 指标建模](https://www.onehouse.ai/blog/announcing-onehouse-semantic-layer) · [阿里云 AIDBS](https://developer.aliyun.com/article/1784599)
+- **Agent 在哪里取数、留下什么记录。** 正泰集团的复盘展示了应用服务按用户授权取数，再把结果交给临时 DuckDB。结合 Google Cloud 的日志说明，可以把「允许查哪些数据」和「允许留下哪些会话内容」分别验收。 [Doris Summit 复盘](https://www.selectdb.com/blog/chint-selectdb-ai-agent-vector-search-practice) · [BigQuery / Looker 观测与治理](https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker)
+
+### 公开分享
+
+| 日期依据 | 可读材料 | 建议关注 | 原始入口 |
+|---|---|---|---|
+| 11-18 · 复盘发布 | 正泰集团，讲者署名复盘 | 按角色取数后在受限结果集内生成报告 | [SelectDB](https://www.selectdb.com/blog/chint-selectdb-ai-agent-vector-search-practice) |
+| 11-15 · 复盘发布 | Robert Sahlin，正文和视频入口 | 把新鲜度告警沿血缘传给分析 Agent | [讲者博客](https://robertsahlin.substack.com/p/building-data-platforms-by-for-and) |
+| 11-14 · 场次 | COSCon'26，官方议程 | 围绕 GMV 下滑核对指标、数据源和查询前校验 | [大会日程](https://www.bagevent.com/event/coscon26) |
+| 11-11 · 美洲首场 | Databricks DATA + AI LIVE，官方回放入口 | 观察业务语境如何进入销售与 AI 支出等演示任务 | [主办方回放页](https://www.databricks.com/resources/webinar/context-is-just-the-beginning) |
+
+视频入口与场次核验范围见 [公开分享导航](TALKS.md#11-月新增的复盘回放入口与议程)。
+
+### 技术文章与博客
+
+| 发布日 | 主题 | 阅读重点 | 原文 |
+|---|---|---|---|
+| 11-19 | Redshift 执行治理 | 逐层核对访问权限、行数上限、查询资源与模型预算 | [AWS](https://aws.amazon.com/blogs/big-data/guardrails-and-cost-control-for-your-agentic-workloads-with-amazon-redshift/) |
+| 11-19 | 分析知识如何复用 | 每日合并重复知识、标记冲突、保留来源，核对首批预览权限范围 | [Hex Knowledge Engine](https://hex.tech/blog/knowledge-engine/) |
+| 11-18 | 上下文对照实验 | 107 道内部业务题，对照历史 SQL、指标层等，并计算答对成本 | [Atlan Frontier Labs](https://atlan.com/frontier/essays/a-context-bench-for-analytics-agents/) |
+| 11-18 | 可执行指标包 | 用构建重试检验逻辑实体粒度，走查 YAML 校验与发布 | [Onehouse](https://www.onehouse.ai/blog/announcing-onehouse-semantic-layer) |
+| 11-17 | 业务知识与报告证据 | 网关权限、带出处的业务知识和报告数字到 SQL 的链路 | [阿里云 AIDBS](https://developer.aliyun.com/article/1784599) |
+| 11-15 | SQL 语义校验 | 结果契约、Join 扇出、独立对账、歧义澄清 | [HELLO程序员](https://cloud.tencent.com/developer/article/2784662) |
+| 11-13 | 分析结果复核 | 对齐电力与气象数据，用上一年同期检查供暖阈值 | [Simon Späti / MotherDuck](https://motherduck.com/blog/business-knowledge-agentic-data-analysis-without-data-team/) |
+| 11-13 | 线上观测与评测 | 分开验收指标、Trace、会话日志与评测，并覆盖受保护知识源 | [Google Cloud](https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker) |
+| 11-11 | 企业语境检索 | 从资产提取有出处的语境，和认证定义一起排序 | [Databricks Genie Ontology](https://www.databricks.com/blog/announcing-ga-genie-ontology) |
+| 11-10 | Data Agent 验收 | 用同一批数据和实际角色测试多轮、可编辑产物与 API 调用 | [衡石科技](https://www.hengshi.com/blog/data-agent-platform-selection-metrics-visual-delivery-2026.html) |
+| 11-09 | 分析会话成本 | 拆解模型、缓存未命中、工具调用与失败重试的开销 | [Hex 工程博客](https://hex.tech/blog/crashing-the-cost-of-data-intelligence/) |
+| 11-09 | Fabric 语义建模对照 | 预先计算标准答案，对照本体、星型模型与混合路由 | [Data Crafters](https://datacrafters.io/ontology-powered-data-agents-in-microsoft-fabric-a-step-up-from-semantic-models/) |
+
 ## 2026-11-06：重点项目证据复核
 
 定向复核 **6 个已有项目**，总数保持 **168**。版本日期、文档提交与核验日期分别记录，不代表全库重新验证或项目实际运行测试。
@@ -62,7 +98,7 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 
 新增自动结构校验与桌面/手机 Chromium 关键路径测试；检查方法见 [网页维护说明](WEB.md)。
 
-## 本轮扩充：技术文档、项目路线与公开分享
+## 2026-11-05：技术文档、项目路线与公开分享
 
 本轮补录 **12 条** 2026 年资料，并为 **5 个**已有项目补齐官方阅读路线。它是按主题补强，不将这些历史材料写成上次上传后的新发布；原始日期、版本与核验时间分别记录。
 

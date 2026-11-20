@@ -2,9 +2,9 @@
 
 ## Snapshot
 
-- Snapshot date: **2026-11-06 (Asia/Shanghai)**
+- Snapshot date: **2026-11-20 (Asia/Shanghai)**
 - Latest targeted evidence review: **2026-11-06**, six existing projects only; other records retain their own verification dates
-- Latest incremental review: **2026-11-03–2026-11-05**, after the 2026-11-02 snapshot
+- Latest incremental review: **2026-11-07–2026-11-20**, after the 2026-11-06 snapshot, covering first-party technical articles and public sharing materials
 - Latest thematic enrichment: **2026-11-05**, backfilling 2026 project documentation and public sharing materials without advancing the cutoff
 - Scope: Data Agents for analytics, data science, data engineering, data management, and data governance
 - Default evidence: the author, project, vendor, paper, or conference's own page
