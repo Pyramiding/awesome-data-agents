@@ -6,9 +6,9 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**184 条资料** · `68` 架构与实践 · `32` 公开实现 · `27` 分享与议程 · `17` 研究 · `20` 持续文档 · `20` 评测
+**192 条资料** · `71` 架构与实践 · `32` 公开实现 · `29` 分享与议程 · `17` 研究 · `22` 持续文档 · `21` 评测
 
-**资料截止：2026-11-20（Asia/Shanghai）** · [查看本轮新增](#2026-11-20增量更新) · [增量更新记录](UPDATES.md)
+**资料截止：2026-11-21（Asia/Shanghai）** · [查看本轮新增](#2026-11-21增量更新) · [增量更新记录](UPDATES.md)
 
 ## 从这里开始 · Start here
 
@@ -51,6 +51,24 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 - **评测改进不等于自动自我训练。** Traces → Eval suite → Human review → Approved updates 是经审核的改进链；失败修复只重跑受影响步骤，不默认重启整个流程，也不直接把未验证结论写入长期记忆。
 
 </details>
+
+## 2026-11-21：增量更新
+
+本轮新增 **8 条**。接续 11 月 20 日上午的版本，回查当天发布的材料，核验至 11 月 21 日。[在网页版浏览本轮新增](https://pyramiding.github.io/awesome-data-agents/?latest=1#library)
+
+- **把权限测到每次调用。** 用两个权限不同的账号问同一个区域销量问题，核对可访问的数据域、可见行列和实际执行的 SQL。接入外部工具后，再检查该工具是否已启用，以及调用用的是个人授权还是共享凭据。 [JimuChatBI 权限配置](https://help.jimureport.com/chat2bi/role/) · [Genie MCP 接入](https://docs.databricks.com/gcp/en/genie-agents/external-tools)
+- **把回归测到数据和交付物。** 问数场景用同一份合成数据复测重复记录、指标冲突和证据不足时的拒答。管道迁移还要对账，并记录扫描量与重跑范围。 [Google 合成评测](https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents) · [Vodafone 迁移实践](https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent)
+
+| 类型 | 原始日期 | 资料 | 工程阅读重点 |
+|---|---|---|---|
+| 公开分享 | 11-20 · 视频发布 | [OpenAI · Meet the Data Agent in ChatGPT](https://www.youtube.com/watch?v=KrlfehIapEA) | 三集演示覆盖插件、团队数据接入与追问核查。配套视频见[分享导航](TALKS.md#11-月-20-日新增的视频与议程)。 |
+| 国内议程 | 11-20 · 议程公布 | [AskTable 等 · 企业级数据智能体的前沿与实践](https://www.asktable.com/zh-CN/blog/2026-11-20/chengdu-enterprise-data-agent-event-2026) | 成都场次安排在 11 月 27 日，涵盖企业问数、本体及数据工程。当前可读材料为议程。 |
+| 技术博客 | 11-20 · 发布 | [JEECG · JimuChatBI 智能问数](https://www.cnblogs.com/jeecg158/p/23733725) | 注册数据域和术语规则，再从问数结果回看口径与 SQL。[建模配置](https://help.jimureport.com/chat2bi/) |
+| 技术博客 | 11-20 · 发布 | [Google Cloud · Managed Airflow agents](https://cloud.google.com/blog/products/data-analytics/scaling-airflow-pipelines-with-ai-agents-on-managed-airflow) | 把失败任务诊断、升级评估、代码迁移与人工复核串起来。Cymbal Shops 是演示案例。 |
+| 技术博客 | 11-20 · 发布 | [Vodafone · BigQuery 管道迁移](https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent) | 对照存储过程和 Dataform DAG，并行化后量化重复扫描，再评估中间结果缓存。 |
+| 评测实践 | 11-20 · 发布 | [Google Cloud · Data Agent 合成评测](https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents) | 固定蓝图和随机种子，用带冲突与重复的数据检验问数、对账及拒答。 |
+| 项目文档 | 11-20 · 功能发布 | [Databricks · Genie Agents 连接外部 MCP](https://docs.databricks.com/gcp/en/genie-agents/external-tools) | 分别核对 Unity Gateway 注册、工具级开关和 Agent mode 调用。[发布说明](https://docs.databricks.com/gcp/en/ai-bi/release-notes/2026#mcp-tools-in-genie-agents-are-generally-available) |
+| 项目文档 | 11-20 · 版本发布 | [Tonic Fabricate 5.2.0](https://www.tonic.ai/tonic-fabricate-release-notes/5-2-0) | 执行前审查脱敏方案，按次保留文件和运行日志。 |
 
 ## 2026-11-20：增量更新
 

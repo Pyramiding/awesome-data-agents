@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-11-20",
+  "as_of": "2026-11-21",
   "timezone": "Asia/Shanghai",
   "scope": "2026-focused Data Agent architectures, public implementations, evaluations, papers, talks, and living documentation",
   "resources": [
@@ -4253,9 +4253,304 @@
       "evidence_url": "https://aws.amazon.com/blogs/big-data/guardrails-and-cost-control-for-your-agentic-workloads-with-amazon-redshift/",
       "added_on": "2026-11-20",
       "last_verified": "2026-11-20"
+    },
+    {
+      "id": "asktable-chengdu-enterprise-data-agent-agenda",
+      "date": "2026-11-20",
+      "date_basis": "published",
+      "title": "成都见｜从数据到智能：企业级数据智能体的前沿与实践",
+      "organization": "AskTable / 阿里云 / 枢行数据 / 中国人民大学",
+      "url": "https://www.asktable.com/zh-CN/blog/2026-11-20/chengdu-enterprise-data-agent-event-2026",
+      "section": "talk",
+      "language": "zh",
+      "status": "agenda",
+      "tags": [
+        "ontology",
+        "analytics",
+        "data-engineering"
+      ],
+      "summary": "主办方公布四个场次，涉及数据本体、企业级分析智能体、数据工程团队构建和 AIDBS Data Agent。",
+      "date_evidence": "AskTable 团队的公告日期为 2026-11-20，公告安排活动于 2026-11-27 14:00–17:00 举行。",
+      "material_type": [
+        "agenda"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "官方议程",
+        "note": "已核对主办单位、场次与讲者。活动尚待举行，当前可读材料为议程。"
+      },
+      "evidence_url": "https://www.asktable.com/zh-CN/blog/2026-11-20/chengdu-enterprise-data-agent-event-2026",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "openai-data-agent-in-chatgpt-video-series",
+      "date": "2026-11-20",
+      "date_basis": "published",
+      "title": "Meet the Data Agent in ChatGPT",
+      "organization": "OpenAI",
+      "url": "https://www.youtube.com/watch?v=KrlfehIapEA",
+      "section": "talk",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "video-page",
+        "analytics",
+        "mcp",
+        "identity",
+        "reporting"
+      ],
+      "summary": "把同日的三集演示放在一起读，依次了解 Data 插件、工作区数据接入和业务问数。问数演示还展示了追问与查看来源。",
+      "date_evidence": "OpenAI 官方频道订阅源记录三集发布于 11 月 20 日 13:35、14:02 和 14:05（Asia/Shanghai）。",
+      "material_type": [
+        "video-page"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "官方视频入口",
+        "note": "已核对官方频道、视频标题与发布日期。完整播放待核验。"
+      },
+      "use_case": "对照管理员的接入步骤和业务用户的问数步骤，验收工作区插件可用性、数据源访问与结果来源。",
+      "related_materials": [
+        {
+          "title": "Connect Your Team’s Data to ChatGPT",
+          "url": "https://www.youtube.com/watch?v=oJIuz3AFfEQ",
+          "date": "2026-11-20"
+        },
+        {
+          "title": "Ask Questions About Your Data in ChatGPT",
+          "url": "https://www.youtube.com/watch?v=JEgTn37Sk50",
+          "date": "2026-11-20"
+        },
+        {
+          "title": "Data 插件与工作区配置说明",
+          "url": "https://help.openai.com/en/articles/20001518-using-the-data-plugin-in-chatgpt-work-and-codex"
+        }
+      ],
+      "evidence_url": "https://www.youtube.com/watch?v=KrlfehIapEA",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "jimu-chatbi-domain-scoped-analytics",
+      "date": "2026-11-20",
+      "date_basis": "published",
+      "title": "AI 智能问数系统：用大白话 “聊” 出数据答案",
+      "organization": "JEECG / JimuReport",
+      "url": "https://www.cnblogs.com/jeecg158/p/23733725",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "chatbi",
+        "semantic-layer",
+        "text-to-sql",
+        "governance",
+        "visualization"
+      ],
+      "summary": "围绕积木问数演示数据域约束、术语映射和可编辑的分析口径。用户可以调整指标或维度重算，并展开查询 SQL 复核取数逻辑。",
+      "date_evidence": "JEECG 作者博客标注 2026-11-20 17:28。",
+      "use_case": "给运营和区域经理同一个销量问题，核对术语带入的筛选、用户能看到的行和字段，以及修改口径后的 SQL。",
+      "caveat": "官方权限手册注明管理员角色全权放行。用普通角色核验数据域访问、行过滤和脱敏时，应分别检查结果。",
+      "reading_path": [
+        {
+          "title": "JimuChatBI 介绍与建模配置",
+          "url": "https://help.jimureport.com/chat2bi/",
+          "focus": "从数据源配置、表注册和术语管理读到助理绑定的数据域。"
+        },
+        {
+          "title": "JimuChatBI 角色权限配置",
+          "url": "https://help.jimureport.com/chat2bi/role/",
+          "focus": "逐层核对访问授权、行级过滤、列级权限及脱敏。"
+        }
+      ],
+      "evidence_url": "https://www.cnblogs.com/jeecg158/p/23733725",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "google-managed-airflow-agent-workflows",
+      "date": "2026-11-20",
+      "date_basis": "published",
+      "title": "Drowning in clicks: Scaling Black Friday pipelines with Managed Airflow agents",
+      "organization": "Google Cloud",
+      "url": "https://cloud.google.com/blog/products/data-analytics/scaling-airflow-pipelines-with-ai-agents-on-managed-airflow",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "workflow",
+        "observability",
+        "mcp",
+        "human-in-the-loop"
+      ],
+      "summary": "用虚构电商案例串起 DAG 故障诊断、升级评估、迁移和验证。控制台 Agent 读取运行证据，IDE 中的 Data Agent Kit 修改 DAG，工程师复核后推进部署。",
+      "date_evidence": "Google Cloud 技术博客标注 November 20, 2026。",
+      "use_case": "让排障输出包含失败任务、相关日志和版本限制，再作为输入交给代码修改和回归流程。",
+      "caveat": "Cymbal Shops 及流量数字是教学示例。MCP 查询与触发工具的权限须根据实际运行身份核对。",
+      "reading_path": [
+        {
+          "title": "Managed Airflow Agent 故障排查",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-3/troubleshoot-tasks-and-dag-runs-with-agent",
+          "focus": "看控制台诊断的入口、运行环境与权限要求。"
+        },
+        {
+          "title": "Managed Airflow MCP 接入",
+          "url": "https://docs.cloud.google.com/composer/docs/composer-3/use-composer-mcp",
+          "focus": "按用途分别配置查看执行、读取失败任务和触发 DAG 的权限。"
+        }
+      ],
+      "evidence_url": "https://cloud.google.com/blog/products/data-analytics/scaling-airflow-pipelines-with-ai-agents-on-managed-airflow",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "vodafone-bigquery-data-engineering-agent-migration",
+      "date": "2026-11-20",
+      "date_basis": "published",
+      "title": "How Vodafone is using the Data Engineering Agent to improve their data pipelines",
+      "organization": "Vodafone Czech Republic / Google Cloud",
+      "url": "https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "data-quality",
+        "lineage",
+        "workflow",
+        "cost-control"
+      ],
+      "summary": "把数千行 BigQuery 存储过程拆为 Dataform SQLX 与依赖 DAG。文章记录并行化后重复扫描带来的成本变化，以及用物化视图复用中间结果的过程。",
+      "date_evidence": "Vodafone 与 Google Cloud 的署名原文标注 November 20, 2026。",
+      "use_case": "迁移时先做结果对账，再比较端到端时延、实际扫描量和重跑范围。",
+      "caveat": "时延与费用数字来自团队的特定流水线和改造后的配置。",
+      "related_materials": [
+        {
+          "title": "BigQuery Data Engineering Agent 流水线文档",
+          "url": "https://docs.cloud.google.com/bigquery/docs/data-engineering-agent-pipelines"
+        }
+      ],
+      "evidence_url": "https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "google-data-agent-synthetic-estates",
+      "date": "2026-11-20",
+      "date_basis": "published",
+      "title": "Frontier and Center: Why your data agents need a “wind tunnel”",
+      "organization": "Google Cloud Frontier AI",
+      "url": "https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "evaluation",
+        "benchmark",
+        "regression",
+        "ground-truth",
+        "read-only"
+      ],
+      "summary": "从组织蓝图和随机种子生成表、文档与聊天记录，保留关联、口径冲突和重复数据。量化题预先计算标准 SQL，定性题用评分规则，缺证据的题检查是否合理拒答。",
+      "date_evidence": "Google Cloud 工程作者原文标注 November 20, 2026。",
+      "use_case": "同一份数据固定随机种子，逐步提高冲突与重复比例，观察不同 Agent 版本的失误从哪里开始。",
+      "caveat": "文章披露的是 Google 内部模拟器与内部校准结果。跨客户的真实数据和合成数据对照仍在进行。",
+      "evidence_url": "https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "databricks-genie-agent-outbound-mcp",
+      "date": "2026-11-20",
+      "date_basis": "released",
+      "title": "Connect a Genie Agent to MCP tools and sources",
+      "organization": "Databricks",
+      "url": "https://docs.databricks.com/gcp/en/genie-agents/external-tools",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "mcp",
+        "identity",
+        "api",
+        "governance",
+        "tool-selection"
+      ],
+      "summary": "Genie Agents 可连接平台提供的连接器，以及在 Unity Gateway 注册的外部 MCP 服务。作者在 Agent 中选择具体工具，再通过 Agent mode 或对应 API 调用。",
+      "date_evidence": "AI/BI and Genie One 发布记录标注 2026-11-20 正式可用（GA）。接入文档页显示 11 月 19 日更新。",
+      "evidence_url": "https://docs.databricks.com/gcp/en/ai-bi/release-notes/2026#mcp-tools-in-genie-agents-are-generally-available",
+      "use_case": "分别验收作者的连接权限、工具开关、每用户 OAuth 或共享凭据，以及调用者所在区域的可用性。",
+      "caveat": "该能力按工作区分批推送。文档列出 Agent mode、最多 10 个连接及调用方身份限制。",
+      "related_materials": [
+        {
+          "title": "11 月 20 日 MCP 正式可用说明",
+          "url": "https://docs.databricks.com/gcp/en/ai-bi/release-notes/2026#mcp-tools-in-genie-agents-are-generally-available",
+          "date": "2026-11-20"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "tonic-fabricate-data-agent-5-2-0",
+      "date": "2026-11-20",
+      "date_basis": "released",
+      "title": "Tonic Fabricate 5.2.0",
+      "organization": "Tonic.ai",
+      "url": "https://www.tonic.ai/tonic-fabricate-release-notes/5-2-0",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "data-engineering",
+        "workflow",
+        "governance",
+        "observability"
+      ],
+      "summary": "发布说明记录脱敏工作流可先审查源端并修改配置，将目标库连接延至执行前。文件型工作流可按每次运行归档产物，并提供对应日志压缩包。",
+      "date_evidence": "Tonic.ai 官方版本记录标注 5.2.0，2026-11-20。",
+      "use_case": "检查每次运行能否从独立输出目录找到产物、日志与源端审查记录。",
+      "caveat": "适用范围是 Fabricate 的数据生成与脱敏流程。目标数据库仍须在执行前连接。",
+      "related_materials": [
+        {
+          "title": "Tonic Fabricate 使用手册",
+          "url": "https://docs.tonic.ai/fabricate"
+        }
+      ],
+      "evidence_url": "https://www.tonic.ai/tonic-fabricate-release-notes/5-2-0",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-21-sharing-and-project-docs",
+      "kind": "incremental",
+      "as_of": "2026-11-21",
+      "window_start": "2026-11-20",
+      "previous_as_of": "2026-11-20",
+      "base_commit": "4ea37e8a2c06bb1f7b9cfd6ca7f83ecfb24795d5",
+      "previous_total": 184,
+      "added_total": 8,
+      "updated_total": 0,
+      "added_ids": [
+        "asktable-chengdu-enterprise-data-agent-agenda",
+        "openai-data-agent-in-chatgpt-video-series",
+        "jimu-chatbi-domain-scoped-analytics",
+        "google-managed-airflow-agent-workflows",
+        "vodafone-bigquery-data-engineering-agent-migration",
+        "google-data-agent-synthetic-estates",
+        "databricks-genie-agent-outbound-mcp",
+        "tonic-fabricate-data-agent-5-2-0"
+      ],
+      "updated_ids": [],
+      "agenda_reviewed_ids": [
+        "asktable-chengdu-enterprise-data-agent-agenda"
+      ],
+      "review_note": "接续 11 月 20 日上午版本，回查同日出版及发布记录，核验至 11 月 21 日。新增 3 篇架构与实践、2 份项目文档或版本说明、2 条分享资料及 1 篇评测。仅提供日期的页面按原日记载。视频系列合并计为 1 条，成都活动当前可读材料为议程。"
+    },
     {
       "id": "2026-11-20-technical-articles-and-talks",
       "kind": "incremental",

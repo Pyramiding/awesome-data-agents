@@ -4,6 +4,12 @@
 
 这里记录每轮真正新增的资料、已有条目的实质更新，以及仍未核验的公开材料。日期来自原始发布页或版本记录，不把抓取时间当作发表时间；这是有边界的编辑检索，不是全网穷尽抓取。
 
+## 2026-11-21：公开分享、技术博客与项目文档
+
+- **检索窗口** 接续 11 月 20 日上午的版本，回查 11 月 20 日资料并核验至 11 月 21 日（Asia/Shanghai）。只标注日期的页面沿用原日期。 [上一版快照](https://github.com/Pyramiding/awesome-data-agents/tree/4ea37e8a2c06bb1f7b9cfd6ca7f83ecfb24795d5)
+- **新增 8 条**，累计 **184 → 192 条**。包括 3 篇架构与实践、2 份项目文档或版本说明、2 条公开分享资料与 1 篇评测。配套文档随主资料收录。 [README 新增明细](README.md#2026-11-21增量更新) · [网页版本轮新增](https://pyramiding.github.io/awesome-data-agents/?latest=1#library)
+- **分享材料** 包括 OpenAI 的三集官方视频，以及 AskTable 等主办方公布的成都活动议程。三集演示合为一条记录，活动计划在 11 月 27 日举行。 [公开分享导航](TALKS.md#11-月-20-日新增的视频与议程)
+
 ## 2026-11-20：技术博客与公开分享
 
 - **检索窗口** 为 2026-11-07 至 2026-11-20（Asia/Shanghai），接续 [上一版快照](https://github.com/Pyramiding/awesome-data-agents/tree/91e539ddd4f44fa99fc29cac09f6fa1f37d4aa56)。

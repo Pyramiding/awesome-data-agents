@@ -2,7 +2,16 @@
 
 [返回总览](README.md) · [项目资料路线](PROJECT_GUIDE.md) · [机器索引](resources.json) · [更新记录](UPDATES.md)
 
-**资料截止：2026-11-20。** 按要解决的问题和已核验的可读材料选择入口。
+**资料截止：2026-11-21。** 按要解决的问题和已核验的可读材料选择入口。
+
+## 11 月 20 日新增的视频与议程
+
+| 日期依据 | 分享 | 可访问材料 | 阅读重点 |
+|---|---|---|---|
+| 2026-11-20 · 视频发布（上海时间） | OpenAI · Data Agent 系列 | [插件概览](https://www.youtube.com/watch?v=KrlfehIapEA) · [团队数据接入](https://www.youtube.com/watch?v=oJIuz3AFfEQ) · [业务问数](https://www.youtube.com/watch?v=JEgTn37Sk50) | 先看管理员控制接入，再看分析人员如何追问和核查来源。工作区接入细节见[官方说明](https://help.openai.com/en/articles/20001518-using-the-data-plugin-in-chatgpt-work-and-codex)。 |
+| 2026-11-20 · 议程公布 | AskTable、阿里云、枢行数据、中国人民大学 · 成都场 | [主办方议程](https://www.asktable.com/zh-CN/blog/2026-11-20/chengdu-enterprise-data-agent-event-2026) | 计划 11 月 27 日举行。按场次查企业级数据分析智能体、AIDBS 与本体协作，目前可读材料为议程。 |
+
+三集视频的标题、发布者与日期已通过 OpenAI 官方频道核对，完整播放待核验。
 
 ## 11 月新增的复盘、回放入口与议程
 
@@ -13,7 +22,7 @@
 | 2026-11-14 · 场次 | 刘镔辉，COSCon'26 / Datastrato | [官方议程](https://www.bagevent.com/event/coscon26)，16:00–16:30。已确认讲者与提纲，讲义、实录及回放待核验。 | 用 GMV 下滑案例梳理跨源数据发现、口径、查询前校验和错误回归问题。 |
 | 2026-11-11 · 美洲首场 | Ali Ghodsi、Greg Brockman，Databricks DATA + AI LIVE | [按需页](https://www.databricks.com/resources/webinar/context-is-just-the-beginning) · [官方视频页](https://www.youtube.com/watch?v=BsVfRCNI8IY) · [各场次安排](https://community.databricks.com/t5/learning-events/data-ai-live-context-is-just-the-beginning-meet-your-data-smart/ec-p/174147) | 看销售表现和 AI 支出示例怎样结合企业语境推进工作，再对照 [Genie Ontology 架构说明](https://www.databricks.com/blog/announcing-ga-genie-ontology)。 |
 
-本轮阅读了两篇复盘，并核对视频入口与大会日程。两条视频的完整播放未独立测试。
+表中两篇复盘正文可读。两条回放的完整播放待核验。
 
 ## 先按问题选择
 
