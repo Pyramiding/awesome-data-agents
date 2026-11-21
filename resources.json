@@ -4522,9 +4522,359 @@
       "evidence_url": "https://www.tonic.ai/tonic-fabricate-release-notes/5-2-0",
       "added_on": "2026-11-21",
       "last_verified": "2026-11-21"
+    },
+    {
+      "id": "netease-dacon-easydata-zhishu-transcript",
+      "date": "2026-11-05",
+      "date_basis": "published",
+      "title": "当 Agent 开始写 SQL：网易智企数据平台 AI Native 改造实录与思考",
+      "organization": "网易智企·数帆 / DataFun",
+      "url": "https://www.cnblogs.com/163yun/articles/23555859",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "ontology",
+        "governance",
+        "transcript",
+        "evaluation"
+      ],
+      "summary": "网易智企公开的 DACon 分享实录，涵盖 EasyData 冷表治理和运维取证，以及知数 DataAgent 的业务本体、查询 DSL 权限校验和错例回流。",
+      "date_evidence": "网易智企官方博客署名行标注 2026-11-05 10:01，活动在 10 月 24 日举行。",
+      "evidence_url": "https://www.cnblogs.com/163yun/articles/23555859",
+      "use_case": "把表和调度任务的依赖证据连起来，产出可交给负责人复核的下线建议。业务问数用歧义题检查澄清与 DSL 权限。",
+      "caveat": "冷表案例的 Agent 输出为建议，实际变更由负责人确认。指标和客户成效来自分享方披露。",
+      "material_type": [
+        "transcript"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "公开实录",
+        "note": "可读讲者实录与配图，原演讲视频未另行核验。"
+      },
+      "related_materials": [
+        {
+          "title": "网易智企会后案例复盘",
+          "url": "https://www.cnblogs.com/163yun/articles/23470856"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "mirrorship-mip-launch-replays",
+      "date": "2026-10-20",
+      "date_basis": "event",
+      "title": "MIP AI 产品发布会",
+      "organization": "镜舟科技",
+      "url": "https://mirrorship.ai/zh/events/mip-launch",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "video-page",
+        "semantic-layer",
+        "governance",
+        "multimodal",
+        "analytics"
+      ],
+      "summary": "官方页按场次提供回放入口。架构场讲 MirrorData、MirrorMind、MirrorPilot 的职责与贯穿三层的治理，产品场用预算口径和异常追问演示查询与报告。",
+      "date_evidence": "主办方页面标注 2026-10-20 14:00（北京时间），回放上架日未单独标注。",
+      "evidence_url": "https://mirrorship.ai/zh/events/mip-launch",
+      "use_case": "先看架构和产品演示场，再在语义视图示例里核对指标定义、维度、关系以及展开后的实际 SQL。",
+      "caveat": "回放页核验到五场标注可观看，完整播放待核验。演讲资料下载需要提交表单。",
+      "material_type": [
+        "video-page"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "官方分场回放页",
+        "note": "官方列出五场可观看的分享。核验到场次及配套下载入口。"
+      },
+      "reading_path": [
+        {
+          "title": "发布会架构与演示详解",
+          "url": "https://mirrorship.ai/zh/blog/introducing-mip-enterprise-ai-analytics",
+          "focus": "对照数据层、语义层、执行层和审计的分工。"
+        },
+        {
+          "title": "Semantic View 技术解析",
+          "url": "https://www.mirrorship.ai/zh/blog/semantic-view-in-mip-part-2-from-semantic-intent-to-executable-sql",
+          "focus": "读主键与表关系声明、指标聚合和 EXPLAIN INLINE 示例。"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "asktable-caio-enterprise-insights-talk",
+      "date": "2026-09-22",
+      "date_basis": "published",
+      "title": "先看到，再决策：企业需要怎样的 AI 数据洞察底座",
+      "organization": "AskTable / 崔京",
+      "url": "https://www.asktable.com/zh-CN/blog/2026-09-22/see-first-decide-ai-data-insights-foundation",
+      "section": "talk",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "governance",
+        "analytics",
+        "identity"
+      ],
+      "summary": "讲者团队整理金山岭 CAIO 峰会分享，说明指标定义、知识维护与岗位权限，并介绍中国铝业将采购问数嵌入既有平台的做法。",
+      "date_evidence": "原文标注发布于 2026-09-22，文章注明根据崔京在金山岭 CAIO 峰会的演讲整理。",
+      "evidence_url": "https://www.asktable.com/zh-CN/blog/2026-09-22/see-first-decide-ai-data-insights-foundation",
+      "use_case": "从采购分析选一个需要跨部门授权的指标，画出系统入口、组织身份、指标定义和实际查询的四个环节。",
+      "caveat": "正文与演讲配图可读，客户实现细节以分享披露为限。",
+      "material_type": [
+        "recap"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "讲者团队整理",
+        "note": "公开整理稿含演讲配图与客户案例。"
+      },
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "kidswant-dataworks-role-agents",
+      "date": "2026-11-16",
+      "date_basis": "published",
+      "title": "孩子王基于阿里云 Data Agent 的智能体实践：300+ Agent 覆盖 400+ 业务场景",
+      "organization": "孩子王 / 阿里云大数据 AI 技术",
+      "url": "https://xie.infoq.cn/article/b55fdb7eca9006e2538557af0",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "context-graph",
+        "skills",
+        "governance",
+        "automation"
+      ],
+      "summary": "将门店、员工和营销需求拆为业务智能体，借助 DataWorks Context Graph 复用元数据、指标与血缘，用领域技能和定时任务交付报告。",
+      "date_evidence": "阿里云大数据 AI 技术在 InfoQ 写作社区署名发布，原文日期 2026-11-16。",
+      "evidence_url": "https://xie.infoq.cn/article/b55fdb7eca9006e2538557af0",
+      "use_case": "按岗位梳理共享数据与专属技能，再用一次定时推送核查查询权限和交付范围。",
+      "caveat": "覆盖规模为合作案例披露。公开文章给出组织与集成模式，具体业务数据和效果仍需独立验收。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "jboltai-datachat-query-rendering",
+      "date": "2026-05-26",
+      "date_basis": "published",
+      "title": "AI智能问数实现：Text2SQL与图表生成全链路解析",
+      "organization": "向量空间 JBoltAI",
+      "url": "https://developer.aliyun.com/article/1737012",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "text-to-sql",
+        "execution",
+        "visualization",
+        "governance",
+        "read-only"
+      ],
+      "summary": "DataChatChain 把并行预查询、有限轮次工具推理和图表后处理分开。查询进入 JDBC 前校验 SQL 抽象语法树，解析失败时拒绝执行。",
+      "date_evidence": "作者在阿里云开发者社区发布，原文标注 2026-05-26。",
+      "evidence_url": "https://developer.aliyun.com/article/1737012",
+      "use_case": "复查循环停止条件和查询失败后的行为，再核对图表是否由真实执行结果生成。",
+      "caveat": "文章是团队对自身实现的说明。落地时仍需按实际数据库账号、方言和执行权限做验收。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "asktable-enterprise-private-deployment",
+      "date": "2026-06-23",
+      "date_basis": "published",
+      "title": "AskTable 企业级产品架构说明",
+      "organization": "AskTable",
+      "url": "https://www.asktable.com/zh-CN/blog/2026-06-23/enterprise-product-architecture-private-deployment-integration",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "architecture",
+        "sandbox",
+        "governance",
+        "identity",
+        "observability"
+      ],
+      "summary": "以私有化部署图说明访问区、应用服务区及数据与模型区，把 Web/API、Worker、IM 网关、Python 沙箱与状态存储逐一展开。",
+      "date_evidence": "AskTable 团队署名行标注 2026-06-23。",
+      "evidence_url": "https://www.asktable.com/zh-CN/blog/2026-06-23/enterprise-product-architecture-private-deployment-integration",
+      "use_case": "对照网络分区核查请求和查询结果经过哪些组件，再分开评审内网模型和受控外部模型的数据流。",
+      "caveat": "公开文档描述的是供应商参考部署。具体网络、模型出口和数据授权依企业环境配置。",
+      "reading_path": [
+        {
+          "title": "AskTable 如何工作",
+          "url": "https://docs.asktable.com/architecture",
+          "focus": "读权限过滤、历史 SQL 召回、执行及结果留痕。"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "volcengine-dataagent-parallel-query",
+      "date": "2026-02-02",
+      "date_basis": "updated",
+      "title": "最佳实践：智能分析数据查询链路逻辑说明",
+      "organization": "火山引擎",
+      "url": "https://docs.volcengine.com/docs/data-agent-private/best-practice-intelligent-analysis-data-query-link-logic-explanation?lang=zh",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "text-to-sql",
+        "execution",
+        "verification",
+        "cost-control"
+      ],
+      "summary": "文档用两张流程图对照单路和三路问数。启用并行后按首次 SQL 结果的兼容性择优，后续查询由胜出路径执行。",
+      "date_evidence": "私有化文档页标注最近更新时间 2026-02-02 10:41:04。",
+      "evidence_url": "https://docs.volcengine.com/docs/data-agent-private/best-practice-intelligent-analysis-data-query-link-logic-explanation?lang=zh",
+      "use_case": "固定题集和数据快照，对照首答正确率、总查询量与后续追问成本。",
+      "caveat": "三路并发取决于配置开关。文档介绍选择逻辑，实际准确率和资源消耗要按工作负载测量。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "guandata-decidex-agent-evaluation",
+      "date": "2026-09-22",
+      "date_basis": "updated",
+      "title": "智能体评测",
+      "organization": "观远数据 DecideX",
+      "url": "https://docs.guandata.com/product/decidex/agent-evaluation",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "evaluation",
+        "regression",
+        "data-quality",
+        "human-in-the-loop"
+      ],
+      "summary": "评测冻结案例、评分条目、模型和正式配置。可从已完成对话生成候选题，经人工复核纳入案例库，裁判模型单独读取评分说明。",
+      "date_evidence": "官方文档页标注更新时间 2026-09-22 11:20:11。",
+      "evidence_url": "https://docs.guandata.com/product/decidex/agent-evaluation",
+      "use_case": "对比版本时保留同一组题、评分条件和数据版本，分别统计判定失败与执行失败。",
+      "caveat": "外部数据与连接器按运行时读取。相同案例在数据变化后可能出现不同结果。",
+      "reading_path": [
+        {
+          "title": "智能体自进化",
+          "url": "https://docs.guandata.com/product/decidex/agent-self-evolution",
+          "focus": "从失败用例生成修改草稿，经人工审核应用后回到同一套题复评。"
+        },
+        {
+          "title": "测试、发布与授权",
+          "url": "https://docs.guandata.com/product/decidex/publish",
+          "focus": "核对评测所使用的正式配置与发布流程。"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "ksyun-kmr-dataagent-query-guide",
+      "date": "2026-11-12",
+      "date_basis": "updated",
+      "title": "智能问答",
+      "organization": "金山云 KMR DataAgent",
+      "url": "https://docs.ksyun.com/documents/46113?type=3",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "text-to-sql",
+        "context",
+        "identity",
+        "observability"
+      ],
+      "summary": "以日志抖动为例，演示澄清口径后追问另一日期，复用指标与粒度。结果可查看数据来源、实际 SQL、耗时、扫描和返回行数。",
+      "date_evidence": "官方文档页标注最近更新时间 2026-11-12 11:17:17。",
+      "evidence_url": "https://docs.ksyun.com/documents/46113?type=3",
+      "use_case": "使用不同数据源账号复查同一个跨日问题，核对权限、会话继承的条件和查询证据。",
+      "caveat": "权限说明区分产品 IAM 操作、工作空间访问和底层数据源账号权限。",
+      "reading_path": [
+        {
+          "title": "业务语义管理",
+          "url": "https://docs.ksyun.com/documents/46119?type=3",
+          "focus": "配置术语、同义词、指标及计算口径。"
+        },
+        {
+          "title": "产品级权限管理",
+          "url": "https://docs.ksyun.com/documents/46109?type=3",
+          "focus": "从产品入口和工作空间追到实际查询身份。"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "baidu-databuilder-ontology-actions",
+      "date": "2026-08-28",
+      "date_basis": "updated",
+      "title": "核心概念",
+      "organization": "百度智能云·百度胜算",
+      "url": "https://cloud.baidu.com/doc/DataBuilder/s/Gm99rhc4v",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "ontology",
+        "execution",
+        "governance",
+        "identity"
+      ],
+      "summary": "说明对象类型、关联类型和动作类型如何组织业务语义，介绍授权数据集、自定义函数与 Agent 执行时的分析步骤和工具记录。",
+      "date_evidence": "百度智能云文档标注更新时间 2026-08-28。",
+      "evidence_url": "https://cloud.baidu.com/doc/DataBuilder/s/Gm99rhc4v",
+      "use_case": "为一个业务对象列出可查字段、关系、允许动作及使用身份，再对照资源授权验证执行边界。",
+      "caveat": "具体操作范围取决于部署区域、版本及租户授权。",
+      "reading_path": [
+        {
+          "title": "权限体系",
+          "url": "https://cloud.baidu.com/doc/DataBuilder/s/nmcn4p501",
+          "focus": "分别核查 IAM、菜单动作和资源权限。"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-21-china-engineering-enrichment",
+      "kind": "thematic-enrichment",
+      "as_of": "2026-11-21",
+      "window_start": "2026-02-02",
+      "previous_as_of": "2026-11-21",
+      "base_commit": "427cf33c44a9c78ac7fce7fe7f127822dbfe9f54",
+      "previous_total": 192,
+      "added_total": 10,
+      "updated_total": 0,
+      "added_ids": [
+        "netease-dacon-easydata-zhishu-transcript",
+        "mirrorship-mip-launch-replays",
+        "asktable-caio-enterprise-insights-talk",
+        "kidswant-dataworks-role-agents",
+        "jboltai-datachat-query-rendering",
+        "asktable-enterprise-private-deployment",
+        "volcengine-dataagent-parallel-query",
+        "guandata-decidex-agent-evaluation",
+        "ksyun-kmr-dataagent-query-guide",
+        "baidu-databuilder-ontology-actions"
+      ],
+      "updated_ids": [],
+      "review_note": "专题补录 2026 年国内 Data Agent 工程资料，保留原始日期与资料截止。新增 3 条分享材料、2 篇工程实践和 5 份项目文档。配套架构、权限与评测说明随主条目保存。"
+    },
     {
       "id": "2026-11-21-sharing-and-project-docs",
       "kind": "incremental",

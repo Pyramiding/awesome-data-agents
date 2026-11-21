@@ -5,7 +5,7 @@
 - Snapshot date: **2026-11-21 (Asia/Shanghai)**
 - Latest targeted evidence review: **2026-11-06**, six existing projects only; other records retain their own verification dates
 - Latest incremental review: **2026-11-20–2026-11-21**, covering release notes, project documentation, technical blogs, and public sharing materials. The review revisits the prior cutoff day to cover publications with day-level dates.
-- Latest thematic enrichment: **2026-11-05**, backfilling 2026 project documentation and public sharing materials without advancing the cutoff
+- Latest thematic enrichment: **2026-11-21**, covering 2026 Chinese engineering cases, talk materials, and project documentation with their original dates
 - Scope: Data Agents for analytics, data science, data engineering, data management, and data governance
 - Default evidence: the author, project, vendor, paper, or conference's own page
 - Working language: Chinese annotations with original-language titles and links

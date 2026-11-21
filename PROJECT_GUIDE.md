@@ -4,9 +4,17 @@
 
 从要完成的任务选择实现入口，再结合官方技术说明和更新证据阅读。下列类型与阅读路线为本仓编辑归纳；项目能力、许可证和维护状态以各自原始页面为准。
 
-**本轮专题扩充：2026-11-05。** 为 5 个已有项目补齐官方阅读路线，增加 SQLBot 应用案例；既有版本更新仍见 [增量记录](UPDATES.md)。文档核验、项目发布与实际运行是不同证据：本轮没有部署项目、调用模型或测量项目成绩。
+**2026-11-05 专题扩充。** 为 5 个已有项目补齐官方阅读路线，增加 SQLBot 应用案例。各轮核验范围见 [更新记录](UPDATES.md)。
 
 **2026-11-06 定向复核：** WrenAI、DB-GPT、MCP Toolbox、Data Formulator、Jupyter AI 与 Vanna 六个既有条目补齐固定提交证据、版本和许可证范围。其余项目保持原核验日期；未部署运行这些项目。
+
+## 国内项目文档阅读路线
+
+| 要验证的能力 | 阅读顺序 | 建议保留的证据 |
+|---|---|---|
+| 私有化部署与取数权限 | [AskTable 部署架构](https://www.asktable.com/zh-CN/blog/2026-06-23/enterprise-product-architecture-private-deployment-integration) → [问数工作原理](https://docs.asktable.com/architecture) → [KMR 权限](https://docs.ksyun.com/documents/46109?type=3) | 连接身份、可见数据范围、模型端接收内容、实际 SQL |
+| 指标建模进入执行 | [镜舟语义视图](https://www.mirrorship.ai/zh/blog/semantic-view-in-mip-part-2-from-semantic-intent-to-executable-sql) → [百度胜算业务本体](https://cloud.baidu.com/doc/DataBuilder/s/Gm99rhc4v) | 对象和关系、指标定义、展开后的 SQL、执行记录 |
+| 复核查询与迭代效果 | [火山引擎首查择优](https://docs.volcengine.com/docs/data-agent-private/best-practice-intelligent-analysis-data-query-link-logic-explanation?lang=zh) → [KMR 问数证据](https://docs.ksyun.com/documents/46113?type=3) → [DecideX 评测](https://docs.guandata.com/product/decidex/agent-evaluation) → [改进草稿与复评](https://docs.guandata.com/product/decidex/agent-self-evolution) | 相同数据快照上的正确率、查询开销、失败样本和审核过的改动 |
 
 ## 按任务选择起点
 

@@ -6,9 +6,9 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**192 条资料** · `71` 架构与实践 · `32` 公开实现 · `29` 分享与议程 · `17` 研究 · `22` 持续文档 · `21` 评测
+**202 条资料** · `73` 架构与实践 · `32` 公开实现 · `32` 分享与议程 · `17` 研究 · `27` 持续文档 · `21` 评测
 
-**资料截止：2026-11-21（Asia/Shanghai）** · [查看本轮新增](#2026-11-21增量更新) · [增量更新记录](UPDATES.md)
+**资料截止：2026-11-21（Asia/Shanghai）** · [国内工程案例与项目文档](#国内工程案例与项目文档) · [增量更新记录](UPDATES.md)
 
 ## 从这里开始 · Start here
 
@@ -52,9 +52,32 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 
 </details>
 
+## 国内工程案例与项目文档
+
+11 月 21 日专题补录 **10 条** 2026 年公开材料，保留各自的原始日期。[在网页版浏览本轮专题](https://pyramiding.github.io/awesome-data-agents/?lang=zh&latest=1#library)
+
+- **从业务场景反推工具边界。** 网易的冷表治理给出可审核的下线建议，孩子王则按岗位配置业务智能体。分别检查谁有权提出、复核和执行变更。 [网易智企实录](https://www.cnblogs.com/163yun/articles/23555859) · [孩子王案例](https://xie.infoq.cn/article/b55fdb7eca9006e2538557af0)
+- **把业务口径追到查询。** 用同一个采购或销售指标核对语义定义、权限身份、SQL 展开和结果。 [镜舟架构与演示](https://mirrorship.ai/zh/events/mip-launch) · [金山云问数链路](https://docs.ksyun.com/documents/46113?type=3)
+- **把试用题变成可重跑的评测。** 对照火山引擎三路首查与单路的开销，再用 DecideX 的做法分清配置、外部数据和评分条件。 [火山引擎查询链路](https://docs.volcengine.com/docs/data-agent-private/best-practice-intelligent-analysis-data-query-link-logic-explanation?lang=zh) · [观远评测文档](https://docs.guandata.com/product/decidex/agent-evaluation)
+
+| 材料 | 原始日期 | 值得展开看的细节 |
+|---|---|---|
+| [网易智企·数帆 · DACon 实录](https://www.cnblogs.com/163yun/articles/23555859) | 11-05 · 实录发布 | 冷表下线建议、值班取证、业务本体、查询 DSL 权限与错例回流。 |
+| [镜舟 MIP · 分场回放页](https://mirrorship.ai/zh/events/mip-launch) | 10-20 · 活动 | 优先看陈鹏的架构分享和董颖婷的产品演示。回放页可查看场次，讲义下载需提交表单。 |
+| [AskTable · CAIO 峰会分享整理](https://www.asktable.com/zh-CN/blog/2026-09-22/see-first-decide-ai-data-insights-foundation) | 09-22 · 正文发布 | 配合正文中的幻灯片，读中国铝业如何把采购问数嵌入已有平台。 |
+| [孩子王 × 阿里云 · 岗位智能体](https://xie.infoq.cn/article/b55fdb7eca9006e2538557af0) | 11-16 · 案例发布 | 复用元数据、指标和血缘，按岗位组织领域技能与定时任务。 |
+| [JBoltAI · 问数到图表工程拆解](https://developer.aliyun.com/article/1737012) | 05-26 · 文章发布 | 并行预查、有限轮次工具执行、SQL 校验与 ECharts 后处理。 |
+| [AskTable · 企业级产品架构](https://www.asktable.com/zh-CN/blog/2026-06-23/enterprise-product-architecture-private-deployment-integration) | 06-23 · 文档发布 | 网络分区、服务组件、Python 沙箱、数据源与模型出口。 |
+| [火山引擎 · 私有版查询链路](https://docs.volcengine.com/docs/data-agent-private/best-practice-intelligent-analysis-data-query-link-logic-explanation?lang=zh) | 02-02 · 文档更新 | 三路在首次 SQL 查询处择优，胜出链路继续执行后续查询。 |
+| [观远 DecideX · 智能体评测](https://docs.guandata.com/product/decidex/agent-evaluation) | 09-22 · 文档更新 | 对照正式配置快照、实时外部数据和待审核改进草稿。 |
+| [金山云 KMR · 智能问答](https://docs.ksyun.com/documents/46113?type=3) | 11-12 · 文档更新 | 澄清口径、继承追问条件，展示 SQL、耗时与扫描行数。 |
+| [百度胜算 · 核心概念](https://cloud.baidu.com/doc/DataBuilder/s/Gm99rhc4v) | 08-28 · 文档更新 | 对象、关联和动作进入语义建模，权限落到具体资源。 |
+
+[公开分享导航](TALKS.md#国内工程分享) · [项目文档阅读路线](PROJECT_GUIDE.md#国内项目文档阅读路线)
+
 ## 2026-11-21：增量更新
 
-本轮新增 **8 条**。接续 11 月 20 日上午的版本，回查当天发布的材料，核验至 11 月 21 日。[在网页版浏览本轮新增](https://pyramiding.github.io/awesome-data-agents/?latest=1#library)
+本轮新增 **8 条**。接续 11 月 20 日上午的版本，回查当天发布的材料，核验至 11 月 21 日。
 
 - **把权限测到每次调用。** 用两个权限不同的账号问同一个区域销量问题，核对可访问的数据域、可见行列和实际执行的 SQL。接入外部工具后，再检查该工具是否已启用，以及调用用的是个人授权还是共享凭据。 [JimuChatBI 权限配置](https://help.jimureport.com/chat2bi/role/) · [Genie MCP 接入](https://docs.databricks.com/gcp/en/genie-agents/external-tools)
 - **把回归测到数据和交付物。** 问数场景用同一份合成数据复测重复记录、指标冲突和证据不足时的拒答。管道迁移还要对账，并记录扫描量与重跑范围。 [Google 合成评测](https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents) · [Vodafone 迁移实践](https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent)

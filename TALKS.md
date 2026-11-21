@@ -4,6 +4,14 @@
 
 **资料截止：2026-11-21。** 按要解决的问题和已核验的可读材料选择入口。
 
+## 国内工程分享
+
+| 日期依据 | 分享 | 可访问材料 | 阅读重点 |
+|---|---|---|---|
+| 2026-11-05 · 实录发布 | 蒋鸿翔 · 网易智企·数帆 | [DACon 文字实录](https://www.cnblogs.com/163yun/articles/23555859) | 看冷表治理怎样形成建议，值班诊断怎样取证，再对照知数 DataAgent 的口径与权限。 |
+| 2026-10-20 · 活动 | 镜舟 MIP 发布会 | [官方分场回放页](https://mirrorship.ai/zh/events/mip-launch) · [架构图与演示复盘](https://mirrorship.ai/zh/blog/introducing-mip-enterprise-ai-analytics) | 先读架构与产品演示场。官网标注五场可观看，完整播放待核验，讲义下载需表单。 |
+| 2026-09-22 · 整理稿发布 | 崔京 · 金山岭 CAIO 峰会 | [讲者团队整理稿与配图](https://www.asktable.com/zh-CN/blog/2026-09-22/see-first-decide-ai-data-insights-foundation) | 从中国铝业采购问数案例理解现有平台接入、指标定义与岗位权限。 |
+
 ## 11 月 20 日新增的视频与议程
 
 | 日期依据 | 分享 | 可访问材料 | 阅读重点 |
