@@ -8,6 +8,14 @@
 
 **2026-11-06 定向复核：** WrenAI、DB-GPT、MCP Toolbox、Data Formulator、Jupyter AI 与 Vanna 六个既有条目补齐固定提交证据、版本和许可证范围。其余项目保持原核验日期；未部署运行这些项目。
 
+## 海外项目文档阅读路线
+
+| 要验证的能力 | 阅读顺序 | 建议保留的证据 |
+|---|---|---|
+| 问数权限与混合数据引用 | [Genie 文件分析](https://docs.databricks.com/aws/en/genie-agents/volumes) → [Starburst AIDA](https://docs.starburst.io/latest/starburst-ai/aida-ai.html) | 提问者身份、可见文件卷、页级引用、工具审批与审计记录 |
+| 版本部署与发布门槛 | [Fabric Data Agent ALM](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-source-control) → [Cortex Agent 评测与晋升](https://docs.snowflake.com/en/developer-guide/cortex-ai-cookbook/agent-evaluations) | 草稿与已发布配置差异、固定题集和裁判、生产版本别名 |
+| 线上反馈如何回到验收 | [DoorDash 领域评测](https://careersatdoordash.com/blog/inside-vera-doordashs-data-agent/) → [Pinterest 回归设计](https://medium.com/pinterest-engineering/how-pinterest-improved-analytics-agent-compliance-with-loop-engineering-d3c52d0abaa2) | 领域负责人确认的正确结果、应触发和应跳过的工具调用、基线差异 |
+
 ## 国内项目文档阅读路线
 
 | 要验证的能力 | 阅读顺序 | 建议保留的证据 |

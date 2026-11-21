@@ -4,6 +4,16 @@
 
 **资料截止：2026-11-21。** 按要解决的问题和已核验的可读材料选择入口。
 
+## 海外工程分享
+
+| 日期依据 | 分享 | 可访问材料 | 阅读重点 |
+|---|---|---|---|
+| 2026-08-26 · 实录发布 | Thales InFlight Experience | [完整实录与视频章节](https://answers.databricks.com/ai-agents-at-scale-thales-transformed-ife-databricks-genie-CKWj85NUA1Y) · [官方视频](https://www.youtube.com/watch?v=CKWj85NUA1Y) | 12:30 开始看工具路由，18:22 看航司间的隔离和身份传递。 |
+| 2026-08-26 · 实录发布 | Singapore CPF Board · AskPorto | [完整实录与视频章节](https://answers.databricks.com/askporto-building-intelligent-data-analytics-databricks-genie-N4E0DPd66JQ) · [官方视频](https://www.youtube.com/watch?v=N4E0DPd66JQ) | 19:09 的领域路由与 24:32 的代用户授权可连在一起读。 |
+| 2026-09-17 · 场次 | Junya Morita · Recruit Co. | [dbt Summit 按需页](https://www.getdbt.com/dbt-summit/on-demand/beyond-semantic-models-domain-context-as-code-for-high-accuracy-text-to-sql) · [场次视频](https://www.youtube.com/watch?v=4gFcivfHR3A) | 对照同名埋点导致的错答，检查 YAML、日志代码和 QA 如何随功能一起上线。 |
+
+两份逐字稿正文、会议页面和视频入口已核对，完整播放待核验。
+
 ## 国内工程分享
 
 | 日期依据 | 分享 | 可访问材料 | 阅读重点 |

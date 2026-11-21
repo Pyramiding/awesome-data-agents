@@ -4847,9 +4847,410 @@
       ],
       "added_on": "2026-11-21",
       "last_verified": "2026-11-21"
+    },
+    {
+      "id": "thales-ife-agent-architecture-transcript",
+      "date": "2026-08-26",
+      "date_basis": "published",
+      "title": "AI Agents at Scale: How Thales Transformed IFE with Databricks and Genie",
+      "organization": "Thales InFlight Experience / Databricks",
+      "url": "https://answers.databricks.com/ai-agents-at-scale-thales-transformed-ife-databricks-genie-CKWj85NUA1Y",
+      "section": "talk",
+      "status": "published",
+      "language": "en",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21",
+      "tags": [
+        "transcript",
+        "identity",
+        "mcp",
+        "multi-agent",
+        "governance"
+      ],
+      "summary": "完整时间戳实录讲解航司机上娱乐数据的自助查询。主 Agent 在文档检索、Genie 结构化问数和自定义 MCP 之间路由，后半段讨论身份传递和航司租户隔离。",
+      "date_evidence": "主办方实录页的结构化发布元数据为 2026-08-26 20:38:27 UTC。",
+      "evidence_url": "https://answers.databricks.com/ai-agents-at-scale-thales-transformed-ife-databricks-genie-CKWj85NUA1Y",
+      "use_case": "从 12:30 架构段读到 18:22 生产挑战，画出调用者身份穿过路由、数仓和外部工具的路径。",
+      "caveat": "架构与生产挑战来自讲者分享。网页实录可读，视频完整播放待核验。",
+      "material_type": [
+        "transcript",
+        "video-page"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "完整逐字稿与分章视频入口",
+        "note": "主办方网页有带时间戳的完整实录与视频章节。"
+      },
+      "related_materials": [
+        {
+          "title": "Thales 场次视频",
+          "url": "https://www.youtube.com/watch?v=CKWj85NUA1Y"
+        }
+      ]
+    },
+    {
+      "id": "recruit-dbt-summit-domain-context-as-code",
+      "date": "2026-09-17",
+      "date_basis": "event",
+      "title": "Beyond semantic models: “Domain context as code” for high-accuracy text-to-SQL",
+      "organization": "Recruit Co. / dbt Summit",
+      "url": "https://www.getdbt.com/dbt-summit/on-demand/beyond-semantic-models-domain-context-as-code-for-high-accuracy-text-to-sql",
+      "section": "talk",
+      "status": "published",
+      "language": "en",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21",
+      "tags": [
+        "video-page",
+        "context-as-code",
+        "semantic-layer",
+        "text-to-sql",
+        "regression"
+      ],
+      "summary": "Recruit 把相近的前端点击和曝光事件写成可审核的 YAML 埋点规格，连接 dbt 语义定义、埋点代码生成和 QA，使分析语境能随功能上线同步。",
+      "date_evidence": "dbt Summit 官方场次安排为 2026-09-17（太平洋时间），录像页列为 2026 年 Breakout。",
+      "evidence_url": "https://courses.getdbt.com/dbt-summit/agenda/beyond-semantic-models-domain-context-as-code-for-high-accuracy-text-to-sql",
+      "use_case": "取一组名字相近的埋点，为真实触发时机、正确分母和回归样本建立同一份版本记录。",
+      "caveat": "官方按需页与摘要可访问，视频完整播放待核验。",
+      "material_type": [
+        "video-page"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "大会按需回放入口",
+        "note": "核对了官方场次、讲者 Junya Morita 和会后案例摘要。"
+      },
+      "related_materials": [
+        {
+          "title": "Recruit 场次视频",
+          "url": "https://www.youtube.com/watch?v=4gFcivfHR3A"
+        }
+      ]
+    },
+    {
+      "id": "cpf-board-askporto-transcript",
+      "date": "2026-08-26",
+      "date_basis": "published",
+      "title": "AskPorto: Building Intelligent Data Analytics with Databricks Genie",
+      "organization": "Singapore CPF Board / Databricks",
+      "url": "https://answers.databricks.com/askporto-building-intelligent-data-analytics-databricks-genie-N4E0DPd66JQ",
+      "section": "talk",
+      "status": "published",
+      "language": "en",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21",
+      "tags": [
+        "transcript",
+        "identity",
+        "governance",
+        "tool-routing",
+        "catalog"
+      ],
+      "summary": "新加坡 CPF Board 讲解 AskPorto 将业务问题路由到不同 Genie 空间，以及网络分区和按提问者身份访问数据的做法。上线前还要补齐业务术语、表列描述和测试题。",
+      "date_evidence": "主办方实录页的结构化发布元数据为 2026-08-26 20:38:51 UTC。",
+      "evidence_url": "https://answers.databricks.com/askporto-building-intelligent-data-analytics-databricks-genie-N4E0DPd66JQ",
+      "use_case": "先看 19:09 的领域路由，接着核对 21:36 起的网络与身份分层，最后看 26:30 的元数据和测试。",
+      "caveat": "可读完整实录，公开视频的频道和入口已核对。讲者区分了实际部署和后续计划。",
+      "material_type": [
+        "transcript",
+        "video-page"
+      ],
+      "material_review": {
+        "checked_on": "2026-11-21",
+        "status": "完整逐字稿与官方视频入口",
+        "note": "主办方页面提供完整实录，官方频道视频入口已确认。完整播放待核验。"
+      },
+      "related_materials": [
+        {
+          "title": "AskPorto 场次视频",
+          "url": "https://www.youtube.com/watch?v=N4E0DPd66JQ"
+        }
+      ]
+    },
+    {
+      "id": "doordash-vera-data-agent",
+      "date": "2026-09-16",
+      "date_basis": "published",
+      "title": "Inside Vera, DoorDash’s Data Agent",
+      "organization": "DoorDash",
+      "url": "https://careersatdoordash.com/blog/inside-vera-doordashs-data-agent/",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "semantic-layer",
+        "evaluation",
+        "tool-selection",
+        "human-in-the-loop"
+      ],
+      "summary": "Vera 并行检索业务知识和已建模数据表，执行层限制可查询的资产，并用知识来源差异触发审核。领域负责人贡献并审核评测题，复杂分析先征求用户对计划的确认。",
+      "date_evidence": "DoorDash 工程团队署名文章标注 2026-09-16。",
+      "evidence_url": "https://careersatdoordash.com/blog/inside-vera-doordashs-data-agent/",
+      "use_case": "为同一个业务域分别评分选表、工具选择、查数正确性和查询超时，再比较不同模型。",
+      "caveat": "文中的准确率、步骤数和时延来自 DoorDash 内部题集与运行环境。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "spotify-vedder-domain-context",
+      "date": "2026-06-10",
+      "date_basis": "published",
+      "title": "Encoding Your Domain Expert: The Context Layer Behind Spotify's Data Assistant",
+      "organization": "Spotify Engineering",
+      "url": "https://engineering.atspotify.com/2026/6/encoding-your-domain-expert-the-context-layer-behind-spotifys-data-assistant",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context",
+        "catalog",
+        "evaluation",
+        "retrieval",
+        "data-quality"
+      ],
+      "summary": "按业务域建立由专家负责的知识簇，包含数据集、经过确认的问句与 SQL 示例、业务文档。健康分跟踪数据、示例随 Schema 变化失效的情况和实际问题覆盖。",
+      "date_evidence": "Spotify Engineering 原文及官方文章索引标注 2026-06-10。",
+      "evidence_url": "https://engineering.atspotify.com/2026/6/encoding-your-domain-expert-the-context-layer-behind-spotifys-data-assistant",
+      "use_case": "从查询历史提取候选案例，先由域负责人审核，再用 Schema 变更和线上问题检验知识簇。",
+      "caveat": "历史 SQL 入选率和使用量是 Spotify 披露的内部数据，适用范围取决于候选采样和审核标准。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "notion-data-scout",
+      "date": "2026-10-08",
+      "date_basis": "published",
+      "title": "How we built a personal data scientist for every Notion employee",
+      "organization": "Notion",
+      "url": "https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "semantic-layer",
+        "identity",
+        "trace",
+        "metrics",
+        "skills"
+      ],
+      "summary": "Data Scout 按需加载工作区里的指标、技能与表定义，并以提问者的 Snowflake 身份取数。团队把关联基数、分母、完整时间段和快照去重纳入分析检查。",
+      "date_evidence": "Notion 工程负责人 David Thomas 署名文章标注 2026-10-08。",
+      "evidence_url": "https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee",
+      "use_case": "用两个权限不同的用户问同一指标，比较执行范围，并确认 SQL 追踪能连回指标和来源。",
+      "caveat": "查询标记来自内部封装，官方搭建指南适合对照复现基本流程。采用和工单数据为团队自报。",
+      "reading_path": [
+        {
+          "title": "Notion Data Agent 搭建指南",
+          "url": "https://www.notion.com/help/guides/how-to-build-a-data-agent-in-notion",
+          "focus": "从指标和工作区上下文读到数仓接入、查询留痕与回看流程。"
+        }
+      ],
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "incident-io-agentic-data-analyst",
+      "date": "2026-08-03",
+      "date_basis": "published",
+      "title": "Institutional knowledge doesn't scale: Building an agentic data analyst",
+      "organization": "incident.io",
+      "url": "https://incident.io/blog/agentic-data-analyst-pt-i",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "context-as-code",
+        "semantic-layer",
+        "text-to-sql",
+        "cost-control",
+        "trace"
+      ],
+      "summary": "Go CLI 整合版本化业务主题、审核过的示例、dbt 清单和 BigQuery Schema。统一查询工具做 dry run、表范围和扫描预算检查，执行成功、拒绝与报错分别入库。",
+      "date_evidence": "Navo Das 在 incident.io 工程博客的原文标注 2026-08-03。",
+      "evidence_url": "https://incident.io/blog/agentic-data-analyst-pt-i",
+      "use_case": "抽查一次拒绝执行的查询能否追到题目、业务主题、所选示例和扫描预算。",
+      "caveat": "公开文章披露团队部署与使用情况。实际评测可按自己的仓库数据、语义和题集重建。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "grab-adw-multi-agent-operations",
+      "date": "2026-03-19",
+      "date_basis": "published",
+      "title": "From firefighting to building: How AI agents restored our team’s core productivity",
+      "organization": "Grab Engineering",
+      "url": "https://engineering.grab.com/from-firefighting-to-building",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "multi-agent",
+        "data-engineering",
+        "lineage",
+        "observability",
+        "human-in-the-loop"
+      ],
+      "summary": "Slack 请求分为调研与改动。排障由数据、代码搜索和值班 Agent 协作，结合 Trino、Hive、Delta Lake、元数据与日志。变更走测试环境和合并请求，由工程师审核。",
+      "date_evidence": "Grab 工程团队署名原文标注 2026-03-19。",
+      "evidence_url": "https://engineering.grab.com/from-firefighting-to-building",
+      "use_case": "在一次字段异常调查中保存血缘、样本查询与上线记录，再核对变更审批与部署身份。",
+      "caveat": "文中的范围和节省工时由 Grab 团队披露。测试与人工合并是案例中的变更交付步骤。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "pinterest-analytics-agent-workflow-evals",
+      "date": "2026-11-12",
+      "date_basis": "published",
+      "title": "How Pinterest Improved Analytics Agent Compliance with Loop Engineering",
+      "organization": "Pinterest Engineering",
+      "url": "https://medium.com/pinterest-engineering/how-pinterest-improved-analytics-agent-compliance-with-loop-engineering-d3c52d0abaa2",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "evaluation",
+        "regression",
+        "tool-selection",
+        "trace",
+        "skills"
+      ],
+      "summary": "将每条分析规则拆为应执行与可跳过两套题，再加与本次规则无关的回归集。迭代比较逐题结果，检测多读技能或多做无关搜索之类的副作用。",
+      "date_evidence": "Pinterest Engineering 原文署名日期为 2026-11-12。",
+      "evidence_url": "https://medium.com/pinterest-engineering/how-pinterest-improved-analytics-agent-compliance-with-loop-engineering-d3c52d0abaa2",
+      "use_case": "为同一个工具补齐需要、无需和其他任务三类样本，同时核对最终分析结果。",
+      "caveat": "原文测量流程遵循率和其他回归表现。回答质量预期尚未直接做对照测量。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "fabric-data-agent-alm-guide",
+      "date": "2026-08-27",
+      "date_basis": "updated",
+      "title": "Source Control, CI/CD, and ALM for Fabric data agent",
+      "organization": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/fabric/data-science/data-agent-source-control",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "configuration",
+        "regression",
+        "governance",
+        "deployment"
+      ],
+      "summary": "拆分草稿和已发布配置，把数据源与少样本示例纳入版本控制。通过流水线在开发、测试、生产工作区间推进，目标阶段再发布。",
+      "date_evidence": "Microsoft Learn 页尾标注最后更新于 2026-08-27。",
+      "evidence_url": "https://learn.microsoft.com/en-us/fabric/data-science/data-agent-source-control",
+      "use_case": "用差异对照确认指令、数据源和示例发生的变化，并在目标工作区执行权限和正确性回归。",
+      "caveat": "源代码管理处于预览。同一租户内运行部署流水线，服务主体支持范围限定在 ALM 场景。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "databricks-genie-volume-file-analysis",
+      "date": "2026-11-17",
+      "date_basis": "updated",
+      "title": "Analyze files in volumes with a Genie Agent",
+      "organization": "Databricks",
+      "url": "https://docs.databricks.com/aws/en/genie-agents/volumes",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "retrieval",
+        "catalog",
+        "identity",
+        "evidence"
+      ],
+      "summary": "向 Genie Agent 挂载 Unity Catalog 卷，自动同步文件索引，把检索材料和表数据一起送入推理，支持页级引用。提问者须有卷读取权限。",
+      "date_evidence": "Databricks AWS 文档页标注最后更新于 2026-11-17。",
+      "evidence_url": "https://docs.databricks.com/aws/en/genie-agents/volumes",
+      "use_case": "用不同权限的读者对照同一个混合问题，核对文件引用、授权范围和结构化查询。",
+      "caveat": "功能处于公开预览，仅在 Agent mode 运行。附加单位为整个卷，文档列有区域、文件及数量限制。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "snowflake-cortex-agent-eval-promotion",
+      "date": "2026-03-13",
+      "date_basis": "released",
+      "title": "Evaluate and promote Cortex Agent versions",
+      "organization": "Snowflake Documentation",
+      "url": "https://docs.snowflake.com/en/developer-guide/cortex-ai-cookbook/agent-evaluations",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "evaluation",
+        "regression",
+        "deployment",
+        "governance"
+      ],
+      "summary": "以标准答案表和评测指标配置对比基线与候选 Agent，固定被测版本、裁判配置及样本，评审后再提升版本别名。",
+      "date_evidence": "官方更新记录标注 Cortex Agent evaluations 于 2026-03-13 GA。配套 Cookbook 标注其验证日期为 2026-10-04。",
+      "evidence_url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-03-13-cortex-agent-evaluations",
+      "use_case": "挑同一个指标的正确、模糊与缺数据案例，验收候选版本后再切换别名。",
+      "caveat": "该评测流程不调用 MCP 工具，也不包含会话属性。涉及这些条件的实际授权另行验证。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
+    },
+    {
+      "id": "starburst-aida-data-product-controls",
+      "date": "2026-11-19",
+      "date_basis": "released",
+      "title": "AI Data Assistant (AIDA)",
+      "organization": "Starburst Enterprise",
+      "url": "https://docs.starburst.io/latest/starburst-ai/aida-ai.html",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "catalog",
+        "mcp",
+        "governance",
+        "cost-control",
+        "trace"
+      ],
+      "summary": "AIDA 选定数据产品后用其元数据和业务规则运行探索与最终 SQL。文档给出超时、结果大小配置、MCP 工具调用审批和交互审计。",
+      "date_evidence": "2026.6.0 STS 官方版本说明日期为 2026-11-19，列出 AIDA 审计来源字段和角色访问更新。",
+      "evidence_url": "https://docs.starburst.io/latest/release/release-2026.6.html#starburst-ai",
+      "use_case": "用受限用户走一遍查询和 MCP 工具调用，分别核对服务器访问控制、工具审批与审计记录。",
+      "caveat": "适用 2026.6.0 STS 文档。部署形态和许可有前提，按实际集群与角色检查可用性。",
+      "added_on": "2026-11-21",
+      "last_verified": "2026-11-21"
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-21-international-engineering-enrichment",
+      "kind": "thematic-enrichment",
+      "as_of": "2026-11-21",
+      "window_start": "2026-03-13",
+      "previous_as_of": "2026-11-21",
+      "base_commit": "c651d2543b0ef4a591ed1cc449536a7138868a63",
+      "previous_total": 202,
+      "added_total": 13,
+      "updated_total": 0,
+      "added_ids": [
+        "thales-ife-agent-architecture-transcript",
+        "recruit-dbt-summit-domain-context-as-code",
+        "cpf-board-askporto-transcript",
+        "doordash-vera-data-agent",
+        "spotify-vedder-domain-context",
+        "notion-data-scout",
+        "incident-io-agentic-data-analyst",
+        "grab-adw-multi-agent-operations",
+        "pinterest-analytics-agent-workflow-evals",
+        "fabric-data-agent-alm-guide",
+        "databricks-genie-volume-file-analysis",
+        "snowflake-cortex-agent-eval-promotion",
+        "starburst-aida-data-product-controls"
+      ],
+      "updated_ids": [],
+      "review_note": "专题补录 2026 年海外材料，新增 3 条公开分享、5 篇工程实践、1 篇评测和 4 份项目文档。沿用原始日期及资料截止。完整逐字稿、回放入口和配套正文的核验范围见条目。"
+    },
     {
       "id": "2026-11-21-china-engineering-enrichment",
       "kind": "thematic-enrichment",

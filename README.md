@@ -6,9 +6,9 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**202 条资料** · `73` 架构与实践 · `32` 公开实现 · `32` 分享与议程 · `17` 研究 · `27` 持续文档 · `21` 评测
+**215 条资料** · `78` 架构与实践 · `32` 公开实现 · `35` 分享与议程 · `17` 研究 · `31` 持续文档 · `22` 评测
 
-**资料截止：2026-11-21（Asia/Shanghai）** · [国内工程案例与项目文档](#国内工程案例与项目文档) · [增量更新记录](UPDATES.md)
+**资料截止：2026-11-21（Asia/Shanghai）** · [海外工程案例与项目文档](#海外工程案例与项目文档) · [国内专题](#国内工程案例与项目文档) · [增量更新记录](UPDATES.md)
 
 ## 从这里开始 · Start here
 
@@ -52,9 +52,35 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 
 </details>
 
+## 海外工程案例与项目文档
+
+11 月 21 日专题补录 **13 条** 2026 年公开材料，沿用原始发布、更新或场次日期。 [网页版本轮补录](https://pyramiding.github.io/awesome-data-agents/?lang=en&latest=1#library)
+
+- **给业务口径指定维护人。** 先让领域专家审核问句和 SQL，再把表结构变更、无答案的问题和线上反馈带回评测。 [Spotify 知识簇](https://engineering.atspotify.com/2026/6/encoding-your-domain-expert-the-context-layer-behind-spotifys-data-assistant) · [DoorDash Vera](https://careersatdoordash.com/blog/inside-vera-doordashs-data-agent/)
+- **从问题追到实际查询。** 核对查询是否以提问者身份执行，并保留业务主题、选表、查询日志和拒绝原因。 [Notion Data Scout](https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee) · [incident.io 查询工具](https://incident.io/blog/agentic-data-analyst-pt-i)
+- **把流程回归与上线验收接起来。** 用正反样本判断该用的工具是否用了、无关步骤是否被引入，再用同一套题对比候选版本与现网基线。 [Pinterest 评测](https://medium.com/pinterest-engineering/how-pinterest-improved-analytics-agent-compliance-with-loop-engineering-d3c52d0abaa2) · [Snowflake 版本评测](https://docs.snowflake.com/en/developer-guide/cortex-ai-cookbook/agent-evaluations)
+
+| 材料 | 原始日期 | 值得展开看的细节 |
+|---|---|---|
+| [Thales · 机上娱乐 Data Agent 实录](https://answers.databricks.com/ai-agents-at-scale-thales-transformed-ife-databricks-genie-CKWj85NUA1Y) | 08-26 · 实录发布 | 文档检索、结构化问数和自定义 MCP 的路由，航司租户与用户身份的隔离。 |
+| [Singapore CPF Board · AskPorto 实录](https://answers.databricks.com/askporto-building-intelligent-data-analytics-databricks-genie-N4E0DPd66JQ) | 08-26 · 实录发布 | 业务域路由、多网络分区、代用户授权及上线前测试。 |
+| [Recruit · dbt Summit 回放](https://www.getdbt.com/dbt-summit/on-demand/beyond-semantic-models-domain-context-as-code-for-high-accuracy-text-to-sql) | 09-17 · 场次 | 在埋点 YAML、前端代码与 QA 之间维护同一套业务语境。 |
+| [DoorDash · Vera](https://careersatdoordash.com/blog/inside-vera-doordashs-data-agent/) | 09-16 · 工程文章 | 建模数据与业务知识并行召回，领域负责人审核评测，复杂分析先确认计划。 |
+| [Spotify · Vedder](https://engineering.atspotify.com/2026/6/encoding-your-domain-expert-the-context-layer-behind-spotifys-data-assistant) | 06-10 · 工程文章 | 知识簇包含数据集、审核示例和业务文档，监测示例失效与问题覆盖。 |
+| [Notion · Data Scout](https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee) | 10-08 · 工程文章 | 以用户身份查数，按需加载指标和技能，核对关联基数、分母与时间段。 |
+| [incident.io · Agentic Data Analyst](https://incident.io/blog/agentic-data-analyst-pt-i) | 08-03 · 工程文章 | 业务主题版本化，BigQuery dry run、扫描预算和结果日志集中在查询工具。 |
+| [Grab · 分析数仓支持 Agent](https://engineering.grab.com/from-firefighting-to-building) | 03-19 · 工程文章 | 将排障与修改分流，汇集数据和血缘证据后再进入测试与人工审核。 |
+| [Pinterest · 分析流程评测](https://medium.com/pinterest-engineering/how-pinterest-improved-analytics-agent-compliance-with-loop-engineering-d3c52d0abaa2) | 11-12 · 工程评测 | 对每条规则同时测应用和跳过，再保留独立的回归集。 |
+| [Microsoft Fabric · Data Agent ALM](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-source-control) | 08-27 · 文档更新 | 分别管理草稿与发布配置，经开发、测试、生产工作区晋升。 |
+| [Databricks Genie · 文件分析](https://docs.databricks.com/aws/en/genie-agents/volumes) | 11-17 · 文档更新 | 整卷索引、页级引用以及提问者的卷读取权限。 |
+| [Snowflake · Cortex Agent 版本评测](https://docs.snowflake.com/en/developer-guide/cortex-ai-cookbook/agent-evaluations) | 03-13 · 功能发布 | 在相同题集与裁判配置下比较基线和候选，再推进生产别名。 |
+| [Starburst AIDA · 查询与工具配置](https://docs.starburst.io/latest/starburst-ai/aida-ai.html) | 11-19 · 版本发布 | 数据产品范围、查询预算、MCP 工具审批与审计记录。 |
+
+[海外分享导航](TALKS.md#海外工程分享) · [项目文档阅读路线](PROJECT_GUIDE.md#海外项目文档阅读路线)
+
 ## 国内工程案例与项目文档
 
-11 月 21 日专题补录 **10 条** 2026 年公开材料，保留各自的原始日期。[在网页版浏览本轮专题](https://pyramiding.github.io/awesome-data-agents/?lang=zh&latest=1#library)
+11 月 21 日专题补录 **10 条** 2026 年公开材料，保留各自的原始日期。 [在网页版筛选中文资料](https://pyramiding.github.io/awesome-data-agents/?lang=zh#library)
 
 - **从业务场景反推工具边界。** 网易的冷表治理给出可审核的下线建议，孩子王则按岗位配置业务智能体。分别检查谁有权提出、复核和执行变更。 [网易智企实录](https://www.cnblogs.com/163yun/articles/23555859) · [孩子王案例](https://xie.infoq.cn/article/b55fdb7eca9006e2538557af0)
 - **把业务口径追到查询。** 用同一个采购或销售指标核对语义定义、权限身份、SQL 展开和结果。 [镜舟架构与演示](https://mirrorship.ai/zh/events/mip-launch) · [金山云问数链路](https://docs.ksyun.com/documents/46113?type=3)
