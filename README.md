@@ -6,7 +6,7 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**215 条资料** · `78` 架构与实践 · `32` 公开实现 · `35` 分享与议程 · `17` 研究 · `31` 持续文档 · `22` 评测
+**216 条资料** · `78` 架构与实践 · `32` 公开实现 · `35` 分享与议程 · `17` 研究 · `31` 持续文档 · `23` 评测
 
 **资料截止：2026-11-21（Asia/Shanghai）** · [海外工程案例与项目文档](#海外工程案例与项目文档) · [国内专题](#国内工程案例与项目文档) · [增量更新记录](UPDATES.md)
 
@@ -402,6 +402,7 @@ Trace → Evals → 回归 → 反馈/记忆
 
 ### 已公开材料
 
+- **2026-11-04 · 中国互联网协会 · [人工智能数据智能体 总体要求（征求意见稿）](https://www.isc.org.cn//profile//2026/11/04/ba0151d7-1449-443f-a906-728138495601.pdf)** — 数据任务闭环、性能与恢复、溯源、安全、人工干预及协同要求，可用于整理验收清单。**这是团体标准征求意见稿，不是已生效标准，也不是 8 月研究报告**；[官方通知](https://www.isc.org.cn/article/30968611055464448.html)要求“12月3日前”反馈。
 - **2026-08-17 · 中国互联网协会人工智能工作委员会 × 中国信通院 · [《数据智能体研究报告（2026）》征求意见稿](https://www.isc.org.cn/article/30075177847877632.html)** — 55 页中文分类框架，覆盖定义、与 BI/RPA/NL2SQL/LLM 的差异、参考架构、关键技术、生态、应用和安全合规；注意它是征求意见稿，不是最终版。
 - **2026-04-17 / 2026-07-14 · Shopee @ QCon 北京 · [议题页](https://qcon.infoq.cn/2026/beijing/presentation/7006) / [全文实录](https://www.infoq.cn/article/LfO7mzdhxMWTtICFuTNb)** — 渐进披露 Multi-Agent、画像/记忆、语义模型、File-as-Context、Sandbox、Skills 和自动评测；目前未核到官方完整视频。
 - **2026-04-16–18 · 网易 @ QCon 北京 · [从 Copilot 到 DataAgent：企业级智能数据开发治理平台的技术演进和实践](https://qcon.infoq.cn/2026/beijing/presentation/7030)** — EasyData 从 Copilot、Agent 到 CLI 化，并连接任务诊断与智能分析。

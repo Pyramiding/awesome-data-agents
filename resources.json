@@ -5220,9 +5220,70 @@
       "caveat": "适用 2026.6.0 STS 文档。部署形态和许可有前提，按实际集群与角色检查可用性。",
       "added_on": "2026-11-21",
       "last_verified": "2026-11-21"
+    },
+    {
+      "id": "isc-data-agent-general-requirements-draft",
+      "date": "2026-11-04",
+      "date_basis": "published",
+      "title": "人工智能数据智能体 总体要求（征求意见稿）",
+      "organization": "中国互联网协会",
+      "url": "https://www.isc.org.cn//profile//2026/11/04/ba0151d7-1449-443f-a906-728138495601.pdf",
+      "section": "evaluation",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "draft",
+        "standard",
+        "evaluation",
+        "governance",
+        "trace",
+        "human-in-the-loop",
+        "recovery",
+        "interoperability"
+      ],
+      "summary": "围绕数据任务理解、规划、执行、校验与交付，给出可靠性、结果溯源、安全合规、人工干预和互操作要求。性能表区分任务完成、故障恢复和非预期重复操作，不规定统一数值阈值。",
+      "date_evidence": "中国互联网协会 2026 年 11 月 4 日征求意见通知的附件 3 公开本稿；采用通知日期，不把 PDF 中的占位发布日期视为正式发布日。",
+      "evidence_url": "https://www.isc.org.cn/article/30968611055464448.html",
+      "use_case": "把能力声明、异常恢复、授权确认和审计留痕转成验收清单，为每项约定测试条件、统计口径与目标值。",
+      "caveat": "这是团体标准公开征求意见稿，编号和发布、实施日期仍为占位符，不是正式发布或生效标准，也不是 8 月《数据智能体研究报告（2026）》。意见截止按通知原文为“12月3日前”。",
+      "material_type": [
+        "draft-standard",
+        "pdf"
+      ],
+      "reading_path": [
+        {
+          "title": "公开征求意见通知",
+          "url": "https://www.isc.org.cn/article/30968611055464448.html",
+          "focus": "核对 2026 年 11 月 4 日公告、附件 3 和意见反馈时限。"
+        },
+        {
+          "title": "人工智能数据智能体 总体要求（征求意见稿）",
+          "url": "https://www.isc.org.cn//profile//2026/11/04/ba0151d7-1449-443f-a906-728138495601.pdf",
+          "focus": "先读能力声明和任务闭环，再对照性能与恢复指标、溯源、安全和人工干预要求。"
+        }
+      ],
+      "verification_scope": "核对官方通知、PDF 封面及总体框架、性能和溯源正文；未进行产品符合性测试。",
+      "added_on": "2026-11-22",
+      "last_verified": "2026-11-22"
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-22-isc-consultation-draft",
+      "kind": "thematic-enrichment",
+      "as_of": "2026-11-21",
+      "window_start": "2026-11-04",
+      "previous_as_of": "2026-11-21",
+      "base_commit": "3a58584a4b6b686a5d60d4555e7a6670ace14171",
+      "previous_total": 215,
+      "added_total": 1,
+      "updated_total": 0,
+      "added_ids": [
+        "isc-data-agent-general-requirements-draft"
+      ],
+      "updated_ids": [],
+      "review_note": "2026 年 11 月 22 日定向补录中国互联网协会《人工智能数据智能体 总体要求》征求意见稿。沿用 11 月 4 日原始通知日期及 11 月 21 日资料截止；仅核对此稿及其通知，不代表全库复核。与 8 月研究报告分开计数，不认定为已生效标准。"
+    },
     {
       "id": "2026-11-21-international-engineering-enrichment",
       "kind": "thematic-enrichment",
