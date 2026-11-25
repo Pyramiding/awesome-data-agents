@@ -6,9 +6,9 @@
 
 A source-checked guide to AI data agents: architectures, implementations, semantic layers, benchmarks and production practices. Chinese notes, original-language sources.
 
-**216 条资料** · `78` 架构与实践 · `32` 公开实现 · `35` 分享与议程 · `17` 研究 · `31` 持续文档 · `23` 评测
+**224 条资料** · `81` 架构与实践 · `32` 公开实现 · `35` 分享与议程 · `17` 研究 · `34` 持续文档 · `25` 评测
 
-**资料截止：2026-11-21（Asia/Shanghai）** · [海外工程案例与项目文档](#海外工程案例与项目文档) · [国内专题](#国内工程案例与项目文档) · [增量更新记录](UPDATES.md)
+**资料截止：2026-11-25（Asia/Shanghai）** · [本轮新增](#2026-11-25增量更新) · [海外工程案例与项目文档](#海外工程案例与项目文档) · [国内专题](#国内工程案例与项目文档) · [增量更新记录](UPDATES.md)
 
 ## 从这里开始 · Start here
 
@@ -52,9 +52,26 @@ A source-checked, 2026-focused field guide to Data Agent architectures, producti
 
 </details>
 
+## 2026-11-25：增量更新
+
+新增 **8 条**，覆盖 11 月 22 日至 25 日（上海时间），并回查上次截止日。 [网页版本轮补录](https://pyramiding.github.io/awesome-data-agents/?latest=1#library)
+
+这组材料适合对照三类验收。**工作流**看审批、依赖和增量刷新。**分析结果**看指标粒度、时间窗口和样例对账。**Agent 执行**看失败后能否在调用上限内完成修正，以及每个问题实际触发多少查询。
+
+| 类型 | 原始日期 | 资料 | 工程阅读重点 |
+|---|---|---|---|
+| 工程教程 | 11-25 · 发布 | [DataWorks × Hologres 图片检索](https://developer.aliyun.com/article/1789059) | 看四个 SQL 节点如何从方案确认走到生产发布，再用新增图片检验增量刷新。 |
+| 版本说明 | 11-25 · 版本发布 | [Data Agent 2.4.0 · 看板助手](https://dataagent-doc.askdataservice.com/guide/releases/v2-4/release-2-4-0.html) | 复测多区块选中状态、会话恢复和展示文案变化对数据判定的影响。 |
+| 工程博客 | 11-24 · 发布 | [ClickHouse · Agent 查询负载与批处理](https://clickhouse.com/blog/your-agents-dont-care-that-youre-a-batch-shop) | 把每个问题触发的选表、采样和复核查询计入并发预算，再检查它们是否挤占批处理窗口。 |
+| 项目文档 | 11-24 · 功能发布 | [Databricks · Genie Migrate](https://docs.databricks.com/aws/en/migration/genie-migrate/convert) | 把 T-SQL 转为 Lakeflow 管道后，分别检查分组依赖、dry run 和真实数据对账。 |
+| 功能文档 | 11-24 · 功能发布 | [BigQuery · 对话分析的统计函数](https://docs.cloud.google.com/bigquery/docs/release-notes#November_24_2026) | 核对趋势、季节性、变点和相关性所用的数据粒度与时间窗口。 |
+| 评测教程 | 11-24 · 发布 | [LangChain · 只读 SQL Agent 的轨迹测试](https://www.ozercemkelahmet.com/articles/tutorial-sql-data-agent-langchain-tests) | 在不用模型 API 的测试里覆盖查询失败后的修正、只读连接和循环上限。 |
+| 场景指南 | 11-23 · 发布 | [Aloudata · 电商促销毛利复盘](https://aloudata.com/resources/compare/ai-data-intelligence/ecommerce-promotion-margin-report-vs-data-agent) | 让报表和 Agent 共用毛利口径，对账后再沿渠道与商品维度追问。 |
+| 评测预印本 | 11-21 · arXiv 提交（UTC） | [BIRD-FanOut · JOIN 重复计数排查](https://arxiv.org/abs/2611.29009) | 用一对多样本查 JOIN 放大导致的重复计数，同时复核基准标准答案。 |
+
 ## 海外工程案例与项目文档
 
-11 月 21 日专题补录 **13 条** 2026 年公开材料，沿用原始发布、更新或场次日期。 [网页版本轮补录](https://pyramiding.github.io/awesome-data-agents/?lang=en&latest=1#library)
+11 月 21 日专题补录 **13 条** 2026 年公开材料，沿用原始发布、更新或场次日期。 [网页版英文资料](https://pyramiding.github.io/awesome-data-agents/?lang=en#library)
 
 - **给业务口径指定维护人。** 先让领域专家审核问句和 SQL，再把表结构变更、无答案的问题和线上反馈带回评测。 [Spotify 知识簇](https://engineering.atspotify.com/2026/6/encoding-your-domain-expert-the-context-layer-behind-spotifys-data-assistant) · [DoorDash Vera](https://careersatdoordash.com/blog/inside-vera-doordashs-data-agent/)
 - **从问题追到实际查询。** 核对查询是否以提问者身份执行，并保留业务主题、选表、查询日志和拒绝原因。 [Notion Data Scout](https://www.notion.com/blog/how-we-built-a-personal-data-scientist-for-every-notion-employee) · [incident.io 查询工具](https://incident.io/blog/agentic-data-analyst-pt-i)

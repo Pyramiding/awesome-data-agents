@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "as_of": "2026-11-21",
+  "as_of": "2026-11-25",
   "timezone": "Asia/Shanghai",
   "scope": "2026-focused Data Agent architectures, public implementations, evaluations, papers, talks, and living documentation",
   "resources": [
@@ -5265,9 +5265,252 @@
       "verification_scope": "核对官方通知、PDF 封面及总体框架、性能和溯源正文；未进行产品符合性测试。",
       "added_on": "2026-11-22",
       "last_verified": "2026-11-22"
+    },
+    {
+      "id": "dataworks-hologres-image-search-workflow",
+      "date": "2026-11-25",
+      "date_basis": "published",
+      "title": "DataWorks Data Agent：构建 Hologres 图片向量检索工作流",
+      "organization": "向翠 · 阿里云开发者社区",
+      "url": "https://developer.aliyun.com/article/1789059",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "data-engineering",
+        "workflow",
+        "multimodal",
+        "human-in-the-loop",
+        "verification"
+      ],
+      "summary": "将商品图片检索需求拆成四个 HologresSQL 节点。用 Object Table 映射 OSS 图片，由 Dynamic Table 计算向量并增量刷新，随后用 HGraph 索引验证文搜图和图搜图。",
+      "date_evidence": "阿里云开发者社区原文标注 2026-11-25。",
+      "use_case": "对照方案审核、依赖变更、生产发布和生产执行四次人工确认，在新增样例图片后检查向量表更新及检索结果。",
+      "caveat": "作者报告的是单次教程环境的验收结果。运行前核对 Hologres 版本、模型和 OSS 权限，确认实际刷新延迟与召回表现。",
+      "reading_path": [
+        {
+          "title": "Hologres Object Table",
+          "url": "https://help.aliyun.com/zh/hologres/user-guide/manage-object-table-and-unstructured-data",
+          "focus": "确认对象映射、访问权限和可供后续处理的文件字段。"
+        },
+        {
+          "title": "Hologres 图像多模态向量检索",
+          "url": "https://help.aliyun.com/zh/hologres/user-guide/visual-data-analysis-for-autonomous-driving",
+          "focus": "对照增量 Dynamic Table、向量化和 Top N 检索的配置。"
+        }
+      ],
+      "evidence_url": "https://developer.aliyun.com/article/1789059",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "askdataservice-data-agent-2-4-dashboard-context",
+      "date": "2026-11-25",
+      "date_basis": "released",
+      "title": "Release 2.4.0 · 看板助手支持多区块分析",
+      "organization": "Data Agent 文档站",
+      "url": "https://dataagent-doc.askdataservice.com/guide/releases/v2-4/release-2-4-0.html",
+      "section": "living-doc",
+      "language": "zh",
+      "status": "living-doc",
+      "tags": [
+        "chatbi",
+        "context",
+        "visualization",
+        "regression"
+      ],
+      "summary": "看板助手可把多个区块作为一次分析的上下文，选择随消息保留。版本还修复了重开看板后 HTML 数据读取不完整，以及展示文字变动触发数据变化误判的问题。",
+      "date_evidence": "实施文档标注 2.4.0 于 2026-11-25 发布，镜像版本 2.4.0.20261125091804。",
+      "use_case": "用同名的不同区块和并发切换会话复测选区恢复，再只改展示文案检查业务数据的变化判定。",
+      "caveat": "版本记录给出用户可见行为与修复点。跨区块的权限、指标一致性和恢复行为仍要用实际看板验收。",
+      "evidence_url": "https://dataagent-doc.askdataservice.com/guide/releases/v2-4/release-2-4-0.html",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "clickhouse-batch-data-agent-query-load",
+      "date": "2026-11-24",
+      "date_basis": "published",
+      "title": "Your agents don't care that you're a batch shop",
+      "organization": "ClickHouse · Jake Vernon",
+      "url": "https://clickhouse.com/blog/your-agents-dont-care-that-youre-a-batch-shop",
+      "section": "architecture",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "architecture",
+        "execution",
+        "cost-control",
+        "latency"
+      ],
+      "summary": "用金融数据批处理举例，分别估算数据到达频率和 Agent 的查询负载。列举选表、采样、查询与复核如何放大流量，以及数据跳读和预计算如何减轻每次查询的工作量。",
+      "date_evidence": "ClickHouse 原文 Jake Vernon 作者栏标注 2026-11-24。",
+      "use_case": "按每个问题触发的查询数和实际时延估算在途查询，和夜间批处理在同一时段压测争抢。",
+      "caveat": "并发数字来自作者设定的场景。容量和成本结论应按自己的查询组合、峰值流量及批处理窗口实测。",
+      "evidence_url": "https://clickhouse.com/blog/your-agents-dont-care-that-youre-a-batch-shop",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "databricks-genie-migrate-t-sql-lakeflow",
+      "date": "2026-11-24",
+      "date_basis": "released",
+      "title": "Convert SQL scripts and ETL pipelines with Genie Migrate",
+      "organization": "Databricks Documentation",
+      "url": "https://docs.databricks.com/aws/en/migration/genie-migrate/convert",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "data-engineering",
+        "migration",
+        "workflow",
+        "verification"
+      ],
+      "summary": "将 SQL Server 和 Azure Synapse 专用 SQL 池的 T-SQL 按文件分组转换为 Lakeflow 管道。逐组指定 catalog 和 schema，查看转换差异，并由 Genie Migrate 对生成管道做 dry run。",
+      "date_evidence": "Databricks 11 月官方发布记录标注转为 Lakeflow 管道的功能于 2026-11-24 正式可用。",
+      "evidence_url": "https://docs.databricks.com/aws/en/release-notes/product/2026/november#genie-migrate-conversion-to-lakeflow-pipelines-is-generally-available",
+      "use_case": "按原任务的依赖拆组，保留转换差异和 dry run 记录，再用同批输入对账并比较重跑结果。",
+      "caveat": "发布记录仍要求管理员启用对应的工作区开关。dry run 验证管道转换，真实数据口径与增量结果还需验收。",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "google-bigquery-conversational-analytics-statistical-functions",
+      "date": "2026-11-24",
+      "date_basis": "released",
+      "title": "Statistical functions in BigQuery conversational analytics",
+      "organization": "Google Cloud Documentation",
+      "url": "https://docs.cloud.google.com/bigquery/docs/release-notes#November_24_2026",
+      "section": "living-doc",
+      "language": "en",
+      "status": "living-doc",
+      "tags": [
+        "bigquery",
+        "conversational-analytics",
+        "statistics",
+        "verification"
+      ],
+      "summary": "BigQuery 将趋势、季节性、变点检测和相关性四类表值函数正式开放给对话式分析和 SQL 编辑器，可在对话生成或 Agent 的已验证查询中使用。",
+      "date_evidence": "BigQuery 官方发布记录在 2026-11-24 将这四类功能标为 GA。",
+      "use_case": "把常用时间序列问题固化成已验证查询，分别检查时间粒度、观察窗口和实际调用的函数。",
+      "caveat": "变点用于定位变化时段，相关性用于找可进一步检查的线索。业务归因还需要结合活动、埋点和口径变更证据。",
+      "reading_path": [
+        {
+          "title": "BigQuery 对话式分析用例",
+          "url": "https://docs.cloud.google.com/bigquery/docs/conversational-analytics#bqml-use-cases",
+          "focus": "对照自然语言提问与已验证查询两种入口。"
+        },
+        {
+          "title": "ML.DETECT_CHANGE_POINTS",
+          "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-detect-change-points",
+          "focus": "先核对输入粒度和时间戳，再解读变化点输出。"
+        }
+      ],
+      "evidence_url": "https://docs.cloud.google.com/bigquery/docs/release-notes#November_24_2026",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "kelahmet-read-only-sql-agent-trajectory-tests",
+      "date": "2026-11-24",
+      "date_basis": "published",
+      "title": "Tutorial: build a read-only SQL data agent with LangChain 1.5 and test it without an LLM",
+      "organization": "Özer Cem Kelahmet",
+      "url": "https://www.ozercemkelahmet.com/articles/tutorial-sql-data-agent-langchain-tests",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "sql",
+        "langchain",
+        "evaluation",
+        "regression",
+        "trace",
+        "cost-control"
+      ],
+      "summary": "用只读 SQLite 连接和调用上限约束查询。脚本模型重放发现表、查看字段、首次查询失败及修正的轨迹，分别断言只读、工具顺序、答案和循环上限。",
+      "date_evidence": "作者原文的 Published 栏标注 24 Nov 2026。",
+      "use_case": "在每次代码变更时重放同一条失败与重试轨迹，再用真实模型和固定金标另测选表、选指标及答案质量。",
+      "caveat": "脚本模型验证的是执行层的确定性行为。真实模型的稳定性和生产数据权限需要在实际环境中独立评估。",
+      "evidence_url": "https://www.ozercemkelahmet.com/articles/tutorial-sql-data-agent-langchain-tests",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "aloudata-promotion-margin-analysis-agent",
+      "date": "2026-11-23",
+      "date_basis": "published",
+      "title": "固定报表 vs Data Agent：电商大促后如何复盘促销毛利？",
+      "organization": "Aloudata 团队",
+      "url": "https://aloudata.com/resources/compare/ai-data-intelligence/ecommerce-promotion-margin-report-vs-data-agent",
+      "section": "architecture",
+      "language": "zh",
+      "status": "published",
+      "tags": [
+        "chatbi",
+        "semantic-layer",
+        "metric-layer",
+        "governance"
+      ],
+      "summary": "用电商促销毛利复盘说明，固定报表和问数 Agent 可共用受治理的指标。报表用于稳定的经营对比，Agent 按问题选择数据和拆解路径，输出需核对成本范围与数据截至时间。",
+      "date_evidence": "Aloudata 原文同时标注发布和最后更新于 2026-11-23。",
+      "use_case": "让报表与 Agent 分别计算同一活动的毛利，检查费用分摊、归属周期和数据完整性，再追问异常渠道。",
+      "caveat": "这是厂商编写的场景指南。费用归属和促销影响仍须由业务与财务复核。",
+      "evidence_url": "https://aloudata.com/resources/compare/ai-data-intelligence/ecommerce-promotion-margin-report-vs-data-agent",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
+    },
+    {
+      "id": "bird-fanout-grain-aware-guards",
+      "date": "2026-11-21",
+      "date_basis": "published",
+      "title": "Mind the Trap As LLMs Guess the Data Model: Grain-Aware Guards Against Fan-out in Text-to-SQL and Its Benchmarks",
+      "organization": "Ahmed M. Mahran · arXiv",
+      "url": "https://arxiv.org/abs/2611.29009",
+      "section": "evaluation",
+      "language": "en",
+      "status": "published",
+      "tags": [
+        "text-to-sql",
+        "evaluation",
+        "benchmark",
+        "data-quality",
+        "semantic-layer"
+      ],
+      "summary": "用指标粒度和键的重复倍数判断 JOIN 后的聚合是否重复计数。作者核查 BIRD 的标准答案，并发布补充题集 BIRD-FanOut 和合成样本 GrainTraps。",
+      "date_evidence": "arXiv v1 标为 2026-11-21 19:39:56 UTC（上海时间 11 月 22 日 03:39）。条目保留原页 UTC 日期。",
+      "use_case": "为订单关联明细这类一对多场景加入能执行但会重计的查询，对照金标及 Agent 所用的聚合粒度。",
+      "caveat": "结论来自预印本中的特定题集和 Agent 设置。论文报告的重复计数改善幅度大于整体准确率改善幅度。",
+      "evidence_url": "https://arxiv.org/abs/2611.29009",
+      "added_on": "2026-11-25",
+      "last_verified": "2026-11-25"
     }
   ],
   "refresh_history": [
+    {
+      "id": "2026-11-25-engineering-and-project-docs",
+      "kind": "incremental",
+      "as_of": "2026-11-25",
+      "window_start": "2026-11-21",
+      "previous_as_of": "2026-11-21",
+      "base_commit": "b7a040e0c026016ee8f7d69cd8742ae8498728cf",
+      "previous_total": 216,
+      "added_total": 8,
+      "updated_total": 0,
+      "added_ids": [
+        "dataworks-hologres-image-search-workflow",
+        "askdataservice-data-agent-2-4-dashboard-context",
+        "clickhouse-batch-data-agent-query-load",
+        "databricks-genie-migrate-t-sql-lakeflow",
+        "google-bigquery-conversational-analytics-statistical-functions",
+        "kelahmet-read-only-sql-agent-trajectory-tests",
+        "aloudata-promotion-margin-analysis-agent",
+        "bird-fanout-grain-aware-guards"
+      ],
+      "updated_ids": [],
+      "review_note": "覆盖 11 月 22 日至 25 日（上海时间），并回查上一截止日。按项目版本、原文发布日期与论文提交时间收录 3 篇工程与场景文章、3 份项目文档、2 条评测资料。附带的用例和帮助文档随主条目计数。"
+    },
     {
       "id": "2026-11-22-isc-consultation-draft",
       "kind": "thematic-enrichment",
